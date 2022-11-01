@@ -8,9 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { NoopAnimationsModule} from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { FeedMainComponent } from './main_page/feed_main.component';
 import { UserProfileComponent } from './profile/user_profile.component';
 import { SignupComponent } from './signup/signup.component';
+import { MatRadioModule} from '@angular/material/radio';
+import { MatDatepickerModule} from '@angular/material/datepicker';
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -53,7 +54,7 @@ import { AuthService } from "./shared/services/auth.service";
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
