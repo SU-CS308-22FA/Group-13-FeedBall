@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NoopAnimationsModule} from '@angular/platform-browser/animations'
-import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +50,10 @@ import {MatMenuModule} from '@angular/material/menu';
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
@@ -60,7 +63,9 @@ import {MatMenuModule} from '@angular/material/menu';
     NoopAnimationsModule,
     MatIconModule,
     MatMenuModule,
-    MatRadioModule
+    MatRadioModule,
+    MatNativeDateModule,
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
