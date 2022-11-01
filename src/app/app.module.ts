@@ -16,6 +16,13 @@ import { LoginComponent } from './login/login.component';
 import { FeedMainComponent } from './main_page/feed_main.component';
 import { UserProfileComponent } from './profile/user_profile.component';
 import { SignupComponent } from './signup/signup.component';
+import { environment } from "src/environments/environment";
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AuthService } from "./shared/services/auth.service";
 
 
 @NgModule({
@@ -25,7 +32,7 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     FeedMainComponent,
     UserProfileComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +44,14 @@ import { SignupComponent } from './signup/signup.component';
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
