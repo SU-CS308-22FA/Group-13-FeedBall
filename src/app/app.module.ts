@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NoopAnimationsModule} from '@angular/platform-browser/animations'
+import { MatNativeDateModule} from '@angular/material/core'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,16 +52,18 @@ import { AuthService } from "./shared/services/auth.service";
     MatRadioModule,
     MatDatepickerModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,/*
+    NoopAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule,*/
+    AngularFireDatabaseModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    MatNativeDateModule,
+
   ],
-  /*providers: [AuthService],*/
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
