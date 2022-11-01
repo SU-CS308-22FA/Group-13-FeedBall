@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NoopAnimationsModule} from '@angular/platform-browser/animations'
-import { MatNativeDateModule} from '@angular/material/core'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +27,10 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AuthService } from "./shared/services/auth.service";
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 @NgModule({
@@ -60,6 +63,9 @@ import { AuthService } from "./shared/services/auth.service";
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatRadioModule,
     MatNativeDateModule,
 
   ],
