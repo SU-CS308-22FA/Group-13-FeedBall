@@ -1,0 +1,37 @@
+.divs{
+  text-align: center;
+}
+
+.divform{
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.p1{
+  font-size: 25px;
+  font-family: 'Bangers';
+}
+
+.p2{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.p3{
+  font-size: 12px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+.p4{
+  font-style: italic;
+  font-size: 12px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:green;
+
+}

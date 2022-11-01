@@ -1,0 +1,41 @@
+<div class="divs">
+  <p class="p1">Welcome To FeedBall!</p>
+</div>
+
+<div class="divform">
+  <mat-card>
+    <mat-card-title class="p2">Please login to continue.</mat-card-title>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+      <table align="center">
+        <td align="center">
+          <tr>
+            <mat-form-field>
+              <input type="email" name="emailInput" email placeholder="email" required #localEmailInput>
+              <mat-error>Please enter a valid email address.</mat-error>
+            </mat-form-field>
+          </tr>
+          <tr>
+            <mat-form-field>
+              <input type="password" name="passwordInput" placeholder="password" required  #localPasswordInput>
+              <mat-error>Please enter a valid password.</mat-error>
+            </mat-form-field>
+          </tr>
+          <tr><button mat-raised-button color="primary">Login</button></tr>
+        </td>
+      </table>
+    </form>
+  </mat-card>
+</div>
+
+<div class="divs">
+  <table align="center">
+    <tr aling="center">
+      <td>
+        <p class="p3">Doesn't have an account yet?</p>
+      </td>
+      <td>
+        <p class="p4"><a mat-button routerLink="/signup">Signup now</a></p>
+      </td>
+    </tr>
+  </table>
+</div>

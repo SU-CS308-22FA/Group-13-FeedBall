@@ -1,0 +1,14 @@
+
+.app-slogan{
+  font-family: 'Bangers';
+  font-size: 14px;
+
+}
+
+.mat-toolbar{
+  background-color: white;
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
