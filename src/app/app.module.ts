@@ -47,18 +47,13 @@ import { AuthService } from "./shared/services/auth.service";
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-=======
     BrowserAnimationsModule,
-    NoopAnimationsModule,
-
->>>>>>> 4c9bd0a64573047554c2b061dcd96fa3265944ed
-
+    NoopAnimationsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
