@@ -8,6 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,11 +47,17 @@ import { AuthService } from "./shared/services/auth.service";
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+=======
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+
+>>>>>>> 4c9bd0a64573047554c2b061dcd96fa3265944ed
 
   ],
   providers: [AuthService],
