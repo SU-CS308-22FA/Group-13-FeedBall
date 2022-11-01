@@ -1,5 +1,3 @@
-<a routerLink="">back to login page</a>
-
 <div class="divs">
   <p class="p1">Welcome To FeedBall!</p>
 </div>
@@ -12,6 +10,19 @@
         <td align="center">
           <tr>
             <mat-form-field>
+              <input type="text" matInput name="nameInput" ngModel placeholder="name" required #localNameInput="ngModel">
+              <mat-error *ngIf="localNameInput.invalid">Please enter your name.</mat-error>
+            </mat-form-field>
+          </tr>
+          <tr>
+            <mat-form-field>
+              <input type="text" matInput surname="surnameInput" ngModel placeholder="surname" required #localSurnameInput="ngModel">
+              <mat-error *ngIf="localSurnameInput.invalid">Please enter your surname.</mat-error>
+            </mat-form-field>
+          </tr>
+
+          <tr>
+            <mat-form-field>
               <input type="email" matInput name="emailInput" email ngModel placeholder="email" required #localEmailInput="ngModel">
               <mat-error *ngIf="localEmailInput.invalid">Please enter a valid email address.</mat-error>
             </mat-form-field>
@@ -19,14 +30,14 @@
 
           <tr>
             <mat-form-field>
-              <input type="password" matInput name="passwordInput1" ngModel placeholder="password1" required #localPassword1Input="ngModel">
+              <input type="password" matInput name="passwordInput1" ngModel placeholder="password" required #localPassword1Input="ngModel">
               <mat-error *ngIf="localPassword1Input.invalid">Please enter a valid password.</mat-error>
             </mat-form-field>
           </tr>
 
           <tr>
             <mat-form-field>
-              <input type="password" matInput name="passwordInput2" ngModel placeholder="password2" required  #localPassword2Input="ngModel">
+              <input type="password" matInput name="passwordInput2" ngModel placeholder="password verification" required  #localPassword2Input="ngModel">
               <mat-error *ngIf="localPassword1Input!=localPassword2Input">Please enter the same value as above.</mat-error>
             </mat-form-field>
           </tr>
@@ -46,18 +57,9 @@
             </table>
           </tr>
 
-          <tr>
-            <mat-form-field>
-              <input type="" matInput name="birthdayInput" ngModel placeholder="birthday" required  #localBirthdayInput="ngModel">
-              <mat-error *ngIf="localBirthdayInput.invalid">Please enter the same value as above.</mat-error>
-            </mat-form-field>
-          </tr>
-
-
-
           <tr class="birthdayInput">
             <mat-form-field appearance="fill" >
-              <mat-label class="s-e-label">Start date</mat-label>
+              <mat-label class="s-e-label">Enter your birthday:</mat-label>
               <input matInput [matDatepicker]="pickerstart"  name="birthday" required ngModel #localBirthdayInput="ngModel">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matSuffix [for]="pickerstart"></mat-datepicker-toggle>
@@ -72,3 +74,5 @@
     </form>
   </mat-card>
 </div>
+
+<a routerLink="">Login Page</a>
