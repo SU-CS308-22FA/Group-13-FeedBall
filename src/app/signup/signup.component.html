@@ -4,7 +4,7 @@
   <p class="p1">Welcome To FeedBall!</p>
 </div>
 
-<div class="divform" width="50%">
+<div class="divform" >
   <mat-card>
     <mat-card-title class="p2">Create a FeedBall account!</mat-card-title>
     <form (submit)="onSignUp(loginForm)" #loginForm="ngForm">
@@ -16,30 +16,58 @@
               <mat-error *ngIf="localEmailInput.invalid">Please enter a valid email address.</mat-error>
             </mat-form-field>
           </tr>
-          <tr><br></tr>
+
           <tr>
             <mat-form-field>
-              <input type="password" matInput name="passwordInput" ngModel placeholder="password" required  #localPasswordInput="ngModel">
-              <mat-error *ngIf="localPasswordInput.invalid">Please enter a valid password.</mat-error>
+              <input type="password" matInput name="passwordInput1" ngModel placeholder="password1" required #localPassword1Input="ngModel">
+              <mat-error *ngIf="localPassword1Input.invalid">Please enter a valid password.</mat-error>
             </mat-form-field>
           </tr>
-          <tr><br></tr>
+
+          <tr>
+            <mat-form-field>
+              <input type="password" matInput name="passwordInput2" ngModel placeholder="password2" required  #localPassword2Input="ngModel">
+              <mat-error *ngIf="localPassword1Input!=localPassword2Input">Please enter the same value as above.</mat-error>
+            </mat-form-field>
+          </tr>
+
+          <tr>
+            <table width="100%">
+              <tr width="100%">
+                <td align="left">
+                  <mat-radio-group class="radiobuttons" matInput ngModel name="statusTask" required #localStatus="ngModel">
+                    <mat-radio-button value="Male">Male&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button value="Female">Female&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button value="Other">Other&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button>
+                    <mat-error *ngIf="localStatus.invalid"><p class="errortext">Please select a gender.</p></mat-error>
+                  </mat-radio-group>
+                </td>
+              </tr>
+            </table>
+          </tr>
+
+          <tr>
+            <mat-form-field>
+              <input type="" matInput name="birthdayInput" ngModel placeholder="birthday" required  #localBirthdayInput="ngModel">
+              <mat-error *ngIf="localBirthdayInput.invalid">Please enter the same value as above.</mat-error>
+            </mat-form-field>
+          </tr>
+
+
+
+          <tr class="birthdayInput">
+            <mat-form-field appearance="fill" >
+              <mat-label class="s-e-label">Start date</mat-label>
+              <input matInput [matDatepicker]="pickerstart"  name="birthday" required ngModel #localBirthdayInput="ngModel">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="pickerstart"></mat-datepicker-toggle>
+              <mat-datepicker #pickerstart></mat-datepicker>
+              <mat-error *ngIf="localBirthdayInput.invalid"><p class="errortext">Please select a start date.</p></mat-error>
+            </mat-form-field>
+          </tr>
           <tr><button mat-raised-button color="primary">Login</button></tr>
-        </td>
+          </td>
       </table>
     </form>
   </mat-card>
-</div>
-
-<div class="divs">
-  <table align="center">
-    <tr aling="center">
-      <td>
-        <p class="p3">Doesn't have an account yet?</p>
-      </td>
-      <td>
-        <p class="p4"><a mat-button routerLink="/signup">Signup now</a></p>
-      </td>
-    </tr>
-  </table>
 </div>
