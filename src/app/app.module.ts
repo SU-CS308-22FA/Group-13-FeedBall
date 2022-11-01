@@ -20,6 +20,13 @@ import { UserProfileComponent } from './profile/user_profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { MatRadioModule} from '@angular/material/radio';
 import { MatDatepickerModule} from '@angular/material/datepicker';
+import { environment } from "src/environments/environment";
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AuthService } from "./shared/services/auth.service";
 
 
 @NgModule({
@@ -29,7 +36,7 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
     LoginComponent,
     FeedMainComponent,
     UserProfileComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,10 +51,16 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
     MatRadioModule,
     MatDatepickerModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
-
+    NoopAnimationsModule,/*
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,*/
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
   ],
-  providers: [],
+  /*providers: [AuthService],*/
   bootstrap: [AppComponent]
 })
 export class AppModule { }
