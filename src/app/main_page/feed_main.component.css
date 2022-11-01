@@ -1,0 +1,18 @@
+.maindiv{
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+/*
+.rightalign{
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+*/
+
+.spacer{
+  flex: 1 1 auto;
+}

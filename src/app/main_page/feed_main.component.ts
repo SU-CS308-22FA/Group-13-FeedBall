@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class FeedMainComponent{
 
+  constructor(private router: Router){}
+
+  navigateProfilePage(){
+    this.router.navigate(['/profile']);
+  }
+
+
+  callLogOut(){
+    console.log("logout will be called, in callLogOut.");
+  }
 }
