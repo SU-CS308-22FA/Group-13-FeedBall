@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { AuthService } from "../shared/services/auth.service";
 
 
 @Component({
@@ -10,10 +11,19 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 })
 
 export class SignupComponent{
+
+
+  constructor(
+    public authService: AuthService
+  )
+  {}
+
   onSignUp(form: NgForm){
     console.log("in onSignUp");
     if(form.invalid){
       return;
+    } else{
+      this.authService.SignUp(form.value.emailInput, form.value.passwordInput1);
     }
 
 
