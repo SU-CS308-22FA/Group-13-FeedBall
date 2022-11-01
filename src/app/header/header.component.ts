@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-header',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent{
 
+  constructor() {}
+
+  onLogin(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+
+    //this.authService.login(form.value.email, form.value.password);
+  }
 }

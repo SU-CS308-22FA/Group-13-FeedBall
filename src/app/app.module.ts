@@ -8,6 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +40,9 @@ import { SignupComponent } from './signup/signup.component';
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+
 
   ],
   providers: [],
