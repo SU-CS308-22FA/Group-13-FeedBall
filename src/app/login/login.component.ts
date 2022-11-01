@@ -18,6 +18,9 @@ export class LoginComponent{
     }
 
 
+
+
+
     //maybe password rules: 8 chars, etc. etc.
 
     form.resetForm();
