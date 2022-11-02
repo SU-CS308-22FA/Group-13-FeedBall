@@ -29,5 +29,4 @@ export class UserProfileComponent{
 
   user$ = this.authService.user$;
 
-
 }
