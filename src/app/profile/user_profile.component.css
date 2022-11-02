@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .divs{
   text-align: center;
   align-items: center;
@@ -34,8 +33,8 @@
   font-size: 12px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:green;
+}
 
-=======
 .maindiv{
 
   display: flex;
@@ -61,5 +60,4 @@
 .p1{
   font-size: 25px;
   font-family: 'Bangers';
->>>>>>> 1d01592b1214dd19737daa7bfefad2967a0f21a0
 }
