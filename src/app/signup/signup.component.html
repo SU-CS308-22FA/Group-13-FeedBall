@@ -30,15 +30,15 @@
 
           <tr>
             <mat-form-field>
-              <input type="password" matInput name="passwordInput1" ngModel placeholder="password" required #localPassword1Input="ngModel">
-              <mat-error *ngIf="localPassword1Input.invalid">Please enter a valid password.</mat-error>
+              <input type="password" matInput name="passwordInput1" ngModel placeholder="password" required #localPasswordInput1="ngModel">
+              <mat-error *ngIf="localPasswordInput1.invalid">Please enter a valid password.</mat-error>
             </mat-form-field>
           </tr>
 
           <tr>
             <mat-form-field>
-              <input type="password" matInput name="passwordInput2" ngModel placeholder="password verification" required  #localPassword2Input="ngModel">
-              <mat-error *ngIf="localPassword1Input!=localPassword2Input">Please enter the same value as above.</mat-error>
+              <input type="password" matInput name="passwordInput2" ngModel placeholder="password verification" required  #localPasswordInput2="ngModel">
+              <mat-error *ngIf="localPasswordInput1!=localPasswordInput2">Please enter the same value as above.</mat-error>
             </mat-form-field>
           </tr>
 
