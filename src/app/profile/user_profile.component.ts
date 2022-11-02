@@ -32,9 +32,9 @@ export class UserProfileComponent{
   user$ = this.authService.user$;
 
 
-  callLogOut(
-
-  ){}
+  callLogOut(){
+    this.authService.SignOut();
+  }
 
 
   navigateMainPage(){
