@@ -16,3 +16,8 @@
 .spacer{
   flex: 1 1 auto;
 }
+
+.mainfeedtext{
+  font-size: 25px;
+  font-family: 'Bangers';
+}
