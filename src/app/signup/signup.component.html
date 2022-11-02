@@ -30,8 +30,8 @@
 
           <tr>
             <mat-form-field>
-              <input type="password" matInput name="passwordInput1" ngModel placeholder="password" required #localPassword1Input="ngModel">
-              <mat-error *ngIf="localPassword1Input.invalid">Please enter a valid password.</mat-error>
+              <input type="password" matInput name="passwordInput1" ngModel placeholder="password" required #localPasswordInput1="ngModel">
+              <mat-error *ngIf="localPasswordInput1.invalid">Please enter a valid password.</mat-error>
             </mat-form-field>
           </tr>
 
@@ -64,7 +64,7 @@
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matSuffix [for]="pickerstart"></mat-datepicker-toggle>
               <mat-datepicker #pickerstart></mat-datepicker>
-              <mat-error *ngIf="localBirthdayInput.invalid"><p class="errortext">Please select you birthday.</p></mat-error>
+              <mat-error *ngIf="localBirthdayInput.invalid"><p class="errortext">Please select your birthday in MM/DD/YYYY format.</p></mat-error>
             </mat-form-field>
           </tr>
           <tr><br></tr>
