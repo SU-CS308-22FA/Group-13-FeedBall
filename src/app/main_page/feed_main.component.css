@@ -21,3 +21,10 @@
   font-size: 25px;
   font-family: 'Bangers';
 }
+
+
+.titlediv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
