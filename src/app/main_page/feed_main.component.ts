@@ -14,7 +14,6 @@ export class FeedMainComponent{
     this.router.navigate(['/profile']);
   }
 
-
   callLogOut(){
     console.log("logout will be called, in callLogOut.");
   }
