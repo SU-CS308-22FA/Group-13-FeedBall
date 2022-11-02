@@ -25,7 +25,10 @@ export class UserProfileComponent{
     private authService: AuthService
     ){}
 
-  deleteUserAccount(){}
+  deleteUserAccount(){
+    this.authService.userDelete();
+    this.authService.SignOut();
+  }
 
   user$ = this.authService.user$;
 

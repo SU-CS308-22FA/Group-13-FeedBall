@@ -19,4 +19,5 @@ export class FeedMainComponent{
   callLogOut(){
     this.authService.SignOut();
   }
+
 }
