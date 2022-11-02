@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .divs{
   text-align: center;
   align-items: center;
@@ -34,4 +35,31 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:green;
 
+=======
+.maindiv{
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+.rightalign{
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+
+
+
+.p1{
+  font-size: 25px;
+  font-family: 'Bangers';
+>>>>>>> 1d01592b1214dd19737daa7bfefad2967a0f21a0
 }

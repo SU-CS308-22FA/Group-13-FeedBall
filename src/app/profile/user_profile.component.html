@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="divs">
   <p class="p1">Welcome To FeedBall!</p>
 </div>
@@ -6,6 +7,46 @@
   <div *ngIf="(user$ | async) as user">
     <mat-card-title class="p2"><h1>Hello: <strong>{{ user.name }} {{ user.surname }}</strong></h1></mat-card-title>
   </div>
+=======
+<div class="maindiv">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="navigateMainPage()">
+      <div class="rightalign">
+        <span>Main Feed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span class="spacer"></span>
+        <span><mat-icon>home</mat-icon></span>
+      </div>
+
+    </button>
+    <button mat-menu-item (click)="callLogOut()">
+      <div class="rightalign">
+
+        <span>Log Out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span class="spacer"></span>
+        <span><mat-icon>close</mat-icon></span>
+      </div>
+    </button>
+
+  </mat-menu>
+</div>
+
+
+
+
+
+<div class="divs">
+    <p class="p1">Welcome To FeedBall!</p>
+</div>
+
+<!--<div class="divs">
+    <p> &nbsp; &nbsp; Placeholder name &nbsp; &nbsp; Placeholder surname </p>
+</div>-->
+<div *ngIf="(user$ | async) as user">
+  <h1>Hello: <strong>{{ user.name }} {{ user.surname }}</strong></h1>
+>>>>>>> 1d01592b1214dd19737daa7bfefad2967a0f21a0
 </div>
 
 <div class="divform" width="50%">
