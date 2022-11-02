@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { UserProfileComponent } from 'src/app/profile/user_profile.component';
 @Injectable({
   providedIn: 'root',
 })
@@ -107,7 +108,7 @@ export class AuthService {
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user: any, name: string, surname: string) {
+  SetUserData(user: any, name: string, surname: string, gender: string, age: Date) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
@@ -118,7 +119,9 @@ export class AuthService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
       name: name,
-      surname: surname
+      surname: surname,
+      gender: user.gender,
+      age: user.age
     };
     return userRef.set(userData, {
       merge: true,
@@ -135,7 +138,9 @@ export class AuthService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
       name: user.name,
-      surname: user.surname
+      surname: user.surname,
+      gender: user.gender,
+      age: user.age
     };
     return userRef.set(userData, {
       merge: true,
