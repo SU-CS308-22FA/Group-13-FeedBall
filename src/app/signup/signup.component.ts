@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
+import { UserProfileComponent } from '../profile/user_profile.component';
 import { AuthService } from "../shared/services/auth.service";
-
+import { User } from "../shared/services/user";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-signup',
@@ -11,12 +18,18 @@ import { AuthService } from "../shared/services/auth.service";
 })
 
 export class SignupComponent{
+  userData:any;
+  //User: any;
+  user: any;
+
 
 
   public passwordMatch = true; //check pass match
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    public afAuth: AngularFireAuth,
+    public afs: AngularFirestore
   )
   {}
 
@@ -24,27 +37,19 @@ export class SignupComponent{
     console.log("in onSignUp");
 
     if(form.value.passwordInput1 != form.value.passwordInput2){
-      console.log("password does not match. Form will be rejected.");
       this.passwordMatch = false;
     }
-    else{
-      this.passwordMatch = true;
-      console.log("passwords match!");
-    }
-
-
-
 
     if(form.invalid){
       return;
     } else{
 
       if(this.passwordMatch){ //password match true
-        console.log("passwords match, call signup.")
-        this.authService.SignUp(form.value.emailInput, form.value.passwordInput1);
+
+        this.authService.SignUp(form.value.emailInput, form.value.passwordInput1, form.value.nameInput, form.value.surnameInput);
+
       }
       else{
-        console.log("reject form, not matching passwords.");
         return;
       }
     }
