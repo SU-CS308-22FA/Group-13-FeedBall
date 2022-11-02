@@ -1,68 +1,68 @@
-<div class="maindiv">
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="navigateMainPage()">
-      <div class="rightalign">
-        <span>Main Feed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span class="spacer"></span>
-        <span><mat-icon>home</mat-icon></span>
-      </div>
 
-    </button>
-    <button mat-menu-item (click)="callLogOut()">
-      <div class="rightalign">
+<div>
+    <div class="maindiv">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="navigateMainPage()">
+          <div class="rightalign">
+            <span>Main Feed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="spacer"></span>
+            <span><mat-icon>home</mat-icon></span>
+          </div>
+        </button>
+        <button mat-menu-item (click)="callLogOut()">
+          <div class="rightalign">
 
-        <span>Log Out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span class="spacer"></span>
-        <span><mat-icon>close</mat-icon></span>
-      </div>
-    </button>
+            <span>Log Out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="spacer"></span>
+            <span><mat-icon>close</mat-icon></span>
+          </div>
+        </button>
+      </mat-menu>
+    </div>
 
-  </mat-menu>
-</div>
-
-
-
-
-
-<div class="divs">
-    <p class="p1">Welcome To FeedBall!</p>
-</div>
-
-<div class="divs">
-  <div *ngIf="(user$ | async) as user">
-    <mat-card-title class="p2"><h1>Hello: <strong>{{ user.name }} {{ user.surname }}</strong></h1></mat-card-title>
+    <div class="divs">
+      <p class="mainfeedtext">User Profile</p>
   </div>
-</div>
 
-<div class="divform" width="50%">
-    <mat-card>
-        <mat-card-title class="p2">Want to update your account information or delete it?</mat-card-title>
-            <table align="center">
-                <td align="center">
-                    <tr><br></tr>
-                    <tr>
-                        <button mat-raised-button color="primary">Update user information</button>
-                    </tr>
-                    <tr>&nbsp;</tr>
-                    <tr>
-                      <button (click)="deleteUserAccount()" mat-raised-button color="primary">Delete user account</button>
-                    </tr>
-                    <tr>&nbsp;</tr>
-                    <tr>
-                        <button mat-raised-button color="primary">Changed my mind</button>
-                    </tr>
-                </td>
-            </table>
-    </mat-card>
 </div>
 
 
-
-
-
-
-
+<div *ngIf="(user$ | async) as user">
+  <table  align="center">
+    <tr align="center">
+      <td>
+        <mat-card>
+          <table>
+            <tr>
+              <td><mat-icon>account_circle</mat-icon></td>
+              <td><p class="namesurname">&nbsp;&nbsp;{{user.name}}&nbsp;{{user.surname}}</p></td>
+            </tr>
+            <tr>
+              <td><mat-icon>alternate_email</mat-icon></td>
+              <td><p class="namesurname">&nbsp;&nbsp;{{user.email}}</p></td>
+            </tr>
+            <tr>
+              <td><mat-icon>wc</mat-icon></td>
+              <td><p class="namesurname">&nbsp;&nbsp;{{user.gender}}</p></td>
+            </tr>
+            <tr>
+              <td><mat-icon>calendar_today</mat-icon></td>
+              <td><p class="namesurname">&nbsp;&nbsp;{{user.age}}</p></td>
+            </tr>
+          </table>
+        </mat-card>
+      </td>
+    </tr>
+  </table>
+  <table align="center">
+    <td>
+      <tr>
+        <td align="center"><button (click)="deleteUserAccount()" mat-raised-button class="deletebutton">Delete user account</button></td>
+      </tr>
+    </td>
+  </table>
+</div>
 
