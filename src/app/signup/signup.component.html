@@ -58,9 +58,9 @@
               <tr width="100%">
                 <td align="left">
                   <mat-radio-group class="radiobuttons" matInput ngModel name="statusTask" required #localStatus="ngModel">
-                    <mat-radio-button value="Male">Male&nbsp;&nbsp;&nbsp;</mat-radio-button>
-                    <mat-radio-button value="Female">Female&nbsp;&nbsp;&nbsp;</mat-radio-button>
-                    <mat-radio-button value="Other">Other&nbsp;&nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button value="Male"><p class="radiobuttontext">Male&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
+                    <mat-radio-button value="Female"><p class="radiobuttontext">Female&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
+                    <mat-radio-button value="Other"><p class="radiobuttontext">Other&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
                     <mat-error *ngIf="localStatus.invalid"><p class="errortext">Please select a gender.</p></mat-error>
                   </mat-radio-group>
                 </td>
