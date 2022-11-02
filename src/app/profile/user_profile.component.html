@@ -1,18 +1,11 @@
-
-
 <div class="divs">
-    <p>Welcome To FeedBall!</p>
+  <p class="p1">Welcome To FeedBall!</p>
 </div>
 
-<tr>
-    <img src="https://ronaldmottram.co.nz/wp-content/uploads/2019/01/default-user-icon-8.jpg" alt="default user avatar" width="240" height="240">
-</tr>
-
-<!--<div class="divs">
-    <p> &nbsp; &nbsp; Placeholder name &nbsp; &nbsp; Placeholder surname </p>
-</div>-->
-<div *ngIf="(user$ | async) as user">
-  <h1>Hello: <strong>{{ user.name }} {{ user.surname }}</strong></h1>
+<div class="divs">
+  <div *ngIf="(user$ | async) as user">
+    <mat-card-title class="p2"><h1>Hello: <strong>{{ user.name }} {{ user.surname }}</strong></h1></mat-card-title>
+  </div>
 </div>
 
 <div class="divform" width="50%">
