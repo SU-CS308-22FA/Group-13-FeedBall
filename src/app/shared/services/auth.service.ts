@@ -121,8 +121,8 @@ export class AuthService {
       emailVerified: user.emailVerified,
       name: name,
       surname: surname,
-      gender: user.gender,
-      age: user.age
+      gender: gender,
+      age: age
     };
     return userRef.set(userData, {
       merge: true,
