@@ -41,7 +41,7 @@ export class AuthService {
         //this.SetUserData2(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['profile']);
+            this.router.navigate(['feed']);
           }
         });
       })
