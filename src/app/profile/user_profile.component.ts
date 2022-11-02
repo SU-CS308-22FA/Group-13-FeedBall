@@ -6,8 +6,11 @@ import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
-import { animationFrameScheduler } from 'rxjs';
-import { getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
+import { animationFrameScheduler, of, switchMap } from 'rxjs';
+import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
+import * as firebase from 'firebase/compat';
+
+
 
 @Component({
   selector: 'app-user-profile',
@@ -16,13 +19,15 @@ import { getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 })
 export class UserProfileComponent{
 
-  constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore){}
-  user = this.afAuth.currentUser;
+  constructor(
+    public afAuth: AngularFireAuth,
+    public afs: AngularFirestore,
+    private authService: AuthService
+    ){}
+
   deleteUserAccount(){}
 
-  userRef = this.afs.collection('users').doc("name");
+  user$ = this.authService.user$;
 
-  x=this.userRef;
-  y = 5;
 
 }

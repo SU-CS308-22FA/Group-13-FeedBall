@@ -11,9 +11,8 @@
 <!--<div class="divs">
     <p> &nbsp; &nbsp; Placeholder name &nbsp; &nbsp; Placeholder surname </p>
 </div>-->
-<div *ngIf="{ a : x, b: y } as variable">
-  <span>{{variable.a}}</span>
-  <span>{{variable.a}}</span>
+<div *ngIf="(user$ | async) as user">
+  <h1>Hello: <strong>{{ user.name }} {{ user.surname }}</strong></h1>
 </div>
 
 <div class="divform" width="50%">

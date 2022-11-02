@@ -11,7 +11,7 @@ export class FeedMainComponent{
   constructor(private router: Router){}
 
   navigateProfilePage(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['profile']);
   }
 
 

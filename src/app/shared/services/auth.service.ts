@@ -8,6 +8,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { UserProfileComponent } from 'src/app/profile/user_profile.component';
+import { switchMap, of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -40,7 +41,7 @@ export class AuthService {
         //this.SetUserData2(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['feed']);
+            this.router.navigate(['profile']);
           }
         });
       })
@@ -154,4 +155,14 @@ export class AuthService {
       this.router.navigate(['']);
     });
   }
+
+  user$ = this.afAuth.authState.pipe(
+    switchMap(user => {
+      if (user) {
+        return this.afs.doc<any>(`users/${user.uid}`).valueChanges();
+      } else {
+        return of(null);
+      }
+    })
+  );
 }
