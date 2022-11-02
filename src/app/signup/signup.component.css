@@ -40,3 +40,9 @@
 .errortext{
   font-size: x-small;
 }
+
+
+.radiobuttontext{
+  font-size: 16px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
