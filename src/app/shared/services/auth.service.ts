@@ -9,6 +9,9 @@ import {
 import { Router } from '@angular/router';
 import { UserProfileComponent } from 'src/app/profile/user_profile.component';
 import { switchMap, of } from 'rxjs';
+import * as firebase from 'firebase/compat';
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -165,4 +168,8 @@ export class AuthService {
       }
     })
   );
+
+  userDelete(){
+    this.afAuth.currentUser.then(user => user?.delete());
+  }
 }
