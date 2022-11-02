@@ -6,3 +6,9 @@
   font-family: Bangers;
   src: url("/assets/fonts/Bangers-Regular.ttf") format("truetype");
 }
+
+
+body {
+  margin: 0;
+}
+

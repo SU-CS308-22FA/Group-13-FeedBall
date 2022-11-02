@@ -13,6 +13,8 @@ import { AuthService } from "../shared/services/auth.service";
 export class SignupComponent{
 
 
+  public passwordMatch = true; //check pass match
+
   constructor(
     public authService: AuthService
   )
@@ -20,10 +22,24 @@ export class SignupComponent{
 
   onSignUp(form: NgForm){
     console.log("in onSignUp");
+
+    if(form.value.passwordInput1 != form.value.passwordInput2){
+      this.passwordMatch = false;
+    }
+
+
+
+
     if(form.invalid){
       return;
     } else{
-      this.authService.SignUp(form.value.emailInput, form.value.passwordInput1);
+
+      if(this.passwordMatch){ //password match true
+        this.authService.SignUp(form.value.emailInput, form.value.passwordInput1);
+      }
+      else{
+        return;
+      }
     }
 
 
