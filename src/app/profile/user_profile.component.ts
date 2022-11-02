@@ -16,27 +16,13 @@ import { getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 })
 export class UserProfileComponent{
 
-<<<<<<< HEAD
   constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore){}
-
-
   user = this.afAuth.currentUser;
+  deleteUserAccount(){}
 
-  userRef = this.afs.collection('users')
-  .doc("name");
+  userRef = this.afs.collection('users').doc("name");
 
   x=this.userRef;
   y = 5;
 
-=======
-
-  constructor(){
-
-  }
-
-
-  deleteUserAccount(){
-    //call delete fucntion here
-  }
->>>>>>> b3ff46356ad07aa4523c3c6fb97104db6596be8f
 }

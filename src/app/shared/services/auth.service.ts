@@ -49,14 +49,14 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  SignUp(email: string, password: string, name: string, surname: string) {
+  SignUp(email: string, password: string, name: string, surname: string, gender: string, age: Date) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
         this.router.navigate(["feed"]);
-        this.SetUserData(result.user, name, surname);
+        this.SetUserData(result.user, name, surname, gender, age);
 
       })
       .catch((error) => {
@@ -99,7 +99,8 @@ export class AuthService {
       .signInWithPopup(provider)
       .then((result) => {
         this.router.navigate(['dashboard']);
-        this.SetUserData(result.user, "", "");
+        const dummyDate = new Date(2022,11,2);
+        this.SetUserData(result.user, "", "", "", dummyDate);
       })
       .catch((error) => {
         window.alert(error);

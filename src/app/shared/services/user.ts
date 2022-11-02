@@ -6,4 +6,6 @@ export interface User {
   emailVerified: boolean;
   name: string;
   surname: string;
+  gender: string;
+  age: Date
 }

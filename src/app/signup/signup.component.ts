@@ -46,7 +46,7 @@ export class SignupComponent{
 
       if(this.passwordMatch){ //password match true
 
-        this.authService.SignUp(form.value.emailInput, form.value.passwordInput1, form.value.nameInput, form.value.surnameInput);
+        this.authService.SignUp(form.value.emailInput, form.value.passwordInput1, form.value.nameInput, form.value.surnameInput, form.value.genderInput, form.value.birthday);
 
       }
       else{
