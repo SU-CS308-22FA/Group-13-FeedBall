@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class UserProfileComponent{
 
+
+  constructor(){
+
+  }
+
+
+  deleteUserAccount(){
+    //call delete fucntion here
+  }
 }
