@@ -27,14 +27,17 @@ export class UserProfileComponent{
     private router: Router
     ){}
 
-  deleteUserAccount(){}
+  deleteUserAccount(){
+    this.authService.userDelete();
+    this.authService.SignOut();
+  }
 
   user$ = this.authService.user$;
 
 
-  callLogOut(
-
-  ){}
+  callLogOut(){
+    this.authService.SignOut();
+  }
 
 
   navigateMainPage(){
