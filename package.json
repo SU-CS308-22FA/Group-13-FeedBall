@@ -1,18 +1,27 @@
 {
   "name": "feedball-project",
   "version": "0.0.0",
+  "engines": {
+    "node": "18.12.0",
+    "npm": "8.19.2"},
+
+
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild": "ng build - prod"
   },
+
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.1.0",
+    "@angular/cli": "~14.1.2",
     "@angular/common": "^14.1.0",
     "@angular/compiler": "^14.1.0",
+    "@angular/compiler-cli": "^14.1.0",
     "@angular/core": "^14.1.0",
     "@angular/fire": "^7.4.1",
     "@angular/forms": "^14.1.0",
@@ -20,9 +29,12 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "express": "^4.18.2",
     "firebase": "^9.13.0",
+    "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "typescript": "~4.7.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
