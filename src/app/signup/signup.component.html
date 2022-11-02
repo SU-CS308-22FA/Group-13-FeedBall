@@ -14,12 +14,22 @@
               <mat-error *ngIf="localNameInput.invalid">Please enter your name.</mat-error>
             </mat-form-field>
           </tr>
+
+          <tr>
+            <mat-form-field>
+              <input type="text" matInput name="surnameInput" ngModel placeholder="surname" #localSurnameInput="ngModel"  required>
+              <mat-error *ngIf="localSurnameInput.invalid">Please enter your name.</mat-error>
+            </mat-form-field>
+          </tr>
+
+          <!--
           <tr>
             <mat-form-field>
               <input type="text" matInput surname="surnameInput" ngModel placeholder="surname" required #localSurnameInput="ngModel">
               <mat-error *ngIf="localSurnameInput.invalid">Please enter your surname.</mat-error>
             </mat-form-field>
           </tr>
+          -->
 
           <tr>
             <mat-form-field>
@@ -41,7 +51,7 @@
               <mat-error *ngIf="!passwordMatch">Ple enter a valid password.</mat-error>
             </mat-form-field>
           </tr>
-          <tr><mat-error *ngIf="!passwordMatch">Please enter the same password value as above.</mat-error></tr>
+          <tr><mat-error *ngIf="!passwordMatch"><p class="errortext">Please enter the same password value as above.</p></mat-error></tr>
 
           <tr>
             <table width="100%">
