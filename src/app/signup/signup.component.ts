@@ -24,7 +24,12 @@ export class SignupComponent{
     console.log("in onSignUp");
 
     if(form.value.passwordInput1 != form.value.passwordInput2){
+      console.log("password does not match. Form will be rejected.");
       this.passwordMatch = false;
+    }
+    else{
+      this.passwordMatch = true;
+      console.log("passwords match!");
     }
 
 
@@ -35,9 +40,11 @@ export class SignupComponent{
     } else{
 
       if(this.passwordMatch){ //password match true
+        console.log("passwords match, call signup.")
         this.authService.SignUp(form.value.emailInput, form.value.passwordInput1);
       }
       else{
+        console.log("reject form, not matching passwords.");
         return;
       }
     }
