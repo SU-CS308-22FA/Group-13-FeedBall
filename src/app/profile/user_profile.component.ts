@@ -9,6 +9,7 @@ import {
 import { animationFrameScheduler, of, switchMap } from 'rxjs';
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 import * as firebase from 'firebase/compat';
+import { Router } from '@angular/router';
 
 
 
@@ -22,11 +23,22 @@ export class UserProfileComponent{
   constructor(
     public afAuth: AngularFireAuth,
     public afs: AngularFirestore,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
     ){}
 
   deleteUserAccount(){}
 
   user$ = this.authService.user$;
+
+
+  callLogOut(
+
+  ){}
+
+
+  navigateMainPage(){
+    this.router.navigate(['feed']);
+  }
 
 }
