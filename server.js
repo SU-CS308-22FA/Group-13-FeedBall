@@ -7,8 +7,9 @@ const app = express();
 app.use(express.static(__dirname + '/dist/feedball-project'));
 app.get('/*', function(req,res) {
 res.sendFile(path.join(__dirname+
-'/dist/<app-name>/index.html'));});
+'/dist/feedball-project/index.html'));});
 app.listen(process.env.PORT, '0.0.0.0');//change
+
 
 const normalizePort = val => {
   var port = parseInt(val, 10);
@@ -25,6 +26,7 @@ const normalizePort = val => {
 
   return false;
 };
+
 
 const onError = error => {
   if (error.syscall !== "listen") {
