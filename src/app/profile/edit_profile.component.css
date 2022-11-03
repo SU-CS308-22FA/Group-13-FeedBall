@@ -1,0 +1,14 @@
+.maindiv{
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+.rightalign{
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+

@@ -32,6 +32,10 @@ export class UserProfileComponent{
     this.authService.SignOut();
   }
 
+  editUserInfo(){
+    this.router.navigate(["edit-profile"]);
+  }
+
   user$ = this.authService.user$;
 
 

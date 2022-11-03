@@ -39,6 +39,9 @@ export class SignupComponent{
     if(form.value.passwordInput1 != form.value.passwordInput2){
       this.passwordMatch = false;
     }
+    else{
+      this.passwordMatch = true;
+    }
 
     if(form.invalid){
       return;
