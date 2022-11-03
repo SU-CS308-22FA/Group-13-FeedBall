@@ -49,8 +49,8 @@
               <td><p class="namesurname">&nbsp;&nbsp;{{user.gender}}</p></td>
             </tr>
             <tr>
-              <td><mat-icon>calendar_today</mat-icon></td>
-              <td><p class="namesurname">&nbsp;&nbsp;{{user.age}}</p></td>
+              <td><mat-icon>cake</mat-icon></td>
+              <td><p class="namesurname">&nbsp;&nbsp;{{user.age.toDate() | date:'dd/MM/yyyy'}}</p></td>
             </tr>
           </table>
         </mat-card>
