@@ -55,6 +55,10 @@ export class EditProfileComponent{
     }
   }
 
-
-
+  onSignUp(form: NgForm){
+    console.log("in onSignUp");
+    if(form.invalid){
+      return;
+    }
+  }
 }

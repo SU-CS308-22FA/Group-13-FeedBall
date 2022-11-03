@@ -32,5 +32,55 @@
   </div>
 </div>
 
+<div class="divform" >
+<mat-card>
+<mat-card-title class="p2">You can change your user information here.</mat-card-title>
+<form (submit)="onSignUp(loginForm)" #loginForm="ngForm">
+  <table align="center">
+    <td align="center">
+      <tr>
+        <mat-form-field>
+          <input type="text" matInput name="nameInput" ngModel placeholder="name" #localNameInput="ngModel">
+          <mat-error *ngIf="localNameInput.invalid">Please enter your name.</mat-error>
+        </mat-form-field>
+      </tr>
 
-<p>edit profile page</p>
+      <tr>
+        <mat-form-field>
+          <input type="text" matInput name="surnameInput" ngModel placeholder="surname" #localSurnameInput="ngModel">
+          <mat-error *ngIf="localSurnameInput.invalid">Please enter your name.</mat-error>
+        </mat-form-field>
+      </tr>
+
+      <tr>
+        <table width="100%">
+          <tr width="100%">
+            <td align="left">
+              <mat-radio-group class="radiobuttons" matInput ngModel name="genderInput" #localStatus="ngModel">
+                <mat-radio-button value="Male"><p class="radiobuttontext">Male&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
+                <mat-radio-button value="Female"><p class="radiobuttontext">Female&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
+                <mat-radio-button value="Other"><p class="radiobuttontext">Other&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
+                <mat-error *ngIf="localStatus.invalid"><p class="errortext">Please select a gender.</p></mat-error>
+              </mat-radio-group>
+            </td>
+          </tr>
+        </table>
+      </tr>
+
+      <tr class="birthdayInput">
+        <mat-form-field appearance="fill" >
+          <mat-label class="s-e-label">Enter your birthday:</mat-label>
+          <input matInput [matDatepicker]="pickerstart"  name="birthday" ngModel #localBirthdayInput="ngModel">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="pickerstart"></mat-datepicker-toggle>
+          <mat-datepicker #pickerstart></mat-datepicker>
+          <mat-error *ngIf="localBirthdayInput.invalid"><p class="errortext">Please select your birthday in MM/DD/YYYY format.</p></mat-error>
+        </mat-form-field>
+      </tr>
+      <tr><br></tr>
+      <tr><button mat-raised-button class="signupbutton">Change</button></tr>
+      </td>
+  </table>
+</form>
+</mat-card>
+</div>

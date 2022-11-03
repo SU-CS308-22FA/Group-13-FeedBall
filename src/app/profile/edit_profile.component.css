@@ -12,3 +12,72 @@
   justify-content: right;
 }
 
+.divs{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divform{
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p1{
+  font-size: 25px;
+  font-family: 'Bangers';
+}
+
+.p2{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.p3{
+  font-size: 12px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+.p4{
+  font-style: italic;
+  font-size: 12px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:green;
+}
+
+.maindiv{
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+.rightalign{
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+
+.mainfeedtext{
+  font-size: 25px;
+  font-family: 'Bangers';
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+
+.p5{
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 
 
 
+
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user_profile.component.html',
@@ -23,9 +25,19 @@ export class UserProfileComponent{
   constructor(
     public afAuth: AngularFireAuth,
     public afs: AngularFirestore,
+
     private authService: AuthService,
     private router: Router
     ){}
+
+    public showMyMessage = false
+
+    changePassword() {
+
+      setTimeout(() => {
+        this.showMyMessage = true
+      }, 1000)
+    }
 
   deleteUserAccount(){
     this.authService.userDelete();
@@ -47,5 +59,6 @@ export class UserProfileComponent{
   navigateMainPage(){
     this.router.navigate(['feed']);
   }
+
 
 }
