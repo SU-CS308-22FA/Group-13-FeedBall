@@ -1,6 +1,12 @@
-const app = require("./backend/app");
+
 const debug = require("debug")("node-angular");
 const http = require("http");
+const express = require('express');
+const path = require('path');
+const app = express();
+app.use(express.static(__dirname + '/dist/feedball-project'));
+app.listen(process.env.PORT, '0.0.0.0');//change
+
 
 
 const normalizePort = val => {
@@ -18,6 +24,7 @@ const normalizePort = val => {
 
   return false;
 };
+
 
 const onError = error => {
   if (error.syscall !== "listen") {
@@ -47,7 +54,8 @@ const onListening = () => {
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
+
 const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
-server.listen(port);
+server.listen(process.env.PORT || port); //change
