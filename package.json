@@ -2,7 +2,7 @@
   "name": "feedball-project",
   "version": "0.0.0",
   "engines": {
-    "node": "18.12.0",
+    "node": "16.x",
     "npm": "8.19.2"},
 
 
