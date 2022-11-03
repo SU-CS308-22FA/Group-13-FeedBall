@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { UserProfileComponent } from 'src/app/profile/user_profile.component';
 import { switchMap, of } from 'rxjs';
 import * as firebase from 'firebase/compat';
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 
 @Injectable({
@@ -172,4 +173,46 @@ export class AuthService {
   userDelete(){
     this.afAuth.currentUser.then(user => user?.delete());
   }
+
+  updateUser(fieldName: string, newValue: any){
+    this.afAuth.authState.pipe(
+      switchMap(user => {
+        if (user) {
+          return this.afs.doc<any>(`users/${user.uid}`).update({fieldName: newValue});
+        } else {
+          return of(null);
+        }
+      })
+    );
+  }
+
+  confirmPassword(confCode: string, newPass: string){
+    return this.afAuth.confirmPasswordReset(confCode, newPass)
+    .then(() => {
+      // Password has been reset!
+      // ..
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+  }
+
+  resetPassword(email: string){
+    const auth = getAuth();
+    return sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent!
+        // ..
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+
+  }
+
+
 }
