@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/dist/feedball-project'));
 app.listen(process.env.PORT, '0.0.0.0');//change
 
 
-/*
+
 const normalizePort = val => {
   var port = parseInt(val, 10);
 
@@ -53,7 +53,7 @@ const onListening = () => {
 
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
-*/
+
 
 const server = http.createServer(app);
 server.on("error", onError);
