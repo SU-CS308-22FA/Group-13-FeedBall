@@ -11,6 +11,7 @@ import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { format } from 'path';
 
 
 
@@ -47,18 +48,26 @@ export class EditProfileComponent{
   }
 
   onEditInfo(form: NgForm){
-    if(form.invalid){
-      return;
-    }
-    else{
+      if(form.invalid){
+        return;
+      }
+      else{
+          if(form.value.nameInput != null){
+            this.authService.updateUser("name", form.value.nameInput);
+          }
+          if(form.value.surnameInput != null){
+            this.authService.updateUser("surname", form.value.surnameInput);
 
-    }
+          }
+          if(form.value.genderInput != null){
+            this.authService.updateUser("gender", form.value.genderInput);
+          }
+          if(form.value.nameInput != null){
+            this.authService.updateUser("age", form.value.birthday);
+
+          }
+          return;
+        }
+      }
   }
 
-  onSignUp(form: NgForm){
-    console.log("in onSignUp");
-    if(form.invalid){
-      return;
-    }
-  }
-}

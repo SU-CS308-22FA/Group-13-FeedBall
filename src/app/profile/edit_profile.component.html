@@ -35,7 +35,7 @@
 <div class="divform" >
 <mat-card>
 <mat-card-title class="p2">You can change your user information here.</mat-card-title>
-<form (submit)="onSignUp(loginForm)" #loginForm="ngForm">
+<form (submit)="onEditInfo(loginForm)" #loginForm="ngForm">
   <table align="center">
     <td align="center">
       <tr>
@@ -78,7 +78,7 @@
         </mat-form-field>
       </tr>
       <tr><br></tr>
-      <tr><button mat-raised-button class="signupbutton">Change</button></tr>
+      <tr><button mat-raised-button  class="signupbutton">Change</button></tr>
       </td>
   </table>
 </form>
