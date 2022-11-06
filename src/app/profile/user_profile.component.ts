@@ -31,8 +31,11 @@ export class UserProfileComponent{
     ){}
 
     public showMyMessage = false
+    user$ = this.authService.user$;
 
-    changePassword() {
+    changePassword(mail: string) {
+
+      this.authService.ForgotPassword(mail);
 
       setTimeout(() => {
         this.showMyMessage = true
@@ -47,8 +50,6 @@ export class UserProfileComponent{
   editUserInfo(){
     this.router.navigate(["edit-profile"]);
   }
-
-  user$ = this.authService.user$;
 
 
   callLogOut(){

@@ -76,9 +76,7 @@
   <table align="center">
     <td>
       <tr>
-        <td align="center"><button (click)="changePassword()" mat-raised-button class="deletebutton">Reset your password</button></td>
-      </tr>
-      <tr>
+        <td align="center"><button (click)="changePassword(user.email)" mat-raised-button class="deletebutton">Reset your password</button></td>
         <p *ngIf="showMyMessage">Your reset link has been sent to your mail address.</p>
       </tr>
     </td>
