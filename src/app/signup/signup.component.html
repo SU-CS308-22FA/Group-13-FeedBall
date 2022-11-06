@@ -39,7 +39,7 @@
           <tr>
             <mat-form-field>
               <input type="password" matInput name="passwordInput2" ngModel placeholder="password verification" required  #localPassword2Input="ngModel">
-              <mat-error *ngIf="!passwordMatch">Ple enter a valid password.</mat-error>
+              <mat-error *ngIf="!passwordMatch">Please enter a valid password.</mat-error>
             </mat-form-field>
           </tr>
           <tr><mat-error *ngIf="!passwordMatch"><p class="errortext">Please enter the same password value as above.</p></mat-error></tr>
