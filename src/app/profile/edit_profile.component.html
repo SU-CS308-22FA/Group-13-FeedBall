@@ -1,4 +1,4 @@
-<div>
+<!--<div>
   <div class="maindiv">
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
       <mat-icon>more_vert</mat-icon>
@@ -30,24 +30,26 @@
       </button>
     </mat-menu>
   </div>
+</div>-->
+<div class="divs">
+  <p class="mainfeedtext">Edit User Profile</p>
 </div>
-
-<div class="divform" >
+<div class="divform" *ngIf="(user$ | async) as user">
 <mat-card>
-<mat-card-title class="p2">You can change your user information here.</mat-card-title>
-<form (submit)="onSignUp(loginForm)" #loginForm="ngForm">
+<!--<mat-card-title class="p2">Change user information<br></mat-card-title>-->
+<form (submit)="onEditInfo(loginForm)" #loginForm="ngForm">
   <table align="center">
     <td align="center">
       <tr>
         <mat-form-field>
-          <input type="text" matInput name="nameInput" ngModel placeholder="name" #localNameInput="ngModel">
+          <input type="text" matInput name="nameInput" [ngModel]="user?.name" placeholder="name" #localNameInput="ngModel">
           <mat-error *ngIf="localNameInput.invalid">Please enter your name.</mat-error>
         </mat-form-field>
       </tr>
 
       <tr>
         <mat-form-field>
-          <input type="text" matInput name="surnameInput" ngModel placeholder="surname" #localSurnameInput="ngModel">
+          <input type="text" matInput name="surnameInput" [ngModel]="user?.surname" placeholder="surname" #localSurnameInput="ngModel">
           <mat-error *ngIf="localSurnameInput.invalid">Please enter your name.</mat-error>
         </mat-form-field>
       </tr>
@@ -56,7 +58,7 @@
         <table width="100%">
           <tr width="100%">
             <td align="left">
-              <mat-radio-group class="radiobuttons" matInput ngModel name="genderInput" #localStatus="ngModel">
+              <mat-radio-group class="radiobuttons" matInput [ngModel]="user?.gender" name="genderInput" #localStatus="ngModel">
                 <mat-radio-button value="Male"><p class="radiobuttontext">Male&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
                 <mat-radio-button value="Female"><p class="radiobuttontext">Female&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
                 <mat-radio-button value="Other"><p class="radiobuttontext">Other&nbsp;&nbsp;&nbsp;</p></mat-radio-button>
@@ -66,11 +68,10 @@
           </tr>
         </table>
       </tr>
-
       <tr class="birthdayInput">
         <mat-form-field appearance="fill" >
           <mat-label class="s-e-label">Enter your birthday:</mat-label>
-          <input matInput [matDatepicker]="pickerstart"  name="birthday" ngModel #localBirthdayInput="ngModel">
+          <input matInput [matDatepicker]="pickerstart"  name="birthday" [ngModel]="user?.age | todatepipe" #localBirthdayInput="ngModel">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="pickerstart"></mat-datepicker-toggle>
           <mat-datepicker #pickerstart></mat-datepicker>
@@ -78,7 +79,7 @@
         </mat-form-field>
       </tr>
       <tr><br></tr>
-      <tr><button mat-raised-button class="signupbutton">Change</button></tr>
+      <tr><button mat-raised-button class="editbutton">Change</button></tr>
       </td>
   </table>
 </form>

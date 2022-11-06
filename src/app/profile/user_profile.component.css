@@ -78,5 +78,11 @@
 .deletebutton{
   background-color: #861a1f;
   color: white;
+  width: 200px;
 
+}
+
+
+.matcardclass{
+  min-width: 200px;
 }

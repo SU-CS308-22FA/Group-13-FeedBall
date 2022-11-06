@@ -7,6 +7,10 @@
 .mat-toolbar{
   background-color: #b9dcc0;
 
+}.rightalign{
+  display: flex;
+  align-items:flex-start;
+  justify-content: left;
 }
 
 .spacer{
@@ -20,4 +24,27 @@
   left: 0;
   z-index: 2;
   width: 100%;
+}
+
+
+.maindiv{
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+
+.redclass{
+  color: darkred;
+
+}
+
+.blackclass{
+  color: black;
+}
+
+.imgclass{
+  margin-top: 8px;
 }

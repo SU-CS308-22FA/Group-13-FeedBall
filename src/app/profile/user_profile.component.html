@@ -1,5 +1,5 @@
 
-<div>
+<!--<div>
     <div class="maindiv">
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>more_vert</mat-icon>
@@ -27,14 +27,16 @@
       <p class="mainfeedtext">User Profile</p>
   </div>
 
+</div>-->
+
+<div class="divs">
+  <p class="mainfeedtext">User Profile</p>
 </div>
-
-
 <div *ngIf="(user$ | async) as user">
   <table  align="center">
     <tr align="center">
       <td>
-        <mat-card>
+        <mat-card class="matcardclass">
           <table>
             <tr>
               <td><mat-icon>account_circle</mat-icon></td>
@@ -67,7 +69,7 @@
   <table align="center">
     <td>
       <tr>
-        <td align="center"><button (click)="editUserInfo()" mat-raised-button class="deletebutton">Edit user info</button></td>
+        <td align="center"><button (click)="editUserInfo()" mat-raised-button class="deletebutton">Edit user profile</button></td>
       </tr>
     </td>
   </table>
@@ -75,6 +77,8 @@
     <td>
       <tr>
         <td align="center"><button (click)="changePassword()" mat-raised-button class="deletebutton">Reset your password</button></td>
+      </tr>
+      <tr>
         <p *ngIf="showMyMessage">Your reset link has been sent to your mail address.</p>
       </tr>
     </td>

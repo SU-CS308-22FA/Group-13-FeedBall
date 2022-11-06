@@ -32,6 +32,7 @@ import { AuthService } from "./shared/services/auth.service";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ToDatePipe } from './profile/edit_profile.component';
 
 
 
@@ -43,7 +44,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     FeedMainComponent,
     UserProfileComponent,
     SignupComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ToDatePipe
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatIconModule,
     MatMenuModule,
     MatRadioModule,
-    MatNativeDateModule,
+    MatNativeDateModule
 
   ],
   providers: [AuthService],
