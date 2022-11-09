@@ -23,6 +23,11 @@ export class HeaderComponent{
 
   user$ = this.authService.user$;
 
+
+  user2 = JSON.parse(localStorage.getItem('user')!);
+
+
+
   callLogOut(){
     this.authService.SignOut();
   }
@@ -33,13 +38,8 @@ export class HeaderComponent{
     this.router.navigate(['profile']);
   }
 
-
-
-  onLogin(form: NgForm) {
-    if (form.invalid) {
-      return;
-    }
-
-    //this.authService.login(form.value.email, form.value.password);
+  navigateAdminPanel(){
+    //double check for if user is admin etc.
+    //this.router.navigate(['admin-panel']);
   }
 }

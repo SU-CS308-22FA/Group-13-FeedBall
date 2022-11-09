@@ -15,7 +15,7 @@ import { PipeTransform } from '@angular/core';
 
 
 @Component({
-  selector: 'app-user-profile',
+  selector: 'app-user-profile-edit',
   templateUrl: './edit_profile.component.html',
   styleUrls: ['./edit_profile.component.css']
 })
@@ -63,16 +63,16 @@ export class EditProfileComponent{
         return;
       }
       else{
-          if(form.value.nameInput != null){
+          if(form.value.nameInput != null && form.value.nameInput != ""){
             this.authService.updateUser("name", form.value.nameInput);
           }
-          if(form.value.surnameInput != null){
+          if(form.value.surnameInput != null && form.value.surnameInput != ""){
             this.authService.updateUser("surname", form.value.surnameInput);
 
-          if(form.value.genderInput != null){
+          if(form.value.genderInput != null && form.value.genderInput != ""){
             this.authService.updateUser("gender", form.value.genderInput);
           }
-          if(form.value.nameInput != null){
+          if(form.value.birthday != null){
             this.authService.updateUser("age", form.value.birthday);
 
           }

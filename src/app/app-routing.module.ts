@@ -6,6 +6,7 @@ import { FeedMainComponent } from './main_page/feed_main.component';
 import { UserProfileComponent } from './profile/user_profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { EditProfileComponent } from './profile/edit_profile.component';
+import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'feed', component: FeedMainComponent },
   { path: 'profile', component: UserProfileComponent},
   { path: 'edit-profile', component: EditProfileComponent},
+  { path: 'admin-panel', component: AdminPanelComponent},
 ];
 
 @NgModule({

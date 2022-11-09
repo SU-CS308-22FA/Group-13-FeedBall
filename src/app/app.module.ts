@@ -19,6 +19,7 @@ import { FeedMainComponent } from './main_page/feed_main.component';
 import { UserProfileComponent } from './profile/user_profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { EditProfileComponent } from './profile/edit_profile.component';
+import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 
 import { MatRadioModule} from '@angular/material/radio';
 import { MatDatepickerModule} from '@angular/material/datepicker';
@@ -45,7 +46,8 @@ import { ToDatePipe } from './profile/edit_profile.component';
     UserProfileComponent,
     SignupComponent,
     EditProfileComponent,
-    ToDatePipe
+    ToDatePipe,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,

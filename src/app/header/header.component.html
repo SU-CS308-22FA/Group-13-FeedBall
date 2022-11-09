@@ -16,6 +16,12 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
+        <!--<button mat-menu-item (click)="navigateAdminPanel()">
+          <div class="rightalign">
+            <span><mat-icon class="blackclass">assignment_ind</mat-icon></span>
+            <span class="blackclass">TFF Admin Panel</span>
+          </div>
+        </button>-->
         <button mat-menu-item (click)="navigateMainPage()">
           <div class="rightalign">
             <span><mat-icon class="blackclass">home</mat-icon></span>
@@ -25,6 +31,7 @@
 
           </div>
         </button>
+
         <button mat-menu-item (click)="navigateProfilePage()">
           <div class="rightalign">
             <span><mat-icon class="blackclass">account_circle</mat-icon></span>
