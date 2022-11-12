@@ -175,11 +175,15 @@ export class AuthService {
   }
 
   updateUser(fieldName: string, newValue: any){
+    console.log("in update user");
     this.afAuth.authState.pipe(
       switchMap(user => {
+        console.log("in switchmap");
         if (user) {
+          console.log("in if");
           return this.afs.doc<any>(`users/${user.uid}`).update({fieldName: newValue});
         } else {
+          console.log("in else");
           return of(null);
         }
       })
@@ -212,6 +216,31 @@ export class AuthService {
         // ..
       });
 
+  }
+
+
+
+  updateUserData2(fbUser: User, ageGiven: Date, nameGiven: string, surnameGiven: string, genderGiven: string) {
+
+
+
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(
+      `users/${fbUser?.uid}`
+    );
+
+    const user: User = {
+      uid: fbUser.uid,
+      email: fbUser.email,
+      displayName: fbUser.displayName,
+      photoURL: fbUser.photoURL,
+      emailVerified: fbUser.emailVerified,
+      name: nameGiven,
+      surname: surnameGiven,
+      gender: genderGiven,
+      age: ageGiven
+    };
+
+    return userRef.set(user, { merge: true });
   }
 
 

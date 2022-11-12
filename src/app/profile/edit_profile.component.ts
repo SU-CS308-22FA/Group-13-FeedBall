@@ -34,6 +34,7 @@ export class EditProfileComponent{
 
   public showMyMessage = false;
   user$ = this.authService.user$;
+  public userCopy: any;
 
   changePassword(mail: string) {
 
@@ -49,6 +50,9 @@ export class EditProfileComponent{
     this.authService.SignOut();
   }
 
+  assignUser(userOf: User){
+    this.userCopy = userOf;
+  }
 
   navigateMainPage(){
     this.router.navigate(['feed']);
@@ -63,8 +67,10 @@ export class EditProfileComponent{
         return;
       }
       else{
+          /*
           if(form.value.nameInput != null && form.value.nameInput != ""){
             this.authService.updateUser("name", form.value.nameInput);
+
           }
           if(form.value.surnameInput != null && form.value.surnameInput != ""){
             this.authService.updateUser("surname", form.value.surnameInput);
@@ -76,8 +82,16 @@ export class EditProfileComponent{
             this.authService.updateUser("age", form.value.birthday);
 
           }
-          return;
+          */
+        if(form.value.nameInput != null && form.value.nameInput != ""
+          && form.value.surnameInput != null && form.value.surnameInput != ""
+          && form.value.genderInput != null && form.value.genderInput != ""
+          && form.value.birthday != null){
+          this.authService.updateUserData2(this.userCopy, form.value.birthday, form.value.nameInput, form.value.surnameInput, form.value.genderInput);
+
+          this.router.navigate(['profile']);
         }
+        return;
       }
   }
 }
@@ -95,4 +109,5 @@ transform(timestamp: any) {
   return dateOf;
   }
 }
+
 

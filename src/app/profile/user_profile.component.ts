@@ -33,6 +33,7 @@ export class UserProfileComponent{
     public showMyMessage = false
     user$ = this.authService.user$;
 
+
     changePassword(mail: string) {
 
       this.authService.ForgotPassword(mail);
@@ -60,6 +61,10 @@ export class UserProfileComponent{
   navigateMainPage(){
     this.router.navigate(['feed']);
   }
+
+
+
+
 
 
 }

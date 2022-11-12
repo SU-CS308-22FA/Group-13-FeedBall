@@ -10,5 +10,5 @@ export interface User {
   //point Number; (earned points of the user)
   //type: string; (defaultUser, TFFAdmin, teamAdmin)
   //team: string; (from a team list)
-  age: Date
+  age: Date;
 }
