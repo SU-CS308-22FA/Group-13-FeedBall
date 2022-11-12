@@ -35,6 +35,7 @@ export class EditProfileComponent{
   public showMyMessage = false;
   user$ = this.authService.user$;
   public userCopy: any;
+  public emptyField = false;
 
   changePassword(mail: string) {
 
@@ -63,36 +64,24 @@ export class EditProfileComponent{
   }
 
   onEditInfo(form: NgForm){
-      if(form.invalid){
-        return;
-      }
-      else{
-          /*
-          if(form.value.nameInput != null && form.value.nameInput != ""){
-            this.authService.updateUser("name", form.value.nameInput);
-
-          }
-          if(form.value.surnameInput != null && form.value.surnameInput != ""){
-            this.authService.updateUser("surname", form.value.surnameInput);
-
-          if(form.value.genderInput != null && form.value.genderInput != ""){
-            this.authService.updateUser("gender", form.value.genderInput);
-          }
-          if(form.value.birthday != null){
-            this.authService.updateUser("age", form.value.birthday);
-
-          }
-          */
-        if(form.value.nameInput != null && form.value.nameInput != ""
+    this.emptyField = false;
+    if(form.invalid){
+      return;
+    }
+    else{
+      if(form.value.nameInput != null && form.value.nameInput != ""
           && form.value.surnameInput != null && form.value.surnameInput != ""
           && form.value.genderInput != null && form.value.genderInput != ""
           && form.value.birthday != null){
-          this.authService.updateUserData2(this.userCopy, form.value.birthday, form.value.nameInput, form.value.surnameInput, form.value.genderInput);
+        this.authService.updateUserData2(this.userCopy, form.value.birthday, form.value.nameInput, form.value.surnameInput, form.value.genderInput);
 
-          this.router.navigate(['profile']);
-        }
+        this.router.navigate(['profile']);
+      }
+      else{
+        this.emptyField = true;
         return;
       }
+    }
   }
 }
 

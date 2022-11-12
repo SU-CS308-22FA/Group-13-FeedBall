@@ -46,6 +46,7 @@
         </mat-form-field>
       </tr>
       <tr><br></tr>
+      <tr><mat-error *ngIf="emptyField"><p class="errortext">Please do not leave any field empty.</p></mat-error></tr>
       <tr><button mat-raised-button (click)="assignUser(user)" class="editbutton">Change</button></tr>
       </td>
   </table>
