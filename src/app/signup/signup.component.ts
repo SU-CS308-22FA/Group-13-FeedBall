@@ -11,6 +11,8 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 
+
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -22,6 +24,27 @@ export class SignupComponent{
   //User: any;
   user: any;
 
+  public teamsList: Array<string> = [
+    "Adana Demirspor",
+    "Alanyaspor" ,
+    "Antalyaspor",
+    "Beşiktaş",
+    "Fatih Karagümrük",
+    "Fenerbahçe",
+    "Galatasaray",
+    "Gaziantep",
+    "Giresunspor",
+    "Hatayspor",
+    "İstanbul Başakşehir",
+    "İstanbulspor",
+    "Kasımpaşa",
+    "Kayserispor",
+    "Konyaspor",
+    "MKE Ankaragücü",
+    "Sivasspor",
+    "Trabzonspor",
+    "Ümraniyespor"
+  ];
 
 
   public passwordMatch = true; //check pass match
@@ -49,7 +72,7 @@ export class SignupComponent{
 
       if(this.passwordMatch){ //password match true
 
-        this.authService.SignUp(form.value.emailInput, form.value.passwordInput1, form.value.nameInput, form.value.surnameInput, form.value.genderInput, form.value.birthday, 0);
+        this.authService.SignUp(form.value.emailInput, form.value.passwordInput1, form.value.nameInput, form.value.surnameInput, form.value.genderInput, form.value.birthday, 0, form.value.teamInput);
 
       }
       else{

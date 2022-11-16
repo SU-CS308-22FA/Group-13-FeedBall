@@ -14,6 +14,9 @@ import { PipeTransform } from '@angular/core';
 
 
 
+
+
+
 @Component({
   selector: 'app-user-profile-edit',
   templateUrl: './edit_profile.component.html',
@@ -22,6 +25,27 @@ import { PipeTransform } from '@angular/core';
 export class EditProfileComponent{
 
 
+  public teamsList: Array<string> = [
+    "Adana Demirspor",
+    "Alanyaspor" ,
+    "Antalyaspor",
+    "Beşiktaş",
+    "Fatih Karagümrük",
+    "Fenerbahçe",
+    "Galatasaray",
+    "Gaziantep",
+    "Giresunspor",
+    "Hatayspor",
+    "İstanbul Başakşehir",
+    "İstanbulspor",
+    "Kasımpaşa",
+    "Kayserispor",
+    "Konyaspor",
+    "MKE Ankaragücü",
+    "Sivasspor",
+    "Trabzonspor",
+    "Ümraniyespor"
+  ];
 
 
   constructor(
@@ -72,8 +96,8 @@ export class EditProfileComponent{
       if(form.value.nameInput != null && form.value.nameInput != ""
           && form.value.surnameInput != null && form.value.surnameInput != ""
           && form.value.genderInput != null && form.value.genderInput != ""
-          && form.value.birthday != null){
-        this.authService.updateUserData2(this.userCopy, form.value.birthday, form.value.nameInput, form.value.surnameInput, form.value.genderInput, this.userCopy.point);
+          && form.value.birthday != null && form.value.teamInput != null && form.value.teamInput != ""){
+        this.authService.updateUserData2(this.userCopy, form.value.birthday, form.value.nameInput, form.value.surnameInput, form.value.genderInput, this.userCopy.point, form.value.teamInput);
 
         this.router.navigate(['profile']);
       }

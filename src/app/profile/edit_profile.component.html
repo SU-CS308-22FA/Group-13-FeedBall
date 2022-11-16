@@ -45,6 +45,17 @@
           <mat-error *ngIf="localBirthdayInput.invalid"><p class="errortext">Please select your birthday in MM/DD/YYYY format.</p></mat-error>
         </mat-form-field>
       </tr>
+      <tr>
+        <mat-form-field appearance="fill">
+          <mat-label>Select a team</mat-label>
+            <mat-select matInput [ngModel]="user?.team" name="teamInput" #localTeamInput="ngModel">
+              <mat-option *ngFor="let team of this.teamsList" [value]="team">
+                {{team}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="localTeamInput.invalid"><p class="errortext">Please select a team.</p></mat-error>
+        </mat-form-field>
+      </tr>
       <tr><br></tr>
       <tr><mat-error *ngIf="emptyField"><p class="errortext">Please do not leave any field empty.</p></mat-error></tr>
       <tr><button mat-raised-button (click)="assignUser(user)" class="editbutton">Change</button></tr>

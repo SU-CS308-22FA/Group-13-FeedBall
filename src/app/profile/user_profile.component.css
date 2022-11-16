@@ -86,3 +86,13 @@
 .matcardclass{
   min-width: 200px;
 }
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 800,
+  'GRAD' 0,
+  'opsz' 48
+}

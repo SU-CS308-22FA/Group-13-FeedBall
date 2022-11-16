@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
 <div class="divs">
   <p class="mainfeedtext">User Profile</p>
 </div>
@@ -20,11 +23,15 @@
               <td><p class="namesurname">&nbsp;&nbsp;{{user.gender}}</p></td>
             </tr>
             <tr>
-              <td><mat-icon>cake</mat-icon></td>
+              <td><span class="material-symbols-outlined">cake</span></td>
               <td><p class="namesurname">&nbsp;&nbsp;{{user.age.toDate() | date:'dd/MM/yyyy'}}</p></td>
             </tr>
             <tr>
-              <td><mat-icon>assessment</mat-icon></td>
+              <td><span class="material-symbols-outlined">sports_soccer</span></td>
+              <td><p class="namesurname">&nbsp;&nbsp;{{user.team}}</p></td>
+            </tr>
+            <tr>
+              <td><span class="material-symbols-outlined">leaderboard</span></td>
               <td><p class="namesurname">&nbsp;&nbsp;{{user.point}}&nbsp;Points</p></td>
             </tr>
           </table>

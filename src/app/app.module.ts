@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NoopAnimationsModule} from '@angular/platform-browser/animations'
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -75,7 +76,8 @@ import { ToDatePipe } from './profile/edit_profile.component';
     MatIconModule,
     MatMenuModule,
     MatRadioModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
 
   ],
   providers: [AuthService],
