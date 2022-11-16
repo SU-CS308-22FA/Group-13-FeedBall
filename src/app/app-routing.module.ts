@@ -8,6 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { InMatchComponent } from './in-match/in-match.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'profile', component: UserProfileComponent},
   { path: 'edit-profile', component: EditProfileComponent},
   { path: 'admin-panel', component: AdminPanelComponent},
-  { path: 'leaderboard', component: LeaderboardComponent}
+  { path: 'leaderboard', component: LeaderboardComponent},
+  { path: 'in-match', component: InMatchComponent}
 ];
 
 @NgModule({

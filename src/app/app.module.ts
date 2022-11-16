@@ -22,6 +22,7 @@ import { SignupComponent } from './signup/signup.component';
 import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { InMatchComponent } from './in-match/in-match.component';
 
 import { MatRadioModule} from '@angular/material/radio';
 import { MatDatepickerModule} from '@angular/material/datepicker';
@@ -36,6 +37,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ToDatePipe } from './profile/edit_profile.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -50,7 +52,8 @@ import { ToDatePipe } from './profile/edit_profile.component';
     EditProfileComponent,
     ToDatePipe,
     AdminPanelComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    InMatchComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,8 @@ import { ToDatePipe } from './profile/edit_profile.component';
     MatMenuModule,
     MatRadioModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTooltipModule
 
   ],
   providers: [AuthService],

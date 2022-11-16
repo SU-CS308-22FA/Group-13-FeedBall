@@ -46,4 +46,8 @@ export class HeaderComponent{
   navigateLeaderBoard(){
     this.router.navigate(['leaderboard']);
   }
+
+  navigateInMatch(){
+    this.router.navigate(['in-match']);
+  }
 }
