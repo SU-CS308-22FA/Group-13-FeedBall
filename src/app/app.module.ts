@@ -12,6 +12,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NoopAnimationsModule} from '@angular/platform-browser/animations'
 import {MatSelectModule} from '@angular/material/select';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -81,7 +82,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatRadioModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
 
   ],
   providers: [AuthService],
