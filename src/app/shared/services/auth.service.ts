@@ -13,12 +13,15 @@ import * as firebase from 'firebase/compat';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { NumberLiteralType } from 'typescript';
 
+//const db = firebase.default.firestore();   //this might be used later on
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   userData: any; // Save logged in user data
+
+
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -248,6 +251,15 @@ export class AuthService {
     };
 
     return userRef.set(user, { merge: true });
+  }
+
+
+
+
+  incrementPoints(userCurrent: User, pointToIncrement: number){ //points to incrememt will be given by the activity type that the user did, in related ts file
+
+    var sumpoint = userCurrent.point + pointToIncrement;
+    this.updateUserData2(userCurrent, userCurrent.age, userCurrent.name, userCurrent.surname, userCurrent.gender, sumpoint, userCurrent.team);
   }
 
 
