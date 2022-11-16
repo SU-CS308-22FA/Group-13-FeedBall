@@ -42,4 +42,8 @@ export class HeaderComponent{
     //double check for if user is admin etc.
     //this.router.navigate(['admin-panel']);
   }
+
+  navigateLeaderBoard(){
+    this.router.navigate(['leaderboard']);
+  }
 }

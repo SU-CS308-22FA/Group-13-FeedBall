@@ -20,6 +20,7 @@ import { UserProfileComponent } from './profile/user_profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 import { MatRadioModule} from '@angular/material/radio';
 import { MatDatepickerModule} from '@angular/material/datepicker';
@@ -47,7 +48,8 @@ import { ToDatePipe } from './profile/edit_profile.component';
     SignupComponent,
     EditProfileComponent,
     ToDatePipe,
-    AdminPanelComponent
+    AdminPanelComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
