@@ -73,7 +73,7 @@ export class EditProfileComponent{
           && form.value.surnameInput != null && form.value.surnameInput != ""
           && form.value.genderInput != null && form.value.genderInput != ""
           && form.value.birthday != null){
-        this.authService.updateUserData2(this.userCopy, form.value.birthday, form.value.nameInput, form.value.surnameInput, form.value.genderInput);
+        this.authService.updateUserData2(this.userCopy, form.value.birthday, form.value.nameInput, form.value.surnameInput, form.value.genderInput, this.userCopy.point);
 
         this.router.navigate(['profile']);
       }

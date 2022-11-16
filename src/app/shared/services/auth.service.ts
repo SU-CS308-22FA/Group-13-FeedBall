@@ -11,6 +11,7 @@ import { UserProfileComponent } from 'src/app/profile/user_profile.component';
 import { switchMap, of } from 'rxjs';
 import * as firebase from 'firebase/compat';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { NumberLiteralType } from 'typescript';
 
 
 @Injectable({
@@ -54,14 +55,14 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  SignUp(email: string, password: string, name: string, surname: string, gender: string, age: Date) {
+  SignUp(email: string, password: string, name: string, surname: string, gender: string, age: Date, point: number) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
         this.router.navigate(["feed"]);
-        this.SetUserData(result.user, name, surname, gender, age);
+        this.SetUserData(result.user, name, surname, gender, age, point);
 
       })
       .catch((error) => {
@@ -105,7 +106,7 @@ export class AuthService {
       .then((result) => {
         this.router.navigate(['dashboard']);
         const dummyDate = new Date(2022,11,2);
-        this.SetUserData(result.user, "", "", "", dummyDate);
+        this.SetUserData(result.user, "", "", "", dummyDate, 0);
       })
       .catch((error) => {
         window.alert(error);
@@ -114,7 +115,7 @@ export class AuthService {
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user: any, name: string, surname: string, gender: string, age: Date) {
+  SetUserData(user: any, name: string, surname: string, gender: string, age: Date, point: number) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
@@ -127,7 +128,8 @@ export class AuthService {
       name: name,
       surname: surname,
       gender: gender,
-      age: age
+      age: age,
+      point: point
     };
     return userRef.set(userData, {
       merge: true,
@@ -146,7 +148,8 @@ export class AuthService {
       name: user.name,
       surname: user.surname,
       gender: user.gender,
-      age: user.age
+      age: user.age,
+      point: user.point
     };
     return userRef.set(userData, {
       merge: true,
@@ -220,7 +223,7 @@ export class AuthService {
 
 
 
-  updateUserData2(fbUser: User, ageGiven: Date, nameGiven: string, surnameGiven: string, genderGiven: string) {
+  updateUserData2(fbUser: User, ageGiven: Date, nameGiven: string, surnameGiven: string, genderGiven: string, pointGiven: number) {
 
 
 
@@ -237,7 +240,8 @@ export class AuthService {
       name: nameGiven,
       surname: surnameGiven,
       gender: genderGiven,
-      age: ageGiven
+      age: ageGiven,
+      point: pointGiven
     };
 
     return userRef.set(user, { merge: true });
