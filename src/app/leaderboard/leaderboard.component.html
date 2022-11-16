@@ -1,1 +1,15 @@
 <div class="titlediv" ><p class="mainfeedtext">LeaderBoard</p></div>
+<div *ngIf="(user$ | async) as user">
+  <button mat-raised-button (click)="getUsersListAll()">CLICK</button>
+  <span *ngIf="this.listUsers == null">NULL</span>
+  <span *ngIf="this.listUsers != null">
+    <p>NOT NULL</p>
+    <span *ngFor="let thisUser of (this.listUsers | transformpipe)">
+      <p>{{thisUser.userPoint}}</p>
+      <p>{{thisUser.userName}}</p>
+      <br>
+    </span>
+  </span>
+</div>
+
+<!--ilk 5, ilk 10, tüm userlar filtrelemesi, küçük dropdown list ile olabilir-->
