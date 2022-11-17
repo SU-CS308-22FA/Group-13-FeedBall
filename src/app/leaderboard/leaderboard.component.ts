@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AuthService } from "../shared/services/auth.service";
+import { Subscription } from 'rxjs';
 
 import { User } from "../shared/services/user";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -21,7 +22,8 @@ interface LeaderboardElems {
   userName: string,
   userSurname: string,
   userUid: string,
-  userPoint: number
+  userPoint: number,
+  userRank: number
 }
 
 
@@ -30,20 +32,27 @@ interface LeaderboardElems {
   templateUrl: './leaderboard.component.html',
   styleUrls: ['./leaderboard.component.css']
 })
-export class LeaderboardComponent{
+export class LeaderboardComponent implements OnInit, OnDestroy {
 
-
-  public listUsers = this.authService.getAllUsers();
-
-  constructor(
-    public authService: AuthService){}
-  user$ = this.authService.user$;
+  public listUsers = this.ngOnInit();
+  public isButtonClicked: boolean = false;
+  constructor(public authService: AuthService){}
 
   getUsersListAll(){
+    this.isButtonClicked = true;
     const vallistUsers = this.authService.getAllUsers();
     this.listUsers = vallistUsers;
   }
 
+  ngOnInit(){
+    const vallistUsers = this.authService.getAllUsers();
+    this.listUsers = vallistUsers;
+  }
+
+  ngOnDestroy(): void {
+  }
+
+  user$ = this.authService.user$;
 }
 
 //pipelines
@@ -61,9 +70,9 @@ transform(listOf: any) {
       userName: "",
       userSurname: "",
       userPoint: 0,
-      userUid: ""
+      userUid: "",
+      userRank: -1
     }
-
     elem.userName = model.name;
     elem.userSurname = model.surname;
     elem.userUid = model.uid;
@@ -72,14 +81,53 @@ transform(listOf: any) {
     listType.push(elem);
   }
 
-
   var sortedList: LeaderboardElems[] = listType.sort((obj1, obj2) => {
     if(obj1.userPoint > obj2.userPoint){return -1;}
     if(obj1.userPoint < obj2.userPoint){return 1;}
     return 0;
   });
 
+  for (let j=0; j<size; j++){
+    sortedList[j].userRank = j+1; //1st, 2nd, 3rd...
+  }
+
   return sortedList;
+  }
+}
+
+@Pipe({ name: 'returnsizepipe' })
+export class ReturnSizePipe implements PipeTransform {
+transform(listOf: any) {
+
+  var size = Object.keys(listOf).length;
+  return size;
+  }
+}
+
+@Pipe({ name: 'return3rdpipe' })
+export class Return3rdPipe implements PipeTransform {
+transform(listOf: any) {
+
+  var size = Object.keys(listOf).length;
+  return size;
+  }
+}
+
+@Pipe({ name: 'return1stpipe' })
+export class Return1stPipe implements PipeTransform {
+transform(listOf: any) {
+
+  var size = Object.keys(listOf).length;
+  return size;
+  }
+}
+
+@Pipe({ name: 'return2ndpipe' })
+export class Return2ndPipe implements PipeTransform {
+transform(listOf: any) {
+
+  var size = Object.keys(listOf).length;
+  return size;
   }
 }
 

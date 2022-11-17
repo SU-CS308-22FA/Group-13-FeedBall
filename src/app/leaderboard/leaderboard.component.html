@@ -1,15 +1,87 @@
 <div class="titlediv" ><p class="mainfeedtext">LeaderBoard</p></div>
-<div *ngIf="(user$ | async) as user">
-  <button mat-raised-button (click)="getUsersListAll()">CLICK</button>
-  <span *ngIf="this.listUsers == null">NULL</span>
-  <span *ngIf="this.listUsers != null">
-    <p>NOT NULL</p>
-    <span *ngFor="let thisUser of (this.listUsers | transformpipe)">
-      <p>{{thisUser.userPoint}}</p>
-      <p>{{thisUser.userName}}</p>
+<div class="maindiv" *ngIf="(user$ | async) as user">
+  <div *ngIf="!isButtonClicked"><button mat-raised-button (click)="getUsersListAll()">CLICK</button></div>
+  <span *ngIf="isButtonClicked">
+
+    <div *ngIf="(listUsers | returnsizepipe) > 3">
+      <div class="wrapper">
+        <div>
+          <div class="columndiv1t">
+            <table align="center">
+              <td align="center">
+                <tr><br></tr>
+                <tr><p>second</p></tr>
+              </td>
+            </table>
+          </div>
+          <div class="columndiv1">2</div>
+        </div>
+        <div>
+          <div class="columndiv2t">
+            <p>first</p>
+          </div>
+          <div class="columndiv2">1</div>
+        </div>
+        <div>
+          <div class="columndiv3t">
+            <table align="center">
+              <td align="center">
+                <tr><br></tr>
+                <tr><br></tr>
+                <tr><p>third</p></tr>
+              </td>
+            </table>
+          </div>
+          <div class="columndiv3">3</div>
+        </div>
+      </div>
       <br>
-    </span>
+      <span *ngFor="let thisUser of (this.listUsers | transformpipe)">
+        <div *ngIf="thisUser.userUid == user.uid">
+          <mat-card class="backgroundcolor">
+            <mat-card-content>
+              <p>{{thisUser.userRank}}&nbsp;-&nbsp;{{thisUser.userName}}&nbsp;{{thisUser.userSurname}}</p>
+              <p>{{thisUser.userPoint}}&nbsp;Points</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div *ngIf="thisUser.userUid != user.uid">
+          <mat-card>
+            <mat-card-content>
+              <p>{{thisUser.userRank}}&nbsp;-&nbsp;{{thisUser.userName}}&nbsp;{{thisUser.userSurname}}</p>
+              <p>{{thisUser.userPoint}}&nbsp;Points</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <br>
+      </span>
+    </div>
+
+    <div *ngIf="(listUsers | returnsizepipe) == 3">
+      <div class="wrapper">
+        <div>
+          <div class="columndiv1t">One top</div>
+          <div class="columndiv1">One</div>
+        </div>
+        <div>
+          <div class="columndiv2t">Two top</div>
+          <div class="columndiv2">Two</div>
+        </div>
+        <div>
+          <div class="columndiv3t">Three top</div>
+          <div class="columndiv3">Three</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div *ngIf="(listUsers | returnsizepipe) < 3">less than 3</div>
+
   </span>
 </div>
 
-<!--ilk 5, ilk 10, tüm userlar filtrelemesi, küçük dropdown list ile olabilir-->
+
+
+
+<!--possible display options
+more than 3: first 3 -->

@@ -9,3 +9,88 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.maindiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  height: 150px;
+  /*border-style: solid;
+  border-color: white;*/
+}
+
+.columndiv1{
+  /*background-color: #d4ead8;*/
+  background-color: #dceee0;
+  border-radius:  15px;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:xx-large;
+
+}
+.columndiv1t{
+  background-color:  white;
+  border-radius:  15px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.columndiv2{
+  background-color:   #b9dcc0;
+  border-radius:  15px;
+  height: 120px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:xx-large;
+}
+.columndiv2t{
+  background-color: rgb(255, 255, 255);
+  border-radius:  15px;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.columndiv3{
+  background-color: #e5f3e8;
+  border-radius:  15px;
+  height: 80px;
+  text-align: center;
+  font-size:xx-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.columndiv3t{
+  background-color: rgb(255, 255, 255);
+  border-radius:  15px;
+  height: 70px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.backgroundcolor{
+  background-color:goldenrod;
+}

@@ -40,7 +40,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ToDatePipe } from './profile/edit_profile.component';
 import { TransformPipe } from './leaderboard/leaderboard.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import { ReturnSizePipe } from './leaderboard/leaderboard.component';
+import { Return1stPipe } from './leaderboard/leaderboard.component';
+import { Return2ndPipe } from './leaderboard/leaderboard.component';
+import { Return3rdPipe } from './leaderboard/leaderboard.component';
 
 
 @NgModule({
@@ -56,7 +59,11 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AdminPanelComponent,
     LeaderboardComponent,
     InMatchComponent,
-    TransformPipe
+    TransformPipe,
+    ReturnSizePipe,
+    Return1stPipe,
+    Return2ndPipe,
+    Return3rdPipe
   ],
   imports: [
     BrowserModule,

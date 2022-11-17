@@ -270,8 +270,4 @@ export class AuthService {
       return this.collectionResult;
   }
 
-
-  /*userList$ = this.afs.collection("users").valueChanges().subscribe(val =>
-    {this.collectionResult = val;});*/
-
 }
