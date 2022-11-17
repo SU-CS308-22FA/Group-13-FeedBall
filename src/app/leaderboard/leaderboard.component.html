@@ -1,41 +1,76 @@
 <div class="titlediv" ><p class="mainfeedtext">LeaderBoard</p></div>
-<div class="maindiv" *ngIf="(user$ | async) as user">
-  <div *ngIf="!isButtonClicked"><button mat-raised-button (click)="getUsersListAll()">CLICK</button></div>
-  <span *ngIf="isButtonClicked">
 
-    <div *ngIf="(listUsers | returnsizepipe) > 3">
+<div class="maindiv" *ngIf="(user$ | async) as user">
+
+  <div *ngIf="!isButtonClicked"><button mat-raised-button (click)="getUsersListAll()">CLICK</button></div>
+
+  <span *ngIf="isButtonClicked">
+    <div class="maindiv">
+      <p class="p2">{{(this.listUsers | transformpipe) | returnrankuserpipe: user}}</p>
+    </div>
+
+    <div *ngIf="(listUsers | returnsizepipe) >= 3">
       <div class="wrapper">
-        <div>
+        <div class="paddingclass">
           <div class="columndiv1t">
             <table align="center">
               <td align="center">
                 <tr><br></tr>
-                <tr><p>second</p></tr>
+                <tr><p>{{(this.listUsers | transformpipe) | returnxthpipe: 2}}</p></tr>
               </td>
             </table>
           </div>
-          <div class="columndiv1">2</div>
+          <div *ngIf="(this.listUsers | transformpipe) | returnifxthpipe: 2: user" class="columndiv1user">2</div>
+          <div *ngIf="!((this.listUsers | transformpipe) | returnifxthpipe: 2: user)" class="columndiv1">2</div>
         </div>
-        <div>
+        <div class="columndiv1-2"></div>
+        <div class="paddingclass">
           <div class="columndiv2t">
-            <p>first</p>
+            <p>{{(this.listUsers | transformpipe) | returnxthpipe: 1}}</p>
           </div>
-          <div class="columndiv2">1</div>
+          <div *ngIf="(this.listUsers | transformpipe) | returnifxthpipe: 1: user" class="columndiv2user">1</div>
+          <div *ngIf="!((this.listUsers | transformpipe) | returnifxthpipe: 1: user)" class="columndiv2">1</div>
         </div>
-        <div>
+        <div class="columndiv2-3"></div>
+        <div class="paddingclass">
           <div class="columndiv3t">
             <table align="center">
               <td align="center">
                 <tr><br></tr>
                 <tr><br></tr>
-                <tr><p>third</p></tr>
+                <tr><p>{{(this.listUsers | transformpipe) | returnxthpipe: 3}}</p></tr>
               </td>
             </table>
           </div>
-          <div class="columndiv3">3</div>
+          <div *ngIf="(this.listUsers | transformpipe) | returnifxthpipe: 3: user" class="columndiv3user">3</div>
+          <div *ngIf="!((this.listUsers | transformpipe) | returnifxthpipe: 3: user)" class="columndiv3">3</div>
         </div>
       </div>
       <br>
+      <span *ngFor="let thisUser of (this.listUsers | transformpipe)">
+        <div *ngIf="thisUser.userRank > 3">
+          <div *ngIf="thisUser.userUid == user.uid">
+            <mat-card class="backgroundcolor">
+              <mat-card-content>
+                <p>{{thisUser.userRank}}&nbsp;-&nbsp;{{thisUser.userName}}&nbsp;{{thisUser.userSurname}}</p>
+                <p>{{thisUser.userPoint}}&nbsp;Points</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="thisUser.userUid != user.uid">
+            <mat-card>
+              <mat-card-content>
+                <p>{{thisUser.userRank}}&nbsp;-&nbsp;{{thisUser.userName}}&nbsp;{{thisUser.userSurname}}</p>
+                <p>{{thisUser.userPoint}}&nbsp;Points</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <br>
+        </div>
+      </span>
+    </div>
+
+    <div *ngIf="(listUsers | returnsizepipe) < 3">
       <span *ngFor="let thisUser of (this.listUsers | transformpipe)">
         <div *ngIf="thisUser.userUid == user.uid">
           <mat-card class="backgroundcolor">
@@ -56,26 +91,6 @@
         <br>
       </span>
     </div>
-
-    <div *ngIf="(listUsers | returnsizepipe) == 3">
-      <div class="wrapper">
-        <div>
-          <div class="columndiv1t">One top</div>
-          <div class="columndiv1">One</div>
-        </div>
-        <div>
-          <div class="columndiv2t">Two top</div>
-          <div class="columndiv2">Two</div>
-        </div>
-        <div>
-          <div class="columndiv3t">Three top</div>
-          <div class="columndiv3">Three</div>
-        </div>
-
-      </div>
-    </div>
-
-    <div *ngIf="(listUsers | returnsizepipe) < 3">less than 3</div>
 
   </span>
 </div>

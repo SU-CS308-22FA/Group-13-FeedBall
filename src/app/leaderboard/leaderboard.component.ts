@@ -104,30 +104,45 @@ transform(listOf: any) {
   }
 }
 
-@Pipe({ name: 'return3rdpipe' })
-export class Return3rdPipe implements PipeTransform {
-transform(listOf: any) {
+@Pipe({ name: 'returnxthpipe' })
+export class ReturnXthPipe implements PipeTransform {
+transform(listOf: LeaderboardElems[], index: number) {
 
-  var size = Object.keys(listOf).length;
-  return size;
+  var toReturn = "";
+  toReturn = listOf[index-1].userName +  " " + listOf[index-1].userSurname + " - " + listOf[index-1].userPoint + " Points";
+
+  return toReturn;
   }
 }
 
-@Pipe({ name: 'return1stpipe' })
-export class Return1stPipe implements PipeTransform {
-transform(listOf: any) {
+@Pipe({ name: 'returnifxthpipe' })
+export class ReturnIfXthPipe implements PipeTransform {
+transform(listOf: LeaderboardElems[], index: number, user: User) {
 
-  var size = Object.keys(listOf).length;
-  return size;
+  if(listOf[index-1].userUid == user.uid){
+    return true;
+  }
+  return false;
   }
 }
 
-@Pipe({ name: 'return2ndpipe' })
-export class Return2ndPipe implements PipeTransform {
-transform(listOf: any) {
 
+@Pipe({ name: 'returnrankuserpipe'})
+export class ReturnRankUserPipe implements PipeTransform {
+transform(listOf: LeaderboardElems[], user: User) {
+  var strReturn = "";
   var size = Object.keys(listOf).length;
-  return size;
+  for(let i=0; i<size; i++){
+    if(listOf[i].userUid == user.uid){
+      if(listOf[i].userRank < 4){
+        strReturn = "Congratulations, " + user.name + "! You are currently ranked #" + listOf[i].userRank;
+      }
+      else{
+        strReturn = user.name + ", you are currently ranked #" + listOf[i].userRank;
+      }
+    }
+  }
+  return strReturn;
   }
 }
 

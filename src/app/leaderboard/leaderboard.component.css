@@ -20,7 +20,7 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: 150px 150px 150px;
+  grid-template-columns: 180px 5px 180px 5px 180px;
   height: 150px;
   /*border-style: solid;
   border-color: white;*/
@@ -36,6 +36,42 @@
   align-items: center;
   justify-content: center;
   font-size:xx-large;
+
+}
+.columndiv1user{
+  /*background-color: #d4ead8;*/
+  background-color: goldenrod;
+  border-radius:  15px;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:xx-large;
+
+}
+.columndiv1-2{
+  /*background-color: #d4ead8;*/
+  background-color: white;
+  border-radius:  15px;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.columndiv2-3{
+  /*background-color: #d4ead8;*/
+  background-color: white;
+  border-radius:  15px;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 
 }
 .columndiv1t{
@@ -59,6 +95,18 @@
   justify-content: center;
   font-size:xx-large;
 }
+
+.columndiv2user{
+  background-color:  goldenrod;
+  border-radius:  15px;
+  height: 120px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:xx-large;
+}
+
 .columndiv2t{
   background-color: rgb(255, 255, 255);
   border-radius:  15px;
@@ -80,6 +128,18 @@
   align-items: center;
   justify-content: center;
 }
+
+.columndiv3user{
+  background-color: goldenrod;
+  border-radius:  15px;
+  height: 80px;
+  text-align: center;
+  font-size:xx-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .columndiv3t{
   background-color: rgb(255, 255, 255);
   border-radius:  15px;
@@ -94,3 +154,12 @@
 .backgroundcolor{
   background-color:goldenrod;
 }
+
+
+.p2{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-style: oblique;
+}
+
+
