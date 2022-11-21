@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "engines": {
     "node": "16.x",
-    "npm": "8.19.2"},
-
-
+    "npm": "8.19.2"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -14,7 +13,6 @@
     "test": "ng test",
     "heroku-postbuild": "ng build --configuration production"
   },
-
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.1.0",
@@ -31,6 +29,7 @@
     "@angular/router": "^14.1.0",
     "express": "^4.18.2",
     "firebase": "^9.13.0",
+    "firebase-admin": "^11.3.0",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -57,6 +57,9 @@ export class UserProfileComponent{
     this.authService.SignOut();
   }
 
+  adminPanel(){
+    this.router.navigate(['admin-panel'])
+  }
 
   navigateMainPage(){
     this.router.navigate(['feed']);
