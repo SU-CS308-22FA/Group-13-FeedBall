@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, QueryList } from '@angular/core';
 import { User } from '../services/user';
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -8,12 +8,10 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { UserProfileComponent } from 'src/app/profile/user_profile.component';
-import { switchMap, of } from 'rxjs';
+import { switchMap, of, Observable } from 'rxjs';
 import * as firebase from 'firebase/compat';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { NumberLiteralType } from 'typescript';
-
-//const db = firebase.default.firestore();   //this might be used later on
 
 @Injectable({
   providedIn: 'root',
@@ -185,6 +183,8 @@ export class AuthService {
     })
   );
 
+  collectionResult: any;
+
   userDelete(){
     this.afAuth.currentUser.then(user => user?.delete());
   }
@@ -269,5 +269,12 @@ export class AuthService {
     this.updateUserData2(userCurrent, userCurrent.age, userCurrent.name, userCurrent.surname, userCurrent.gender, sumpoint, userCurrent.team);
   }
 
+
+  getAllUsers()/*:Observable<User>*/{
+
+    this.afs.collection("users").valueChanges().subscribe(val =>
+      {this.collectionResult = val;});
+      return this.collectionResult;
+  }
 
 }

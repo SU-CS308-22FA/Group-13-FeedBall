@@ -39,8 +39,12 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ToDatePipe } from './profile/edit_profile.component';
+import { TransformPipe } from './leaderboard/leaderboard.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import { ReturnSizePipe } from './leaderboard/leaderboard.component';
+import { ReturnXthPipe } from './leaderboard/leaderboard.component';
+import { ReturnIfXthPipe } from './leaderboard/leaderboard.component';
+import { ReturnRankUserPipe } from './leaderboard/leaderboard.component';
 
 
 @NgModule({
@@ -55,9 +59,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ToDatePipe,
     AdminPanelComponent,
     LeaderboardComponent,
-    InMatchComponent,
-    UserDetailComponent
-
+    InMatchComponent
   ],
   imports: [
     BrowserModule,
