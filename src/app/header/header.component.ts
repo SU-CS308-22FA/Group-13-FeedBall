@@ -9,6 +9,7 @@ import { animationFrameScheduler, of, switchMap } from 'rxjs';
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
+import { LeaderboardComponent } from '../leaderboard/leaderboard.component';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent{
 
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(public authService: AuthService, private router: Router, public leaderboard: LeaderboardComponent) {}
 
 
   user$ = this.authService.user$;
@@ -44,6 +45,7 @@ export class HeaderComponent{
   }
 
   navigateLeaderBoard(){
+    this.leaderboard.getUsersListAll();
     this.router.navigate(['leaderboard']);
   }
 

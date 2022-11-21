@@ -44,7 +44,6 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
     this.isButtonClicked = true;
     const vallistUsers = this.authService.getAllUsers();
     this.listUsers = vallistUsers;
-    console.log(this.listUsers == null);
   }
 
   ngOnInit(){
