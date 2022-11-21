@@ -99,7 +99,7 @@ import { ReturnRankUserPipe } from './leaderboard/leaderboard.component';
     MatTooltipModule,
 
   ],
-  providers: [AuthService],
+  providers: [AuthService, LeaderboardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

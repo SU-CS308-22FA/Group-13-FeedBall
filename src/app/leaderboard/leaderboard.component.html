@@ -1,6 +1,6 @@
 <div class="titlediv" ><p class="mainfeedtext">LeaderBoard</p></div>
 <div class="maindiv" *ngIf="(user$ | async) as user">
-  <div *ngIf="!isButtonClicked">
+  <div *ngIf="!isButtonClicked && this.listUsers == null">
     <table align="center">
       <td align="center">
         <tr><p class="p2">Please click the button below to fetch the current leaderboard!</p></tr>
@@ -89,7 +89,6 @@
             <mat-option [value]="10">First 10</mat-option>
             <mat-option [value]="15">First 15</mat-option>
             <mat-option [value]="(this.listUsers | transformpipe) | returnsizepipe">All Users</mat-option>
-            <!--this can be optimized bu using number instead of strings and checking from them-->
           </mat-select>
         </mat-form-field>
       </div>
