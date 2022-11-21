@@ -24,6 +24,7 @@ import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { InMatchComponent } from './in-match/in-match.component';
+import { UserDetailComponent } from './admin_panel/user_detail.component';
 
 import { MatRadioModule} from '@angular/material/radio';
 import { MatDatepickerModule} from '@angular/material/datepicker';
@@ -59,11 +60,7 @@ import { ReturnRankUserPipe } from './leaderboard/leaderboard.component';
     AdminPanelComponent,
     LeaderboardComponent,
     InMatchComponent,
-    TransformPipe,
-    ReturnSizePipe,
-    ReturnXthPipe,
-    ReturnIfXthPipe,
-    ReturnRankUserPipe
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

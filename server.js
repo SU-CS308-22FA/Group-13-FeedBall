@@ -6,6 +6,13 @@ const path = require('path');
 const app = express();
 app.use(express.static(__dirname + '/dist/feedball-project'));
 app.listen(process.env.PORT, '0.0.0.0');//change
+var admin = require("firebase-admin");
+
+var serviceAccount = require("path/to/serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
 
 
 
