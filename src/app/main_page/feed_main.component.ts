@@ -16,6 +16,9 @@ export class FeedMainComponent{
     this.router.navigate(['profile']);
   }
 
+  navigateNewsPage(){
+    this.router.navigate(['news-page']);
+  }
   callLogOut(){
     this.authService.SignOut();
   }

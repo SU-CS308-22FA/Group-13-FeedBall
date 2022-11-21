@@ -28,3 +28,29 @@
   align-items: center;
   justify-content: center;
 }
+
+.container {
+  display: table;
+  width: 100%;
+}
+
+.newscontainer {
+  background-color: #ff9e2c;
+  position: absolute;
+  left: 0px;
+  width: 42%;
+  margin-left:5%;
+  margin-top:50px;
+  height:350px;
+}
+
+.pollscontainer {
+  background-color: #b6701e;
+  position: absolute;
+  right: 0px;
+  width: 42%;
+  margin-right:5%;
+  margin-top:50px;
+  height:350px;
+}
+
