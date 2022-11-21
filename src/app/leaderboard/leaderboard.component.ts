@@ -38,14 +38,13 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
   public isButtonClicked: boolean = false;
   constructor(public authService: AuthService){}
 
-  public filterSelection = "displayAll";
+  public filterSelection = 10;
 
   getUsersListAll(){
     this.isButtonClicked = true;
     const vallistUsers = this.authService.getAllUsers();
     this.listUsers = vallistUsers;
     console.log(this.listUsers == null);
-
   }
 
   ngOnInit(){

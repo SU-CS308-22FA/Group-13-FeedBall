@@ -60,7 +60,7 @@
 
       <span *ngFor="let thisUser of (this.listUsers | transformpipe)">
         <div *ngIf="thisUser.userRank > 3">
-          <div *ngIf="filterSelection == 'displayAll'">
+          <div *ngIf="thisUser.userRank < filterSelection + 1">
             <div *ngIf="thisUser.userUid == user.uid">
               <mat-card class="backgroundcolor">
                 <mat-card-content>
@@ -79,50 +79,6 @@
             </div>
             <br>
           </div>
-
-          <div *ngIf="filterSelection == 'display10'">
-            <div *ngIf="thisUser.userRank < 11">
-              <div *ngIf="thisUser.userUid == user.uid">
-                <mat-card class="backgroundcolor">
-                  <mat-card-content>
-                    <p class="pclass">{{thisUser.userRank}}&nbsp;-&nbsp;{{thisUser.userName}}&nbsp;{{thisUser.userSurname}}</p>
-                    <p class="pclass">{{thisUser.userPoint}}&nbsp;Points</p><!--4th and later, print user and user = this user-->
-                  </mat-card-content>
-                </mat-card>
-              </div>
-              <div *ngIf="thisUser.userUid != user.uid">
-                <mat-card>
-                  <mat-card-content>
-                    <p class="pclass">{{thisUser.userRank}}&nbsp;-&nbsp;{{thisUser.userName}}&nbsp;{{thisUser.userSurname}}</p>
-                    <p class="pclass">{{thisUser.userPoint}}&nbsp;Points</p><!--4th and later, print user and user is not this user-->
-                  </mat-card-content>
-                </mat-card>
-              </div>
-              <br>
-            </div>
-          </div>
-
-          <div *ngIf="filterSelection == 'display15'">
-            <div *ngIf="thisUser.userRank < 16">
-              <div *ngIf="thisUser.userUid == user.uid">
-                <mat-card class="backgroundcolor">
-                  <mat-card-content>
-                    <p class="pclass">{{thisUser.userRank}}&nbsp;-&nbsp;{{thisUser.userName}}&nbsp;{{thisUser.userSurname}}</p>
-                    <p class="pclass">{{thisUser.userPoint}}&nbsp;Points</p><!--4th and later, print user and user = this user-->
-                  </mat-card-content>
-                </mat-card>
-              </div>
-              <div *ngIf="thisUser.userUid != user.uid">
-                <mat-card>
-                  <mat-card-content>
-                    <p class="pclass">{{thisUser.userRank}}&nbsp;-&nbsp;{{thisUser.userName}}&nbsp;{{thisUser.userSurname}}</p>
-                    <p class="pclass">{{thisUser.userPoint}}&nbsp;Points</p><!--4th and later, print user and user is not this user-->
-                  </mat-card-content>
-                </mat-card>
-              </div>
-              <br>
-            </div>
-          </div>
         </div>
       </span>
 
@@ -130,9 +86,10 @@
         <mat-form-field appearance="fill">
           <mat-label>Display options</mat-label>
           <mat-select class="matselect" [(value)]="filterSelection">
-            <mat-option value="display10">First 10</mat-option>
-            <mat-option value="display15">First 15</mat-option>
-            <mat-option value="displayAll">All Users</mat-option>
+            <mat-option [value]="10">First 10</mat-option>
+            <mat-option [value]="15">First 15</mat-option>
+            <mat-option [value]="(this.listUsers | transformpipe) | returnsizepipe">All Users</mat-option>
+            <!--this can be optimized bu using number instead of strings and checking from them-->
           </mat-select>
         </mat-form-field>
       </div>
