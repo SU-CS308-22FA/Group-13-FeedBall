@@ -59,7 +59,8 @@ import { ReturnRankUserPipe } from './leaderboard/leaderboard.component';
     ToDatePipe,
     AdminPanelComponent,
     LeaderboardComponent,
-    InMatchComponent
+    InMatchComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
