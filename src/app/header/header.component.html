@@ -32,15 +32,25 @@
           </div>
         </button>
 
-        <button mat-menu-item (click)="navigateProfilePage()">
-          <div class="rightalign">
-            <span><mat-icon class="blackclass">account_circle</mat-icon></span>
+        <div *ngIf="true">
+          <button mat-menu-item (click)="navigateProfilePage()">
+            <div class="rightalign">
+              <span><mat-icon class="blackclass">account_circle</mat-icon></span>
 
-            <span class="blackclass">Profile Page</span>
+              <span class="blackclass">Profile Page</span>
 
 
-          </div>
-        </button>
+            </div>
+          </button>
+        </div>
+        <div *ngIf="false"><!--user.type, admin-->
+          <button mat-menu-item (click)="navigateAdminPanel()">
+            <div class="rightalign">
+              <span><mat-icon class="blackclass">admin_panel_settings</mat-icon></span>
+              <span class="blackclass">Admin Panel</span>
+            </div>
+          </button>
+        </div>
         <button mat-menu-item (click)="navigateLeaderBoard()">
           <div class="rightalign">
             <span><mat-icon class="blackclass">assessment</mat-icon></span>
