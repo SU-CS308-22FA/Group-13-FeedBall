@@ -49,7 +49,13 @@ export class AuthService {
         //this.SetUserData2(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['feed']);
+            if(user.emailVerified){
+              this.router.navigate(['feed']);
+            }else{
+              this.SignOut();
+              window.alert('You did not verify your mail adress, please check your inbox.');
+            }
+
           }
         });
       })
@@ -64,8 +70,9 @@ export class AuthService {
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
-        this.router.navigate(["feed"]);
         this.SetUserData(result.user, name, surname, gender, age, point, team);
+        this.SendVerificationMail();
+        this.SignOut();
 
       })
       .catch((error) => {
@@ -77,7 +84,7 @@ export class AuthService {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
       .then(() => {
-        this.router.navigate(['verify-email-address']);
+        window.alert('Verification email sent, check your inbox.');
       });
   }
   // Reset Forggot password
