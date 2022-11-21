@@ -8,7 +8,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { UserProfileComponent } from 'src/app/profile/user_profile.component';
-import { switchMap, of } from 'rxjs';
+import { switchMap, of, Observable } from 'rxjs';
 import * as firebase from 'firebase/compat';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { NumberLiteralType } from 'typescript';
@@ -263,7 +263,7 @@ export class AuthService {
   }
 
 
-  getAllUsers(){
+  getAllUsers()/*:Observable<User>*/{
 
     this.afs.collection("users").valueChanges().subscribe(val =>
       {this.collectionResult = val;});

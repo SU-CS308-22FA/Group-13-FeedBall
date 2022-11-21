@@ -38,10 +38,14 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
   public isButtonClicked: boolean = false;
   constructor(public authService: AuthService){}
 
+  public filterSelection = "displayAll";
+
   getUsersListAll(){
     this.isButtonClicked = true;
     const vallistUsers = this.authService.getAllUsers();
     this.listUsers = vallistUsers;
+    console.log(this.listUsers == null);
+
   }
 
   ngOnInit(){
@@ -49,7 +53,7 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
     this.listUsers = vallistUsers;
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy(): void{
   }
 
   user$ = this.authService.user$;
