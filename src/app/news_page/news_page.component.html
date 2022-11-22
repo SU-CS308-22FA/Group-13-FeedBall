@@ -1,21 +1,29 @@
 <div *ngIf="(user$ | async) as user">
+
   <div *ngIf="(news$ | async) as news">
 
     <div *ngIf="filterOption == 'all'">
 
       <div *ngIf="(news | sortteamfirstpipe: user.team) as newslist">
+
         <div *ngFor="let news of newslist">
-          <div>
-            <table>
-            <tr>
-              <h1>{{news.header}}</h1>
-            </tr>
-            <tr>{{news.writtenby}}</tr>
-            <tr>{{news.newsdate | todatepipe2}}</tr>
-            <tr>{{news.content}}</tr>
-          </table>
-          </div>
+
+          <mat-accordion multi="true">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <table width="100%">
+                  <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>
+                  <span class="space-panel"></span>
+                  <span class="right"><td><div class="statust">&nbsp;&nbsp;{{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+                  <span class="right"><td><div class="statusi">&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
+                  <span class="right"><td><div class="statusf">&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
+                </table>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+          </mat-accordion>
+
         </div>
+
       </div>
 
       <div class="selectfilter">
@@ -34,14 +42,19 @@
       <div *ngIf="(news | filterteamonlypipe: user.team) as newslist">
         <div *ngFor="let news of newslist">
           <div>
-            <table>
-            <tr>
-              <h1>{{news.header}}</h1>
-            </tr>
-            <tr>{{news.writtenby}}</tr>
-            <tr>{{news.newsdate | todatepipe2}}</tr>
-            <tr>{{news.content}}</tr>
-          </table>
+            <mat-accordion multi="true">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <table width="100%">
+                    <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>
+            <span class="space-panel"></span>
+            <span class="right"><td><div class="statust">&nbsp;&nbsp;{{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+            <span class="right"><td><div class="statusi">&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
+            <span class="right"><td><div class="statusf">&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
+              </table>
+            </mat-expansion-panel-header>
+            </mat-expansion-panel>
+          </mat-accordion>
           </div>
         </div>
       </div>
