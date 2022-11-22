@@ -72,7 +72,10 @@ import { FilterTeamOnlyPipe } from './news_page/news_page.component';
     ReturnIfXthPipe,
     ReturnRankUserPipe,
     NewsPageComponent,
-    ToDatePipe2
+    ToDatePipe2,
+    SortTeamFirstPipe,
+    FilterTeamOnlyPipe
+
   ],
   imports: [
     BrowserModule,

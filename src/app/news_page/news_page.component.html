@@ -1,19 +1,66 @@
+<div *ngIf="(user$ | async) as user">
+  <div *ngIf="(news$ | async) as news">
 
-<div *ngIf="(news$ | async) as newslist">
-  <div *ngFor="let news of newslist">
-    <div>
-      <table>
-      <tr>
-        <h1>{{news.header}}</h1>
-      </tr>
-      <tr>{{news.writtenby}}</tr>
-      <tr>{{news.newsdate | todatepipe2}}</tr>
-      <tr>{{news.content}}</tr>
-    </table>
+    <div *ngIf="filterOption == 'all'">
+
+      <div *ngIf="(news | sortteamfirstpipe: user.team) as newslist">
+        <div *ngFor="let news of newslist">
+          <div>
+            <table>
+            <tr>
+              <h1>{{news.header}}</h1>
+            </tr>
+            <tr>{{news.writtenby}}</tr>
+            <tr>{{news.newsdate | todatepipe2}}</tr>
+            <tr>{{news.content}}</tr>
+          </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="selectfilter">
+        <mat-form-field appearance="fill">
+          <mat-label>Display options</mat-label>
+          <mat-select class="matselect" [(value)]="filterOption">
+            <mat-option value="all">All news</mat-option>
+            <mat-option value="teamonly">Only {{user.team}} news</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
     </div>
-  </div>
-</div>
+    <div *ngIf="filterOption == 'teamonly'">
 
+      <div *ngIf="(news | filterteamonlypipe: user.team) as newslist">
+        <div *ngFor="let news of newslist">
+          <div>
+            <table>
+            <tr>
+              <h1>{{news.header}}</h1>
+            </tr>
+            <tr>{{news.writtenby}}</tr>
+            <tr>{{news.newsdate | todatepipe2}}</tr>
+            <tr>{{news.content}}</tr>
+          </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="selectfilter">
+        <mat-form-field appearance="fill">
+          <mat-label>Display options</mat-label>
+          <mat-select class="matselect" [(value)]="filterOption">
+            <mat-option value="all">All news</mat-option>
+            <mat-option value="teamonly">Only {{user.team}} news</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 
 
