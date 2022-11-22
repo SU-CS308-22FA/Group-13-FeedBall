@@ -12,6 +12,7 @@ import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
 import { Pipe } from '@angular/core';
 import { PipeTransform } from '@angular/core';
+import { isIntersectionTypeNode } from 'typescript';
 
 
 
@@ -27,11 +28,12 @@ export class NewsPageComponent{
   constructor(public authService: AuthService,
     private router: Router,
     private afs: AngularFirestore,
-    private auth: AngularFireAuth) {
-      this.newsRef = this.afs.collection('News');
-      this.news$ = this.newsRef.valueChanges();
-      console.log(this.newsRef);
-    }
+    private auth: AngularFireAuth)
+  {
+    this.newsRef = this.afs.collection('News');
+    this.news$ = this.newsRef.valueChanges();
+    console.log(this.newsRef);
+  }
 }
 
 //pipelines
@@ -51,3 +53,76 @@ export class ToDatePipe2 implements PipeTransform {
 
   }
 }
+
+@Pipe({ name: 'sortteamfirstpipe' })
+export class SortTeamFirstPipe implements PipeTransform {
+  transform(listUnsorted: News[], teamUser: string) {
+
+    var listSorted: News[] = [];
+    var addedIndexes: number[] = [];
+    var size = Object.keys(listUnsorted).length;
+    for(let i=0; i<size; i++){
+
+      var stringList = listUnsorted[i].tags;
+      var boolOf = false;
+
+      var sizeList = Object.keys(stringList).length;
+      for(let j=0; j<sizeList; j++){
+        if(stringList[j] == teamUser){
+          boolOf = true;
+        }
+      }
+      listSorted.push(listUnsorted[i]);
+      addedIndexes.push(i);
+    }
+
+    var sizeIndexList = Object.keys(addedIndexes).length;
+    for(let k=0; k<size; k++){
+
+      var isAdded = false;
+
+      for(let l=0; l<sizeIndexList; l++){
+        if(k == addedIndexes[l]){
+          isAdded = true;
+        }
+      }
+
+      if(!isAdded){
+        listSorted.push(listUnsorted[k]);
+      }
+    }
+    var size2 = Object.keys(listSorted).length;
+    console.log(size2 == size); //should be equal
+
+    return listSorted;
+  }
+}
+
+
+@Pipe({ name: 'filterteamonlypipe' })
+export class FilterTeamOnlyPipe implements PipeTransform {
+  transform(listUnfiltered: News[], teamUser: string) {
+
+    var filteredList: News[] = [];
+    var size = Object.keys(listUnfiltered).length;
+
+    for(let i=0; i<size; i++){
+
+      var strList = listUnfiltered[i].tags;
+      var sizeStrList = Object.keys(strList).length;
+      var isTeamInTag = false;
+      for(let j=0; j<sizeStrList; j++){
+        if(teamUser == strList[j]){
+          isTeamInTag = true;
+        }
+      }
+
+      if(isTeamInTag){
+        filteredList.push(listUnfiltered[i]);
+      }
+    }
+
+    return filteredList;
+  }
+}
+

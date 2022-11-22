@@ -48,6 +48,8 @@ import { ReturnSizePipe } from './leaderboard/leaderboard.component';
 import { ReturnXthPipe } from './leaderboard/leaderboard.component';
 import { ReturnIfXthPipe } from './leaderboard/leaderboard.component';
 import { ReturnRankUserPipe } from './leaderboard/leaderboard.component';
+import { SortTeamFirstPipe } from './news_page/news_page.component';
+import { FilterTeamOnlyPipe } from './news_page/news_page.component';
 
 
 @NgModule({
