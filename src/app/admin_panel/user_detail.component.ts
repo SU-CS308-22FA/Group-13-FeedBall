@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 
-
 @Component({
   selector: 'app-user-panel',
   templateUrl: './user_detail.component.html',
@@ -34,8 +33,10 @@ export class UserDetailComponent{
 
 
 
-  deleteUser(){
+  deleteUser(pass: any, mail: any){
+    this.authService.adminUserDelete(pass, mail, this.authService.userData.password, this.authService.userData.email);
   }
+
   navigateMainPage(){
     this.router.navigate(['feed']);
   }

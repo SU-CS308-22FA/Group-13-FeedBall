@@ -20,7 +20,7 @@
         <tr>{{users.point}}</tr>
         <tr align="center">
 
-            <td align="center"><button (click)="deleteUser()" mat-raised-button class="deletebutton">Delete user account</button></td>
+            <td align="center"><button (click)="deleteUser(users.password, users.email)" mat-raised-button class="deletebutton">Delete user account</button></td>
 
         </tr>
       </div>

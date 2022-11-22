@@ -32,7 +32,7 @@
           </div>
         </button>
 
-        <div *ngIf="true">
+        <div *ngIf="user.isAdmin != true">
           <button mat-menu-item (click)="navigateProfilePage()">
             <div class="rightalign">
               <span><mat-icon class="blackclass">account_circle</mat-icon></span>
@@ -43,7 +43,7 @@
             </div>
           </button>
         </div>
-        <div *ngIf="false"><!--user.type, admin-->
+        <div *ngIf="user.isAdmin == true"><!--user.type, admin-->
           <button mat-menu-item (click)="navigateAdminPanel()">
             <div class="rightalign">
               <span><mat-icon class="blackclass">admin_panel_settings</mat-icon></span>

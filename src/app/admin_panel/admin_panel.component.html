@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+<div class="divs">
+  <p class="mainfeedtext">Admin Panel</p>
+</div>
+<div *ngIf="(user$ | async) as user">
+  <table  align="center">
+    <tr align="center">
+      <td>
+        <mat-card class="matcardclass">
+          <table>
+
+            <tr>
+              <td><span class="material-symbols-outlined">sports_soccer</span></td>
+              <td><p class="namesurname">&nbsp;&nbsp;{{user.name}}&nbsp;{{user.surname}}</p></td>
+            </tr>
+            <tr>
+              <td><mat-icon>alternate_email</mat-icon></td>
+              <td><p class="namesurname">&nbsp;&nbsp;{{user.email}}</p></td>
+            </tr>
+
+
+          </table>
+        </mat-card>
+      </td>
+    </tr>
+  </table>
+  <table align="center">
+    <td>
+      <tr>
+        <td align="center"><button (click)="UserInfo()" mat-raised-button class="deletebutton">See User Profile</button></td>
+        <td align="center"><button (click)="DoSmth()" mat-raised-button class="deletebutton">Lose Yourself</button></td>
+      </tr>
+    </td>
+  </table>
+
+</div>
+
