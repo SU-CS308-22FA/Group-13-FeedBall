@@ -73,6 +73,15 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: bold;
   font-size: 20px;
+
+}
+
+.headers{
+  font-family: 'Quicksand', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: bold;
+  font-size: 25px;
+  color: aliceblue;
+
 }
 
 .deletebutton{
@@ -87,6 +96,11 @@
   min-width: 200px;
 }
 
+.matcardclass2{
+  min-width: 180px;
+  height: 100px;
+  background-color:rgb(209, 148, 83);
+}
 
 
 .material-symbols-outlined {

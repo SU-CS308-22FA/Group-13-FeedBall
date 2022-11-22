@@ -33,8 +33,8 @@ export class UserDetailComponent{
 
 
 
-  deleteUser(pass: any, mail: any){
-    this.authService.adminUserDelete(pass, mail, this.authService.userData.password, this.authService.userData.email);
+  deleteUser(){
+
   }
 
   navigateMainPage(){

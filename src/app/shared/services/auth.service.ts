@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 import { UserProfileComponent } from 'src/app/profile/user_profile.component';
 import { switchMap, of, Observable } from 'rxjs';
 import * as firebase from 'firebase/compat';
-import { getAuth, sendPasswordResetEmail, SignInMethod, signInWithEmailLink, signInWithRedirect } from "firebase/auth";
-import { NumberLiteralType } from 'typescript';
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { isNamedExportBindings, NumberLiteralType } from 'typescript';
 
 @Injectable({
   providedIn: 'root',
@@ -44,20 +44,16 @@ export class AuthService {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.SetUserData2(result.user);
+        //this.SetUserData2(result.user);
         this.afAuth.authState.subscribe((user) => {
+          //this.SetUserData2(result.user);
           if (user) {
-            if(this.userData.isAdmin == true){
-              this.router.navigate(['feed']);
-            } else{
-              if(user.emailVerified){
-                this.router.navigate(['feed']);
-              }else{
-                this.SignOut();
-                window.alert('You did not verify your mail adress, please check your inbox.');
-              }
+            if(user.emailVerified){
+              this.router.navigate(['news-page']);
+            }else{
+              this.SignOut();
+              window.alert('You did not verify your mail adress, please check your inbox.');
             }
-
           }
         });
       })
@@ -66,13 +62,13 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  SignUp(email: string, password: string, name: string, surname: string, gender: string, age: Date, point: number, team: string, pass: string) {
+  SignUp(email: string, password: string, name: string, surname: string, gender: string, age: Date, point: number, team: string) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
-        this.SetUserData(result.user, name, surname, gender, age, point, team, pass);
+        this.SetUserData(result.user, name, surname, gender, age, point, team);
         this.SendVerificationMail();
         this.SignOut();
 
@@ -118,7 +114,7 @@ export class AuthService {
       .then((result) => {
         this.router.navigate(['dashboard']);
         const dummyDate = new Date(2022,11,2);
-        this.SetUserData(result.user, "", "", "", dummyDate, 0, "","");
+        //this.SetUserData(result.user, "", "", "", dummyDate, 0, "");
       })
       .catch((error) => {
         window.alert(error);
@@ -127,7 +123,7 @@ export class AuthService {
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user: any, name: string, surname: string, gender: string, age: Date, point: number, team: string, pass: string) {
+  SetUserData(user: any, name: string, surname: string, gender: string, age: Date, point: number, team: string) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
@@ -143,8 +139,7 @@ export class AuthService {
       age: age,
       point: point,
       team: team,
-      isAdmin: false,
-      password: pass
+      isAdmin: false
     };
     return userRef.set(userData, {
       merge: true,
@@ -166,8 +161,7 @@ export class AuthService {
       age: user.age,
       point: user.point,
       team: user.team,
-      isAdmin: user.isAdmin,
-      password: user.password
+      isAdmin: user.isAdmin
     };
     return userRef.set(userData, {
       merge: true,
@@ -178,12 +172,6 @@ export class AuthService {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['']);
-    });
-  }
-
-  SignOut2() {
-    return this.afAuth.signOut().then(() => {
-      localStorage.removeItem('user');
     });
   }
 
@@ -211,22 +199,6 @@ export class AuthService {
         if (user) {
           console.log("in if");
           return this.afs.doc<any>(`users/${user.uid}`).update({fieldName: newValue});
-        } else {
-          console.log("in else");
-          return of(null);
-        }
-      })
-    );
-  }
-
-  delUser(){
-    console.log("in update user");
-    this.afAuth.authState.pipe(
-      switchMap(user => {
-        console.log("in switchmap");
-        if (user) {
-          console.log("in if");
-          return this.afs.doc<any>(`users/${user.uid}`).delete();
         } else {
           console.log("in else");
           return of(null);
@@ -268,6 +240,7 @@ export class AuthService {
   updateUserData2(fbUser: User, ageGiven: Date, nameGiven: string, surnameGiven: string, genderGiven: string, pointGiven: number, teamGiven: string) {
 
 
+
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${fbUser?.uid}`
     );
@@ -284,8 +257,7 @@ export class AuthService {
       age: ageGiven,
       point: pointGiven,
       team: teamGiven,
-      isAdmin: false,
-      password: fbUser.password
+      isAdmin: fbUser.isAdmin
     };
 
     return userRef.set(user, { merge: true });
@@ -306,15 +278,6 @@ export class AuthService {
     this.afs.collection("users").valueChanges().subscribe(val =>
       {this.collectionResult = val;});
       return this.collectionResult;
-  }
-
-  adminUserDelete(passDel: any, mailDel: any, passAdmin: any, mailAdmin: any){
-    this.SignOut2();
-    this.SignIn(mailDel, passDel);
-    this.userDelete();
-    this.delUser();
-    this.SignIn(mailAdmin, passAdmin);
-    this.router.navigate(["user-detail"]);
   }
 
 }
