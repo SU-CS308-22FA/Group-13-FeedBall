@@ -1,0 +1,19 @@
+
+<div *ngIf="(news$ | async) as newslist">
+  <div *ngFor="let news of newslist">
+    <div>
+      <table>
+      <tr>
+        <h1>{{news.header}}</h1>
+      </tr>
+      <tr>{{news.writtenby}}</tr>
+      <tr>{{news.newsdate | todatepipe2}}</tr>
+      <tr>{{news.content}}</tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+
+
