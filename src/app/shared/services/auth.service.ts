@@ -44,7 +44,7 @@ export class AuthService {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.SetUserData2(result.user);
+        //this.SetUserData2(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
             if(this.userData.isAdmin == true){
@@ -66,13 +66,13 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  SignUp(email: string, password: string, name: string, surname: string, gender: string, age: Date, point: number, team: string, pass: string) {
+  SignUp(email: string, password: string, name: string, surname: string, gender: string, age: Date, point: number, team: string) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
-        this.SetUserData(result.user, name, surname, gender, age, point, team, pass);
+        this.SetUserData(result.user, name, surname, gender, age, point, team);
         this.SendVerificationMail();
         this.SignOut();
 
@@ -118,7 +118,7 @@ export class AuthService {
       .then((result) => {
         this.router.navigate(['dashboard']);
         const dummyDate = new Date(2022,11,2);
-        this.SetUserData(result.user, "", "", "", dummyDate, 0, "","");
+        this.SetUserData(result.user, "", "", "", dummyDate, 0, "");
       })
       .catch((error) => {
         window.alert(error);
@@ -127,7 +127,7 @@ export class AuthService {
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user: any, name: string, surname: string, gender: string, age: Date, point: number, team: string, pass: string) {
+  SetUserData(user: any, name: string, surname: string, gender: string, age: Date, point: number, team: string) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
@@ -144,7 +144,7 @@ export class AuthService {
       point: point,
       team: team,
       isAdmin: false,
-      password: pass
+      //password: pass
     };
     return userRef.set(userData, {
       merge: true,
@@ -167,7 +167,7 @@ export class AuthService {
       point: user.point,
       team: user.team,
       isAdmin: user.isAdmin,
-      password: user.password
+      //password: user.password
     };
     return userRef.set(userData, {
       merge: true,
@@ -284,8 +284,8 @@ export class AuthService {
       age: ageGiven,
       point: pointGiven,
       team: teamGiven,
-      isAdmin: false,
-      password: fbUser.password
+      isAdmin: fbUser.isAdmin
+      //password: fbUser.password
     };
 
     return userRef.set(user, { merge: true });

@@ -12,7 +12,7 @@ import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
 import { Pipe } from '@angular/core';
 import { PipeTransform } from '@angular/core';
-import { isIntersectionTypeNode } from 'typescript';
+import { isIntersectionTypeNode, sortAndDeduplicateDiagnostics } from 'typescript';
 
 
 
@@ -35,7 +35,7 @@ export class NewsPageComponent{
     console.log(this.newsRef);
   }
 
-  public filterOption = "all";
+  public filterOption = "allteamfirst";
   user$ = this.authService.user$;
 
 
@@ -132,4 +132,17 @@ export class FilterTeamOnlyPipe implements PipeTransform {
     return filteredList;
   }
 }
+
+
+@Pipe({ name: 'sortdatedescendingpipe' })
+export class SortDateDescendingPipe implements PipeTransform {
+  transform(listUnfiltered: News[]) {
+
+    var sortedList: News[] = [];
+    sortedList = listUnfiltered.sort((a, b) => (a.newsdate < b.newsdate ? -1 : 1));
+    return sortedList;
+  }
+}
+
+
 

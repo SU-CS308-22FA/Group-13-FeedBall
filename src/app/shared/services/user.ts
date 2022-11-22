@@ -12,5 +12,5 @@ export interface User {
   team: string; //(from a team list)
   age: Date;
   isAdmin: boolean;
-  password: string;
+  //password: string;
 }

@@ -27,6 +27,7 @@ import { InMatchComponent } from './in-match/in-match.component';
 import { UserDetailComponent } from './admin_panel/user_detail.component';
 import { NewsPageComponent } from './news_page/news_page.component';
 import { ToDatePipe2 } from './news_page/news_page.component';
+import { SortDateDescendingPipe } from './news_page/news_page.component';
 
 
 import { MatRadioModule} from '@angular/material/radio';
@@ -74,7 +75,8 @@ import { FilterTeamOnlyPipe } from './news_page/news_page.component';
     NewsPageComponent,
     ToDatePipe2,
     SortTeamFirstPipe,
-    FilterTeamOnlyPipe
+    FilterTeamOnlyPipe,
+    SortDateDescendingPipe
 
   ],
   imports: [
