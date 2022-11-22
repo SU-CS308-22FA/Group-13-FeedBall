@@ -1,3 +1,11 @@
-.matselect {
+.right{
+  float: right;
+}
 
+.left{
+  float: left;
+}
+
+.space-panel{
+  flex: 1 1 auto;
 }
