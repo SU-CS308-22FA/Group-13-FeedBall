@@ -49,7 +49,7 @@ export class AuthService {
           //this.SetUserData2(result.user);
           if (user) {
             if(user.emailVerified){
-              this.router.navigate(['news-page']);
+              this.router.navigate(['feed']);
             }else{
               this.SignOut();
               window.alert('You did not verify your mail adress, please check your inbox.');

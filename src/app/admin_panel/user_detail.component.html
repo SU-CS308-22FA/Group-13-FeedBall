@@ -1,20 +1,16 @@
 <br>
 <table align="center">
 <tr align="center">
-<div style="border-radius: 50px;
-  border: 4px solid #12798bb2;
-  width: 500px;
+<div style="
+  border: 4px solid #b9dcc0;
+  width: 400px;
   height: 700px;
   overflow-x:auto">
-  <ul>
+
     <div align="center" *ngFor="let users of user$ | async">
-      <div style="border-radius: 50px;
-      border: 4px solid #12798bb2;
-      width: 300px;
-      height: auto;">
-        <tr>
-          <td >{{users.name}} {{users.surname}}</td>
-        </tr>
+      <mat-card align="center" class="matcardclass">
+      <table align="center">
+        <tr>{{users.name}} {{users.surname}}</tr>
         <tr>{{users.gender}}</tr>
         <tr>{{users.team}}</tr>
         <tr>{{users.point}}</tr>
@@ -23,10 +19,15 @@
             <td align="center"><button (click)="deleteUser()" mat-raised-button class="deletebutton">Delete user account</button></td>
 
         </tr>
+      </table>
+    </mat-card>
+    <br>
       </div>
       <br>
-    </div>
-  </ul>
-</div>
-</tr>
+
+
+ </div>
+ </tr>
 </table>
+
+
