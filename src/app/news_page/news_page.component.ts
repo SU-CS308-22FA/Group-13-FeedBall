@@ -139,7 +139,7 @@ export class SortDateDescendingPipe implements PipeTransform {
   transform(listUnfiltered: News[]) {
 
     var sortedList: News[] = [];
-    sortedList = listUnfiltered.sort((a, b) => (a.newsdate < b.newsdate ? -1 : 1));
+    sortedList = listUnfiltered.sort((a, b) => (a.newsdate > b.newsdate ? -1 : 1));
     return sortedList;
   }
 }

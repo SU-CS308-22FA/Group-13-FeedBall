@@ -1,3 +1,4 @@
+<table align="center">
 <div *ngIf="(user$ | async) as user">
 
   <div *ngIf="(news$ | async) as news">
@@ -8,16 +9,17 @@
         <div *ngFor="let news of newslist">
 
           <mat-accordion multi="true">
-            <mat-expansion-panel>
+            <mat-expansion-panel class="individualnews">
               <mat-expansion-panel-header>
                 <table width="100%">
                   <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>
                   <span class="space-panel"></span>
-                  <span class="right"><td><div class="statust">&nbsp;&nbsp;{{news.writtenby}}&nbsp;&nbsp;</div></td></span>
-                  <span class="right"><td><div class="statusi">&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
-                  <span class="right"><td><div class="statusf">&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
+                  <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
                 </table>
               </mat-expansion-panel-header>
+              <span class="left"><td><div>&nbsp;&nbsp; by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+              <br>
+              <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
             </mat-expansion-panel>
           </mat-accordion>
 
@@ -30,14 +32,20 @@
       <div *ngIf="((news | filterteamonlypipe: user.team) | sortdatedescendingpipe) as newslist">
         <div *ngFor="let news of newslist">
           <div>
-            <table>
-            <tr>
-              <h1>{{news.header}}</h1>
-            </tr>
-            <tr>{{news.writtenby}}</tr>
-            <tr>{{news.newsdate | todatepipe2}}</tr>
-            <tr>{{news.content}}</tr>
-          </table>
+            <mat-accordion multi="true">
+              <mat-expansion-panel class="individualnews">
+                <mat-expansion-panel-header>
+                  <table width="100%">
+                    <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>
+                    <span class="space-panel"></span>
+                    <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
+                  </table>
+                </mat-expansion-panel-header>
+                <span class="left"><td><div>&nbsp;&nbsp; by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+                <br>
+                <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
+              </mat-expansion-panel>
+            </mat-accordion>
           </div>
         </div>
       </div>
@@ -50,36 +58,37 @@
         <div *ngFor="let news of newslist">
           <div>
             <mat-accordion multi="true">
-              <mat-expansion-panel>
+              <mat-expansion-panel class="individualnews">
                 <mat-expansion-panel-header>
                   <table width="100%">
                     <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>
-            <span class="space-panel"></span>
-            <span class="right"><td><div class="statust">&nbsp;&nbsp;{{news.writtenby}}&nbsp;&nbsp;</div></td></span>
-            <span class="right"><td><div class="statusi">&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
-            <span class="right"><td><div class="statusf">&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
-              </table>
-            </mat-expansion-panel-header>
-            </mat-expansion-panel>
-          </mat-accordion>
+                    <span class="space-panel"></span>
+                    <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
+                  </table>
+                </mat-expansion-panel-header>
+                <span class="left"><td><div>&nbsp;&nbsp; by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+                <br>
+                <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
+              </mat-expansion-panel>
+            </mat-accordion>
           </div>
         </div>
       </div>
     </div>
 
   </div>
+  <table align="center">
   <div class="selectfilter">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance = "fill" class = "displaybutton">
       <mat-label>Display options</mat-label>
       <mat-select class="matselect" [(value)]="filterOption">
-        <mat-option value="allteamfirst">All news - {{user.team}} first</mat-option>
-        <mat-option value="teamonly">Only {{user.team}} related news</mat-option>
-        <mat-option value="alldatedesc">All news - newer first</mat-option>
+        <mat-option value="allteamfirst">All News ({{user.team}} First)</mat-option>
+        <mat-option value="teamonly">Only {{user.team}} News</mat-option>
+        <mat-option value="alldatedesc">All News (Newer First)</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
-
+</table>
 </div>
-
-
+</table>
 

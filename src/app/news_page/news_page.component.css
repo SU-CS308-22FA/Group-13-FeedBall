@@ -9,3 +9,17 @@
 .space-panel{
   flex: 1 1 auto;
 }
+
+
+.individualnews{
+  margin: 5%;
+  background-color:rgb(242, 255, 241);
+  border: 3px solid rgb(216, 255, 213);
+  border-radius: 10px;
+}
+
+.displaybutton{
+  width: 170px;
+  height: 40px;
+  border-radius: 25px;
+}
