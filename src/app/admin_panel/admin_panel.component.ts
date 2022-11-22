@@ -10,6 +10,8 @@ import { animationFrameScheduler, of, switchMap } from 'rxjs';
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
+import { News } from '../models/news.model';
+import { NgForm } from '@angular/forms';
 
 
 
@@ -52,6 +54,19 @@ export class AdminPanelComponent{
     this.router.navigate(["user-detail"]);
   }
 
+  submitForm(form: NgForm, name: any){
+    const today = new Date();
+    let tags: Array<string> = ['Konyaspor'];
+    this.afs.collection("News").add({header: form.value.headerInput, content: form.value.contentInput, newsdate: today, writtenby: name, tags: tags})
+    .then(() => {
+      alert("The new has been added to the news page.")
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+    form.resetForm();
+  }
 
   DoSmth(){
     //bir sey yapcaz

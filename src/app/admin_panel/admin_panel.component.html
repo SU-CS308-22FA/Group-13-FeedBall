@@ -48,15 +48,36 @@
           </table>
         </mat-card>
       </td>
+
       <td align="center">
         <mat-card class="matcardclass2">
-          <table align="center">
-            <tr>
-              <td><p class="headers">PUBLISH NEWS</p></td>
-            </tr>
-          </table>
+          <div class="divform" width="50%">
+            <mat-card>
+              <mat-card-title class="p2">Please enter the details of your news here.</mat-card-title>
+              <form (submit)="submitForm(newsForm, user.name)" #newsForm="ngForm">
+                <table align="center">
+                  <td align="center">
+                    <tr>
+                      <mat-form-field>
+                        <input type="text" matInput name="headerInput" ngModel placeholder="Header" required #localHeaderInput="ngModel">
+                      </mat-form-field>
+                    </tr>
+                    <br>
+                    <tr>
+                      <mat-form-field>
+                        <textarea matInput name="contentInput" ngModel placeholder="Body" required  #localContentInput="ngModel"></textarea>
+                      </mat-form-field>
+                    </tr>
+                    <br>
+                    <tr><button mat-raised-button class="loginbutton">Submit News</button></tr>
+                  </td>
+                </table>
+              </form>
+            </mat-card>
+          </div>
         </mat-card>
       </td>
+
     </tr>
   </table>
   </div>
