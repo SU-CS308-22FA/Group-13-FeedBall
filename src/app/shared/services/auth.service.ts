@@ -139,7 +139,8 @@ export class AuthService {
       age: age,
       point: point,
       team: team,
-      isAdmin: false
+      isAdmin: false,
+      //password: pass
     };
     return userRef.set(userData, {
       merge: true,
@@ -161,7 +162,8 @@ export class AuthService {
       age: user.age,
       point: user.point,
       team: user.team,
-      isAdmin: user.isAdmin
+      isAdmin: user.isAdmin,
+      //password: user.password
     };
     return userRef.set(userData, {
       merge: true,
@@ -258,6 +260,7 @@ export class AuthService {
       point: pointGiven,
       team: teamGiven,
       isAdmin: fbUser.isAdmin
+      //password: fbUser.password
     };
 
     return userRef.set(user, { merge: true });

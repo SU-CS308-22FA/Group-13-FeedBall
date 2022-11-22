@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NoopAnimationsModule} from '@angular/platform-browser/animations'
 import {MatSelectModule} from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,7 @@ import { InMatchComponent } from './in-match/in-match.component';
 import { UserDetailComponent } from './admin_panel/user_detail.component';
 import { NewsPageComponent } from './news_page/news_page.component';
 import { ToDatePipe2 } from './news_page/news_page.component';
+import { SortDateDescendingPipe } from './news_page/news_page.component';
 
 
 import { MatRadioModule} from '@angular/material/radio';
@@ -72,7 +74,11 @@ import { FilterTeamOnlyPipe } from './news_page/news_page.component';
     ReturnIfXthPipe,
     ReturnRankUserPipe,
     NewsPageComponent,
-    ToDatePipe2
+    ToDatePipe2,
+    SortTeamFirstPipe,
+    FilterTeamOnlyPipe,
+    SortDateDescendingPipe
+
   ],
   imports: [
     BrowserModule,
@@ -101,6 +107,8 @@ import { FilterTeamOnlyPipe } from './news_page/news_page.component';
     MatNativeDateModule,
     MatSelectModule,
     MatTooltipModule,
+    MatExpansionModule,
+
 
   ],
   providers: [AuthService, LeaderboardComponent],

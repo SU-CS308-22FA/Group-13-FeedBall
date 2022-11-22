@@ -11,5 +11,6 @@ export interface User {
   //type: string; (defaultUser, TFFAdmin, teamAdmin)
   team: string; //(from a team list)
   age: Date;
-  isAdmin: boolean
+  isAdmin: boolean;
+  //password: string;
 }

@@ -12,7 +12,7 @@ import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
 import { Pipe } from '@angular/core';
 import { PipeTransform } from '@angular/core';
-import { isIntersectionTypeNode } from 'typescript';
+import { isIntersectionTypeNode, sortAndDeduplicateDiagnostics } from 'typescript';
 
 
 
@@ -34,6 +34,12 @@ export class NewsPageComponent{
     this.news$ = this.newsRef.valueChanges();
     console.log(this.newsRef);
   }
+
+  public filterOption = "allteamfirst";
+  user$ = this.authService.user$;
+
+
+
 }
 
 //pipelines
@@ -65,15 +71,19 @@ export class SortTeamFirstPipe implements PipeTransform {
 
       var stringList = listUnsorted[i].tags;
       var boolOf = false;
-
       var sizeList = Object.keys(stringList).length;
       for(let j=0; j<sizeList; j++){
+
         if(stringList[j] == teamUser){
           boolOf = true;
+
         }
       }
-      listSorted.push(listUnsorted[i]);
-      addedIndexes.push(i);
+      if(boolOf){
+        listSorted.push(listUnsorted[i]);
+        addedIndexes.push(i);
+      }
+      boolOf = false;
     }
 
     var sizeIndexList = Object.keys(addedIndexes).length;
@@ -91,9 +101,6 @@ export class SortTeamFirstPipe implements PipeTransform {
         listSorted.push(listUnsorted[k]);
       }
     }
-    var size2 = Object.keys(listSorted).length;
-    console.log(size2 == size); //should be equal
-
     return listSorted;
   }
 }
@@ -125,4 +132,17 @@ export class FilterTeamOnlyPipe implements PipeTransform {
     return filteredList;
   }
 }
+
+
+@Pipe({ name: 'sortdatedescendingpipe' })
+export class SortDateDescendingPipe implements PipeTransform {
+  transform(listUnfiltered: News[]) {
+
+    var sortedList: News[] = [];
+    sortedList = listUnfiltered.sort((a, b) => (a.newsdate < b.newsdate ? -1 : 1));
+    return sortedList;
+  }
+}
+
+
 
