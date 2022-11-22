@@ -60,7 +60,12 @@ import { ReturnRankUserPipe } from './leaderboard/leaderboard.component';
     AdminPanelComponent,
     LeaderboardComponent,
     InMatchComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    ReturnSizePipe,
+    ReturnXthPipe,
+    ReturnIfXthPipe,
+    ReturnRankUserPipe,
+    TransformPipe
   ],
   imports: [
     BrowserModule,
