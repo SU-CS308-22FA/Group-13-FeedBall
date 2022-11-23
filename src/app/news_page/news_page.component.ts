@@ -53,7 +53,9 @@ export class ToDatePipe2 implements PipeTransform {
 
     var returnString = "";
 
-    returnString = dateOf.getDate().toString() + "." + dateOf.getMonth().toString() + "." +  dateOf.getFullYear().toString();
+    var nummonth = Number(dateOf.getMonth())+1
+
+    returnString = dateOf.getDate().toString() + "." + String(nummonth) + "." +  dateOf.getFullYear().toString();
 
     return returnString;
 
