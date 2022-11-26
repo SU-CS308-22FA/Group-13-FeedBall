@@ -69,38 +69,40 @@ export class SortTeamFirstPipe implements PipeTransform {
     var listSorted: News[] = [];
     var addedIndexes: number[] = [];
     var size = Object.keys(listUnsorted).length;
-    for(let i=0; i<size; i++){
+    if(listUnsorted != null && size > 0){
+      for(let i=0; i<size; i++){
 
-      var stringList = listUnsorted[i].tags;
-      var boolOf = false;
-      var sizeList = Object.keys(stringList).length;
-      for(let j=0; j<sizeList; j++){
+        var stringList = listUnsorted[i].tags;
+        var boolOf = false;
+        var sizeList = Object.keys(stringList).length;
+        for(let j=0; j<sizeList; j++){
 
-        if(stringList[j] == teamUser){
-          boolOf = true;
+          if(stringList[j] == teamUser){
+            boolOf = true;
 
+          }
         }
-      }
-      if(boolOf){
-        listSorted.push(listUnsorted[i]);
-        addedIndexes.push(i);
-      }
-      boolOf = false;
-    }
-
-    var sizeIndexList = Object.keys(addedIndexes).length;
-    for(let k=0; k<size; k++){
-
-      var isAdded = false;
-
-      for(let l=0; l<sizeIndexList; l++){
-        if(k == addedIndexes[l]){
-          isAdded = true;
+        if(boolOf){
+          listSorted.push(listUnsorted[i]);
+          addedIndexes.push(i);
         }
+        boolOf = false;
       }
 
-      if(!isAdded){
-        listSorted.push(listUnsorted[k]);
+      var sizeIndexList = Object.keys(addedIndexes).length;
+      for(let k=0; k<size; k++){
+
+        var isAdded = false;
+
+        for(let l=0; l<sizeIndexList; l++){
+          if(k == addedIndexes[l]){
+            isAdded = true;
+          }
+        }
+
+        if(!isAdded){
+          listSorted.push(listUnsorted[k]);
+        }
       }
     }
     return listSorted;
@@ -115,19 +117,21 @@ export class FilterTeamOnlyPipe implements PipeTransform {
     var filteredList: News[] = [];
     var size = Object.keys(listUnfiltered).length;
 
-    for(let i=0; i<size; i++){
+    if(listUnfiltered != null && size > 0){
+      for(let i=0; i<size; i++){
 
-      var strList = listUnfiltered[i].tags;
-      var sizeStrList = Object.keys(strList).length;
-      var isTeamInTag = false;
-      for(let j=0; j<sizeStrList; j++){
-        if(teamUser == strList[j]){
-          isTeamInTag = true;
+        var strList = listUnfiltered[i].tags;
+        var sizeStrList = Object.keys(strList).length;
+        var isTeamInTag = false;
+        for(let j=0; j<sizeStrList; j++){
+          if(teamUser == strList[j]){
+            isTeamInTag = true;
+          }
         }
-      }
 
-      if(isTeamInTag){
-        filteredList.push(listUnfiltered[i]);
+        if(isTeamInTag){
+          filteredList.push(listUnfiltered[i]);
+        }
       }
     }
 
@@ -141,7 +145,11 @@ export class SortDateDescendingPipe implements PipeTransform {
   transform(listUnfiltered: News[]) {
 
     var sortedList: News[] = [];
-    sortedList = listUnfiltered.sort((a, b) => (a.newsdate > b.newsdate ? -1 : 1));
+
+    if(listUnfiltered != null){
+      sortedList = listUnfiltered.sort((a, b) => (a.newsdate > b.newsdate ? -1 : 1));
+    }
+
     return sortedList;
   }
 }
