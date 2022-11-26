@@ -14,7 +14,7 @@ import { NewsPageComponent } from './news_page/news_page.component';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LoginComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'feed', component: FeedMainComponent },
   { path: 'profile', component: UserProfileComponent},
