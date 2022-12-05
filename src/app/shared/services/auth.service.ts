@@ -12,6 +12,7 @@ import { switchMap, of, Observable } from 'rxjs';
 import * as firebase from 'firebase/compat';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { isNamedExportBindings, NumberLiteralType } from 'typescript';
+import { News } from 'src/app/models/news.model';
 
 @Injectable({
   providedIn: 'root',
@@ -275,12 +276,64 @@ export class AuthService {
     this.updateUserData2(userCurrent, userCurrent.age, userCurrent.name, userCurrent.surname, userCurrent.gender, sumpoint, userCurrent.team);
   }
 
+  decrementPoints(userCurrent: User, pointToIncrement: number){ //points to incrememt will be given by the activity type that the user did, in related ts file
+
+    var sumpoint = userCurrent.point - pointToIncrement;
+    this.updateUserData2(userCurrent, userCurrent.age, userCurrent.name, userCurrent.surname, userCurrent.gender, sumpoint, userCurrent.team);
+  }
+
 
   getAllUsers()/*:Observable<User>*/{
 
     this.afs.collection("users").valueChanges().subscribe(val =>
       {this.collectionResult = val;});
       return this.collectionResult;
+  }
+
+
+  SetNewId(news: News, idGiven: string){
+
+    const newRef: AngularFirestoreDocument<any> = this.afs.doc(`News/${idGiven}`);
+
+    console.log(newRef);
+
+    const theNew: News = {
+      nid: idGiven,
+      header: news.header,
+      content: news.content,
+      writtenby: news.writtenby,
+      newsdate: news.newsdate,
+      tags: news.tags,
+      likes: news.likes,
+      dislikes: news.dislikes,
+      likedUsers: news.likedUsers,
+      dislikedUsers: news.dislikedUsers
+    };
+    console.log("added id to news: ", theNew.nid);
+
+    return newRef.set(theNew, { merge: true });
+  }
+
+
+  LikeDislikePost(news: News, likeGiven: number, dislikeGiven: number, likeListGiven: Array<String>, dislikeListGiven: Array<String>, idGiven: string){ //like, take like back, dislike, take dislike back
+
+    const newRef: AngularFirestoreDocument<any> = this.afs.doc(`News/${idGiven}`);
+    console.log(newRef);
+
+    const theNewNew: News = {
+      nid: news.nid,
+      header: news.header,
+      content: news.content,
+      writtenby: news.writtenby,
+      newsdate: news.newsdate,
+      tags: news.tags,
+      likes: likeGiven,
+      dislikes: dislikeGiven,
+      likedUsers: likeListGiven,
+      dislikedUsers: dislikeListGiven
+    };
+
+    return newRef.set(theNewNew, { merge: true });
   }
 
 }

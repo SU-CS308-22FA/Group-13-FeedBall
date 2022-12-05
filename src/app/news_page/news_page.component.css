@@ -23,3 +23,45 @@
   height: 40px;
   border-radius: 25px;
 }
+
+
+.buttonsrowclass{
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+.material-symbols-outlined{
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 10
+}
+
+
+.liked{
+  color: rgb(62, 91, 62);
+
+}
+
+.notliked{
+  color: black;
+}
+
+
+.disliked{
+  color: rgb(133, 37, 37);
+}
+
+
+.notdisliked{
+  color: black;
+}
+
+.aligncenter{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}

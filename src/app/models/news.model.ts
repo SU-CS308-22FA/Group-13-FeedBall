@@ -6,4 +6,9 @@ export interface News {
   writtenby: string;
   newsdate: Date;
   tags: Array<String>;
+  likes: number;
+  dislikes: number;
+  nid: string;
+  likedUsers: Array<String>;
+  dislikedUsers: Array<String>
 }

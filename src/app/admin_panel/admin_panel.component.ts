@@ -55,16 +55,64 @@ export class AdminPanelComponent{
   }
 
   submitForm(form: NgForm, name: any){
+    var id = ""
+    var created = true;
     const today = new Date();
+
+    var headerFrom = form.value.headerInput;
+    var contentFrom = form.value.contentInput;
+
+
     let tags: Array<string> = ['Konyaspor'];
-    this.afs.collection("News").add({header: form.value.headerInput, content: form.value.contentInput, newsdate: today, writtenby: name, tags: tags})
-    .then(() => {
-      alert("The new has been added to the news page.")
+    let emptyList: Array<string> = [];
+    const sendNews: News = {
+      header: headerFrom,
+      content: contentFrom,
+      newsdate: today,
+      writtenby: name,
+      tags: tags,
+      likes: 0,
+      dislikes: 0,
+      nid: "",
+      likedUsers: emptyList,
+      dislikedUsers: emptyList
+    }
+
+
+    this.afs.collection("News").add(sendNews)
+    .then((result) => {
+      id = result.id;
+      console.log("result id: ", result.id, "\n");
+      //alert("The new has been added to the news page.")
+
+
+      this.authService.SetNewId(sendNews, id).then((result2) => {
+        console.log("id setted succesfully\n");
+      }).catch((error2) => {
+        const errorCode2 = error2.code;
+        const errorMessage2 = error2.message;
+
+        console.log(errorCode2, errorMessage2);
+      });
+
+
+
+
     })
     .catch((error) => {
+      created = false;
       const errorCode = error.code;
       const errorMessage = error.message;
+
+
+      console.log(errorCode, errorMessage);
     });
+
+
+
+
+
+
     form.resetForm();
   }
 

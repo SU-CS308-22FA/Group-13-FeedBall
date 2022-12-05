@@ -1,6 +1,9 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <table align="center">
 <div *ngIf="(user$ | async) as user">
-
+  <div class="aligncenter"><p>current user point:{{user.point}}</p></div>
+  <div class="aligncenter"><p>current user uid:{{user.uid}}</p></div>
   <div *ngIf="(news$ | async) as news">
 
     <div *ngIf="filterOption == 'allteamfirst'">
@@ -20,6 +23,12 @@
               <span class="left"><td><div>&nbsp;&nbsp; by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
               <br>
               <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
+
+
+              <mat-action-row class="buttonsrowclass">
+
+              </mat-action-row>
+
             </mat-expansion-panel>
           </mat-accordion>
 
@@ -44,6 +53,12 @@
                 <span class="left"><td><div>&nbsp;&nbsp; by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
                 <br>
                 <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
+
+
+                <mat-action-row class="buttonsrowclass">
+
+                </mat-action-row>
+
               </mat-expansion-panel>
             </mat-accordion>
           </div>
@@ -66,9 +81,48 @@
                     <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
                   </table>
                 </mat-expansion-panel-header>
-                <span class="left"><td><div>&nbsp;&nbsp; by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
-                <br>
-                <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
+                <span class="left"><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></span>
+                <br><br>
+                <span class="left"><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></span>
+
+
+                <mat-action-row class="buttonsrowclass">
+                  <span *ngIf="!(news | isuserinlikedlistpipe : user)">
+                    <table align="center">
+                      <td align="center">
+                        <tr><button mat-icon-button (click)="like(user, news)" class="notliked"><mat-icon>thumb_up</mat-icon></button></tr>
+                        <tr>{{news.likes}}</tr>
+                      </td>
+                    </table>
+                  </span>
+
+                  <span *ngIf="(news | isuserinlikedlistpipe : user)">
+                    <table align="center">
+                      <td align="center">
+                        <tr><button mat-icon-button (click)="unlike(user, news)" class="liked"><mat-icon>thumb_up</mat-icon></button></tr>
+                        <tr>{{news.likes}}</tr>
+                      </td>
+                    </table>
+                  </span>
+                  &nbsp;&nbsp;
+                  <span *ngIf="!(news | isuserindislikedlistpipe : user)">
+                    <table align="center">
+                      <td align="center">
+                        <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked"><mat-icon>thumb_down</mat-icon></button></tr>
+                        <tr>{{news.dislikes}}</tr>
+                      </td>
+                    </table>
+                  </span>
+                  <span *ngIf="(news | isuserindislikedlistpipe : user)">
+                    <table align="center">
+                      <td align="center">
+                        <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked"><mat-icon>thumb_down</mat-icon></button></tr>
+                        <tr>{{news.dislikes}}</tr>
+                      </td>
+                    </table>
+                  </span>
+                </mat-action-row>
+
               </mat-expansion-panel>
             </mat-accordion>
           </div>

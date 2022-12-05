@@ -52,6 +52,8 @@ import { ReturnIfXthPipe } from './leaderboard/leaderboard.component';
 import { ReturnRankUserPipe } from './leaderboard/leaderboard.component';
 import { SortTeamFirstPipe } from './news_page/news_page.component';
 import { FilterTeamOnlyPipe } from './news_page/news_page.component';
+import { IsUserInDisikedListPipe } from './news_page/news_page.component';
+import { IsUserInLikedListPipe } from './news_page/news_page.component';
 
 
 @NgModule({
@@ -77,7 +79,9 @@ import { FilterTeamOnlyPipe } from './news_page/news_page.component';
     ToDatePipe2,
     SortTeamFirstPipe,
     FilterTeamOnlyPipe,
-    SortDateDescendingPipe
+    SortDateDescendingPipe,
+    IsUserInDisikedListPipe,
+    IsUserInLikedListPipe
 
   ],
   imports: [
