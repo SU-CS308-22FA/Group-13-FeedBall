@@ -19,13 +19,45 @@
                   <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
                 </table>
               </mat-expansion-panel-header>
-              <span class="left"><td><div>&nbsp;&nbsp; by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
-              <br>
+              <span class="left"><td><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+              <br><br>
               <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
 
-
               <mat-action-row class="buttonsrowclass">
+                <span *ngIf="!(news | isuserinlikedlistpipe : user)">
+                  <table align="center">
+                    <td align="center">
+                      <tr><button mat-icon-button (click)="like(user, news)" class="notliked"><mat-icon>thumb_up</mat-icon></button></tr>
+                      <tr class="pgrey">{{news.likes}}</tr>
+                    </td>
+                  </table>
+                </span>
 
+                <span *ngIf="(news | isuserinlikedlistpipe : user)">
+                  <table align="center">
+                    <td align="center">
+                      <tr><button mat-icon-button (click)="unlike(user, news)" class="liked"><mat-icon>thumb_up</mat-icon></button></tr>
+                      <tr class="pgreen">{{news.likes}}</tr>
+                    </td>
+                  </table>
+                </span>
+                &nbsp;&nbsp;
+                <span *ngIf="!(news | isuserindislikedlistpipe : user)">
+                  <table align="center">
+                    <td align="center">
+                      <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked"><mat-icon>thumb_down</mat-icon></button></tr>
+                      <tr class="pgrey">{{news.dislikes}}</tr>
+                    </td>
+                  </table>
+                </span>
+                <span *ngIf="(news | isuserindislikedlistpipe : user)">
+                  <table align="center">
+                    <td align="center">
+                      <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked"><mat-icon>thumb_down</mat-icon></button></tr>
+                      <tr class="pred">{{news.dislikes}}</tr>
+                    </td>
+                  </table>
+                </span>
               </mat-action-row>
 
             </mat-expansion-panel>
@@ -49,13 +81,46 @@
                     <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
                   </table>
                 </mat-expansion-panel-header>
-                <span class="left"><td><div>&nbsp;&nbsp; by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
-                <br>
+                <span class="left"><td><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+                <br><br>
                 <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
 
 
                 <mat-action-row class="buttonsrowclass">
+                  <span *ngIf="!(news | isuserinlikedlistpipe : user)">
+                    <table align="center">
+                      <td align="center">
+                        <tr><button mat-icon-button (click)="like(user, news)" class="notliked"><mat-icon>thumb_up</mat-icon></button></tr>
+                        <tr class="pgrey">{{news.likes}}</tr>
+                      </td>
+                    </table>
+                  </span>
 
+                  <span *ngIf="(news | isuserinlikedlistpipe : user)">
+                    <table align="center">
+                      <td align="center">
+                        <tr><button mat-icon-button (click)="unlike(user, news)" class="liked"><mat-icon>thumb_up</mat-icon></button></tr>
+                        <tr class="pgreen">{{news.likes}}</tr>
+                      </td>
+                    </table>
+                  </span>
+                  &nbsp;&nbsp;
+                  <span *ngIf="!(news | isuserindislikedlistpipe : user)">
+                    <table align="center">
+                      <td align="center">
+                        <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked"><mat-icon>thumb_down</mat-icon></button></tr>
+                        <tr class="pgrey">{{news.dislikes}}</tr>
+                      </td>
+                    </table>
+                  </span>
+                  <span *ngIf="(news | isuserindislikedlistpipe : user)">
+                    <table align="center">
+                      <td align="center">
+                        <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked"><mat-icon>thumb_down</mat-icon></button></tr>
+                        <tr class="pred">{{news.dislikes}}</tr>
+                      </td>
+                    </table>
+                  </span>
                 </mat-action-row>
 
               </mat-expansion-panel>
@@ -90,7 +155,7 @@
                     <table align="center">
                       <td align="center">
                         <tr><button mat-icon-button (click)="like(user, news)" class="notliked"><mat-icon>thumb_up</mat-icon></button></tr>
-                        <tr>{{news.likes}}</tr>
+                        <tr class="pgrey">{{news.likes}}</tr>
                       </td>
                     </table>
                   </span>
@@ -99,7 +164,7 @@
                     <table align="center">
                       <td align="center">
                         <tr><button mat-icon-button (click)="unlike(user, news)" class="liked"><mat-icon>thumb_up</mat-icon></button></tr>
-                        <tr>{{news.likes}}</tr>
+                        <tr class="pgreen">{{news.likes}}</tr>
                       </td>
                     </table>
                   </span>
@@ -108,7 +173,7 @@
                     <table align="center">
                       <td align="center">
                         <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked"><mat-icon>thumb_down</mat-icon></button></tr>
-                        <tr>{{news.dislikes}}</tr>
+                        <tr class="pgrey">{{news.dislikes}}</tr>
                       </td>
                     </table>
                   </span>
@@ -116,7 +181,7 @@
                     <table align="center">
                       <td align="center">
                         <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked"><mat-icon>thumb_down</mat-icon></button></tr>
-                        <tr>{{news.dislikes}}</tr>
+                        <tr class="pred">{{news.dislikes}}</tr>
                       </td>
                     </table>
                   </span>
@@ -135,9 +200,9 @@
     <mat-form-field appearance = "fill" class = "displaybutton">
       <mat-label>Display options</mat-label>
       <mat-select class="matselect" [(value)]="filterOption">
+        <mat-option value="alldatedesc">All News (Newer First)</mat-option>
         <mat-option value="allteamfirst">All News ({{user.team}} First)</mat-option>
         <mat-option value="teamonly">Only {{user.team}} News</mat-option>
-        <mat-option value="alldatedesc">All News (Newer First)</mat-option>
       </mat-select>
     </mat-form-field>
   </div>

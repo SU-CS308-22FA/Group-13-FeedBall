@@ -66,3 +66,20 @@
   justify-content: center;
 }
 
+.pgrey{
+  color: grey;
+}
+
+.pblack{
+  color: black;
+}
+
+.pred{
+  color: rgb(133, 37, 37);
+
+}
+
+.pgreen{
+  color: rgb(62, 91, 62);
+
+}
