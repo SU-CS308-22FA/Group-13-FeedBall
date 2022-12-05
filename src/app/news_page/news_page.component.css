@@ -47,7 +47,7 @@
 }
 
 .notliked{
-  color: black;
+  color: grey;
 }
 
 
@@ -57,7 +57,7 @@
 
 
 .notdisliked{
-  color: black;
+  color: grey;
 }
 
 .aligncenter{
@@ -65,3 +65,4 @@
   align-items: flex-end;
   justify-content: center;
 }
+

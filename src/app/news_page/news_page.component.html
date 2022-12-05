@@ -2,8 +2,7 @@
 
 <table align="center">
 <div *ngIf="(user$ | async) as user">
-  <div class="aligncenter"><p>current user point:{{user.point}}</p></div>
-  <div class="aligncenter"><p>current user uid:{{user.uid}}</p></div>
+
   <div *ngIf="(news$ | async) as news">
 
     <div *ngIf="filterOption == 'allteamfirst'">
