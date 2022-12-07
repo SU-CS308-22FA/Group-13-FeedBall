@@ -12,6 +12,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NoopAnimationsModule} from '@angular/platform-browser/animations'
 import {MatSelectModule} from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -81,7 +82,8 @@ import { IsUserInLikedListPipe } from './news_page/news_page.component';
     FilterTeamOnlyPipe,
     SortDateDescendingPipe,
     IsUserInDisikedListPipe,
-    IsUserInLikedListPipe
+    IsUserInLikedListPipe,
+
 
   ],
   imports: [
@@ -112,7 +114,7 @@ import { IsUserInLikedListPipe } from './news_page/news_page.component';
     MatSelectModule,
     MatTooltipModule,
     MatExpansionModule,
-
+    ScrollingModule
 
   ],
   providers: [AuthService, LeaderboardComponent],

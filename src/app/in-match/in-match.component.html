@@ -1,1 +1,100 @@
+<br>
 <div class="titlediv" ><p class="mainfeedtext">InMatch Page</p></div>
+<br>
+
+<div class="titlediv">
+  <div class="matchscorediv">
+    <h3>real time match score</h3>
+  </div><!--match score real time div-->
+</div>
+
+<div class="titlediv">
+  <table align="center">
+    <tr align="center">
+      <td>
+        <div class="borderclass">
+          <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
+            <div *ngFor="let elem of dummyelems">
+              <div *ngIf="elem % 2 == 1" class="rightdiv"><!--class="{{className}}"-->
+                <div class="box3 sbright">
+                  <!--<p>message{{elem}}</p>-->
+                  <table align="right">
+                    <tr>
+                      <table align="center">
+                        <tr align="center">
+                          <td>
+                            <p>message{{elem}}</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </tr>
+
+                    <tr>
+                      <table align="right">
+                        <tr align="right">
+                          <td>
+                            <p>11:11</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div *ngIf="elem % 2 == 0" class="leftdiv">
+                <div class="box3-2 sbleft">
+                  <!--<p>message{{elem}}</p>-->
+                  <table align="left">
+
+                    <tr>
+                      <table align="center">
+                        <tr align="center">
+                          <td>
+                            <p>message{{elem}}</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </tr>
+
+                    <tr>
+                      <table align="left">
+                        <tr align="left">
+                          <td>
+                            <p>11:11</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div><!--chat screen div-->
+          </cdk-virtual-scroll-viewport>
+          <div>
+            <!--get input as message-->
+            <table>
+              <tr>
+                <td>
+                  <p>____________________________________________________________</p>
+                </td>
+                <td>
+                  <div><mat-icon class="iconclass">send</mat-icon></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+       </div>
+      </td>
+      <td>
+        <div>
+          <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport-2">
+            <div>
+              <h3>in match poll screen</h3>
+            </div><!--in match poll screen div-->
+          </cdk-virtual-scroll-viewport>
+          <div class="dummydiv"></div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

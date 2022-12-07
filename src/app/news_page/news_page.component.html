@@ -154,7 +154,7 @@
                   <span *ngIf="!(news | isuserinlikedlistpipe : user)">
                     <table align="center">
                       <td align="center">
-                        <tr><button mat-icon-button (click)="like(user, news)" class="notliked"><mat-icon>thumb_up</mat-icon></button></tr>
+                        <tr><button mat-icon-button (click)="like(user, news)" class="notliked" matTooltip="like" matTooltipPosition="above"><mat-icon>thumb_up</mat-icon></button></tr>
                         <tr class="pgrey">{{news.likes}}</tr>
                       </td>
                     </table>
@@ -163,7 +163,7 @@
                   <span *ngIf="(news | isuserinlikedlistpipe : user)">
                     <table align="center">
                       <td align="center">
-                        <tr><button mat-icon-button (click)="unlike(user, news)" class="liked"><mat-icon>thumb_up</mat-icon></button></tr>
+                        <tr><button mat-icon-button (click)="unlike(user, news)" class="liked" matTooltip="take back like" matTooltipPosition="above"><mat-icon>thumb_up</mat-icon></button></tr>
                         <tr class="pgreen">{{news.likes}}</tr>
                       </td>
                     </table>
@@ -172,7 +172,7 @@
                   <span *ngIf="!(news | isuserindislikedlistpipe : user)">
                     <table align="center">
                       <td align="center">
-                        <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked"><mat-icon>thumb_down</mat-icon></button></tr>
+                        <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked" matTooltip="dislike" matTooltipPosition="above"><mat-icon>thumb_down</mat-icon></button></tr>
                         <tr class="pgrey">{{news.dislikes}}</tr>
                       </td>
                     </table>
@@ -180,7 +180,7 @@
                   <span *ngIf="(news | isuserindislikedlistpipe : user)">
                     <table align="center">
                       <td align="center">
-                        <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked"><mat-icon>thumb_down</mat-icon></button></tr>
+                        <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked" matTooltip="take back dislike" matTooltipPosition="above"><mat-icon>thumb_down</mat-icon></button></tr>
                         <tr class="pred">{{news.dislikes}}</tr>
                       </td>
                     </table>

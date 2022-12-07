@@ -9,3 +9,139 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.example-viewport {
+  height: 480px;
+  width: 740px;
+  border: 1px transparent;
+}
+.example-viewport-2 {
+  height: 480px;
+  width: 740px;
+  border: 1px solid rgb(196, 196, 196);
+}
+
+.example-item {
+  height: 50px;
+}
+
+.dummydiv{
+  height: 40px;
+}
+
+.matchscorediv{
+  border: 1px solid grey;
+  height: 80px;
+  width: 1486px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.borderclass{
+  border: 1px solid rgb(196, 196, 196);
+}
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.box3 {
+  width: 300px;
+  margin-bottom: 20px auto;
+  border-radius: 15px;
+  background: #00bfb6;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  position: relative;
+  right: 14px;
+
+
+}
+
+.box3-2 {
+  width: 300px;
+  margin-bottom: 20px auto;
+  border-radius: 15px;
+  background: #889695;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  left: 14px;
+  position: relative;
+
+}
+
+
+/* speech bubble 13 */
+
+.sbright:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid #00bfb6;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #00bfb6;
+  border-bottom: 15px solid transparent;
+  right: -14px;
+  top: 0px;
+}
+
+
+/* speech bubble 14 */
+
+.sbleft:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #889695;
+  border-top: 15px solid #889695;
+  border-bottom: 15px solid transparent;
+  left: -14px;
+  top: 0px;
+}
+
+
+
+.rightdiv{
+  display: flex;
+  align-items: right;
+  justify-content: right;
+
+}
+
+
+.leftdiv{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+
+
+.red{
+  background-color: red;
+}
+
+
+
+.dummyclass{
+  border: 1px solid black;
+}
+
+.iconclass{
+  background-color: aquamarine;
+  color: black;
+  border-radius: 20px;
+  border: 5px solid aquamarine;
+}
