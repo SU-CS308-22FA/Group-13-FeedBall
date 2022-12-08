@@ -55,6 +55,7 @@ import { SortTeamFirstPipe } from './news_page/news_page.component';
 import { FilterTeamOnlyPipe } from './news_page/news_page.component';
 import { IsUserInDisikedListPipe } from './news_page/news_page.component';
 import { IsUserInLikedListPipe } from './news_page/news_page.component';
+import { HoursMinutesPipe } from './in-match/in-match.component';
 
 
 @NgModule({
@@ -83,8 +84,7 @@ import { IsUserInLikedListPipe } from './news_page/news_page.component';
     SortDateDescendingPipe,
     IsUserInDisikedListPipe,
     IsUserInLikedListPipe,
-
-
+    HoursMinutesPipe
   ],
   imports: [
     BrowserModule,

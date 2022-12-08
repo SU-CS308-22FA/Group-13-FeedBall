@@ -13,7 +13,7 @@ import * as firebase from 'firebase/compat';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { isNamedExportBindings, NumberLiteralType } from 'typescript';
 import { News } from 'src/app/models/news.model';
-import { Messages } from 'src/app/models/messages.model';
+import { messages } from 'src/app/models/messages.model';
 
 @Injectable({
   providedIn: 'root',
@@ -315,21 +315,21 @@ export class AuthService {
     return newRef.set(theNew, { merge: true });
   }
 
-  SetMessageId(message: Messages, idGiven: string){
+  SetMessageId(message: messages, idGiven: string){
     const newRef: AngularFirestoreDocument<any> = this.afs.doc(`messages/${idGiven}`);
 
     console.log(newRef);
 
-    const theMessage: Messages = {
+    const theMessage: messages = {
       mid: idGiven,
       content: message.content,
       matchCode: message.matchCode,
       messageOwnerID: message.messageOwnerID,
+      messageOwnerName: message.messageOwnerName,
+      messageOwnerSurname: message.messageOwnerSurname,
       sentWhen: message.sentWhen,
       likeNumber: message.likeNumber,
-      dislikeNumber: message.dislikeNumber,
-      likeList: message.likeList,
-      dislikeList: message.dislikeList
+      likeList: message.likeList
     }
 
     console.log("added id to message", theMessage.mid);

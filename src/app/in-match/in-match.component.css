@@ -19,20 +19,22 @@
 .example-viewport-2 {
   height: 480px;
   width: 740px;
-  border: 1px solid rgb(196, 196, 196);
+  border: 1px transparent;
+
 }
+
 
 .example-item {
   height: 50px;
 }
 
 .dummydiv{
-  height: 40px;
+  height: 68px;
 }
 
 .matchscorediv{
   border: 1px solid grey;
-  height: 80px;
+  height: 60px;
   width: 1486px;
 
   display: flex;
@@ -54,29 +56,26 @@
   width: 300px;
   margin-bottom: 20px auto;
   border-radius: 15px;
-  background: #00bfb6;
+  background: #b9dcc0;
   color: black;
   padding: 20px;
   text-align: center;
-  font-weight: 900;
   position: relative;
   right: 14px;
-
-
+  height: fit-content;
 }
 
 .box3-2 {
   width: 300px;
   margin-bottom: 20px auto;
   border-radius: 15px;
-  background: #889695;
+  background: #e5f3e8;
   color: black;
   padding: 20px;
   text-align: center;
-  font-weight: 900;
   left: 14px;
   position: relative;
-
+  height: fit-content;
 }
 
 
@@ -87,9 +86,9 @@
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 15px solid #00bfb6;
+  border-left: 15px solid #b9dcc0;
   border-right: 15px solid transparent;
-  border-top: 15px solid #00bfb6;
+  border-top: 15px solid #b9dcc0;
   border-bottom: 15px solid transparent;
   right: -14px;
   top: 0px;
@@ -104,8 +103,8 @@
   height: 0px;
   position: absolute;
   border-left: 15px solid transparent;
-  border-right: 15px solid #889695;
-  border-top: 15px solid #889695;
+  border-right: 15px solid #e5f3e8;
+  border-top: 15px solid #e5f3e8;
   border-bottom: 15px solid transparent;
   left: -14px;
   top: 0px;
@@ -127,21 +126,18 @@
   justify-content: left;
 }
 
-
-
-.red{
-  background-color: red;
-}
-
-
-
-.dummyclass{
-  border: 1px solid black;
-}
-
 .iconclass{
-  background-color: aquamarine;
+  background-color: #83e094;
   color: black;
   border-radius: 20px;
-  border: 5px solid aquamarine;
+  border: 5px solid #83e094;
+}
+
+.colorclass{
+  background-color: #83e094;
+}
+
+
+.nameclass{
+  font-size: smaller;
 }
