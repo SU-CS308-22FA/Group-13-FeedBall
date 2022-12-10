@@ -1,5 +1,6 @@
 # FeedBall
-## URL for the server: `group-13-feed-ball.vercel.app`
+## URL for the server: 
+<a href="https://group-13-feed-ball.vercel.app/">group-13-feed-ball.vercel.app</a>
 ## Description of the project(What is it doing?)
 ## User Documentation:
     * How to install the software
