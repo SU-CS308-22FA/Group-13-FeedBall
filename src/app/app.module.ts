@@ -30,6 +30,7 @@ import { UserDetailComponent } from './admin_panel/user_detail.component';
 import { NewsPageComponent } from './news_page/news_page.component';
 import { ToDatePipe2 } from './news_page/news_page.component';
 import { SortDateDescendingPipe } from './news_page/news_page.component';
+import { PluralPipe } from './in-match/in-match.component';
 
 
 import { MatRadioModule} from '@angular/material/radio';
@@ -57,6 +58,8 @@ import { IsUserInDisikedListPipe } from './news_page/news_page.component';
 import { IsUserInLikedListPipe } from './news_page/news_page.component';
 import { HoursMinutesPipe } from './in-match/in-match.component';
 import { SortByDatePipe } from './in-match/in-match.component';
+import { IsUserInLikedListOfMessagePipe } from './in-match/in-match.component';
+import { ReturnUserPipe } from './in-match/in-match.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +88,10 @@ import { SortByDatePipe } from './in-match/in-match.component';
     IsUserInDisikedListPipe,
     IsUserInLikedListPipe,
     HoursMinutesPipe,
-    SortByDatePipe
+    SortByDatePipe,
+    PluralPipe,
+    IsUserInLikedListOfMessagePipe,
+    ReturnUserPipe
 
   ],
   imports: [

@@ -14,6 +14,7 @@ import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { isNamedExportBindings, NumberLiteralType } from 'typescript';
 import { News } from 'src/app/models/news.model';
 import { messages } from 'src/app/models/messages.model';
+import { ReturnRankUserPipe } from 'src/app/leaderboard/leaderboard.component';
 
 @Injectable({
   providedIn: 'root',
@@ -357,6 +358,28 @@ export class AuthService {
     };
 
     return newRef.set(theNewNew, { merge: true });
+  }
+
+
+  LikeUnlikeMessage(message: messages, likeGiven: number, likeListGiven: Array<String>, midGiven: string){
+
+    const newRef: AngularFirestoreDocument<any> = this.afs.doc(`messages/${midGiven}`);
+
+
+    const theNewMesg: messages = {
+      mid: midGiven,
+      content: message.content,
+      matchCode: message.matchCode,
+      messageOwnerID: message.messageOwnerID,
+      messageOwnerName: message.messageOwnerName,
+      messageOwnerSurname: message.messageOwnerSurname,
+      sentWhen: message.sentWhen,
+      likeNumber: likeGiven,
+      likeList: likeListGiven
+    }
+
+
+    return newRef.set(theNewMesg, { merge: true });
   }
 
 }

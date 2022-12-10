@@ -58,7 +58,10 @@
   border-radius: 15px;
   background: #b9dcc0;
   color: black;
-  padding: 20px;
+  padding-right: 18px;
+  padding-left: 4px;
+  padding-top: 14px;
+  padding-bottom: 4px;
   text-align: center;
   position: relative;
   right: 14px;
@@ -71,7 +74,10 @@
   border-radius: 15px;
   background: #e5f3e8;
   color: black;
-  padding: 20px;
+  padding-left: 18px;
+  padding-right: 4px;
+  padding-top: 14px;
+  padding-bottom: 4px;
   text-align: center;
   left: 14px;
   position: relative;
@@ -119,6 +125,26 @@
 
 }
 
+.rightdiv2{
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  margin-top: -4px;
+  margin-bottom: 10px;
+  margin-right: 12px;
+
+}
+
+.leftdiv2{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-top: -4px;
+  margin-bottom: 10px;
+  margin-left: 12px;
+
+}
+
 
 .leftdiv{
   display: flex;
@@ -133,11 +159,43 @@
   border: 5px solid #83e094;
 }
 
+.iconclass2{
+  color: grey;
+  transform: scale(0.85);
+}
+
+.iconclass3{
+  color: rgb(62, 91, 62);
+  transform: scale(0.85);
+}
+
 .colorclass{
   background-color: #83e094;
 }
 
+.spacer{
+  flex: 1 1 auto;
+}
 
 .nameclass{
   font-size: smaller;
+}
+
+.timeclass{
+  font-size:x-small;
+}
+
+.countclass{
+  font-size:xx-small;
+}
+
+.countclass2{
+  font-size:xx-small;
+  color: rgb(62, 91, 62);
+}
+
+.spacebetweendiv{
+  display: flex;
+  align-items:stretch;
+  justify-content: stretch;
 }
