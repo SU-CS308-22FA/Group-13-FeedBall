@@ -15,48 +15,50 @@
         <td>
           <div class="borderclass">
             <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
-              <div *ngFor="let mesg of (messages$ | async)">
-                <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
-                  <div class="box3 sbright">
-                    <table align="right">
-                      <td align="right">
-                        <tr>
-                          <p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p>
-                        </tr>
-                        <tr><br></tr>
-                        <tr>
-                          <p>{{mesg.content}}</p>
-                        </tr>
-                        <tr>
-                          <p>{{mesg.sentWhen | hoursminutespipe}}</p>
-                        </tr>
-                      </td>
-                    </table>
+              <div *ngIf="(messages$ | async) as messagesList">
+                <div *ngFor="let mesg of (messagesList | sortbydatepipe)">
+                  <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
+                    <div class="box3 sbright">
+                      <table align="right">
+                        <td align="right">
+                          <tr>
+                            <p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p>
+                          </tr>
+                          <tr><br></tr>
+                          <tr>
+                            <p>{{mesg.content}}</p>
+                          </tr>
+                          <tr>
+                            <p>{{mesg.sentWhen | hoursminutespipe}}</p>
+                          </tr>
+                        </td>
+                      </table>
+                    </div>
                   </div>
-                </div>
-                <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">
-                  <div class="box3-2 sbleft">
-                    <table align="left">
-                      <td align="left">
-                        <tr>
-                          <p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p>
-                        </tr>
-                        <tr><br></tr>
-                        <tr>
-                          <p>{{mesg.content}}</p>
-                        </tr>
-                        <tr>
-                          <p>{{mesg.sentWhen | hoursminutespipe}}</p>
-                        </tr>
-                      </td>
-                    </table>
+                  <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">
+                    <div class="box3-2 sbleft">
+                      <table align="left">
+                        <td align="left">
+                          <tr>
+                            <p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p>
+                          </tr>
+                          <tr><br></tr>
+                          <tr>
+                            <p>{{mesg.content}}</p>
+                          </tr>
+                          <tr>
+                            <p>{{mesg.sentWhen | hoursminutespipe}}</p>
+                          </tr>
+                        </td>
+                      </table>
+                    </div>
                   </div>
+                  <br>
                 </div>
               </div>
             </cdk-virtual-scroll-viewport>
             <div>
-              <!--get input as message-->
-              <form class="example-form" (submit)="onSubmitForm(messageForm)" #messageForm="ngForm">
+              <form class="example-form" (submit)="onSubmitForm(messageForm, user)" #messageForm="ngForm">
                 <table align="center">
                   <tr align="center">
                     <td>
@@ -64,7 +66,7 @@
                         <input type="text" matInput placeholder="type something here..." name="content" ngModel #localContent="ngModel">
                       </mat-form-field>
                     </td>
-                    <td><button mat-mini-fab class="colorclass"><mat-icon>send</mat-icon></button></td>
+                    <td>&nbsp;&nbsp;<button mat-mini-fab class="colorclass"><mat-icon>send</mat-icon></button></td>
                   </tr>
                 </table>
               </form>

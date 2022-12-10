@@ -46,14 +46,17 @@ export class InMatchComponent{
 
   dummyelems: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
-  onSubmitForm(form: NgForm){
+  onSubmitForm(form: NgForm, user: User){
 
     console.log(form.value.content);
-
-
-
-    //this.createMessageAndPushToDatabase();
-
+    if(form.valid){
+      var message = form.value.content;
+      const now = new Date();
+      this.createMessageAndPushToDatabase(message, now, user, this.dummyMatch);
+    }
+    else{
+      return;
+    }
 
     form.resetForm();
   }
@@ -141,5 +144,21 @@ transform(timestamp: any) {
 
 
   return returnStr;
+  }
+}
+
+
+@Pipe({ name: 'sortbydatepipe'})
+export class SortByDatePipe implements PipeTransform {
+  transform(listNotSorted: messages[]) {
+
+    var sortedList: messages[] = [];
+
+    if(listNotSorted != null){
+      sortedList = listNotSorted.sort((a, b) => (a.sentWhen < b.sentWhen ? -1 : 1));
+    }
+
+    return sortedList;
+
   }
 }
