@@ -60,6 +60,7 @@ import { HoursMinutesPipe } from './in-match/in-match.component';
 import { SortByDatePipe } from './in-match/in-match.component';
 import { IsUserInLikedListOfMessagePipe } from './in-match/in-match.component';
 import { ReturnUserPipe } from './in-match/in-match.component';
+import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { ReturnUserPipe } from './in-match/in-match.component';
     SortByDatePipe,
     PluralPipe,
     IsUserInLikedListOfMessagePipe,
-    ReturnUserPipe
+    ReturnUserPipe,
+    DisplayMessagesOnlyFromCurrentMatchPipe
 
   ],
   imports: [

@@ -126,11 +126,6 @@
 }
 
 .rightdiv2{
-  display: flex;
-  align-items: right;
-  justify-content: right;
-  margin-top: -4px;
-  margin-bottom: 10px;
   margin-right: 12px;
 
 }
@@ -139,8 +134,7 @@
   display: flex;
   align-items: left;
   justify-content: left;
-  margin-top: -4px;
-  margin-bottom: 10px;
+
   margin-left: 12px;
 
 }
@@ -150,6 +144,15 @@
   display: flex;
   align-items: left;
   justify-content: left;
+}
+
+.leftdivnew{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  float:left;
+
+  left: 0px;
 }
 
 .iconclass{
@@ -186,11 +189,11 @@
 }
 
 .countclass{
-  font-size:xx-small;
+  font-size:x-small;
 }
 
 .countclass2{
-  font-size:xx-small;
+  font-size:x-small;
   color: rgb(62, 91, 62);
 }
 
@@ -198,4 +201,36 @@
   display: flex;
   align-items:stretch;
   justify-content: stretch;
+}
+
+
+.textalign1{
+  text-align: right;
+  text-align-last: right;
+}
+
+.textalign2{
+  text-align: left;
+  text-align-last: left;
+}
+
+
+
+.outerdiv{
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  background-color: transparent;
+}
+
+
+.outerdiv2{
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  background-color: transparent;
 }

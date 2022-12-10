@@ -40,6 +40,9 @@ export class InMatchComponent{
     this.messagesRef = this.afs.collection('messages');
     this.messages$ = this.messagesRef.valueChanges();
 
+
+    //get matches list, apply async on frontend, then a pipeline to match a match time to current time, when found, dummyMathch will be assigned accordingly maybe with a function.
+
     this.usersRef = this.afs.collection('users');
     this.users$ = this.usersRef.valueChanges();
   }
@@ -47,7 +50,7 @@ export class InMatchComponent{
 
   user$ = this.authService.user$;
 
-  dummyMatch = "GS:FB/07.12.22/21.30:23.00";
+  currentMatch = "GS:FB/07.12.22/21.30:23.00";
   className = "rightdiv";
 
   dummyelems: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
@@ -58,7 +61,7 @@ export class InMatchComponent{
     if(form.valid){
       var message = form.value.content;
       const now = new Date();
-      this.createMessageAndPushToDatabase(message, now, user, this.dummyMatch);
+      this.createMessageAndPushToDatabase(message, now, user, this.currentMatch);
     }
     else{
       return;
@@ -320,3 +323,22 @@ transform(uidUser: string, userList: Array<User>) {
 
   }
 }
+
+@Pipe({ name: 'displaymessagesonlyformcurrentmatchipe' })
+export class DisplayMessagesOnlyFromCurrentMatchPipe implements PipeTransform {
+transform(mesgList: messages[], currentMatchString: string) {
+
+  var returnList: messages[] = [];
+  var size = Object.keys(mesgList).length;
+
+  for(let i=0; i<size; i++){
+    if(mesgList[i].matchCode == currentMatchString){
+      returnList.push(mesgList[i]);
+    }
+  }
+
+  return returnList;
+  }
+}
+
+

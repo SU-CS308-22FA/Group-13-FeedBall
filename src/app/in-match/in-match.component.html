@@ -17,26 +17,36 @@
             <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
               <div *ngIf="(messages$ | async) as messagesList">
                 <div *ngIf="(users$ | async) as usersList">
-                  <div *ngFor="let mesg of (messagesList | sortbydatepipe)">
+                  <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatch) | sortbydatepipe)">
                     <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
                       <div class="box3 sbright">
                         <div class="rightdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
                         <div class="rightdiv"><p class="timeclass"><br></p></div>
-                        <div class="rightdiv"><p>{{mesg.content}}</p></div>
-                        <div class="rightdiv"><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div>
-                        <div class="leftdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div>
+                        <div class="rightdiv"><p class="textalign1">{{mesg.content}}</p></div>
+                        <div><br></div>
+                        <div class="outerdiv2">
+                          <span><div class="leftdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                          <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                        </div>
+
+
                       </div>
                     </div>
                     <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">
                       <div class="box3-2 sbleft">
                         <div class="leftdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
                         <div class="leftdiv"><p class="timeclass"><br></p></div>
-                        <div class="leftdiv"><p>{{mesg.content}}</p></div>
-                        <div class="leftdiv"><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div>
+                        <div class="leftdiv"><p class="textalign2">{{mesg.content}}</p></div>
                         <div class="rightdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="likeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass2">thumb_up</mat-icon></button></div>
                         <div class="rightdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="unlikeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass3">thumb_up</mat-icon></button></div>
-                        <div class="rightdiv2" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div>
-                        <div class="rightdiv2" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)"><p class="countclass2">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div>
+                        <div class="outerdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)">
+                          <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                          <span><div class="rightdiv2"><p class="countclass2">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                        </div>
+                        <div class="outerdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)">
+                          <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                          <span><div class="rightdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                        </div>
                       </div>
                     </div>
                     <br>
