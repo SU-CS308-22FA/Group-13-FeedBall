@@ -58,7 +58,10 @@
   border-radius: 15px;
   background: #b9dcc0;
   color: black;
-  padding: 20px;
+  padding-right: 18px;
+  padding-left: 4px;
+  padding-top: 14px;
+  padding-bottom: 4px;
   text-align: center;
   position: relative;
   right: 14px;
@@ -71,7 +74,10 @@
   border-radius: 15px;
   background: #e5f3e8;
   color: black;
-  padding: 20px;
+  padding-left: 18px;
+  padding-right: 4px;
+  padding-top: 14px;
+  padding-bottom: 4px;
   text-align: center;
   left: 14px;
   position: relative;
@@ -119,11 +125,34 @@
 
 }
 
+.rightdiv2{
+  margin-right: 12px;
+
+}
+
+.leftdiv2{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+
+  margin-left: 12px;
+
+}
+
 
 .leftdiv{
   display: flex;
   align-items: left;
   justify-content: left;
+}
+
+.leftdivnew{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  float:left;
+
+  left: 0px;
 }
 
 .iconclass{
@@ -133,11 +162,75 @@
   border: 5px solid #83e094;
 }
 
+.iconclass2{
+  color: grey;
+  transform: scale(0.85);
+}
+
+.iconclass3{
+  color: rgb(62, 91, 62);
+  transform: scale(0.85);
+}
+
 .colorclass{
   background-color: #83e094;
 }
 
+.spacer{
+  flex: 1 1 auto;
+}
 
 .nameclass{
   font-size: smaller;
+}
+
+.timeclass{
+  font-size:x-small;
+}
+
+.countclass{
+  font-size:x-small;
+}
+
+.countclass2{
+  font-size:x-small;
+  color: rgb(62, 91, 62);
+}
+
+.spacebetweendiv{
+  display: flex;
+  align-items:stretch;
+  justify-content: stretch;
+}
+
+
+.textalign1{
+  text-align: right;
+  text-align-last: right;
+}
+
+.textalign2{
+  text-align: left;
+  text-align-last: left;
+}
+
+
+
+.outerdiv{
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  background-color: transparent;
+}
+
+
+.outerdiv2{
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  background-color: transparent;
 }
