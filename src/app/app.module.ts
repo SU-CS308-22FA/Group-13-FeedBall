@@ -21,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { FeedMainComponent } from './main_page/feed_main.component';
 import { UserProfileComponent } from './profile/user_profile.component';
+import { PollsPageComponent } from './polls_page/polls_page.component';
 import { SignupComponent } from './signup/signup.component';
 import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
@@ -84,7 +85,8 @@ import { HoursMinutesPipe } from './in-match/in-match.component';
     SortDateDescendingPipe,
     IsUserInDisikedListPipe,
     IsUserInLikedListPipe,
-    HoursMinutesPipe
+    HoursMinutesPipe,
+    PollsPageComponent
   ],
   imports: [
     BrowserModule,

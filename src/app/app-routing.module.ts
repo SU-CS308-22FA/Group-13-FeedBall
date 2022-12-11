@@ -11,6 +11,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { InMatchComponent } from './in-match/in-match.component';
 import { UserDetailComponent } from './admin_panel/user_detail.component';
 import { NewsPageComponent } from './news_page/news_page.component';
+import { PollsPageComponent } from './polls_page/polls_page.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'leaderboard', component: LeaderboardComponent},
   { path: 'in-match', component: InMatchComponent},
   { path: 'user-detail', component: UserDetailComponent},
-  { path: 'news-page', component: NewsPageComponent}
+  { path: 'news-page', component: NewsPageComponent},
+  { path: 'polls-page', component: PollsPageComponent}
 ];
 
 @NgModule({
