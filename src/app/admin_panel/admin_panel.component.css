@@ -98,7 +98,13 @@
 
 .matcardclass2{
   min-width: 400px;
-  height: 400px;
+  height: 520px;
+  background-color:rgb(209, 148, 83);
+}
+
+.matcardclass3{
+  min-width: 400px;
+  height: 520px;
   background-color:rgb(209, 148, 83);
 }
 

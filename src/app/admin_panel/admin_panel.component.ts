@@ -12,6 +12,7 @@ import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
 import { News } from '../models/news.model';
 import { NgForm } from '@angular/forms';
+import { Polls } from '../models/polls.model';
 
 
 

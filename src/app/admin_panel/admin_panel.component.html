@@ -39,13 +39,44 @@
   <div class="divs">
   <table>
     <tr>
+     
       <td align="center">
-        <mat-card (click)="DoSmth()" class="matcardclass2">
-          <table align="center">
-            <tr>
-              <td><p class="headers">CREATE POLLS</p></td>
-            </tr>
-          </table>
+        <mat-card class="matcardclass3">
+          <div class="divform" width="50%">
+            <mat-card>
+              <mat-card-title class="p2">Please enter the details of your polls here.</mat-card-title>
+              <form (submit)="submitForm(pollsForm, user.name)" #pollsForm="ngForm">
+                <table align="center">
+                  <td align="center">
+                    <tr>
+                      <mat-form-field>
+                        <input type="text" matInput name="questionInput" ngModel placeholder="Question" required #localQuestionInput="ngModel">
+                      </mat-form-field>
+                    </tr>
+                    <br>
+                    <tr>
+                      <mat-form-field>
+                        <textarea matInput name="opt1Input" ngModel placeholder="Option1" required  #localOpt1Input="ngModel"></textarea>
+                      </mat-form-field>
+                    </tr>
+                    <tr>
+                      <mat-form-field>
+                        <textarea matInput name="opt2Input" ngModel placeholder="Option2" required  #localOpt2Input="ngModel"></textarea>
+                      </mat-form-field>
+                    </tr>
+                    <tr>
+                      <mat-form-field>
+                        <textarea matInput name="opt3Input" ngModel placeholder="Option3" required  #localOption3Input="ngModel"></textarea>
+                      </mat-form-field>
+                    </tr>
+                    <br>
+                    <tr><button mat-raised-button class="deactivatebutton">Deactivate previous poll</button></tr>
+                    <tr><button mat-raised-button class="assignbutton">Post the poll</button></tr>
+                  </td>
+                </table>
+              </form>
+            </mat-card>
+          </div>
         </mat-card>
       </td>
 
