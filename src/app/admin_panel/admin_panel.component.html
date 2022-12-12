@@ -45,7 +45,7 @@
           <div class="divform" width="50%">
             <mat-card>
               <mat-card-title class="p2">Please enter the details of your polls here.</mat-card-title>
-              <form (submit)="submitForm(pollsForm, user.name)" #pollsForm="ngForm">
+              <form (submit)="submitPForm(pollsForm, user.name)" #pollsForm="ngForm">
                 <table align="center">
                   <td align="center">
                     <tr>
@@ -70,7 +70,8 @@
                       </mat-form-field>
                     </tr>
                     <br>
-                    <tr><button mat-raised-button class="deactivatebutton">Deactivate previous poll</button></tr>
+                    <tr><button (click)="postedPollInactive()" mat-raised-button class="deactivatebutton">Deactivate previous poll</button></tr>
+                    <br>
                     <tr><button mat-raised-button class="assignbutton">Post the poll</button></tr>
                   </td>
                 </table>

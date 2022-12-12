@@ -130,6 +130,77 @@ export class AdminPanelComponent{
     this.router.navigate(['feed']);
   }
 
+  submitPForm(form: NgForm, name: any){
+    var id = ""
+    var created = true;
+    const today = new Date();
+
+    var questionFrom = form.value.questionInput;
+    var option1From = form.value.opt1Input;
+    var option2From = form.value.opt2Input;
+    var option3From = form.value.opt3Input;
+    
+    let emptyList: Array<string> = [];
+    const sendPolls: Polls = {
+      question: questionFrom,
+      option1: option1From,
+      option2: option2From,
+      option3: option3From,
+      countOpt1: 0,
+      countOpt2: 0,
+      countOpt3: 0,
+      writtenby: name,
+      newsdate: today,
+      pid: "",
+      UsersPickOpt1: emptyList,
+      UsersPickOpt2: emptyList,
+      UsersPickOpt3: emptyList
+    }
+
+    this.afs.collection("Polls").add(sendPolls)
+    .then((result) => {
+      id = result.id;
+      console.log("result id: ", result.id, "\n");
+      
+
+
+      this.authService.SetNewPId(sendPolls, id).then((result2) => {      
+        console.log("id setted succesfully\n");
+        alert("The poll has been added to the polls page.");
+      }).catch((error2) => {
+        const errorCode2 = error2.code;
+        const errorMessage2 = error2.message;
+
+        console.log(errorCode2, errorMessage2);
+      });
+
+
+
+
+    })
+    .catch((error) => {
+      created = false;
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+
+      console.log(errorCode, errorMessage);
+    });
+
+
+
+
+
+
+    form.resetForm();
+  }
+
+  postedPollInactive(){             // Got to finish this one. Additionally should give error when no poll is posted but the deactivate button is still pressed.
+    
+  }
+
+  
+
 
 
 
