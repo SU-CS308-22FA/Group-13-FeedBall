@@ -16,6 +16,7 @@ import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
 import { messages } from '../models/messages.model';
 import { UserDetailComponent } from '../admin_panel/user_detail.component';
+import { MatPseudoCheckboxModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-in-match',
@@ -340,5 +341,17 @@ transform(mesgList: messages[], currentMatchString: string) {
   return returnList;
   }
 }
+
+@Pipe({ name: 'returncurrentmatchipe' })
+export class ReturnCurrentMatchPipe implements PipeTransform {
+transform() {
+
+  var matchCode = ""
+    //search by date among matches list, return the match code
+
+  return matchCode;
+  }
+}
+
 
 

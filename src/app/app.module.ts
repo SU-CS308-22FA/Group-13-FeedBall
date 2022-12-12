@@ -61,6 +61,7 @@ import { SortByDatePipe } from './in-match/in-match.component';
 import { IsUserInLikedListOfMessagePipe } from './in-match/in-match.component';
 import { ReturnUserPipe } from './in-match/in-match.component';
 import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
+import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.com
     PluralPipe,
     IsUserInLikedListOfMessagePipe,
     ReturnUserPipe,
-    DisplayMessagesOnlyFromCurrentMatchPipe
+    DisplayMessagesOnlyFromCurrentMatchPipe,
+    ReturnCurrentMatchPipe
 
   ],
   imports: [
