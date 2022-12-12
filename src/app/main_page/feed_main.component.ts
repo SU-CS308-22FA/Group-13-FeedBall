@@ -23,4 +23,8 @@ export class FeedMainComponent{
     this.authService.SignOut();
   }
 
+  navigatePollsPage(){
+    this.router.navigate(['polls-page']);
+  }
+
 }

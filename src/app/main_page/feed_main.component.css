@@ -53,5 +53,7 @@
   margin-right:5%;
   margin-top:50px;
   height:350px;
+  background-image: url("FeedB2.png");
+  box-sizing: cover;
 }
 
