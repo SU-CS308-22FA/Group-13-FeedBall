@@ -65,6 +65,9 @@ import { IsUserInLikedListOfMessagePipe } from './in-match/in-match.component';
 import { ReturnUserPipe } from './in-match/in-match.component';
 import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
 import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
+import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
+import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
+
 import { ChartsComponent } from './charts/charts.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 
@@ -104,9 +107,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     IsUserInLikedListOfMessagePipe,
     ReturnUserPipe,
     DisplayMessagesOnlyFromCurrentMatchPipe,
-    ReturnCurrentMatchPipe,
-    ChartsComponent,
-
+    ReturnCurrentMatchPipe
 
   ],
   imports: [

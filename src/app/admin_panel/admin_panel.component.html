@@ -10,7 +10,6 @@
       <td>
         <mat-card class="matcardclass">
           <table>
-
             <tr>
               <td><span class="material-symbols-outlined">sports_soccer</span></td>
               <td><p class="namesurname">&nbsp;&nbsp;{{user.name}}&nbsp;{{user.surname}}</p></td>
@@ -19,8 +18,6 @@
               <td><mat-icon>alternate_email</mat-icon></td>
               <td><p class="namesurname">&nbsp;&nbsp;{{user.email}}</p></td>
             </tr>
-
-
           </table>
         </mat-card>
 
@@ -45,7 +42,7 @@
           <div class="divform" width="50%">
             <mat-card>
               <mat-card-title class="p2">Please enter the details of your polls here.</mat-card-title>
-              <form (submit)="submitForm(pollsForm, user.name)" #pollsForm="ngForm">
+              <form (submit)="submitPForm(pollsForm, user.name)" #pollsForm="ngForm">
                 <table align="center">
                   <td align="center">
                     <tr>
@@ -70,7 +67,8 @@
                       </mat-form-field>
                     </tr>
                     <br>
-                    <tr><button mat-raised-button class="deactivatebutton">Deactivate previous poll</button></tr>
+                    <tr><button (click)="postedPollInactive()" mat-raised-button class="deactivatebutton">Deactivate previous poll</button></tr>
+                    <br>
                     <tr><button mat-raised-button class="assignbutton">Post the poll</button></tr>
                   </td>
                 </table>
@@ -101,6 +99,80 @@
                     </tr>
                     <br>
                     <tr><button mat-raised-button class="loginbutton">Submit News</button></tr>
+                  </td>
+                </table>
+              </form>
+            </mat-card>
+          </div>
+        </mat-card>
+      </td>
+
+
+
+      <td align="center">
+        <mat-card class="matcardclass2">
+          <div class="divform" width="50%">
+            <mat-card>
+              <mat-card-title class="p2">Please enter the details of the match here.</mat-card-title>
+              <form (submit)="submitMatch(matchesForm)" #matchesForm="ngForm">
+                <table align="center">
+                  <td align="center">
+                    <tr>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Team1</mat-label>
+                        <mat-select matInput name= "Team1Input" ngModel required>
+                          <mat-option *ngFor="let team of teams" [value]="team">
+                            {{team}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </tr>
+                    <tr>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Team2</mat-label>
+                        <mat-select matInput name= "Team2Input" ngModel required>
+                          <mat-option *ngFor="let team of teams" [value]="team">
+                            {{team}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </tr>
+
+                    <div>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Choose the match date</mat-label>
+                      <input matInput required ngModel name= "DateInput" [matDatepicker]="picker">
+                      <mat-hint>MM/DD/YYYY</mat-hint>
+                      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                    <table>
+                      <tr>
+                      <td>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Match Hour</mat-label>
+                        <mat-select matInput name= "HourInput" ngModel required>
+                          <mat-option *ngFor="let hour of hours" [value]="hour">
+                            {{hour}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Match Minute</mat-label>
+                        <mat-select matInput name= "MinuteInput" ngModel required>
+                          <mat-option *ngFor="let minute of minutes" [value]="minute">
+                            {{minute}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                </table>
+                    <br>
+                    <tr><button mat-raised-button class="loginbutton" >Log the Match</button></tr>
                   </td>
                 </table>
               </form>

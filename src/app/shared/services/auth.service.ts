@@ -15,6 +15,8 @@ import { isNamedExportBindings, NumberLiteralType } from 'typescript';
 import { News } from 'src/app/models/news.model';
 import { messages } from 'src/app/models/messages.model';
 import { ReturnRankUserPipe } from 'src/app/leaderboard/leaderboard.component';
+import { matches } from 'src/app/models/matches.model';
+import { Polls } from 'src/app/models/polls.model';
 
 @Injectable({
   providedIn: 'root',
@@ -319,6 +321,25 @@ export class AuthService {
     return newRef.set(theNew, { merge: true });
   }
 
+  SetMatchId(theMatch: matches, idGiven: string){
+
+    const matchRef: AngularFirestoreDocument<any> = this.afs.doc(`matches/${idGiven}`);
+
+    console.log(matchRef);
+
+    const theMatchObj: matches = {
+      team1: theMatch.team1,
+      team2: theMatch.team2,
+      starts_at: theMatch.starts_at,
+      matchID: idGiven,
+      score_team1: theMatch.score_team1,
+      score_team2: theMatch.score_team2
+    };
+    console.log("added id to match: ", theMatchObj.matchID);
+
+    return matchRef.set(theMatchObj, { merge: true });
+  }
+
   SetMessageId(message: messages, idGiven: string){
     const newRef: AngularFirestoreDocument<any> = this.afs.doc(`messages/${idGiven}`);
 
@@ -383,6 +404,34 @@ export class AuthService {
 
 
     return newRef.set(theNewMesg, { merge: true });
+  }
+
+  SetNewPId(polls: Polls, idGiven: string){
+
+    const newRef: AngularFirestoreDocument<any> = this.afs.doc(`Polls/${idGiven}`);
+
+    console.log(newRef); // stuck
+
+    const thePoll: Polls = {
+      pid: idGiven,
+      question: polls.question,
+      option1: polls.option1,
+      option2: polls.option2,
+      option3: polls.option3,
+      countOpt1: polls.countOpt1,
+      countOpt2: polls.countOpt2,
+      countOpt3: polls.countOpt3,
+      writtenby: polls.writtenby,
+      newsdate: polls.newsdate,
+      UsersPickOpt1: polls.UsersPickOpt1,
+      UsersPickOpt2: polls.UsersPickOpt2,
+      UsersPickOpt3: polls.UsersPickOpt3
+
+
+    };
+    console.log("added id to news: ", thePoll.pid);
+
+    return newRef.set(thePoll, { merge: true });
   }
 
 }
