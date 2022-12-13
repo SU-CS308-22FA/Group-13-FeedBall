@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 import { messages } from '../models/messages.model';
 import { UserDetailComponent } from '../admin_panel/user_detail.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
+import { matches } from '../models/matches.model';
 
 @Component({
   selector: 'app-in-match',
@@ -32,6 +33,8 @@ export class InMatchComponent{
   usersRef: AngularFirestoreCollection<User>;
   users$: Observable<User[]>;
 
+  matchesRef: AngularFirestoreCollection<matches>;
+  matches$: Observable<matches[]>;
 
   constructor(
     public authService: AuthService,
@@ -46,6 +49,9 @@ export class InMatchComponent{
 
     this.usersRef = this.afs.collection('users');
     this.users$ = this.usersRef.valueChanges();
+
+    this.matchesRef = this.afs.collection('matches');
+    this.matches$ = this.matchesRef.valueChanges();
   }
 
 
@@ -344,13 +350,41 @@ transform(mesgList: messages[], currentMatchString: string) {
 
 @Pipe({ name: 'returncurrentmatchipe' })
 export class ReturnCurrentMatchPipe implements PipeTransform {
-transform() {
+transform(matchesList: matches[]) {
 
-  var matchCode = ""
+  var retStr: string = "";
+
+  var size = Object.keys(matchesList).length;
+  function addMinutes(date:Date, minutes:number) {
+    date.setMinutes(date.getMinutes() + minutes);
+    return date;
+  }
+
+    for(let i=0; i<size; i++){
+      var star:any = matchesList[i].starts_at;
+      var numtimestamp = Number(star.seconds);
+      numtimestamp = numtimestamp * 1000;
+      const dateOf = new Date(numtimestamp);
+      console.log("dateofinitial", dateOf);
+      const dateOf2 = dateOf;
+      var ends_at = addMinutes(dateOf2,90);
+      const anlik = new Date();
+      const dateOf3 = new Date(numtimestamp);
+      console.log(anlik, "\n", dateOf3, "\n",  ends_at)
+      if (anlik >= dateOf3 && anlik <= ends_at){
+        console.log("hereeee");
+        retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() +"\n" +
+        matchesList[i].score_team1.toString() + " - " + matchesList[i].score_team2.toString();
+
+        return retStr;
+      }
+    }
+    return retStr;
     //search by date among matches list, return the match code
 
-  return matchCode;
   }
+
+
 }
 
 

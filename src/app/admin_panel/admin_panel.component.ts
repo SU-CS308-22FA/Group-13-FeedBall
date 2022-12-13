@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 import { News } from '../models/news.model';
 import { NgForm } from '@angular/forms';
 import { Polls } from '../models/polls.model';
+import { matches } from '../models/matches.model';
 
 
 
@@ -23,6 +24,8 @@ import { Polls } from '../models/polls.model';
   templateUrl: './admin_panel.component.html',
   styleUrls: ['./admin_panel.component.css']
 })
+
+
 export class AdminPanelComponent{
 
   constructor(
@@ -117,6 +120,61 @@ export class AdminPanelComponent{
     form.resetForm();
   }
 
+
+  submitMatch(form: NgForm){
+
+    console.log("here");
+    var id = ""
+    var convert = form.value.DateInput;
+    convert.setHours(form.value.HourInput);
+    convert.setMinutes(form.value.MinuteInput);
+
+
+    var Team1 = form.value.Team1Input;
+    var Team2 = form.value.Team2Input;
+
+    const sendMatches: matches = {
+      team1: Team1,
+      team2: Team2,
+      starts_at: convert,
+      matchID: "",
+      score_team1: 0,
+      score_team2: 0,
+    }
+
+
+    this.afs.collection("matches").add(sendMatches)
+    .then((result) => {
+      id = result.id;
+      console.log("result id: ", result.id, "\n");
+
+
+
+      this.authService.SetMatchId(sendMatches, id).then((result2) => {
+        console.log("id setted succesfully\n");
+        alert("The match has been added to the schedule.")
+      }).catch((error2) => {
+        const errorCode2 = error2.code;
+        const errorMessage2 = error2.message;
+
+        console.log(errorCode2, errorMessage2);
+      });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    });
+
+
+
+
+
+
+    form.resetForm();
+  }
+
+
   DoSmth(){
     //bir sey yapcaz
     this.router.navigate(["user-detail"]);
@@ -130,6 +188,14 @@ export class AdminPanelComponent{
     this.router.navigate(['feed']);
   }
 
+  hours: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  11,12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+
+  minutes: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+    11,12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+    24, 25, 26, 27,28,29,30,31,32,33,34,35,36,37,38,39,
+    40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,
+    57,58,59]
 
 
 

@@ -164,6 +164,14 @@ export class ToDatePipe2 implements PipeTransform {
     var numtimestamp = Number(timestamp.seconds);
     numtimestamp = numtimestamp * 1000;
     const dateOf = new Date(numtimestamp);
+    var deneme = new Date();
+    console.log(deneme.getHours().toString(), deneme.getMinutes().toString());
+    deneme.setHours(11);
+    deneme.setMinutes(30);
+    console.log("after: ", deneme.getHours().toString(), deneme.getMinutes().toString());
+
+
+
 
     var returnString = "";
 

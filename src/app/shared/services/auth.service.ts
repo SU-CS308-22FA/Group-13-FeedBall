@@ -15,6 +15,7 @@ import { isNamedExportBindings, NumberLiteralType } from 'typescript';
 import { News } from 'src/app/models/news.model';
 import { messages } from 'src/app/models/messages.model';
 import { ReturnRankUserPipe } from 'src/app/leaderboard/leaderboard.component';
+import { matches } from 'src/app/models/matches.model';
 
 @Injectable({
   providedIn: 'root',
@@ -314,6 +315,25 @@ export class AuthService {
     console.log("added id to news: ", theNew.nid);
 
     return newRef.set(theNew, { merge: true });
+  }
+
+  SetMatchId(theMatch: matches, idGiven: string){
+
+    const matchRef: AngularFirestoreDocument<any> = this.afs.doc(`matches/${idGiven}`);
+
+    console.log(matchRef);
+
+    const theMatchObj: matches = {
+      team1: theMatch.team1,
+      team2: theMatch.team2,
+      starts_at: theMatch.starts_at,
+      matchID: idGiven,
+      score_team1: theMatch.score_team1,
+      score_team2: theMatch.score_team2
+    };
+    console.log("added id to match: ", theMatchObj.matchID);
+
+    return matchRef.set(theMatchObj, { merge: true });
   }
 
   SetMessageId(message: messages, idGiven: string){

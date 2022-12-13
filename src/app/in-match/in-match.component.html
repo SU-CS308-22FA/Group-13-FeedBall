@@ -3,9 +3,10 @@
 <br>
 
 <div *ngIf="(user$ | async) as user">
+  <div *ngIf="(matches$ | async) as matches">
   <div class="titlediv">
     <div class="matchscorediv">
-      <h3>real time match score</h3>
+      <p>{{(matches | returncurrentmatchipe)}}</p>
     </div><!--match score real time div-->
   </div>
 
@@ -82,5 +83,6 @@
         </td>
       </tr>
     </table>
+  </div>
   </div>
 </div>
