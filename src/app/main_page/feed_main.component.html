@@ -1,3 +1,6 @@
+<div *ngIf="(user$ | async) as user">
+  <div class="titlediv" *ngIf = "user.isBanned == true"><br><br><p class="mainfeedtext">You're banned! Please contact us if you think there is a mistake.</p></div>
+  <div *ngIf = "user.isBanned != true">
 <div class="titlediv" ><p class="mainfeedtext">Main Feed Page</p></div>
 
 <!-- <body>
@@ -27,3 +30,5 @@
 </a>
 
 </section>
+</div>
+</div>

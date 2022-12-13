@@ -119,7 +119,7 @@ export class AdminPanelComponent{
 
   DoSmth(){
     //bir sey yapcaz
-    this.router.navigate(["user-detail"]);
+    this.router.navigate(["chart"]);
   }
 
   adminPanel(){

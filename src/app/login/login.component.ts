@@ -25,7 +25,7 @@ import {CanActivate, RouterStateSnapshot, ActivatedRouteSnapshot} from '@angular
 export class LoginComponent implements OnInit, OnDestroy{
 
   constructor(
-    public authService: AuthService, public router: Router
+    public authService: AuthService, public router: Router, public afs: AngularFirestore
   )
   {/*
     if(this.authService.user$ != null){

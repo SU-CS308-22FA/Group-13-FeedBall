@@ -27,7 +27,9 @@ import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { InMatchComponent } from './in-match/in-match.component';
+
 import { UserDetailComponent } from './admin_panel/user_detail.component';
+import { UidContainsListPipe } from './admin_panel/user_detail.component';
 import { NewsPageComponent } from './news_page/news_page.component';
 import { ToDatePipe2 } from './news_page/news_page.component';
 import { SortDateDescendingPipe } from './news_page/news_page.component';
@@ -63,17 +65,22 @@ import { IsUserInLikedListOfMessagePipe } from './in-match/in-match.component';
 import { ReturnUserPipe } from './in-match/in-match.component';
 import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
 import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
+import { ChartsComponent } from './charts/charts.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
+
     FeedMainComponent,
     UserProfileComponent,
     SignupComponent,
     EditProfileComponent,
     ToDatePipe,
+    UidContainsListPipe,
     AdminPanelComponent,
     LeaderboardComponent,
     InMatchComponent,
@@ -97,7 +104,9 @@ import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
     IsUserInLikedListOfMessagePipe,
     ReturnUserPipe,
     DisplayMessagesOnlyFromCurrentMatchPipe,
-    ReturnCurrentMatchPipe
+    ReturnCurrentMatchPipe,
+    ChartsComponent,
+
 
   ],
   imports: [
@@ -105,6 +114,7 @@ import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
     AppRoutingModule,
     MatToolbarModule,
     MatCardModule,
+    HighchartsChartModule,
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,

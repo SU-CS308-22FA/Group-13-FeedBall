@@ -2,7 +2,7 @@
 
   <span>
     <div *ngIf="(user$ | async) as user"  class="maindiv">
-      <button mat-icon-button matTooltip="InMatch Page" (click)="navigateInMatch()">
+      <button mat-icon-button matTooltip="InMatch Page" (click)="navigateInMatch()" *ngIf = "user.isBanned != true">
         <mat-icon>play_circle_outline</mat-icon>
       </button>
     </div>
@@ -12,7 +12,7 @@
   <span class="spacer"></span>
   <span>
     <div *ngIf="(user$ | async) as user" class="maindiv">
-      <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Menu" *ngIf = "user.isBanned != true">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">

@@ -1,4 +1,5 @@
-<br>
+
+<div class="titlediv" align="center"><p class="mainfeedtext">User Profiles</p></div>
 <table align="center">
 <tr align="center">
 <div style="
@@ -8,7 +9,11 @@
   overflow-x:auto">
 
     <div align="center" *ngFor="let users of user$ | async">
-      <mat-card align="center" class="matcardclass">
+      <div>
+        <br>
+      <mat-card align="center" class="matcardclass" style="
+      border: 4px solid #b36338">
+
       <table align="center">
         <tr>{{users.name}} {{users.surname}}</tr>
         <tr>{{users.gender}}</tr>
@@ -16,14 +21,16 @@
         <tr>{{users.point}}</tr>
         <tr align="center">
 
-            <td align="center"><button (click)="deleteUser()" mat-raised-button class="deletebutton">Delete user account</button></td>
+            <td align="center" *ngIf = "users.isBanned != true"><button (click)="deleteUser(users.uid)" mat-raised-button class="deletebutton">Ban the account</button></td>
+            <td align="center" *ngIf = "users.isBanned == true"><button (click)="UnbanUser(users.uid)" mat-raised-button class="deletebutton2">Unban the account</button></td>
 
         </tr>
       </table>
     </mat-card>
-    <br>
+  </div>
+
       </div>
-      <br>
+
 
 
  </div>

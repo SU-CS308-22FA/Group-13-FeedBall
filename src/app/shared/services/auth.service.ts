@@ -143,6 +143,7 @@ export class AuthService {
       point: point,
       team: team,
       isAdmin: false,
+      isBanned: false
       //password: pass
     };
     return userRef.set(userData, {
@@ -166,6 +167,7 @@ export class AuthService {
       point: user.point,
       team: user.team,
       isAdmin: user.isAdmin,
+      isBanned: user.isBanned
       //password: user.password
     };
     return userRef.set(userData, {
@@ -262,7 +264,8 @@ export class AuthService {
       age: ageGiven,
       point: pointGiven,
       team: teamGiven,
-      isAdmin: fbUser.isAdmin
+      isAdmin: fbUser.isAdmin,
+      isBanned: false
       //password: fbUser.password
     };
 

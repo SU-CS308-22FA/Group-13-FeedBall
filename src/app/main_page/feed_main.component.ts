@@ -9,6 +9,7 @@ import { AuthService } from "../shared/services/auth.service";
 })
 export class FeedMainComponent{
 
+  user$ = this.authService.user$;
   constructor(private router: Router,
     private authService: AuthService){}
 
