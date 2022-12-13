@@ -1,5 +1,5 @@
 # FeedBall!
-[Untitled design](https://user-images.githubusercontent.com/88030731/207433498-122d3e2a-5e3a-44b1-a6b7-03e5a129c31b.png)
+![alt text](https://user-images.githubusercontent.com/88030731/207434316-b700e701-4f53-4f47-b2b0-81d2f1813af8.png)
 
 ## URL for the server: 
 <a href="https://group-13-feed-ball.vercel.app/">group-13-feed-ball.vercel.app</a>
