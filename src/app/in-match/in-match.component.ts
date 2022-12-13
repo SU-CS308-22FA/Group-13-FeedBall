@@ -115,6 +115,7 @@ export class InMatchComponent{
       point: 0,
       team: "",
       isAdmin: false,
+      isBanned: false
     };
     return nullUser;
   }

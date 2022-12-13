@@ -12,5 +12,6 @@ export interface User {
   team: string; //(from a team list)
   age: Date;
   isAdmin: boolean;
+  isBanned: boolean;
   //password: string;
 }

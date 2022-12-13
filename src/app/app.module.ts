@@ -27,7 +27,9 @@ import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { InMatchComponent } from './in-match/in-match.component';
+
 import { UserDetailComponent } from './admin_panel/user_detail.component';
+import { UidContainsListPipe } from './admin_panel/user_detail.component';
 import { NewsPageComponent } from './news_page/news_page.component';
 import { ToDatePipe2 } from './news_page/news_page.component';
 import { SortDateDescendingPipe } from './news_page/news_page.component';
@@ -66,17 +68,22 @@ import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
 import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
 import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
 
+import { ChartsComponent } from './charts/charts.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
+
     FeedMainComponent,
     UserProfileComponent,
     SignupComponent,
     EditProfileComponent,
     ToDatePipe,
+    UidContainsListPipe,
     AdminPanelComponent,
     LeaderboardComponent,
     InMatchComponent,
@@ -102,7 +109,8 @@ import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
     DisplayMessagesOnlyFromCurrentMatchPipe,
     ReturnCurrentMatchPipe,
     ReturnFinishedMatchPipe,
-    ReturnCurrentMatchIdPipe
+    ReturnCurrentMatchIdPipe,
+    ChartsComponent
 
   ],
   imports: [
@@ -110,6 +118,7 @@ import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
     AppRoutingModule,
     MatToolbarModule,
     MatCardModule,
+    HighchartsChartModule,
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
@@ -133,7 +142,8 @@ import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
     MatSelectModule,
     MatTooltipModule,
     MatExpansionModule,
-    ScrollingModule
+    ScrollingModule,
+
 
   ],
   providers: [AuthService, LeaderboardComponent],
