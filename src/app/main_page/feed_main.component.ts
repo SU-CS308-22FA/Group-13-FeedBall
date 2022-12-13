@@ -17,6 +17,9 @@ import { Observable } from 'rxjs';
 })
 export class FeedMainComponent{
 
+  user$ = this.authService.user$;
+  matchesRef: AngularFirestoreCollection<matches>;
+  matches$: Observable<matches[]>;
   constructor(private router: Router,
     private authService: AuthService,
     public afs: AngularFirestore,

@@ -107,7 +107,10 @@ import { HighchartsChartModule } from 'highcharts-angular';
     IsUserInLikedListOfMessagePipe,
     ReturnUserPipe,
     DisplayMessagesOnlyFromCurrentMatchPipe,
-    ReturnCurrentMatchPipe
+    ReturnCurrentMatchPipe,
+    ReturnFinishedMatchPipe,
+    ReturnCurrentMatchIdPipe,
+    ChartsComponent
 
   ],
   imports: [
@@ -139,7 +142,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatSelectModule,
     MatTooltipModule,
     MatExpansionModule,
-    ScrollingModule
+    ScrollingModule,
+
 
   ],
   providers: [AuthService, LeaderboardComponent],
