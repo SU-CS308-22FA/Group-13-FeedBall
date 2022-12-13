@@ -16,6 +16,7 @@ import { News } from 'src/app/models/news.model';
 import { messages } from 'src/app/models/messages.model';
 import { ReturnRankUserPipe } from 'src/app/leaderboard/leaderboard.component';
 import { matches } from 'src/app/models/matches.model';
+import { Polls } from 'src/app/models/polls.model';
 
 @Injectable({
   providedIn: 'root',
@@ -400,6 +401,34 @@ export class AuthService {
 
 
     return newRef.set(theNewMesg, { merge: true });
+  }
+
+  SetNewPId(polls: Polls, idGiven: string){
+
+    const newRef: AngularFirestoreDocument<any> = this.afs.doc(`Polls/${idGiven}`);
+
+    console.log(newRef); // stuck
+
+    const thePoll: Polls = {
+      pid: idGiven,
+      question: polls.question,
+      option1: polls.option1,
+      option2: polls.option2,
+      option3: polls.option3,
+      countOpt1: polls.countOpt1,
+      countOpt2: polls.countOpt2,
+      countOpt3: polls.countOpt3,
+      writtenby: polls.writtenby,
+      newsdate: polls.newsdate,
+      UsersPickOpt1: polls.UsersPickOpt1,
+      UsersPickOpt2: polls.UsersPickOpt2,
+      UsersPickOpt3: polls.UsersPickOpt3
+
+
+    };
+    console.log("added id to news: ", thePoll.pid);
+
+    return newRef.set(thePoll, { merge: true });
   }
 
 }
