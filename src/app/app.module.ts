@@ -63,6 +63,8 @@ import { IsUserInLikedListOfMessagePipe } from './in-match/in-match.component';
 import { ReturnUserPipe } from './in-match/in-match.component';
 import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
 import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
+import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
+
 
 @NgModule({
   declarations: [
@@ -97,8 +99,8 @@ import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
     IsUserInLikedListOfMessagePipe,
     ReturnUserPipe,
     DisplayMessagesOnlyFromCurrentMatchPipe,
-    ReturnCurrentMatchPipe
-
+    ReturnCurrentMatchPipe,
+    ReturnFinishedMatchPipe,
   ],
   imports: [
     BrowserModule,

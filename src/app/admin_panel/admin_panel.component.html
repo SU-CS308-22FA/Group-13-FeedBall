@@ -8,7 +8,6 @@
   <table  align="center">
     <tr align="center">
       <td>
-
         <mat-card class="matcardclass">
           <table>
             <tr>
@@ -119,14 +118,23 @@
                 <table align="center">
                   <td align="center">
                     <tr>
-                      <mat-form-field>
-                        <input type="text" matInput name="Team1Input" ngModel placeholder="Team1" required #localTeam1Input="ngModel">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Team1</mat-label>
+                        <mat-select matInput name= "Team1Input" ngModel required>
+                          <mat-option *ngFor="let team of teams" [value]="team">
+                            {{team}}
+                          </mat-option>
+                        </mat-select>
                       </mat-form-field>
                     </tr>
-                    <br>
                     <tr>
-                      <mat-form-field>
-                        <input type="text" matInput name="Team2Input" ngModel placeholder="Team2" required #localTeam2Input="ngModel">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Team2</mat-label>
+                        <mat-select matInput name= "Team2Input" ngModel required>
+                          <mat-option *ngFor="let team of teams" [value]="team">
+                            {{team}}
+                          </mat-option>
+                        </mat-select>
                       </mat-form-field>
                     </tr>
 
@@ -163,7 +171,6 @@
                     </td>
                   </tr>
                 </table>
-
                     <br>
                     <tr><button mat-raised-button class="loginbutton" >Log the Match</button></tr>
                   </td>
