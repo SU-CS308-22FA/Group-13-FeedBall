@@ -4,85 +4,85 @@
 
 <div *ngIf="(user$ | async) as user">
   <div *ngIf="(matches$ | async) as matches">
-  <div class="titlediv">
-    <div class="matchscorediv">
-      <p>{{(matches | returncurrentmatchipe)}}</p>
-    </div><!--match score real time div-->
-  </div>
+    <div *ngIf="(matches | returncurrentmatchidipe) as currentMatchId">
+      <div class="titlediv">
+        <div class="matchscorediv">
+          <p>{{(matches | returncurrentmatchipe)}}</p>
+        </div><!--match score real time div-->
+      </div>
 
-  <div class="titlediv">
-    <table align="center">
-      <tr align="center">
-        <td>
-          <div class="borderclass">
-            <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
-              <div *ngIf="(messages$ | async) as messagesList">
-                <div *ngIf="(users$ | async) as usersList">
-                  <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatch) | sortbydatepipe)">
-                    <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
-                      <div class="box3 sbright">
-                        <div class="rightdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
-                        <div class="rightdiv"><p class="timeclass"><br></p></div>
-                        <div class="rightdiv"><p class="textalign1">{{mesg.content}}</p></div>
-                        <div><br></div>
-                        <div class="outerdiv2">
-                          <span><div class="leftdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
-                          <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+      <div class="titlediv">
+        <table align="center">
+          <tr align="center">
+            <td>
+              <div class="borderclass">
+                <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
+                  <div *ngIf="(messages$ | async) as messagesList">
+                    <div *ngIf="(users$ | async) as usersList">
+                      <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe)">
+                        <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
+                          <div class="box3 sbright">
+                            <div class="rightdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
+                            <div class="rightdiv"><p class="timeclass"><br></p></div>
+                            <div class="rightdiv"><p class="textalign1">{{mesg.content}}</p></div>
+                            <div><br></div>
+                            <div class="outerdiv2">
+                              <span><div class="leftdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                              <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                            </div>
+                          </div>
                         </div>
-
-
+                        <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">
+                          <div class="box3-2 sbleft">
+                            <div class="leftdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
+                            <div class="leftdiv"><p class="timeclass"><br></p></div>
+                            <div class="leftdiv"><p class="textalign2">{{mesg.content}}</p></div>
+                            <div class="rightdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="likeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass2">thumb_up</mat-icon></button></div>
+                            <div class="rightdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="unlikeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass3">thumb_up</mat-icon></button></div>
+                            <div class="outerdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)">
+                              <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                              <span><div class="rightdiv2"><p class="countclass2">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                            </div>
+                            <div class="outerdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)">
+                              <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                              <span><div class="rightdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
                       </div>
                     </div>
-                    <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">
-                      <div class="box3-2 sbleft">
-                        <div class="leftdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
-                        <div class="leftdiv"><p class="timeclass"><br></p></div>
-                        <div class="leftdiv"><p class="textalign2">{{mesg.content}}</p></div>
-                        <div class="rightdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="likeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass2">thumb_up</mat-icon></button></div>
-                        <div class="rightdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="unlikeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass3">thumb_up</mat-icon></button></div>
-                        <div class="outerdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)">
-                          <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
-                          <span><div class="rightdiv2"><p class="countclass2">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
-                        </div>
-                        <div class="outerdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)">
-                          <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
-                          <span><div class="rightdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
-                        </div>
-                      </div>
-                    </div>
-                    <br>
                   </div>
+                </cdk-virtual-scroll-viewport>
+                <div class="inputdiv">
+                  <form class="example-form" (submit)="onSubmitForm(messageForm, user, currentMatchId)" #messageForm="ngForm">
+                    <table align="center">
+                      <tr align="center">
+                        <td>
+                          <mat-form-field class="example-full-width" [style.width.px]=650>
+                            <input type="text" matInput placeholder="type something here..." name="content" ngModel #localContent="ngModel">
+                          </mat-form-field>
+                        </td>
+                        <td>&nbsp;&nbsp;<button mat-mini-fab class="colorclass"><mat-icon>send</mat-icon></button></td>
+                      </tr>
+                    </table>
+                  </form>
                 </div>
               </div>
-            </cdk-virtual-scroll-viewport>
-            <div>
-              <form class="example-form" (submit)="onSubmitForm(messageForm, user)" #messageForm="ngForm">
-                <table align="center">
-                  <tr align="center">
-                    <td>
-                      <mat-form-field class="example-full-width" [style.width.px]=650>
-                        <input type="text" matInput placeholder="type something here..." name="content" ngModel #localContent="ngModel">
-                      </mat-form-field>
-                    </td>
-                    <td>&nbsp;&nbsp;<button mat-mini-fab class="colorclass"><mat-icon>send</mat-icon></button></td>
-                  </tr>
-                </table>
-              </form>
-            </div>
-        </div>
-        </td>
-        <td>
-          <div class="borderclass">
-            <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport-2">
-              <div>
-                <h3>in match poll screen</h3>
+            </td>
+            <td>
+              <div class="borderclass">
+                <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport-2">
+                  <div>
+                    <h3>in match poll screen</h3>
+                  </div>
+                </cdk-virtual-scroll-viewport>
+                <div class="dummydiv"></div>
               </div>
-            </cdk-virtual-scroll-viewport>
-            <div class="dummydiv"></div>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

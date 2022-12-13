@@ -63,6 +63,7 @@ import { IsUserInLikedListOfMessagePipe } from './in-match/in-match.component';
 import { ReturnUserPipe } from './in-match/in-match.component';
 import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
 import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
+import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
 import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
 
 
@@ -99,8 +100,8 @@ import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
     IsUserInLikedListOfMessagePipe,
     ReturnUserPipe,
     DisplayMessagesOnlyFromCurrentMatchPipe,
-    ReturnCurrentMatchPipe,
-    ReturnFinishedMatchPipe,
+    ReturnCurrentMatchPipe
+
   ],
   imports: [
     BrowserModule,

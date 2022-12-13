@@ -57,18 +57,17 @@ export class InMatchComponent{
 
   user$ = this.authService.user$;
 
-  currentMatch = "GS:FB/07.12.22/21.30:23.00";
+  //currentMatch = "GS:FB/07.12.22/21.30:23.00";
   className = "rightdiv";
 
   dummyelems: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
-  onSubmitForm(form: NgForm, user: User){
+  onSubmitForm(form: NgForm, user: User, currentMatchString: string){
 
-    console.log(form.value.content);
-    if(form.valid){
+    if(form.valid && form.value.content != ""){
       var message = form.value.content;
       const now = new Date();
-      this.createMessageAndPushToDatabase(message, now, user, this.currentMatch);
+      this.createMessageAndPushToDatabase(message, now, user, currentMatchString);
     }
     else{
       return;
@@ -384,5 +383,43 @@ transform(matchesList: matches[]) {
 
 }
 
+@Pipe({ name: 'returncurrentmatchidipe' })
+export class ReturnCurrentMatchIdPipe implements PipeTransform {
+transform(matchesList: matches[]) {
+
+  var retStr: string = "";
+
+  var size = Object.keys(matchesList).length;
+  function addMinutes(date:Date, minutes:number) {
+    date.setMinutes(date.getMinutes() + minutes);
+    return date;
+  }
+
+    for(let i=0; i<size; i++){
+
+      var star:any = matchesList[i].starts_at;
+      var numtimestamp = Number(star.seconds);
+      numtimestamp = numtimestamp * 1000;
+      const dateOf = new Date(numtimestamp);
+
+      const dateOf2 = dateOf;
+
+      var ends_at = addMinutes(dateOf2,90);
+      const anlik = new Date();
+      const dateOf3 = new Date(numtimestamp);
+
+      if (anlik >= dateOf3 && anlik <= ends_at){
+        retStr = matchesList[i].matchID;
+        console.log("cureent match id: ", retStr);
+        return retStr;
+      }
+    }
+    return retStr;
+    //search by date among matches list, return the match code
+
+  }
+
+
+}
 
 
