@@ -365,14 +365,11 @@ transform(matchesList: matches[]) {
       var numtimestamp = Number(star.seconds);
       numtimestamp = numtimestamp * 1000;
       const dateOf = new Date(numtimestamp);
-      console.log("dateofinitial", dateOf);
       const dateOf2 = dateOf;
       var ends_at = addMinutes(dateOf2,90);
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
-      console.log(anlik, "\n", dateOf3, "\n",  ends_at)
       if (anlik >= dateOf3 && anlik <= ends_at){
-        console.log("hereeee");
         retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() +"\n" +
         matchesList[i].score_team1.toString() + " - " + matchesList[i].score_team2.toString();
 
