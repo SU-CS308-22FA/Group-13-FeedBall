@@ -2,9 +2,11 @@
 
   <span>
     <div *ngIf="(user$ | async) as user"  class="maindiv">
-      <button mat-icon-button matTooltip="InMatch Page" (click)="navigateInMatch()" *ngIf = "user.isBanned != true">
-        <mat-icon>play_circle_outline</mat-icon>
-      </button>
+      <div *ngIf="(matches$ | async) as matchesList">
+        <button mat-icon-button matTooltip="InMatch Page" (click)="navigateInMatch()" *ngIf = "user.isBanned != true"  [disabled]="matchesList | disableinmatchbuttonpipe">
+          <mat-icon>play_circle_outline</mat-icon>
+        </button>
+      </div>
     </div>
   </span> <!--this will be in-match screen button-->
   <span class="spacer"></span>
