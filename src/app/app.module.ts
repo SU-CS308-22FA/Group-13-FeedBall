@@ -100,7 +100,9 @@ import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
     IsUserInLikedListOfMessagePipe,
     ReturnUserPipe,
     DisplayMessagesOnlyFromCurrentMatchPipe,
-    ReturnCurrentMatchPipe
+    ReturnCurrentMatchPipe,
+    ReturnFinishedMatchPipe,
+    ReturnCurrentMatchIdPipe
 
   ],
   imports: [
