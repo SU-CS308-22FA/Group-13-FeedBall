@@ -12,7 +12,7 @@ Sign in process:
 Firstly, the user needs to create an account by entering a valid e-mail address (a validation e-mail is sent to the provided e-mail to complete the validation process), a valid password (a valid password contains a minimum of 6 characters) (the password needs to be entered twice on a separate field to prevent mistakes), name, surname, date of birth in MM/DD/YYYY format, gender and prefered team information. The sign up process is finished once the valid information is entered and the user pushes the sign up button. 
 Login process:
 After an account is succesfully created, the user enters the previously selected e-mail and password infromation on the respected fields. The login process is finished by pushing the "Login now" button. 
-* How to report a bug: 
+* How to report a bug: User goes to github.com, user finds the repository "SU-CS308-22FA/Group-13-FeedBall", user goes to issues and posts an issue regarding the bug he/she is experiencing: The user writes a clear but short description of the bug they have/are experienced/experiencing on the issue title, the user clearly states the circumstances in which they are experiencing the bug on the issue body, the user labels the issue as "bug" and submits new issue. The issues are periodically checked by the development and maintenance team to provide adequate customer service. 
 * Known bugs: There are no known bugs at the moment. This page is updated periodically.
 ## Developer Documentation:
     * How to obtain the source code (Be aware that if you're using multiple repositories -Backend and frontend separated in different repos- you need to include them, same as with submodules. You need to provide clear instructions for how to obtain all sources.)
