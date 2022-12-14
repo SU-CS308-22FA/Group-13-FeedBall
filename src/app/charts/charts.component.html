@@ -8,3 +8,28 @@
   [options]="chartOptions2"
   style="width: 100%; height: 400px; display: block;">
 </highcharts-chart>
+<div class="divform"><!--we need admin-user-team types for the signing up users in order to redirect teams and admins to the admin panel and team panel-->
+  <mat-card>
+    <mat-card-title class="p2">Create a FeedBall account!</mat-card-title>
+
+      <table align="center">
+        <td align="center">
+          <tr>
+            <mat-form-field>
+              <mat-label>Select a team</mat-label>
+                <mat-select matInput ngModel name="teamInput" required #localTeamInput="ngModel">
+                  <mat-option *ngFor="let team of this.teamsList" [value]="team">
+                    {{team}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="localTeamInput.invalid"><p class="errortext">Please select a team.</p></mat-error>
+            </mat-form-field>
+          </tr>
+
+          <tr><br></tr>
+          <tr><button mat-raised-button class="signupbutton">Sign Up</button></tr>
+          </td>
+      </table>
+
+  </mat-card>
+</div>

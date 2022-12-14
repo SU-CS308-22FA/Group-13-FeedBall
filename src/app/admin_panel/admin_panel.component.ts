@@ -39,7 +39,9 @@ export class AdminPanelComponent{
     public showMyMessage = false
     user$ = this.authService.user$;
 
-
+    /**
+    * This function resets the password
+    */
     changePassword(mail: string) {
 
       this.authService.ForgotPassword(mail);

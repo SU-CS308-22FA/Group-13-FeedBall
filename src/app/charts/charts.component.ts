@@ -13,9 +13,31 @@ import { User } from '../shared/services/user';
   styleUrls: ['./charts.component.css']
 })
 export class ChartsComponent implements OnInit {
+  public teamsList: Array<string> = [
+    "Adana Demirspor",
+    "Alanyaspor" ,
+    "Antalyaspor",
+    "Beşiktaş",
+    "Fatih Karagümrük",
+    "Fenerbahçe",
+    "Galatasaray",
+    "Gaziantep",
+    "Giresunspor",
+    "Hatayspor",
+    "İstanbul Başakşehir",
+    "İstanbulspor",
+    "Kasımpaşa",
+    "Kayserispor",
+    "Konyaspor",
+    "MKE Ankaragücü",
+    "Sivasspor",
+    "Trabzonspor",
+    "Ümraniyespor"
+  ];
   title = "Firestore-Angular-Highcharts";
   items$!: User[];
   Highcharts: typeof Highcharts = Highcharts;
+  filter!: string;
   chardata: any[] = [];
   chartOptions: any;
   chardata2: any[] = [];
@@ -145,20 +167,9 @@ export class ChartsComponent implements OnInit {
         name: 'Team',
         colorByPoint: true,
         data: [{
-          name: 'Galatasaray',
-          y: this.counter2('Galatasaray'),
-          sliced: true,
-          selected: true
-        },
-        {
-          name: 'Konyaspor',
-          y: this.counter2('Konyaspor'),
-          selected: true
-        },
-        {
-          name: 'Beşiktaş',
-          y: this.counter2('Beşiktaş'),
-          selected: true
+          name:this.teamsList,
+
+
         }]
       }]
     };
