@@ -8,550 +8,581 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">feedball-project documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">feedball-project documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html"  class="active" >AppModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ChartsComponent.html" >ChartsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InMatchComponent.html" >InMatchComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AuthService.html" >AuthService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ChartService.html" >ChartService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/HighchartService.html" >HighchartService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/News.html" >News</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/Polls.html" >Polls</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/User.html" >User</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/chartModal.html" >chartModal</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/matches.html" >matches</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/messages.html" >messages</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/PluralPipe.html" >PluralPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/TransformPipe.html" >TransformPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">feedball-project documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html"  class="active" >AppModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ChartsComponent.html" >ChartsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InMatchComponent.html" >InMatchComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AuthService.html" >AuthService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ChartService.html" >ChartService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/HighchartService.html" >HighchartService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/News.html" >News</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/Polls.html" >Polls</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/User.html" >User</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/chartModal.html" >chartModal</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/matches.html" >matches</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/messages.html" >messages</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/PluralPipe.html" >PluralPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/TransformPipe.html" >TransformPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content module">
                    <div class="content-data">
 
-
-
 <ol class="breadcrumb">
-    <li>Modules</li>
-    <li >AppModule</li>
+  <li>Modules</li>
+  <li>AppModule</li>
 </ol>
 
-<div class="text-center module-graph-container">
-    <div id="module-graph-svg">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 5.0.0 (20220707.1540)
- -->
-<!-- Title: dependencies Pages: 1 -->
-<svg width="5779pt" height="247pt"
- viewBox="0.00 0.00 5779.00 246.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 242.8)">
-<title>dependencies</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-242.8 5775,-242.8 5775,4 -4,4"/>
-<text text-anchor="middle" x="2885.5" y="-8.2" font-family="sans-serif" font-size="14.00">dependencies</text>
-<g id="clust1" class="cluster">
-<title>cluster_AppModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 5763,-230.8 5763,-32.8 8,-32.8"/>
-</g>
-<g id="clust39" class="cluster">
-<title>cluster_AppModule_imports</title>
-<polygon fill="none" stroke="black" points="5611,-40.8 5611,-92.8 5755,-92.8 5755,-40.8 5611,-40.8"/>
-</g>
-<g id="clust41" class="cluster">
-<title>cluster_AppModule_bootstrap</title>
-<polygon fill="none" stroke="black" points="2658,-170.8 2658,-222.8 2782,-222.8 2782,-170.8 2658,-170.8"/>
-</g>
-<g id="clust42" class="cluster">
-<title>cluster_AppModule_providers</title>
-<polygon fill="none" stroke="black" points="5469,-40.8 5469,-92.8 5603,-92.8 5603,-40.8 5469,-40.8"/>
-</g>
-<g id="clust2" class="cluster">
-<title>cluster_AppModule_declarations</title>
-<polygon fill="none" stroke="black" points="16,-40.8 16,-92.8 5461,-92.8 5461,-40.8 16,-40.8"/>
-</g>
-<!-- AdminPanelComponent -->
-<g id="node1" class="node">
-<title>AdminPanelComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="5452.82,-84.8 5301.18,-84.8 5301.18,-48.8 5452.82,-48.8 5452.82,-84.8"/>
-<text text-anchor="middle" x="5377" y="-62.6" font-family="Times,serif" font-size="14.00">AdminPanelComponent</text>
-</g>
-<!-- AppModule -->
-<g id="node37" class="node">
-<title>AppModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="2761.66,-149.8 2758.66,-153.8 2737.66,-153.8 2734.66,-149.8 2678.34,-149.8 2678.34,-113.8 2761.66,-113.8 2761.66,-149.8"/>
-<text text-anchor="middle" x="2720" y="-127.6" font-family="Times,serif" font-size="14.00">AppModule</text>
-</g>
-<!-- AdminPanelComponent&#45;&gt;AppModule -->
-<g id="edge1" class="edge">
-<title>AdminPanelComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M5377,-84.89C5377,-107.93 5377,-144.8 5377,-144.8 5377,-144.8 2771.74,-144.8 2771.74,-144.8"/>
-<polygon fill="black" stroke="black" points="2771.74,-141.3 2761.74,-144.8 2771.74,-148.3 2771.74,-141.3"/>
-</g>
-<!-- AppComponent -->
-<g id="node2" class="node">
-<title>AppComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="5283.94,-84.8 5178.06,-84.8 5178.06,-48.8 5283.94,-48.8 5283.94,-84.8"/>
-<text text-anchor="middle" x="5231" y="-62.6" font-family="Times,serif" font-size="14.00">AppComponent</text>
-</g>
-<!-- AppComponent&#45;&gt;AppModule -->
-<g id="edge2" class="edge">
-<title>AppComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M5231,-84.81C5231,-107.29 5231,-142.8 5231,-142.8 5231,-142.8 2771.75,-142.8 2771.75,-142.8"/>
-<polygon fill="black" stroke="black" points="2771.75,-139.3 2761.75,-142.8 2771.75,-146.3 2771.75,-139.3"/>
-</g>
-<!-- ChartsComponent -->
-<g id="node3" class="node">
-<title>ChartsComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="5159.88,-84.8 5042.12,-84.8 5042.12,-48.8 5159.88,-48.8 5159.88,-84.8"/>
-<text text-anchor="middle" x="5101" y="-62.6" font-family="Times,serif" font-size="14.00">ChartsComponent</text>
-</g>
-<!-- ChartsComponent&#45;&gt;AppModule -->
-<g id="edge3" class="edge">
-<title>ChartsComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M5101,-85.09C5101,-107.01 5101,-140.8 5101,-140.8 5101,-140.8 2771.83,-140.8 2771.83,-140.8"/>
-<polygon fill="black" stroke="black" points="2771.83,-137.3 2761.83,-140.8 2771.83,-144.3 2771.83,-137.3"/>
-</g>
-<!-- DisplayMessagesOnlyFromCurrentMatchPipe -->
-<g id="node4" class="node">
-<title>DisplayMessagesOnlyFromCurrentMatchPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="5023.75,-84.8 4748.25,-84.8 4748.25,-48.8 5023.75,-48.8 5023.75,-84.8"/>
-<text text-anchor="middle" x="4886" y="-62.6" font-family="Times,serif" font-size="14.00">DisplayMessagesOnlyFromCurrentMatchPipe</text>
-</g>
-<!-- DisplayMessagesOnlyFromCurrentMatchPipe&#45;&gt;AppModule -->
-<g id="edge4" class="edge">
-<title>DisplayMessagesOnlyFromCurrentMatchPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M4886,-84.97C4886,-106.3 4886,-138.8 4886,-138.8 4886,-138.8 2771.81,-138.8 2771.81,-138.8"/>
-<polygon fill="black" stroke="black" points="2771.81,-135.3 2761.81,-138.8 2771.81,-142.3 2771.81,-135.3"/>
-</g>
-<!-- EditProfileComponent -->
-<g id="node5" class="node">
-<title>EditProfileComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="4730.27,-84.8 4587.73,-84.8 4587.73,-48.8 4730.27,-48.8 4730.27,-84.8"/>
-<text text-anchor="middle" x="4659" y="-62.6" font-family="Times,serif" font-size="14.00">EditProfileComponent</text>
-</g>
-<!-- EditProfileComponent&#45;&gt;AppModule -->
-<g id="edge5" class="edge">
-<title>EditProfileComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M4659,-84.83C4659,-105.57 4659,-136.8 4659,-136.8 4659,-136.8 2771.85,-136.8 2771.85,-136.8"/>
-<polygon fill="black" stroke="black" points="2771.85,-133.3 2761.85,-136.8 2771.85,-140.3 2771.85,-133.3"/>
-</g>
-<!-- FeedMainComponent -->
-<g id="node6" class="node">
-<title>FeedMainComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="4570.1,-84.8 4431.9,-84.8 4431.9,-48.8 4570.1,-48.8 4570.1,-84.8"/>
-<text text-anchor="middle" x="4501" y="-62.6" font-family="Times,serif" font-size="14.00">FeedMainComponent</text>
-</g>
-<!-- FeedMainComponent&#45;&gt;AppModule -->
-<g id="edge6" class="edge">
-<title>FeedMainComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M4501,-85.02C4501,-105.17 4501,-134.8 4501,-134.8 4501,-134.8 2771.83,-134.8 2771.83,-134.8"/>
-<polygon fill="black" stroke="black" points="2771.83,-131.3 2761.83,-134.8 2771.83,-138.3 2771.83,-131.3"/>
-</g>
-<!-- FilterTeamOnlyPipe -->
-<g id="node7" class="node">
-<title>FilterTeamOnlyPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="4413.59,-84.8 4282.41,-84.8 4282.41,-48.8 4413.59,-48.8 4413.59,-84.8"/>
-<text text-anchor="middle" x="4348" y="-62.6" font-family="Times,serif" font-size="14.00">FilterTeamOnlyPipe</text>
-</g>
-<!-- FilterTeamOnlyPipe&#45;&gt;AppModule -->
-<g id="edge7" class="edge">
-<title>FilterTeamOnlyPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M4348,-84.83C4348,-104.38 4348,-132.8 4348,-132.8 4348,-132.8 2771.88,-132.8 2771.88,-132.8"/>
-<polygon fill="black" stroke="black" points="2771.88,-129.3 2761.88,-132.8 2771.88,-136.3 2771.88,-129.3"/>
-</g>
-<!-- HeaderComponent -->
-<g id="node8" class="node">
-<title>HeaderComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="4264.75,-84.8 4143.25,-84.8 4143.25,-48.8 4264.75,-48.8 4264.75,-84.8"/>
-<text text-anchor="middle" x="4204" y="-62.6" font-family="Times,serif" font-size="14.00">HeaderComponent</text>
-</g>
-<!-- HeaderComponent&#45;&gt;AppModule -->
-<g id="edge8" class="edge">
-<title>HeaderComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M4204,-84.91C4204,-104.14 4204,-131.8 4204,-131.8 4204,-131.8 2772.02,-131.8 2772.02,-131.8"/>
-<polygon fill="black" stroke="black" points="2772.02,-128.3 2762.02,-131.8 2772.02,-135.3 2772.02,-128.3"/>
-</g>
-<!-- HoursMinutesPipe -->
-<g id="node9" class="node">
-<title>HoursMinutesPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="4125.5,-84.8 4004.5,-84.8 4004.5,-48.8 4125.5,-48.8 4125.5,-84.8"/>
-<text text-anchor="middle" x="4065" y="-62.6" font-family="Times,serif" font-size="14.00">HoursMinutesPipe</text>
-</g>
-<!-- HoursMinutesPipe&#45;&gt;AppModule -->
-<g id="edge9" class="edge">
-<title>HoursMinutesPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M4065,-85.02C4065,-103.63 4065,-129.8 4065,-129.8 4065,-129.8 2771.73,-129.8 2771.73,-129.8"/>
-<polygon fill="black" stroke="black" points="2771.73,-126.3 2761.73,-129.8 2771.73,-133.3 2771.73,-126.3"/>
-</g>
-<!-- InMatchComponent -->
-<g id="node10" class="node">
-<title>InMatchComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="3986.26,-84.8 3857.74,-84.8 3857.74,-48.8 3986.26,-48.8 3986.26,-84.8"/>
-<text text-anchor="middle" x="3922" y="-62.6" font-family="Times,serif" font-size="14.00">InMatchComponent</text>
-</g>
-<!-- InMatchComponent&#45;&gt;AppModule -->
-<g id="edge10" class="edge">
-<title>InMatchComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M3922,-85.1C3922,-103.07 3922,-127.8 3922,-127.8 3922,-127.8 2771.72,-127.8 2771.72,-127.8"/>
-<polygon fill="black" stroke="black" points="2771.72,-124.3 2761.72,-127.8 2771.72,-131.3 2771.72,-124.3"/>
-</g>
-<!-- IsUserInDisikedListPipe -->
-<g id="node11" class="node">
-<title>IsUserInDisikedListPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="3839.43,-84.8 3684.57,-84.8 3684.57,-48.8 3839.43,-48.8 3839.43,-84.8"/>
-<text text-anchor="middle" x="3762" y="-62.6" font-family="Times,serif" font-size="14.00">IsUserInDisikedListPipe</text>
-</g>
-<!-- IsUserInDisikedListPipe&#45;&gt;AppModule -->
-<g id="edge11" class="edge">
-<title>IsUserInDisikedListPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M3762,-84.82C3762,-102.17 3762,-125.8 3762,-125.8 3762,-125.8 2771.81,-125.8 2771.81,-125.8"/>
-<polygon fill="black" stroke="black" points="2771.81,-122.3 2761.81,-125.8 2771.81,-129.3 2771.81,-122.3"/>
-</g>
-<!-- IsUserInLikedListOfMessagePipe -->
-<g id="node12" class="node">
-<title>IsUserInLikedListOfMessagePipe</title>
-<polygon fill="#ffffb3" stroke="black" points="3666.79,-84.8 3459.21,-84.8 3459.21,-48.8 3666.79,-48.8 3666.79,-84.8"/>
-<text text-anchor="middle" x="3563" y="-62.6" font-family="Times,serif" font-size="14.00">IsUserInLikedListOfMessagePipe</text>
-</g>
-<!-- IsUserInLikedListOfMessagePipe&#45;&gt;AppModule -->
-<g id="edge12" class="edge">
-<title>IsUserInLikedListOfMessagePipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M3563,-84.84C3563,-101.53 3563,-123.8 3563,-123.8 3563,-123.8 2771.8,-123.8 2771.8,-123.8"/>
-<polygon fill="black" stroke="black" points="2771.8,-120.3 2761.8,-123.8 2771.8,-127.3 2771.8,-120.3"/>
-</g>
-<!-- IsUserInLikedListPipe -->
-<g id="node13" class="node">
-<title>IsUserInLikedListPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="3441.53,-84.8 3298.47,-84.8 3298.47,-48.8 3441.53,-48.8 3441.53,-84.8"/>
-<text text-anchor="middle" x="3370" y="-62.6" font-family="Times,serif" font-size="14.00">IsUserInLikedListPipe</text>
-</g>
-<!-- IsUserInLikedListPipe&#45;&gt;AppModule -->
-<g id="edge13" class="edge">
-<title>IsUserInLikedListPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M3370,-84.81C3370,-100.85 3370,-121.8 3370,-121.8 3370,-121.8 2772.15,-121.8 2772.15,-121.8"/>
-<polygon fill="black" stroke="black" points="2772.15,-118.3 2762.15,-121.8 2772.15,-125.3 2772.15,-118.3"/>
-</g>
-<!-- LeaderboardComponent -->
-<g id="node14" class="node">
-<title>LeaderboardComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="3280.06,-84.8 3127.94,-84.8 3127.94,-48.8 3280.06,-48.8 3280.06,-84.8"/>
-<text text-anchor="middle" x="3204" y="-62.6" font-family="Times,serif" font-size="14.00">LeaderboardComponent</text>
-</g>
-<!-- LeaderboardComponent&#45;&gt;AppModule -->
-<g id="edge14" class="edge">
-<title>LeaderboardComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M3204,-85.04C3204,-100.37 3204,-119.8 3204,-119.8 3204,-119.8 2771.68,-119.8 2771.68,-119.8"/>
-<polygon fill="black" stroke="black" points="2771.68,-116.3 2761.68,-119.8 2771.68,-123.3 2771.68,-116.3"/>
-</g>
-<!-- LoginComponent -->
-<g id="node15" class="node">
-<title>LoginComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="3110.27,-84.8 2995.73,-84.8 2995.73,-48.8 3110.27,-48.8 3110.27,-84.8"/>
-<text text-anchor="middle" x="3053" y="-62.6" font-family="Times,serif" font-size="14.00">LoginComponent</text>
-</g>
-<!-- LoginComponent&#45;&gt;AppModule -->
-<g id="edge15" class="edge">
-<title>LoginComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M3053,-84.92C3053,-99.58 3053,-117.8 3053,-117.8 3053,-117.8 2771.84,-117.8 2771.84,-117.8"/>
-<polygon fill="black" stroke="black" points="2771.84,-114.3 2761.84,-117.8 2771.84,-121.3 2771.84,-114.3"/>
-</g>
-<!-- NewsPageComponent -->
-<g id="node16" class="node">
-<title>NewsPageComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="2977.43,-84.8 2836.57,-84.8 2836.57,-48.8 2977.43,-48.8 2977.43,-84.8"/>
-<text text-anchor="middle" x="2907" y="-62.6" font-family="Times,serif" font-size="14.00">NewsPageComponent</text>
-</g>
-<!-- NewsPageComponent&#45;&gt;AppModule -->
-<g id="edge16" class="edge">
-<title>NewsPageComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M2907,-85.05C2907,-98.98 2907,-115.8 2907,-115.8 2907,-115.8 2771.97,-115.8 2771.97,-115.8"/>
-<polygon fill="black" stroke="black" points="2771.97,-112.3 2761.97,-115.8 2771.97,-119.3 2771.97,-112.3"/>
-</g>
-<!-- PluralPipe -->
-<g id="node17" class="node">
-<title>PluralPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="2819.33,-84.8 2744.67,-84.8 2744.67,-48.8 2819.33,-48.8 2819.33,-84.8"/>
-<text text-anchor="middle" x="2782" y="-62.6" font-family="Times,serif" font-size="14.00">PluralPipe</text>
-</g>
-<!-- PluralPipe&#45;&gt;AppModule -->
-<g id="edge17" class="edge">
-<title>PluralPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M2753.33,-84.91C2753.33,-84.91 2753.33,-103.79 2753.33,-103.79"/>
-<polygon fill="black" stroke="black" points="2749.83,-103.79 2753.33,-113.79 2756.83,-103.79 2749.83,-103.79"/>
-</g>
-<!-- PollsPageComponent -->
-<g id="node18" class="node">
-<title>PollsPageComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="2727.06,-84.8 2590.94,-84.8 2590.94,-48.8 2727.06,-48.8 2727.06,-84.8"/>
-<text text-anchor="middle" x="2659" y="-62.6" font-family="Times,serif" font-size="14.00">PollsPageComponent</text>
-</g>
-<!-- PollsPageComponent&#45;&gt;AppModule -->
-<g id="edge18" class="edge">
-<title>PollsPageComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M2702.72,-84.91C2702.72,-84.91 2702.72,-103.79 2702.72,-103.79"/>
-<polygon fill="black" stroke="black" points="2699.22,-103.79 2702.72,-113.79 2706.22,-103.79 2699.22,-103.79"/>
-</g>
-<!-- ReturnCurrentMatchIdPipe -->
-<g id="node19" class="node">
-<title>ReturnCurrentMatchIdPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="2572.69,-84.8 2403.31,-84.8 2403.31,-48.8 2572.69,-48.8 2572.69,-84.8"/>
-<text text-anchor="middle" x="2488" y="-62.6" font-family="Times,serif" font-size="14.00">ReturnCurrentMatchIdPipe</text>
-</g>
-<!-- ReturnCurrentMatchIdPipe&#45;&gt;AppModule -->
-<g id="edge19" class="edge">
-<title>ReturnCurrentMatchIdPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M2488,-85.05C2488,-98.98 2488,-115.8 2488,-115.8 2488,-115.8 2668.26,-115.8 2668.26,-115.8"/>
-<polygon fill="black" stroke="black" points="2668.26,-119.3 2678.26,-115.8 2668.26,-112.3 2668.26,-119.3"/>
-</g>
-<!-- ReturnCurrentMatchPipe -->
-<g id="node20" class="node">
-<title>ReturnCurrentMatchPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="2385.53,-84.8 2228.47,-84.8 2228.47,-48.8 2385.53,-48.8 2385.53,-84.8"/>
-<text text-anchor="middle" x="2307" y="-62.6" font-family="Times,serif" font-size="14.00">ReturnCurrentMatchPipe</text>
-</g>
-<!-- ReturnCurrentMatchPipe&#45;&gt;AppModule -->
-<g id="edge20" class="edge">
-<title>ReturnCurrentMatchPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M2307,-84.92C2307,-99.58 2307,-117.8 2307,-117.8 2307,-117.8 2668.13,-117.8 2668.13,-117.8"/>
-<polygon fill="black" stroke="black" points="2668.13,-121.3 2678.13,-117.8 2668.13,-114.3 2668.13,-121.3"/>
-</g>
-<!-- ReturnFinishedMatchPipe -->
-<g id="node21" class="node">
-<title>ReturnFinishedMatchPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="2210.49,-84.8 2047.51,-84.8 2047.51,-48.8 2210.49,-48.8 2210.49,-84.8"/>
-<text text-anchor="middle" x="2129" y="-62.6" font-family="Times,serif" font-size="14.00">ReturnFinishedMatchPipe</text>
-</g>
-<!-- ReturnFinishedMatchPipe&#45;&gt;AppModule -->
-<g id="edge21" class="edge">
-<title>ReturnFinishedMatchPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M2129,-85.04C2129,-100.37 2129,-119.8 2129,-119.8 2129,-119.8 2667.97,-119.8 2667.97,-119.8"/>
-<polygon fill="black" stroke="black" points="2667.97,-123.3 2677.97,-119.8 2667.97,-116.3 2667.97,-123.3"/>
-</g>
-<!-- ReturnIfXthPipe -->
-<g id="node22" class="node">
-<title>ReturnIfXthPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="2029.82,-84.8 1920.18,-84.8 1920.18,-48.8 2029.82,-48.8 2029.82,-84.8"/>
-<text text-anchor="middle" x="1975" y="-62.6" font-family="Times,serif" font-size="14.00">ReturnIfXthPipe</text>
-</g>
-<!-- ReturnIfXthPipe&#45;&gt;AppModule -->
-<g id="edge22" class="edge">
-<title>ReturnIfXthPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M1975,-84.81C1975,-100.85 1975,-121.8 1975,-121.8 1975,-121.8 2668.08,-121.8 2668.08,-121.8"/>
-<polygon fill="black" stroke="black" points="2668.08,-125.3 2678.08,-121.8 2668.08,-118.3 2668.08,-125.3"/>
-</g>
-<!-- ReturnRankUserPipe -->
-<g id="node23" class="node">
-<title>ReturnRankUserPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="1902.48,-84.8 1767.52,-84.8 1767.52,-48.8 1902.48,-48.8 1902.48,-84.8"/>
-<text text-anchor="middle" x="1835" y="-62.6" font-family="Times,serif" font-size="14.00">ReturnRankUserPipe</text>
-</g>
-<!-- ReturnRankUserPipe&#45;&gt;AppModule -->
-<g id="edge23" class="edge">
-<title>ReturnRankUserPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M1835,-84.84C1835,-101.53 1835,-123.8 1835,-123.8 1835,-123.8 2668.21,-123.8 2668.21,-123.8"/>
-<polygon fill="black" stroke="black" points="2668.21,-127.3 2678.21,-123.8 2668.21,-120.3 2668.21,-127.3"/>
-</g>
-<!-- ReturnSizePipe -->
-<g id="node24" class="node">
-<title>ReturnSizePipe</title>
-<polygon fill="#ffffb3" stroke="black" points="1749.6,-84.8 1646.4,-84.8 1646.4,-48.8 1749.6,-48.8 1749.6,-84.8"/>
-<text text-anchor="middle" x="1698" y="-62.6" font-family="Times,serif" font-size="14.00">ReturnSizePipe</text>
-</g>
-<!-- ReturnSizePipe&#45;&gt;AppModule -->
-<g id="edge24" class="edge">
-<title>ReturnSizePipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M1698,-84.82C1698,-102.17 1698,-125.8 1698,-125.8 1698,-125.8 2668.03,-125.8 2668.03,-125.8"/>
-<polygon fill="black" stroke="black" points="2668.03,-129.3 2678.03,-125.8 2668.03,-122.3 2668.03,-129.3"/>
-</g>
-<!-- ReturnUserPipe -->
-<g id="node25" class="node">
-<title>ReturnUserPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="1628.93,-84.8 1523.07,-84.8 1523.07,-48.8 1628.93,-48.8 1628.93,-84.8"/>
-<text text-anchor="middle" x="1576" y="-62.6" font-family="Times,serif" font-size="14.00">ReturnUserPipe</text>
-</g>
-<!-- ReturnUserPipe&#45;&gt;AppModule -->
-<g id="edge25" class="edge">
-<title>ReturnUserPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M1576,-85.1C1576,-103.07 1576,-127.8 1576,-127.8 1576,-127.8 2668.27,-127.8 2668.27,-127.8"/>
-<polygon fill="black" stroke="black" points="2668.27,-131.3 2678.27,-127.8 2668.27,-124.3 2668.27,-131.3"/>
-</g>
-<!-- ReturnXthPipe -->
-<g id="node26" class="node">
-<title>ReturnXthPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="1504.99,-84.8 1405.01,-84.8 1405.01,-48.8 1504.99,-48.8 1504.99,-84.8"/>
-<text text-anchor="middle" x="1455" y="-62.6" font-family="Times,serif" font-size="14.00">ReturnXthPipe</text>
-</g>
-<!-- ReturnXthPipe&#45;&gt;AppModule -->
-<g id="edge26" class="edge">
-<title>ReturnXthPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M1455,-85.02C1455,-103.63 1455,-129.8 1455,-129.8 1455,-129.8 2668.27,-129.8 2668.27,-129.8"/>
-<polygon fill="black" stroke="black" points="2668.27,-133.3 2678.27,-129.8 2668.27,-126.3 2668.27,-133.3"/>
-</g>
-<!-- SignupComponent -->
-<g id="node27" class="node">
-<title>SignupComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="1386.51,-84.8 1265.49,-84.8 1265.49,-48.8 1386.51,-48.8 1386.51,-84.8"/>
-<text text-anchor="middle" x="1326" y="-62.6" font-family="Times,serif" font-size="14.00">SignupComponent</text>
-</g>
-<!-- SignupComponent&#45;&gt;AppModule -->
-<g id="edge27" class="edge">
-<title>SignupComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M1326,-84.91C1326,-104.14 1326,-131.8 1326,-131.8 1326,-131.8 2668.28,-131.8 2668.28,-131.8"/>
-<polygon fill="black" stroke="black" points="2668.28,-135.3 2678.28,-131.8 2668.28,-128.3 2668.28,-135.3"/>
-</g>
-<!-- SortByDatePipe -->
-<g id="node28" class="node">
-<title>SortByDatePipe</title>
-<polygon fill="#ffffb3" stroke="black" points="1247.49,-84.8 1140.51,-84.8 1140.51,-48.8 1247.49,-48.8 1247.49,-84.8"/>
-<text text-anchor="middle" x="1194" y="-62.6" font-family="Times,serif" font-size="14.00">SortByDatePipe</text>
-</g>
-<!-- SortByDatePipe&#45;&gt;AppModule -->
-<g id="edge28" class="edge">
-<title>SortByDatePipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M1194,-84.83C1194,-104.38 1194,-132.8 1194,-132.8 1194,-132.8 2667.99,-132.8 2667.99,-132.8"/>
-<polygon fill="black" stroke="black" points="2667.99,-136.3 2677.99,-132.8 2667.99,-129.3 2667.99,-136.3"/>
-</g>
-<!-- SortDateDescendingPipe -->
-<g id="node29" class="node">
-<title>SortDateDescendingPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="1122.25,-84.8 965.75,-84.8 965.75,-48.8 1122.25,-48.8 1122.25,-84.8"/>
-<text text-anchor="middle" x="1044" y="-62.6" font-family="Times,serif" font-size="14.00">SortDateDescendingPipe</text>
-</g>
-<!-- SortDateDescendingPipe&#45;&gt;AppModule -->
-<g id="edge29" class="edge">
-<title>SortDateDescendingPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M1044,-85.02C1044,-105.17 1044,-134.8 1044,-134.8 1044,-134.8 2668.15,-134.8 2668.15,-134.8"/>
-<polygon fill="black" stroke="black" points="2668.15,-138.3 2678.15,-134.8 2668.15,-131.3 2668.15,-138.3"/>
-</g>
-<!-- SortTeamFirstPipe -->
-<g id="node30" class="node">
-<title>SortTeamFirstPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="947.77,-84.8 826.23,-84.8 826.23,-48.8 947.77,-48.8 947.77,-84.8"/>
-<text text-anchor="middle" x="887" y="-62.6" font-family="Times,serif" font-size="14.00">SortTeamFirstPipe</text>
-</g>
-<!-- SortTeamFirstPipe&#45;&gt;AppModule -->
-<g id="edge30" class="edge">
-<title>SortTeamFirstPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M887,-84.83C887,-105.57 887,-136.8 887,-136.8 887,-136.8 2668.27,-136.8 2668.27,-136.8"/>
-<polygon fill="black" stroke="black" points="2668.27,-140.3 2678.27,-136.8 2668.27,-133.3 2668.27,-140.3"/>
-</g>
-<!-- ToDatePipe -->
-<g id="node31" class="node">
-<title>ToDatePipe</title>
-<polygon fill="#ffffb3" stroke="black" points="808.37,-84.8 725.63,-84.8 725.63,-48.8 808.37,-48.8 808.37,-84.8"/>
-<text text-anchor="middle" x="767" y="-62.6" font-family="Times,serif" font-size="14.00">ToDatePipe</text>
-</g>
-<!-- ToDatePipe&#45;&gt;AppModule -->
-<g id="edge31" class="edge">
-<title>ToDatePipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M767,-84.97C767,-106.3 767,-138.8 767,-138.8 767,-138.8 2668.31,-138.8 2668.31,-138.8"/>
-<polygon fill="black" stroke="black" points="2668.31,-142.3 2678.31,-138.8 2668.31,-135.3 2668.31,-142.3"/>
-</g>
-<!-- ToDatePipe2 -->
-<g id="node32" class="node">
-<title>ToDatePipe2</title>
-<polygon fill="#ffffb3" stroke="black" points="707.87,-84.8 618.13,-84.8 618.13,-48.8 707.87,-48.8 707.87,-84.8"/>
-<text text-anchor="middle" x="663" y="-62.6" font-family="Times,serif" font-size="14.00">ToDatePipe2</text>
-</g>
-<!-- ToDatePipe2&#45;&gt;AppModule -->
-<g id="edge32" class="edge">
-<title>ToDatePipe2&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M663,-85.09C663,-107.01 663,-140.8 663,-140.8 663,-140.8 2667.98,-140.8 2667.98,-140.8"/>
-<polygon fill="black" stroke="black" points="2667.98,-144.3 2677.98,-140.8 2667.98,-137.3 2667.98,-144.3"/>
-</g>
-<!-- TransformPipe -->
-<g id="node33" class="node">
-<title>TransformPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="599.98,-84.8 500.02,-84.8 500.02,-48.8 599.98,-48.8 599.98,-84.8"/>
-<text text-anchor="middle" x="550" y="-62.6" font-family="Times,serif" font-size="14.00">TransformPipe</text>
-</g>
-<!-- TransformPipe&#45;&gt;AppModule -->
-<g id="edge33" class="edge">
-<title>TransformPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M550,-84.81C550,-107.29 550,-142.8 550,-142.8 550,-142.8 2668.11,-142.8 2668.11,-142.8"/>
-<polygon fill="black" stroke="black" points="2668.11,-146.3 2678.11,-142.8 2668.11,-139.3 2668.11,-146.3"/>
-</g>
-<!-- UidContainsListPipe -->
-<g id="node34" class="node">
-<title>UidContainsListPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="481.95,-84.8 348.05,-84.8 348.05,-48.8 481.95,-48.8 481.95,-84.8"/>
-<text text-anchor="middle" x="415" y="-62.6" font-family="Times,serif" font-size="14.00">UidContainsListPipe</text>
-</g>
-<!-- UidContainsListPipe&#45;&gt;AppModule -->
-<g id="edge34" class="edge">
-<title>UidContainsListPipe&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M415,-84.89C415,-107.93 415,-144.8 415,-144.8 415,-144.8 2668.02,-144.8 2668.02,-144.8"/>
-<polygon fill="black" stroke="black" points="2668.02,-148.3 2678.02,-144.8 2668.02,-141.3 2668.02,-148.3"/>
-</g>
-<!-- UserDetailComponent -->
-<g id="node35" class="node">
-<title>UserDetailComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="329.97,-84.8 188.03,-84.8 188.03,-48.8 329.97,-48.8 329.97,-84.8"/>
-<text text-anchor="middle" x="259" y="-62.6" font-family="Times,serif" font-size="14.00">UserDetailComponent</text>
-</g>
-<!-- UserDetailComponent&#45;&gt;AppModule -->
-<g id="edge35" class="edge">
-<title>UserDetailComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M259,-84.95C259,-108.56 259,-146.8 259,-146.8 259,-146.8 2668.32,-146.8 2668.32,-146.8"/>
-<polygon fill="black" stroke="black" points="2668.32,-150.3 2678.32,-146.8 2668.32,-143.3 2668.32,-150.3"/>
-</g>
-<!-- UserProfileComponent -->
-<g id="node36" class="node">
-<title>UserProfileComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="169.87,-84.8 24.13,-84.8 24.13,-48.8 169.87,-48.8 169.87,-84.8"/>
-<text text-anchor="middle" x="97" y="-62.6" font-family="Times,serif" font-size="14.00">UserProfileComponent</text>
-</g>
-<!-- UserProfileComponent&#45;&gt;AppModule -->
-<g id="edge36" class="edge">
-<title>UserProfileComponent&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M97,-85C97,-109.16 97,-148.8 97,-148.8 97,-148.8 2668.27,-148.8 2668.27,-148.8"/>
-<polygon fill="black" stroke="black" points="2668.27,-152.3 2678.27,-148.8 2668.27,-145.3 2668.27,-152.3"/>
-</g>
-<!-- AppComponent  -->
-<g id="node39" class="node">
-<title>AppComponent </title>
-<polygon fill="#80b1d3" stroke="black" points="2774.44,-214.8 2665.56,-214.8 2665.56,-178.8 2774.44,-178.8 2774.44,-214.8"/>
-<text text-anchor="middle" x="2720" y="-192.6" font-family="Times,serif" font-size="14.00">AppComponent </text>
-</g>
-<!-- AppModule&#45;&gt;AppComponent  -->
-<g id="edge38" class="edge">
-<title>AppModule&#45;&gt;AppComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="1,5" d="M2720,-149.91C2720,-149.91 2720,-168.79 2720,-168.79"/>
-<polygon fill="black" stroke="black" points="2716.5,-168.79 2720,-178.79 2723.5,-168.79 2716.5,-168.79"/>
-</g>
-<!-- AppRoutingModule -->
-<g id="node38" class="node">
-<title>AppRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="5747.28,-84.8 5744.28,-88.8 5723.28,-88.8 5720.28,-84.8 5618.72,-84.8 5618.72,-48.8 5747.28,-48.8 5747.28,-84.8"/>
-<text text-anchor="middle" x="5683" y="-62.6" font-family="Times,serif" font-size="14.00">AppRoutingModule</text>
-</g>
-<!-- AppRoutingModule&#45;&gt;AppModule -->
-<g id="edge37" class="edge">
-<title>AppRoutingModule&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M5683,-85C5683,-109.16 5683,-148.8 5683,-148.8 5683,-148.8 2771.89,-148.8 2771.89,-148.8"/>
-<polygon fill="black" stroke="black" points="2771.89,-145.3 2761.89,-148.8 2771.89,-152.3 2771.89,-145.3"/>
-</g>
-<!-- AuthService -->
-<g id="node40" class="node">
-<title>AuthService</title>
-<ellipse fill="#fdb462" stroke="black" cx="5536" cy="-66.8" rx="59.11" ry="18"/>
-<text text-anchor="middle" x="5536" y="-62.6" font-family="Times,serif" font-size="14.00">AuthService</text>
-</g>
-<!-- AuthService&#45;&gt;AppModule -->
-<g id="edge39" class="edge">
-<title>AuthService&#45;&gt;AppModule</title>
-<path fill="none" stroke="black" d="M5536,-84.95C5536,-108.56 5536,-146.8 5536,-146.8 5536,-146.8 2771.72,-146.8 2771.72,-146.8"/>
-<polygon fill="black" stroke="black" points="2771.72,-143.3 2761.72,-146.8 2771.72,-150.3 2771.72,-143.3"/>
-</g>
-</g>
-</svg>
-
-    </div>
-    <i id="fullscreen" class="icon ion-ios-resize module-graph-fullscreen-btn" aria-hidden="true"></i>
-    <div class="btn-group size-buttons">
+<div class="text-center">
+    <object id="demo-svg" type="image/svg+xml" data="../modules/AppModule/dependencies.svg" style="width: 100%; height: 250px;">
+            Your browser does not support SVG
+    </object>
+    <div class="btn-group">
         <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
         <button id="reset" class="btn btn-default btn-sm">Reset</button>
         <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
@@ -561,17 +592,16 @@
 <script src="../js/svg-pan-zoom.controls.js"></script>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
     </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
     </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-
+    <div class="tab-pane fade active in" id="infos">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -580,161 +610,148 @@
         </p>
 
 
-
-
-
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank"
-                            title="Official documentation about module declarations"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
+                    <h3>Declarations<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#declarations-anchor" target="_blank"><span class="fa fa-info-circle"></span></a></h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/AdminPanelComponent.html">AdminPanelComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/AppComponent.html">AppComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/ChartsComponent.html">ChartsComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html">DisplayMessagesOnlyFromCurrentMatchPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/EditProfileComponent.html">EditProfileComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/FeedMainComponent.html">FeedMainComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/FilterTeamOnlyPipe.html">FilterTeamOnlyPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/HeaderComponent.html">HeaderComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/HoursMinutesPipe.html">HoursMinutesPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/InMatchComponent.html">InMatchComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/IsUserInDisikedListPipe.html">IsUserInDisikedListPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/IsUserInLikedListOfMessagePipe.html">IsUserInLikedListOfMessagePipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/IsUserInLikedListPipe.html">IsUserInLikedListPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/LeaderboardComponent.html">LeaderboardComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/LoginComponent.html">LoginComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/NewsPageComponent.html">NewsPageComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/PluralPipe.html">PluralPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/PollsPageComponent.html">PollsPageComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ReturnCurrentMatchIdPipe.html">ReturnCurrentMatchIdPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ReturnCurrentMatchPipe.html">ReturnCurrentMatchPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ReturnFinishedMatchPipe.html">ReturnFinishedMatchPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ReturnIfXthPipe.html">ReturnIfXthPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ReturnRankUserPipe.html">ReturnRankUserPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ReturnSizePipe.html">ReturnSizePipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ReturnUserPipe.html">ReturnUserPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ReturnXthPipe.html">ReturnXthPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/SignupComponent.html">SignupComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/SortByDatePipe.html">SortByDatePipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/SortDateDescendingPipe.html">SortDateDescendingPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/SortTeamFirstPipe.html">SortTeamFirstPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ToDatePipe.html">ToDatePipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/ToDatePipe2.html">ToDatePipe2</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/TransformPipe.html">TransformPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../pipes/UidContainsListPipe.html">UidContainsListPipe</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/UserDetailComponent.html">UserDetailComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/UserProfileComponent.html">UserProfileComponent</a>
-                        </li>
+                            <li class="list-group-item">
+                                <a href="../components/AppComponent.html">AppComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/HeaderComponent.html">HeaderComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/LoginComponent.html">LoginComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/FeedMainComponent.html">FeedMainComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/UserProfileComponent.html">UserProfileComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/SignupComponent.html">SignupComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/EditProfileComponent.html">EditProfileComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ToDatePipe.html">ToDatePipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/UidContainsListPipe.html">UidContainsListPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/AdminPanelComponent.html">AdminPanelComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/LeaderboardComponent.html">LeaderboardComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/InMatchComponent.html">InMatchComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/UserDetailComponent.html">UserDetailComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/MatchesAdminComponent.html">MatchesAdminComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/TransformPipe.html">TransformPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ReturnSizePipe.html">ReturnSizePipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ReturnXthPipe.html">ReturnXthPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ReturnIfXthPipe.html">ReturnIfXthPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ReturnRankUserPipe.html">ReturnRankUserPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/NewsPageComponent.html">NewsPageComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ToDatePipe2.html">ToDatePipe2</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/SortTeamFirstPipe.html">SortTeamFirstPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/FilterTeamOnlyPipe.html">FilterTeamOnlyPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/SortDateDescendingPipe.html">SortDateDescendingPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/IsUserInDisikedListPipe.html">IsUserInDisikedListPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/IsUserInLikedListPipe.html">IsUserInLikedListPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/HoursMinutesPipe.html">HoursMinutesPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/PollsPageComponent.html">PollsPageComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/SortByDatePipe.html">SortByDatePipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/PluralPipe.html">PluralPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/IsUserInLikedListOfMessagePipe.html">IsUserInLikedListOfMessagePipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ReturnUserPipe.html">ReturnUserPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html">DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ReturnCurrentMatchPipe.html">ReturnCurrentMatchPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ReturnFinishedMatchPipe.html">ReturnFinishedMatchPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/ReturnCurrentMatchIdPipe.html">ReturnCurrentMatchIdPipe</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/ChartsComponent.html">ChartsComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/DisableInMatchButtonPipe.html">DisableInMatchButtonPipe</a>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Providers<a href="https://angular.io/api/core/NgModule#providers" target="_blank"
-                            title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Providers<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#providers-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../injectables/AuthService.html">AuthService</a>
-                        </li>
+                            <li class="list-group-item">
+                                <a href="../injectables/AuthService.html" >AuthService</a>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Imports<a href="https://angular.io/api/core/NgModule#imports" target="_blank" title="Official documentation about module imports"><span
-                                class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Bootstrap<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#bootstrap-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../modules/AppRoutingModule.html">AppRoutingModule</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Bootstrap<a href="https://angular.io/api/core/NgModule#bootstrap" target="_blank"
-                            title="Official documentation about module bootstrap"><span class="icon ion-ios-information-circle-outline"></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/AppComponent.html">AppComponent</a>
-                        </li>
+                            <li class="list-group-item">
+                                <a href="../components/AppComponent.html" >AppComponent</a>
+                            </li>
                     </ul>
                 </div>
             </div>
         </div>
-
-
     </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 import { MatToolbarModule } from &#x27;@angular/material/toolbar&#x27;;
 import { MatCardModule } from &#x27;@angular/material/card&#x27;;
@@ -763,6 +780,8 @@ import { EditProfileComponent } from &#x27;./profile/edit_profile.component&#x27
 import { AdminPanelComponent } from &#x27;./admin_panel/admin_panel.component&#x27;;
 import { LeaderboardComponent } from &#x27;./leaderboard/leaderboard.component&#x27;;
 import { InMatchComponent } from &#x27;./in-match/in-match.component&#x27;;
+import { MatchesAdminComponent } from &#x27;./admin_panel/matches_admin.component&#x27;;
+
 
 import { UserDetailComponent } from &#x27;./admin_panel/user_detail.component&#x27;;
 import { UidContainsListPipe } from &#x27;./admin_panel/user_detail.component&#x27;;
@@ -803,7 +822,7 @@ import { DisplayMessagesOnlyFromCurrentMatchPipe } from &#x27;./in-match/in-matc
 import { ReturnCurrentMatchPipe } from &#x27;./in-match/in-match.component&#x27;;
 import { ReturnCurrentMatchIdPipe } from &#x27;./in-match/in-match.component&#x27;;
 import { ReturnFinishedMatchPipe } from &#x27;./main_page/feed_main.component&#x27;;
-
+import { DisableInMatchButtonPipe } from &#x27;./header/header.component&#x27;;
 import { ChartsComponent } from &#x27;./charts/charts.component&#x27;;
 import { HighchartsChartModule } from &#x27;highcharts-angular&#x27;;
 
@@ -824,6 +843,7 @@ import { HighchartsChartModule } from &#x27;highcharts-angular&#x27;;
     LeaderboardComponent,
     InMatchComponent,
     UserDetailComponent,
+    MatchesAdminComponent,
     TransformPipe,
     ReturnSizePipe,
     ReturnXthPipe,
@@ -846,7 +866,8 @@ import { HighchartsChartModule } from &#x27;highcharts-angular&#x27;;
     ReturnCurrentMatchPipe,
     ReturnFinishedMatchPipe,
     ReturnCurrentMatchIdPipe,
-    ChartsComponent
+    ChartsComponent,
+    DisableInMatchButtonPipe,
 
   ],
   imports: [
@@ -899,13 +920,6 @@ export class AppModule { }
 
 
 
-
-
-
-
-
-
-
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
@@ -916,31 +930,8 @@ export class AppModule { }
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-          <label class="dark-mode-switch">
-               <input type="checkbox">
-               <span class="slider">
-                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-                    </svg>
-               </span>
-          </label>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppModule.html';
-            var MAX_SEARCH_RESULTS = 15;
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-
-       <script src="../js/menu-wc.js" defer></script>
-       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -951,17 +942,20 @@ export class AppModule { }
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>
