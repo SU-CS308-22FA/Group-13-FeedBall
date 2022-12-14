@@ -30,37 +30,90 @@ export class MatchesAdminComponent{
         this.matchesRef = this.afs.collection('matches');
         this.matches$ = this.matchesRef.valueChanges();
       }
+      incrementTeam1(scoringteam: matches){
+        this.authService.Team1Scores(scoringteam);
+      }
+      incrementTeam2(scoringteam: matches){
+        this.authService.Team2Scores(scoringteam);
+      }
 
 }
 
-@Pipe({ name: 'returncurrentmatchipe' })
-export class ReturnCurrentMatchPipe implements PipeTransform {
+
+
+@Pipe({ name: 'returnallmatchpipe' })
+export class ReturnAllMatchPipe implements PipeTransform {
 transform(matchesList: matches[]) {
 
-  var retStr: string = "";
   var size = Object.keys(matchesList).length;
   function addMinutes(date:Date, minutes:number) {
     date.setMinutes(date.getMinutes() + minutes);
     return date;
   }
 
+  var list1: matches[] = [];
+
     for(let i=0; i<size; i++){
       var star:any = matchesList[i].starts_at;
       var numtimestamp = Number(star.seconds);
       numtimestamp = numtimestamp * 1000;
       const dateOf = new Date(numtimestamp);
-      const dateOf2 = dateOf;
-      var ends_at = addMinutes(dateOf2,90);
-      const anlik = new Date();
-      const dateOf3 = new Date(numtimestamp);
+      var ends_at = addMinutes(dateOf,90);
       if (true){
-
-
-        return retStr;
+        list1.push(matchesList[i]);
+        return ends_at;
       }
     }
-    return retStr;
+    return list1;
     //search by date among matches list, return the match code
 
   }
+
+
 }
+
+@Pipe({ name: 'todatepipe2' })
+export class ToDatePipe2 implements PipeTransform {
+  transform(timestamp: any) {
+
+    var numtimestamp = Number(timestamp.seconds);
+    numtimestamp = numtimestamp * 1000;
+    const dateOf = new Date(numtimestamp);
+    var deneme = new Date();
+    console.log(deneme.getHours().toString(), deneme.getMinutes().toString());
+    deneme.setHours(11);
+    deneme.setMinutes(30);
+    console.log("after: ", deneme.getHours().toString(), deneme.getMinutes().toString());
+
+
+
+
+    var returnString = "";
+
+    var nummonth = Number(dateOf.getMonth())+1;
+
+    var mins = dateOf.getMinutes().toString();
+    if(Object.keys(mins).length < 2){
+      mins = "0" + mins;
+    }
+    if(Object.keys(mins).length < 1){
+      mins = "00" + mins;
+    }
+
+    var hours = dateOf.getHours().toString();
+    if(Object.keys(hours).length < 2){
+      hours = "0" + hours;
+    }
+    if(Object.keys(hours).length < 1){
+      hours = "00" + hours;
+    }
+
+    returnString = dateOf.getDate().toString() + "." + String(nummonth) + "." +  dateOf.getFullYear().toString()
+    + " " + hours + ":" + mins;
+
+    return returnString;
+
+  }
+}
+
+

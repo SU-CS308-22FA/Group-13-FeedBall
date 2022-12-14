@@ -1,0 +1,29 @@
+<div class="titlediv" align="center"><p class="mainfeedtext">All Matches</p></div>
+<table align="center">
+    <tr align="center">
+        <div class="matchcontainer">
+            <div *ngIf="(matches$ | async) as matches">
+                <div align="center" *ngFor="let match of matches">
+                    <div>
+                    <br>
+                        <mat-card align="center" class="matcardclass">
+                            <table align="center">
+                                <p>{{(matches | returnallmatchpipe) | todatepipe2}}</p>
+                                <p>{{match.team1}} - {{match.team2}}</p>
+                                <p>{{match.score_team1}} - {{match.score_team2}}</p>
+                            </table>
+                            <td align="center"><button (click)="incrementTeam1(match)"
+                                mat-raised-button class="deletebutton">{{match.team1}} Scores!</button></td>
+                            <td align="center"><button (click)="incrementTeam2(match)"
+                                mat-raised-button class="deletebutton">{{match.team2}} Scores!</button></td>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tr>
+</table>
+
+
+
+

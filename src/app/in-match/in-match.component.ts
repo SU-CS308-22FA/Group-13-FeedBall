@@ -372,8 +372,10 @@ transform(matchesList: matches[]) {
       var numtimestamp = Number(star.seconds);
       numtimestamp = numtimestamp * 1000;
       const dateOf = new Date(numtimestamp);
+      console.log(dateOf);
       const dateOf2 = dateOf;
       var ends_at = addMinutes(dateOf2,90);
+      console.log(ends_at);
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
       if (anlik >= dateOf3 && anlik <= ends_at){

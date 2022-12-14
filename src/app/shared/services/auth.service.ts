@@ -274,8 +274,15 @@ export class AuthService {
     return userRef.set(user, { merge: true });
   }
 
+  Team1Scores(scoringteam: matches){
+    var increment = scoringteam.score_team1 + 1;
+    this.afs.collection("matches").doc(scoringteam.matchID).update({"score_team1": increment});
+  }
 
-
+  Team2Scores(scoringteam: matches){
+    var increment = scoringteam.score_team2 + 1;
+    this.afs.collection("matches").doc(scoringteam.matchID).update({"score_team2": increment});
+  }
 
   incrementPoints(userCurrent: User, pointToIncrement: number){ //points to incrememt will be given by the activity type that the user did, in related ts file
 
