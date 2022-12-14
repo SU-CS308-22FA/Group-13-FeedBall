@@ -43,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Pipes</li>
-  <li >ReturnFinishedMatchPipe</li>
+  <li >ReturnAllMatchPipe</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,7 +62,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/main_page/feed_main.component.ts</code>
+            <code>src/app/admin_panel/matches_admin.component.ts</code>
         </p>
 
 
@@ -74,7 +74,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-3">Name</td>
-                        <td class="col-md-9">returnfinishedmatchpipe</td>
+                        <td class="col-md-9">returnallmatchpipe</td>
                     </tr>
                 </tbody>
             </table>
@@ -105,8 +105,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app/main_page/feed_main.component.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/admin_panel/matches_admin.component.ts:46</a></div>
                 </td>
             </tr>
 
@@ -144,7 +144,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -161,57 +161,51 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
+import { NgForm } from &#x27;@angular/forms&#x27;;
+import { FormsModule, ReactiveFormsModule }   from &#x27;@angular/forms&#x27;;
 import { AuthService } from &quot;../shared/services/auth.service&quot;;
-import { matches } from &#x27;../models/matches.model&#x27;;
+import { User } from &quot;../shared/services/user&quot;;
 import { AngularFireAuth } from &#x27;@angular/fire/compat/auth&#x27;;
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-  AngularFirestoreDocument,
-} from &#x27;@angular/fire/compat/firestore&#x27;;
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument,} from &#x27;@angular/fire/compat/firestore&#x27;;
+import { animationFrameScheduler, of, switchMap } from &#x27;rxjs&#x27;;
+import { Auth, getAdditionalUserInfo, updateCurrentUser } from &#x27;firebase/auth&#x27;;
+import firebase from &#x27;firebase/compat/app&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
+import { matches } from &#x27;../models/matches.model&#x27;;
+
 
 @Component({
-  selector: &#x27;app-main&#x27;,
-  templateUrl: &#x27;./feed_main.component.html&#x27;,
-  styleUrls: [&#x27;./feed_main.component.css&#x27;]
+  selector: &#x27;matches-admin&#x27;,
+  templateUrl: &#x27;./matches_admin.component.html&#x27;,
+  styleUrls: [&#x27;./matches_admin.component.css&#x27;]
 })
-export class FeedMainComponent{
 
-  user$ &#x3D; this.authService.user$;
-  matchesRef: AngularFirestoreCollection&lt;matches&gt;;
-  matches$: Observable&lt;matches[]&gt;;
-  constructor(private router: Router,
-    private authService: AuthService,
-    public afs: AngularFirestore,
-    public auth: AngularFireAuth,){
-      this.matchesRef &#x3D; this.afs.collection(&#x27;matches&#x27;);
-      this.matches$ &#x3D; this.matchesRef.valueChanges();
-    }
-
-  navigateProfilePage(){
-    this.router.navigate([&#x27;profile&#x27;]);
-  }
-
-  navigateNewsPage(){
-    this.router.navigate([&#x27;news-page&#x27;]);
-  }
-  callLogOut(){
-    this.authService.SignOut();
-  }
-
-  navigatePollsPage(){
-    this.router.navigate([&#x27;polls-page&#x27;]);
-  }
+export class MatchesAdminComponent{
+    matchesRef: AngularFirestoreCollection&lt;matches&gt;;
+    matches$: Observable&lt;matches[]&gt;;
+    constructor(
+        public authService: AuthService,
+        public afs: AngularFirestore,
+        public auth: AngularFireAuth,
+      ){
+        this.matchesRef &#x3D; this.afs.collection(&#x27;matches&#x27;);
+        this.matches$ &#x3D; this.matchesRef.valueChanges();
+      }
+      incrementTeam1(scoringteam: matches){
+        this.authService.Team1Scores(scoringteam);
+      }
+      incrementTeam2(scoringteam: matches){
+        this.authService.Team2Scores(scoringteam);
+      }
 
 }
 
-@Pipe({ name: &#x27;returnfinishedmatchpipe&#x27; })
-export class ReturnFinishedMatchPipe implements PipeTransform {
-transform(matchesList: matches[]) {
 
-  var retStr: string &#x3D; &quot;&quot;;
+
+@Pipe({ name: &#x27;returnallmatchpipe&#x27; })
+export class ReturnAllMatchPipe implements PipeTransform {
+transform(matchesList: matches[]) {
 
   var size &#x3D; Object.keys(matchesList).length;
   function addMinutes(date:Date, minutes:number) {
@@ -221,21 +215,15 @@ transform(matchesList: matches[]) {
 
   var list1: matches[] &#x3D; [];
 
-
     for(let i&#x3D;0; i&lt;size; i++){
       var star:any &#x3D; matchesList[i].starts_at;
       var numtimestamp &#x3D; Number(star.seconds);
       numtimestamp &#x3D; numtimestamp * 1000;
       const dateOf &#x3D; new Date(numtimestamp);
-      const dateOf2 &#x3D; dateOf;
-      var ends_at &#x3D; addMinutes(dateOf2,90);
-      const anlik &#x3D; new Date();
-      const dateOf3 &#x3D; new Date(numtimestamp);
-      if (anlik &gt;&#x3D; ends_at){
-        /*retStr &#x3D; matchesList[i].team1.toString() + &quot;-&quot; + matchesList[i].team2.toString() +&quot;\n&quot; +
-        matchesList[i].score_team1.toString() + &quot; - &quot; + matchesList[i].score_team2.toString();*/
-
+      var ends_at &#x3D; addMinutes(dateOf,90);
+      if (true){
         list1.push(matchesList[i]);
+        return ends_at;
       }
     }
     return list1;
@@ -245,6 +233,52 @@ transform(matchesList: matches[]) {
 
 
 }
+
+@Pipe({ name: &#x27;todatepipe2&#x27; })
+export class ToDatePipe2 implements PipeTransform {
+  transform(timestamp: any) {
+
+    var numtimestamp &#x3D; Number(timestamp.seconds);
+    numtimestamp &#x3D; numtimestamp * 1000;
+    const dateOf &#x3D; new Date(numtimestamp);
+    var deneme &#x3D; new Date();
+    console.log(deneme.getHours().toString(), deneme.getMinutes().toString());
+    deneme.setHours(11);
+    deneme.setMinutes(30);
+    console.log(&quot;after: &quot;, deneme.getHours().toString(), deneme.getMinutes().toString());
+
+
+
+
+    var returnString &#x3D; &quot;&quot;;
+
+    var nummonth &#x3D; Number(dateOf.getMonth())+1;
+
+    var mins &#x3D; dateOf.getMinutes().toString();
+    if(Object.keys(mins).length &lt; 2){
+      mins &#x3D; &quot;0&quot; + mins;
+    }
+    if(Object.keys(mins).length &lt; 1){
+      mins &#x3D; &quot;00&quot; + mins;
+    }
+
+    var hours &#x3D; dateOf.getHours().toString();
+    if(Object.keys(hours).length &lt; 2){
+      hours &#x3D; &quot;0&quot; + hours;
+    }
+    if(Object.keys(hours).length &lt; 1){
+      hours &#x3D; &quot;00&quot; + hours;
+    }
+
+    returnString &#x3D; dateOf.getDate().toString() + &quot;.&quot; + String(nummonth) + &quot;.&quot; +  dateOf.getFullYear().toString()
+    + &quot; &quot; + hours + &quot;:&quot; + mins;
+
+    return returnString;
+
+  }
+}
+
+
 </code></pre>
     </div>
 
@@ -285,7 +319,7 @@ transform(matchesList: matches[]) {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
-            var COMPODOC_CURRENT_PAGE_URL = 'ReturnFinishedMatchPipe.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ReturnAllMatchPipe.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

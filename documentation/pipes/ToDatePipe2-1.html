@@ -62,7 +62,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/admin_panel/matches_admin.component.ts</code>
+            <code>src/app/news_page/news_page.component.ts</code>
         </p>
 
 
@@ -105,8 +105,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">src/app/admin_panel/matches_admin.component.ts:77</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/app/news_page/news_page.component.ts:162</a></div>
                 </td>
             </tr>
 
@@ -160,80 +160,165 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import {News} from &quot;src/app/models/news.model&quot;
 import { NgForm } from &#x27;@angular/forms&#x27;;
 import { FormsModule, ReactiveFormsModule }   from &#x27;@angular/forms&#x27;;
 import { AuthService } from &quot;../shared/services/auth.service&quot;;
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument,} from &#x27;@angular/fire/compat/firestore&#x27;;
 import { User } from &quot;../shared/services/user&quot;;
 import { AngularFireAuth } from &#x27;@angular/fire/compat/auth&#x27;;
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument,} from &#x27;@angular/fire/compat/firestore&#x27;;
-import { animationFrameScheduler, of, switchMap } from &#x27;rxjs&#x27;;
+import { animationFrameScheduler, of, switchMap, Observable } from &#x27;rxjs&#x27;;
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from &#x27;firebase/auth&#x27;;
-import firebase from &#x27;firebase/compat/app&#x27;;
+import * as firebase from &#x27;firebase/compat&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-import { matches } from &#x27;../models/matches.model&#x27;;
+import { Pipe } from &#x27;@angular/core&#x27;;
+import { PipeTransform } from &#x27;@angular/core&#x27;;
+import { isIntersectionTypeNode, sortAndDeduplicateDiagnostics } from &#x27;typescript&#x27;;
+
 
 
 @Component({
-  selector: &#x27;matches-admin&#x27;,
-  templateUrl: &#x27;./matches_admin.component.html&#x27;,
-  styleUrls: [&#x27;./matches_admin.component.css&#x27;]
+  selector: &#x27;app-news&#x27;,
+  templateUrl: &#x27;./news_page.component.html&#x27;,
+  styleUrls: [&#x27;./news_page.component.css&#x27;]
 })
-
-export class MatchesAdminComponent{
-    matchesRef: AngularFirestoreCollection&lt;matches&gt;;
-    matches$: Observable&lt;matches[]&gt;;
-    constructor(
-        public authService: AuthService,
-        public afs: AngularFirestore,
-        public auth: AngularFireAuth,
-      ){
-        this.matchesRef &#x3D; this.afs.collection(&#x27;matches&#x27;);
-        this.matches$ &#x3D; this.matchesRef.valueChanges();
-      }
-      incrementTeam1(scoringteam: matches){
-        this.authService.Team1Scores(scoringteam);
-      }
-      incrementTeam2(scoringteam: matches){
-        this.authService.Team2Scores(scoringteam);
-      }
-
-}
+export class NewsPageComponent{
+  newsRef: AngularFirestoreCollection&lt;News&gt;;
+  news$: Observable&lt;News[]&gt;;
 
 
 
-@Pipe({ name: &#x27;returnallmatchpipe&#x27; })
-export class ReturnAllMatchPipe implements PipeTransform {
-transform(matchesList: matches[]) {
 
-  var size &#x3D; Object.keys(matchesList).length;
-  function addMinutes(date:Date, minutes:number) {
-    date.setMinutes(date.getMinutes() + minutes);
-    return date;
+  constructor(public authService: AuthService,
+    private router: Router,
+    private afs: AngularFirestore,
+    private auth: AngularFireAuth)
+  {
+    this.newsRef &#x3D; this.afs.collection(&#x27;News&#x27;);
+    this.news$ &#x3D; this.newsRef.valueChanges();
+    console.log(this.newsRef);
   }
 
-  var list1: matches[] &#x3D; [];
+  public filterOption &#x3D; &quot;alldatedesc&quot;;
+  user$ &#x3D; this.authService.user$;
+
+
+
+
+  returnListWithout(theList: Array&lt;String&gt;, theElem: String){
+    var size &#x3D; Object.keys(theList).length;
+    var copyList: Array&lt;String&gt; &#x3D; [];
 
     for(let i&#x3D;0; i&lt;size; i++){
-      var star:any &#x3D; matchesList[i].starts_at;
-      var numtimestamp &#x3D; Number(star.seconds);
-      numtimestamp &#x3D; numtimestamp * 1000;
-      const dateOf &#x3D; new Date(numtimestamp);
-      var ends_at &#x3D; addMinutes(dateOf,90);
-      if (true){
-        list1.push(matchesList[i]);
-        return ends_at;
+      if(theList[i] !&#x3D; theElem){
+        copyList.push(theList[i]);
       }
     }
-    return list1;
-    //search by date among matches list, return the match code
 
+    return copyList;
+  }
+
+  isUserInList(theList: Array&lt;String&gt;, user: User){
+    var size &#x3D; Object.keys(theList).length;
+    if(size&gt;0){
+      for(let i&#x3D;0; i&lt;size; i++){
+        if(theList[i] &#x3D;&#x3D; user.uid){
+          return true;
+        }
+      }
+      return false;
+    }
+    else{
+      return false;
+    }
+  }
+
+  like(user: User, news: News){
+    console.log(&quot;in like&quot;);
+    if(!this.isUserInList(news.likedUsers, user) &amp;&amp; !this.isUserInList(news.dislikedUsers, user)){ //if the user did not like the post and did not dislike the post
+
+      //call necessary increment and add functions
+      this.authService.incrementPoints(user, 5); //like: 5 points increment for the user
+
+      //
+      var newList: Array&lt;String&gt; &#x3D; news.likedUsers;
+      newList.push(user.uid);
+      var newLikeNum: number &#x3D; news.likes + 1;
+
+      this.authService.LikeDislikePost(news, newLikeNum, news.dislikes, newList, news.dislikedUsers, news.nid);
+
+    }
+    else{ //if user disliked the post, it cannot like the post at the same time, should undislike first
+      return;
+    }
+  }
+
+  unlike(user: User, news: News){
+    console.log(&quot;in unlike&quot;);
+
+    if(this.isUserInList(news.likedUsers, user)){
+
+      //call necessary decrement and remove functions
+      this.authService.decrementPoints(user, 5);
+
+      //
+      var newList &#x3D; this.returnListWithout(news.likedUsers, user.uid);
+      var newLikeNum &#x3D; news.likes - 1;
+
+      this.authService.LikeDislikePost(news, newLikeNum, news.dislikes, newList, news.dislikedUsers, news.nid);
+
+    }
+    else{ //should not be in this state
+      return;
+    }
+  }
+
+  dislike(user: User, news: News){
+    console.log(&quot;in like&quot;);
+    if(!this.isUserInList(news.dislikedUsers, user) &amp;&amp; !this.isUserInList(news.likedUsers, user)){ //if the user did not like the post and did not dislike the post
+
+      //call necessary increment and add functions
+      this.authService.incrementPoints(user, 5);//dislike: 5 points increment for the user
+
+      //
+      var newList: Array&lt;String&gt; &#x3D; news.dislikedUsers;
+      newList.push(user.uid);
+      var newDislikeNum: number &#x3D; news.dislikes + 1;
+
+      this.authService.LikeDislikePost(news, news.likes, newDislikeNum, news.likedUsers, newList, news.nid);
+
+
+    }
+    else{ //if user liked the post, it cannot dislike the post at the same time, should unlike first
+      return;
+    }
+  }
+
+  undislike(user: User, news: News){
+    console.log(&quot;in unlike&quot;);
+
+    if(this.isUserInList(news.dislikedUsers, user)){
+
+      //call necessary decrement and remove functions
+      this.authService.decrementPoints(user, 5);
+
+      //
+      var newList &#x3D; this.returnListWithout(news.dislikedUsers, user.uid);
+      var newDislikeNum &#x3D; news.dislikes - 1;
+
+      this.authService.LikeDislikePost(news, news.likes, newDislikeNum, news.likedUsers, newList, news.nid);
+
+    }
+    else{ //should not be in this state
+      return;
+    }
   }
 
 
 }
 
+//pipelines
 @Pipe({ name: &#x27;todatepipe2&#x27; })
 export class ToDatePipe2 implements PipeTransform {
   transform(timestamp: any) {
@@ -274,6 +359,137 @@ export class ToDatePipe2 implements PipeTransform {
     + &quot; &quot; + hours + &quot;:&quot; + mins;
 
     return returnString;
+
+  }
+}
+
+@Pipe({ name: &#x27;sortteamfirstpipe&#x27; })
+export class SortTeamFirstPipe implements PipeTransform {
+  transform(listUnsorted: News[], teamUser: string) {
+
+    var listSorted: News[] &#x3D; [];
+    var addedIndexes: number[] &#x3D; [];
+    var size &#x3D; Object.keys(listUnsorted).length;
+    if(listUnsorted !&#x3D; null &amp;&amp; size &gt; 0){
+      for(let i&#x3D;0; i&lt;size; i++){
+
+        var stringList &#x3D; listUnsorted[i].tags;
+        var boolOf &#x3D; false;
+        var sizeList &#x3D; Object.keys(stringList).length;
+        for(let j&#x3D;0; j&lt;sizeList; j++){
+
+          if(stringList[j] &#x3D;&#x3D; teamUser){
+            boolOf &#x3D; true;
+
+          }
+        }
+        if(boolOf){
+          listSorted.push(listUnsorted[i]);
+          addedIndexes.push(i);
+        }
+        boolOf &#x3D; false;
+      }
+
+      var sizeIndexList &#x3D; Object.keys(addedIndexes).length;
+      for(let k&#x3D;0; k&lt;size; k++){
+
+        var isAdded &#x3D; false;
+
+        for(let l&#x3D;0; l&lt;sizeIndexList; l++){
+          if(k &#x3D;&#x3D; addedIndexes[l]){
+            isAdded &#x3D; true;
+          }
+        }
+
+        if(!isAdded){
+          listSorted.push(listUnsorted[k]);
+        }
+      }
+    }
+    return listSorted;
+  }
+}
+
+
+@Pipe({ name: &#x27;filterteamonlypipe&#x27; })
+export class FilterTeamOnlyPipe implements PipeTransform {
+  transform(listUnfiltered: News[], teamUser: string) {
+
+    var filteredList: News[] &#x3D; [];
+    var size &#x3D; Object.keys(listUnfiltered).length;
+
+    if(listUnfiltered !&#x3D; null &amp;&amp; size &gt; 0){
+      for(let i&#x3D;0; i&lt;size; i++){
+
+        var strList &#x3D; listUnfiltered[i].tags;
+        var sizeStrList &#x3D; Object.keys(strList).length;
+        var isTeamInTag &#x3D; false;
+        for(let j&#x3D;0; j&lt;sizeStrList; j++){
+          if(teamUser &#x3D;&#x3D; strList[j]){
+            isTeamInTag &#x3D; true;
+          }
+        }
+
+        if(isTeamInTag){
+          filteredList.push(listUnfiltered[i]);
+        }
+      }
+    }
+
+    return filteredList;
+  }
+}
+
+@Pipe({ name: &#x27;sortdatedescendingpipe&#x27; })
+export class SortDateDescendingPipe implements PipeTransform {
+  transform(listUnfiltered: News[]) {
+
+    var sortedList: News[] &#x3D; [];
+
+    if(listUnfiltered !&#x3D; null){
+      sortedList &#x3D; listUnfiltered.sort((a, b) &#x3D;&gt; (a.newsdate &gt; b.newsdate ? -1 : 1));
+    }
+
+    return sortedList;
+  }
+}
+
+@Pipe({ name: &#x27;isuserinlikedlistpipe&#x27; })
+export class IsUserInLikedListPipe implements PipeTransform {
+  transform(news: News, user: User) {
+
+    var size &#x3D; Object.keys(news.likedUsers).length;
+    if(size&gt;0){
+      for(let i&#x3D;0; i&lt;size; i++){
+        if(news.likedUsers[i] &#x3D;&#x3D; user.uid){
+          return true;
+        }
+      }
+      return false;
+    }
+    else{
+      return false;
+    }
+
+  }
+}
+
+@Pipe({ name: &#x27;isuserindislikedlistpipe&#x27; })
+export class IsUserInDisikedListPipe implements PipeTransform {
+  transform(news: News, user: User) {
+
+    var size &#x3D; Object.keys(news.dislikedUsers).length;
+    if(size&gt;0){
+      for(let i&#x3D;0; i&lt;size; i++){
+        if(news.dislikedUsers[i] &#x3D;&#x3D; user.uid){
+          return true;
+        }
+      }
+      return false;
+    }
+    else{
+      return false;
+    }
 
   }
 }
@@ -319,7 +535,7 @@ export class ToDatePipe2 implements PipeTransform {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
-            var COMPODOC_CURRENT_PAGE_URL = 'ToDatePipe2.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ToDatePipe2-1.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

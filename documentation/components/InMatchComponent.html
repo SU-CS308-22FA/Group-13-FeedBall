@@ -8,589 +8,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	    <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">feedball-project documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="../">feedball-project documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="../overview.html" 
-                                         href="../overview.html" 
-                                        >
-                                        <span class="fa fa-th"></span>Overview
-                                    </a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            ></span>
-                        </a>
-                        <ul class="links collapse in"
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="../modules/AppModule.html" >AppModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/AppComponent.html" >AppComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/ChartsComponent.html" >ChartsComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/InMatchComponent.html"  class="active" >InMatchComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-long-arrow-down"></span>
-                            <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-injectables-links"
-                            >
-                                <li class="link">
-                                    <a href="../injectables/AuthService.html" >AuthService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/ChartService.html" >ChartService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/HighchartService.html" >HighchartService</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/News.html" >News</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/Polls.html" >Polls</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/User.html" >User</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/chartModal.html" >chartModal</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/matches.html" >matches</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/messages.html" >messages</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-plus"></span>
-                            <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-pipes-links"
-                            >
-                                <li class="link">
-                                    <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/PluralPipe.html" >PluralPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/TransformPipe.html" >TransformPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-                    <li class="divider"></li>
-                    <li class="copyright">
-                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                            </a>
-                    </li>
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="../">feedball-project documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="../overview.html" 
-                                                href="../overview.html" 
-                                               >
-                                               <span class="fa fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   ></span>
-                               </a>
-                               <ul class="links collapse in"
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="../modules/AppModule.html" >AppModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/AppComponent.html" >AppComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/ChartsComponent.html" >ChartsComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/InMatchComponent.html"  class="active" >InMatchComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-long-arrow-down"></span>
-                                   <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="injectables-links"
-                   >
-                                       <li class="link">
-                                           <a href="../injectables/AuthService.html" >AuthService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/ChartService.html" >ChartService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/HighchartService.html" >HighchartService</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/News.html" >News</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/Polls.html" >Polls</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/User.html" >User</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/chartModal.html" >chartModal</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/matches.html" >matches</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/messages.html" >messages</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-plus"></span>
-                                   <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="pipes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/PluralPipe.html" >PluralPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/TransformPipe.html" >TransformPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                           <li class="copyright">
-                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                                   </a>
-                           </li>
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content component">
                    <div class="content-data">
 
 
+
+
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>InMatchComponent</li>
+  <li
+  >
+  InMatchComponent</li>
 </ol>
 
-
-    <ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-tabs" role="tablist">
         <li class="active">
-            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li>
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-    </ul>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
 
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="infos"><p class="comment">
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -599,11 +69,13 @@
 
 
 
+
+
+
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
-
 
 
 
@@ -622,522 +94,1295 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>in-match.component.css</code></td>
+                <td class="col-md-9"><code>./in-match.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>in-match.component.html</code></td>
+                <td class="col-md-9"><code>./in-match.component.html</code></td>
             </tr>
+
+
+
+
+
+
 
 
         </tbody>
     </table>
 </section>
 
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#afs" >afs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#auth" >auth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#authService" >authService</a>
+                            </li>
+                            <li>
+                                <a href="#className" >className</a>
+                            </li>
+                            <li>
+                                <a href="#dummyelems" >dummyelems</a>
+                            </li>
+                            <li>
+                                <a href="#matches$" >matches$</a>
+                            </li>
+                            <li>
+                                <a href="#matchesRef" >matchesRef</a>
+                            </li>
+                            <li>
+                                <a href="#messages$" >messages$</a>
+                            </li>
+                            <li>
+                                <a href="#messagesRef" >messagesRef</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                <a href="#user$" >user$</a>
+                            </li>
+                            <li>
+                                <a href="#users$" >users$</a>
+                            </li>
+                            <li>
+                                <a href="#usersRef" >usersRef</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createMessageAndPushToDatabase" >createMessageAndPushToDatabase</a>
+                            </li>
+                            <li>
+                                <a href="#isUserInList" >isUserInList</a>
+                            </li>
+                            <li>
+                                <a href="#likeMessage" >likeMessage</a>
+                            </li>
+                            <li>
+                                <a href="#navigateMainPage" >navigateMainPage</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmitForm" >onSubmitForm</a>
+                            </li>
+                            <li>
+                                <a href="#returnListWithout" >returnListWithout</a>
+                            </li>
+                            <li>
+                                <a href="#ReturnUser" >ReturnUser</a>
+                            </li>
+                            <li>
+                                <a href="#unlikeMessage" >unlikeMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
 
     <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>constructor(authService: <a href="../injectables/AuthService.html" >AuthService</a>, afs: AngularFirestore, auth: AngularFireAuth, router: <a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a>)</code>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-    </section>
-
-    <section>
-        <h3 id="methods">Methods</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> onSubmitForm</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>onSubmitForm(form: <a href="https://angular.io/docs/ts/latest/api/forms/index/NgForm-directive.html" target="_blank" >NgForm</a>, user: User, currentMatchString: string)</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> isUserInList</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>isUserInList(theList: String[], user: User)</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> ReturnUser</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>ReturnUser(uidUser: string, userList: User[])</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> returnListWithout</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>returnListWithout(theList: String[], theElem: String)</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> likeMessage</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>likeMessage(msg: messages, userLiking: User, userMessageOwner: User)</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>This function is called when user clicks the thumbs up button in order to like a message<br>To increment the liking user&#39;s points by 5 by calling incrementPoints from authService, giving the first parameter as userLiking<br>To increment the point of the user who is the one sent that message by 5 by calling incrementPoints from authService, giving the first parameters as userMessageOwner<br>It also takes likeList of that message containing uids of users who liked this message, and appends liking user&#39;s uid to this list.<br>It also takes that message&#39;s like count and adds 1<br>Then it calls LikeUnlikeMessage function from authService with the paremeters of msg, new like count, new list containing uids and mid (message id) pf msg</p>
-    </div>
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <ul class="jsdoc-params">
-                                                <li>
-                                                    <div>
-                                                        <b>msg</b>
-                                                    </div>
-                                                    <div>
-                                                        <p>Message which is being liked</p>
-    
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div>
-                                                        <b>userLiking</b>
-                                                    </div>
-                                                    <div>
-                                                        <p>User object of the user liking the messgae</p>
-    
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div>
-                                                        <b>userMessageOwner</b>
-                                                    </div>
-                                                    <div>
-                                                        <p>User object of the user who wrote the message</p>
-    
-                                                    </div>
-                                                </li>
-                                        </ul>
-                                </div>
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                                    <div class="io-description">
-                                        
-                                    </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> unlikeMessage</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>unlikeMessage(msg: messages, userUnliking: User, userMessageOwner: User)</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> navigateMainPage</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>navigateMainPage()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> createMessageAndPushToDatabase</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>createMessageAndPushToDatabase(messageContent: string, messageDate: Date, user: User, currentMatchCode: string)</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>This function is called in onSubmitForm after user presses Eter or clicks the send button.<br>It creates a messages object to be pushed to the database, assigns matchCode as currentMatchCode, sentWhen as messageDate, mid empty, like count as 0,<br>likeList as empty list, content as messageContent, message owner&#39;s id, name, surname from User object.<br>Then it adds this object to the Firebase database and keeps the auto assigned unique document id as a variable.<br>Then it calls SetMessageId to assign this unique document id as a field to use it later on during like or unlike operations.</p>
-    </div>
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <ul class="jsdoc-params">
-                                                <li>
-                                                    <div>
-                                                        <b>messageContent</b>
-                                                    </div>
-                                                    <div>
-                                                        <p>Content of the message taken as an input from the user</p>
-    
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div>
-                                                        <b>messageDate</b>
-                                                    </div>
-                                                    <div>
-                                                        <p>Date object regarding when the button is clicked or Enter pressed to send the message</p>
-    
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div>
-                                                        <b>user</b>
-                                                    </div>
-                                                    <div>
-                                                        <p>Usser object of the user sending the message</p>
-    
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div>
-                                                        <b>currentMatchCode</b>
-                                                    </div>
-                                                    <div>
-                                                        <p>mid (match id) of the current match going on</p>
-    
-                                                    </div>
-                                                </li>
-                                        </ul>
-                                </div>
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                                    <div class="io-description">
-                                        
-                                    </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-
-    <section>
-        <h3 id="inputs">Properties</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> afs</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>afs:     <code>AngularFirestore</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> auth</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>auth:     <code>AngularFireAuth</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> authService</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>authService:     <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> className</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>className:     <code>string</code>
-    </bcode>
-                        </td>
-                    </tr>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, afs: AngularFirestore, auth: AngularFireAuth, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
                         <tr>
                             <td class="col-md-4">
-                                <i>Default value: </i><code>rightdiv</code>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/in-match/in-match.component.ts:37</a></div>
                             </td>
                         </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> dummyelems</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>dummyelems:     <code>number[]</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> matches$</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>matches$:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> matchesRef</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>matchesRef:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> messages$</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>messages$:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> messagesRef</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>messagesRef:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> router</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>router:     <code><a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> user$</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>user$:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> users$</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>users$:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> usersRef</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>usersRef:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>afs</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFirestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireAuth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createMessageAndPushToDatabase"></a>
+                    <span class="name">
+                        <span ><b>createMessageAndPushToDatabase</b></span>
+                        <a href="#createMessageAndPushToDatabase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createMessageAndPushToDatabase(messageContent: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, messageDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, user: <a href="../interfaces/User.html" target="_self">User</a>, currentMatchCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="212"
+                            class="link-to-prism">src/app/in-match/in-match.component.ts:212</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function is called in onSubmitForm after user presses Eter or clicks the send button.
+It creates a messages object to be pushed to the database, assigns matchCode as currentMatchCode, sentWhen as messageDate, mid empty, like count as 0,
+likeList as empty list, content as messageContent, message owner&#39;s id, name, surname from User object.
+Then it adds this object to the Firebase database and keeps the auto assigned unique document id as a variable.
+Then it calls SetMessageId to assign this unique document id as a field to use it later on during like or unlike operations.</p>
 </div>
-        <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>messageContent</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Content of the message taken as an input from the user</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>messageDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Date object regarding when the button is clicked or Enter pressed to send the message</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Usser object of the user sending the message</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>currentMatchCode</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>mid (match id) of the current match going on</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUserInList"></a>
+                    <span class="name">
+                        <span ><b>isUserInList</b></span>
+                        <a href="#isUserInList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isUserInList(theList: Array<String>, user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/in-match/in-match.component.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>theList</td>
+                                    <td>
+                                            <code>Array&lt;String&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="likeMessage"></a>
+                    <span class="name">
+                        <span ><b>likeMessage</b></span>
+                        <a href="#likeMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>likeMessage(msg: <a href="../interfaces/messages.html" target="_self">messages</a>, userLiking: <a href="../interfaces/User.html" target="_self">User</a>, userMessageOwner: <a href="../interfaces/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/app/in-match/in-match.component.ts:149</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function is called when user clicks the thumbs up button in order to like a message
+To increment the liking user&#39;s points by 5 by calling incrementPoints from authService, giving the first parameter as userLiking
+To increment the point of the user who is the one sent that message by 5 by calling incrementPoints from authService, giving the first parameters as userMessageOwner
+It also takes likeList of that message containing uids of users who liked this message, and appends liking user&#39;s uid to this list.
+It also takes that message&#39;s like count and adds 1
+Then it calls LikeUnlikeMessage function from authService with the paremeters of msg, new like count, new list containing uids and mid (message id) pf msg</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>msg</td>
+                                    <td>
+                                                <code><a href="../interfaces/messages.html" target="_self" >messages</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Message which is being liked</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>userLiking</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>User object of the user liking the messgae</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>userMessageOwner</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>User object of the user who wrote the message</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateMainPage"></a>
+                    <span class="name">
+                        <span ><b>navigateMainPage</b></span>
+                        <a href="#navigateMainPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateMainPage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="195"
+                            class="link-to-prism">src/app/in-match/in-match.component.ts:195</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmitForm"></a>
+                    <span class="name">
+                        <span ><b>onSubmitForm</b></span>
+                        <a href="#onSubmitForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmitForm(form: <a href="https://angular.io/api/forms/NgForm" target="_blank">NgForm</a>, user: <a href="../interfaces/User.html" target="_self">User</a>, currentMatchString: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/in-match/in-match.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/NgForm" target="_blank" >NgForm</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>currentMatchString</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="returnListWithout"></a>
+                    <span class="name">
+                        <span ><b>returnListWithout</b></span>
+                        <a href="#returnListWithout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>returnListWithout(theList: Array<String>, theElem: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/in-match/in-match.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>theList</td>
+                                    <td>
+                                            <code>Array&lt;String&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>theElem</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Array&lt;String&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ReturnUser"></a>
+                    <span class="name">
+                        <span ><b>ReturnUser</b></span>
+                        <a href="#ReturnUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ReturnUser(uidUser: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, userList: <a href="../interfaces/User.html" target="_self">Array&lt;User&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/in-match/in-match.component.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uidUser</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>userList</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >Array&lt;User&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unlikeMessage"></a>
+                    <span class="name">
+                        <span ><b>unlikeMessage</b></span>
+                        <a href="#unlikeMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unlikeMessage(msg: <a href="../interfaces/messages.html" target="_self">messages</a>, userUnliking: <a href="../interfaces/User.html" target="_self">User</a>, userMessageOwner: <a href="../interfaces/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/app/in-match/in-match.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>msg</td>
+                                    <td>
+                                                <code><a href="../interfaces/messages.html" target="_self" >messages</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>userUnliking</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>userMessageOwner</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afs"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>afs</b></span>
+                        <a href="#afs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AngularFirestore</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/in-match/in-match.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="auth"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>auth</b></span>
+                        <a href="#auth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AngularFireAuth</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/in-match/in-match.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>authService</b></span>
+                        <a href="#authService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/in-match/in-match.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="className"></a>
+                    <span class="name">
+                        <span ><b>className</b></span>
+                        <a href="#className"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;rightdiv&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/in-match/in-match.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dummyelems"></a>
+                    <span class="name">
+                        <span ><b>dummyelems</b></span>
+                        <a href="#dummyelems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/in-match/in-match.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="matches$"></a>
+                    <span class="name">
+                        <span ><b>matches$</b></span>
+                        <a href="#matches$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/matches.html" target="_self" >Observable&lt;matches[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/in-match/in-match.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="matchesRef"></a>
+                    <span class="name">
+                        <span ><b>matchesRef</b></span>
+                        <a href="#matchesRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/matches.html" target="_self" >AngularFirestoreCollection&lt;matches&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/in-match/in-match.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="messages$"></a>
+                    <span class="name">
+                        <span ><b>messages$</b></span>
+                        <a href="#messages$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/messages.html" target="_self" >Observable&lt;messages[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/in-match/in-match.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="messagesRef"></a>
+                    <span class="name">
+                        <span ><b>messagesRef</b></span>
+                        <a href="#messagesRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/messages.html" target="_self" >AngularFirestoreCollection&lt;messages&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/in-match/in-match.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/in-match/in-match.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user$"></a>
+                    <span class="name">
+                        <span ><b>user$</b></span>
+                        <a href="#user$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.authService.user$</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/in-match/in-match.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="users$"></a>
+                    <span class="name">
+                        <span ><b>users$</b></span>
+                        <a href="#users$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;User[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/in-match/in-match.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usersRef"></a>
+                    <span class="name">
+                        <span ><b>usersRef</b></span>
+                        <a href="#usersRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >AngularFirestoreCollection&lt;User&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/in-match/in-match.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 import { Form, NgForm } from &#x27;@angular/forms&#x27;;
 import { FormsModule, ReactiveFormsModule }   from &#x27;@angular/forms&#x27;;
 import { AuthService } from &quot;../shared/services/auth.service&quot;;
@@ -1535,12 +1780,14 @@ transform(matchesList: matches[]) {
       var numtimestamp &#x3D; Number(star.seconds);
       numtimestamp &#x3D; numtimestamp * 1000;
       const dateOf &#x3D; new Date(numtimestamp);
+      console.log(dateOf);
       const dateOf2 &#x3D; dateOf;
       var ends_at &#x3D; addMinutes(dateOf2,90);
+      console.log(ends_at);
       const anlik &#x3D; new Date();
       const dateOf3 &#x3D; new Date(numtimestamp);
       if (anlik &gt;&#x3D; dateOf3 &amp;&amp; anlik &lt;&#x3D; ends_at){
-        retStr &#x3D; matchesList[i].team1.toString() + &quot;-&quot; + matchesList[i].team2.toString() +&quot;\n&quot; +
+        retStr &#x3D; matchesList[i].team1.toString() + &quot;-&quot; + matchesList[i].team2.toString() + &quot;\r\n&quot; +
         matchesList[i].score_team1.toString() + &quot; - &quot; + matchesList[i].score_team2.toString();
 
         return retStr;
@@ -1595,8 +1842,455 @@ transform(matchesList: matches[]) {
 
 
 </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;br&gt;
+&lt;div class&#x3D;&quot;titlediv&quot; &gt;&lt;p class&#x3D;&quot;mainfeedtext&quot;&gt;InMatch Page&lt;/p&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div *ngIf&#x3D;&quot;(user$ | async) as user&quot;&gt;
+  &lt;div *ngIf&#x3D;&quot;(matches$ | async) as matches&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;(matches | returncurrentmatchidipe) as currentMatchId&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;currentMatchId !&#x3D; &#x27;null&#x27;&quot;&gt;
+        &lt;div class&#x3D;&quot;titlediv&quot;&gt;
+          &lt;div class&#x3D;&quot;matchscorediv&quot;&gt;
+            &lt;p align&#x3D;&quot;center&quot;&gt;{{(matches | returncurrentmatchipe)}}&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;titlediv&quot;&gt;
+          &lt;table align&#x3D;&quot;center&quot;&gt;
+            &lt;tr align&#x3D;&quot;center&quot;&gt;
+              &lt;td&gt;
+                &lt;div class&#x3D;&quot;borderclass&quot;&gt;
+                  &lt;cdk-virtual-scroll-viewport itemSize&#x3D;&quot;100&quot; class&#x3D;&quot;example-viewport&quot;&gt;
+                    &lt;div *ngIf&#x3D;&quot;(messages$ | async) as messagesList&quot;&gt;
+                      &lt;div *ngIf&#x3D;&quot;(users$ | async) as usersList&quot;&gt;
+                        &lt;div *ngFor&#x3D;&quot;let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe)&quot;&gt;
+                          &lt;div *ngIf&#x3D;&quot;mesg.messageOwnerID &#x3D;&#x3D; user.uid&quot; class&#x3D;&quot;rightdiv&quot;&gt;
+                            &lt;div class&#x3D;&quot;box3 sbright&quot;&gt;
+                              &lt;div class&#x3D;&quot;rightdiv&quot;&gt;&lt;p class&#x3D;&quot;nameclass&quot;&gt;{{mesg.messageOwnerName}}&amp;nbsp;{{mesg.messageOwnerSurname}}&lt;/p&gt;&lt;/div&gt;
+                              &lt;div class&#x3D;&quot;rightdiv&quot;&gt;&lt;p class&#x3D;&quot;timeclass&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;
+                              &lt;div class&#x3D;&quot;rightdiv&quot;&gt;&lt;p class&#x3D;&quot;textalign1&quot;&gt;{{mesg.content}}&lt;/p&gt;&lt;/div&gt;
+                              &lt;div&gt;&lt;br&gt;&lt;/div&gt;
+                              &lt;div class&#x3D;&quot;outerdiv2&quot;&gt;
+                                &lt;span&gt;&lt;div class&#x3D;&quot;leftdiv2&quot;&gt;&lt;p class&#x3D;&quot;countclass&quot;&gt;{{mesg.likeNumber}}&amp;nbsp;like{{mesg.likeNumber | pluralpipe}}&lt;/p&gt;&lt;/div&gt;&lt;/span&gt;
+                                &lt;span&gt;&lt;div&gt;&lt;p class&#x3D;&quot;timeclass&quot;&gt;{{mesg.sentWhen | hoursminutespipe}}&lt;/p&gt;&lt;/div&gt;&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;div *ngIf&#x3D;&quot;mesg.messageOwnerID !&#x3D; user.uid&quot; class&#x3D;&quot;leftdiv&quot;&gt;
+                            &lt;div class&#x3D;&quot;box3-2 sbleft&quot;&gt;
+                              &lt;div class&#x3D;&quot;leftdiv&quot;&gt;&lt;p class&#x3D;&quot;nameclass&quot;&gt;{{mesg.messageOwnerName}}&amp;nbsp;{{mesg.messageOwnerSurname}}&lt;/p&gt;&lt;/div&gt;
+                              &lt;div class&#x3D;&quot;leftdiv&quot;&gt;&lt;p class&#x3D;&quot;timeclass&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;
+                              &lt;div class&#x3D;&quot;leftdiv&quot;&gt;&lt;p class&#x3D;&quot;textalign2&quot;&gt;{{mesg.content}}&lt;/p&gt;&lt;/div&gt;
+                              &lt;div class&#x3D;&quot;rightdiv&quot; *ngIf&#x3D;&quot;!(mesg | isuserinlikedlistofmessagepipe: user)&quot;&gt;&lt;button mat-icon-button (click)&#x3D;&quot;likeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))&quot;&gt;&lt;mat-icon class&#x3D;&quot;iconclass2&quot;&gt;thumb_up&lt;/mat-icon&gt;&lt;/button&gt;&lt;/div&gt;
+                              &lt;div class&#x3D;&quot;rightdiv&quot; *ngIf&#x3D;&quot;(mesg | isuserinlikedlistofmessagepipe: user)&quot;&gt;&lt;button mat-icon-button (click)&#x3D;&quot;unlikeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))&quot;&gt;&lt;mat-icon class&#x3D;&quot;iconclass3&quot;&gt;thumb_up&lt;/mat-icon&gt;&lt;/button&gt;&lt;/div&gt;
+                              &lt;div class&#x3D;&quot;outerdiv&quot; *ngIf&#x3D;&quot;(mesg | isuserinlikedlistofmessagepipe: user)&quot;&gt;
+                                &lt;span&gt;&lt;div&gt;&lt;p class&#x3D;&quot;timeclass&quot;&gt;{{mesg.sentWhen | hoursminutespipe}}&lt;/p&gt;&lt;/div&gt;&lt;/span&gt;
+                                &lt;span&gt;&lt;div class&#x3D;&quot;rightdiv2&quot;&gt;&lt;p class&#x3D;&quot;countclass2&quot;&gt;{{mesg.likeNumber}}&amp;nbsp;like{{mesg.likeNumber | pluralpipe}}&lt;/p&gt;&lt;/div&gt;&lt;/span&gt;
+                              &lt;/div&gt;
+                              &lt;div class&#x3D;&quot;outerdiv&quot; *ngIf&#x3D;&quot;!(mesg | isuserinlikedlistofmessagepipe: user)&quot;&gt;
+                                &lt;span&gt;&lt;div&gt;&lt;p class&#x3D;&quot;timeclass&quot;&gt;{{mesg.sentWhen | hoursminutespipe}}&lt;/p&gt;&lt;/div&gt;&lt;/span&gt;
+                                &lt;span&gt;&lt;div class&#x3D;&quot;rightdiv2&quot;&gt;&lt;p class&#x3D;&quot;countclass&quot;&gt;{{mesg.likeNumber}}&amp;nbsp;like{{mesg.likeNumber | pluralpipe}}&lt;/p&gt;&lt;/div&gt;&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;br&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/cdk-virtual-scroll-viewport&gt;
+                  &lt;div class&#x3D;&quot;inputdiv&quot;&gt;
+                    &lt;form class&#x3D;&quot;example-form&quot; (submit)&#x3D;&quot;onSubmitForm(messageForm, user, currentMatchId)&quot; #messageForm&#x3D;&quot;ngForm&quot;&gt;
+                      &lt;table align&#x3D;&quot;center&quot;&gt;
+                        &lt;tr align&#x3D;&quot;center&quot;&gt;
+                          &lt;td&gt;
+                            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; [style.width.px]&#x3D;650&gt;
+                              &lt;input type&#x3D;&quot;text&quot; matInput placeholder&#x3D;&quot;type something here...&quot; name&#x3D;&quot;content&quot; ngModel #localContent&#x3D;&quot;ngModel&quot;&gt;
+                            &lt;/mat-form-field&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&amp;nbsp;&amp;nbsp;&lt;button mat-mini-fab class&#x3D;&quot;colorclass&quot;&gt;&lt;mat-icon&gt;send&lt;/mat-icon&gt;&lt;/button&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                      &lt;/table&gt;
+                    &lt;/form&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;div class&#x3D;&quot;borderclass&quot;&gt;
+                  &lt;cdk-virtual-scroll-viewport itemSize&#x3D;&quot;50&quot; class&#x3D;&quot;example-viewport-2&quot;&gt;
+                    &lt;div&gt;
+                      &lt;h3&gt;in match poll screen&lt;/h3&gt;
+                    &lt;/div&gt;
+                  &lt;/cdk-virtual-scroll-viewport&gt;
+                  &lt;div class&#x3D;&quot;dummydiv&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div *ngIf&#x3D;&quot;currentMatchId &#x3D;&#x3D; &#x27;null&#x27;&quot; class&#x3D;&quot;errordiv&quot;&gt;
+        &lt;table align&#x3D;&quot;center&quot;&gt;
+          &lt;td align&#x3D;&quot;center&quot;&gt;
+            &lt;tr&gt;
+              &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+              &lt;h2 class&#x3D;&quot;oopsclass&quot;&gt;OOPS!!&lt;/h2&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;br&gt;
+              &lt;h4&gt;There is no match currently going on.&lt;br&gt;&lt;br&gt;You can acces finished match scores in main feed page.&lt;/h4&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;br&gt;
+              &lt;button mat-raised-button (click)&#x3D;&quot;navigateMainPage()&quot; class&#x3D;&quot;buttonbackground&quot;&gt;Go back to main page&lt;/button&gt;
+            &lt;/tr&gt;
+          &lt;/td&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./in-match.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.mainfeedtext{
+  font-size: 25px;
+  font-family: &#x27;Bangers&#x27;;
+}
+
+
+.titlediv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.example-viewport {
+  height: 480px;
+  width: 740px;
+  border: 1px transparent;
+}
+.example-viewport-2 {
+  height: 480px;
+  width: 740px;
+  border: 1px transparent;
+
+}
+
+
+.example-item {
+  height: 50px;
+}
+
+.dummydiv{
+  height: 68px;
+}
+
+.matchscorediv{
+  border: 1px solid grey;
+  height: 60px;
+  width: 1486px;
+  white-space: pre-line;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.borderclass{
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  padding-top:  5px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  margin-top: -5px;
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px rgb(196, 196, 196);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(196, 196, 196);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(121, 121, 121);
+}
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.box3 {
+  width: 300px;
+  margin-bottom: 20px auto;
+  border-radius: 15px;
+  background: #b9dcc0;
+  color: black;
+  padding-right: 18px;
+  padding-left: 4px;
+  padding-top: 14px;
+  padding-bottom: 4px;
+  text-align: center;
+  position: relative;
+  right: 14px;
+  height: fit-content;
+}
+
+.box3-2 {
+  width: 300px;
+  margin-bottom: 20px auto;
+  border-radius: 15px;
+  background: #e5f3e8;
+  color: black;
+  padding-left: 18px;
+  padding-right: 4px;
+  padding-top: 14px;
+  padding-bottom: 4px;
+  text-align: center;
+  left: 14px;
+  position: relative;
+  height: fit-content;
+}
+
+
+/* speech bubble 13 */
+
+.sbright:before {
+  content: &quot;&quot;;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid #b9dcc0;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #b9dcc0;
+  border-bottom: 15px solid transparent;
+  right: -14px;
+  top: 0px;
+}
+
+
+/* speech bubble 14 */
+
+.sbleft:before {
+  content: &quot;&quot;;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #e5f3e8;
+  border-top: 15px solid #e5f3e8;
+  border-bottom: 15px solid transparent;
+  left: -14px;
+  top: 0px;
+}
+
+
+
+.rightdiv{
+  display: flex;
+  align-items: right;
+  justify-content: right;
+
+}
+
+.rightdiv2{
+  margin-right: 12px;
+
+}
+
+.leftdiv2{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+
+  margin-left: 12px;
+
+}
+
+
+.leftdiv{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.leftdivnew{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  float:left;
+
+  left: 0px;
+}
+
+.iconclass{
+  background-color: #83e094;
+  color: black;
+  border-radius: 20px;
+  border: 5px solid #83e094;
+}
+
+.iconclass2{
+  color: grey;
+  transform: scale(0.85);
+}
+
+.iconclass3{
+  color: rgb(62, 91, 62);
+  transform: scale(0.85);
+}
+
+.colorclass{
+  background-color: #83e094;
+
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+.nameclass{
+  font-size: smaller;
+}
+
+.timeclass{
+  font-size:x-small;
+}
+
+.countclass{
+  font-size:x-small;
+}
+
+.countclass2{
+  font-size:x-small;
+  color: rgb(62, 91, 62);
+}
+
+.spacebetweendiv{
+  display: flex;
+  align-items:stretch;
+  justify-content: stretch;
+}
+
+
+.textalign1{
+  text-align: right;
+  text-align-last: right;
+}
+
+.textalign2{
+  text-align: left;
+  text-align-last: left;
+}
+
+
+
+.outerdiv{
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  background-color: transparent;
+}
+
+
+.outerdiv2{
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  background-color: transparent;
+}
+
+
+
+.inputdiv{
+  background-color: rgb(214, 214, 214);
+  border-bottom-left-radius:10px ;
+  border-bottom-right-radius:10px ;
+  border-top-right-radius:10px ;
+  border-top-left-radius:10px ;
+}
+
+
+.errordiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.buttonbackground{
+  background-color: #b9dcc0;
+}
+
+
+.oopsclass{
+  font-family: &#x27;Bangers&#x27;;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
         </div>
     </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><br><div class="titlediv" ><p class="mainfeedtext">InMatch Page</p></div><br><div *ngIf="(user$ | async) as user">  <div *ngIf="(matches$ | async) as matches">    <div *ngIf="(matches | returncurrentmatchidipe) as currentMatchId">      <div *ngIf="currentMatchId != \'null\'">        <div class="titlediv">          <div class="matchscorediv">            <p align="center">{{(matches | returncurrentmatchipe)}}</p>          </div>        </div>        <div class="titlediv">          <table align="center">            <tr align="center">              <td>                <div class="borderclass">                  <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">                    <div *ngIf="(messages$ | async) as messagesList">                      <div *ngIf="(users$ | async) as usersList">                        <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe)">                          <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">                            <div class="box3 sbright">                              <div class="rightdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>                              <div class="rightdiv"><p class="timeclass"><br></p></div>                              <div class="rightdiv"><p class="textalign1">{{mesg.content}}</p></div>                              <div><br></div>                              <div class="outerdiv2">                                <span><div class="leftdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>                                <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>                              </div>                            </div>                          </div>                          <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">                            <div class="box3-2 sbleft">                              <div class="leftdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>                              <div class="leftdiv"><p class="timeclass"><br></p></div>                              <div class="leftdiv"><p class="textalign2">{{mesg.content}}</p></div>                              <div class="rightdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="likeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass2">thumb_up</mat-icon></button></div>                              <div class="rightdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="unlikeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass3">thumb_up</mat-icon></button></div>                              <div class="outerdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)">                                <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>                                <span><div class="rightdiv2"><p class="countclass2">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>                              </div>                              <div class="outerdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)">                                <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>                                <span><div class="rightdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>                              </div>                            </div>                          </div>                          <br>                        </div>                      </div>                    </div>                  </cdk-virtual-scroll-viewport>                  <div class="inputdiv">                    <form class="example-form" (submit)="onSubmitForm(messageForm, user, currentMatchId)" #messageForm="ngForm">                      <table align="center">                        <tr align="center">                          <td>                            <mat-form-field class="example-full-width" [style.width.px]=650>                              <input type="text" matInput placeholder="type something here..." name="content" ngModel #localContent="ngModel">                            </mat-form-field>                          </td>                          <td>&nbsp;&nbsp;<button mat-mini-fab class="colorclass"><mat-icon>send</mat-icon></button></td>                        </tr>                      </table>                    </form>                  </div>                </div>              </td>              <td>                <div class="borderclass">                  <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport-2">                    <div>                      <h3>in match poll screen</h3>                    </div>                  </cdk-virtual-scroll-viewport>                  <div class="dummydiv"></div>                </div>              </td>            </tr>          </table>        </div>      </div>      <div *ngIf="currentMatchId == \'null\'" class="errordiv">        <table align="center">          <td align="center">            <tr>              <br><br><br><br>              <h2 class="oopsclass">OOPS!!</h2>            </tr>            <tr>              <br>              <h4>There is no match currently going on.<br><br>You can acces finished match scores in main feed page.</h4>            </tr>            <tr>              <br>              <button mat-raised-button (click)="navigateMainPage()" class="buttonbackground">Go back to main page</button>            </tr>          </td>        </table>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminPanelComponent', 'selector': 'app-admin-profile'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'EditProfileComponent', 'selector': 'app-user-profile-edit'},{'name': 'FeedMainComponent', 'selector': 'app-main'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'InMatchComponent', 'selector': 'app-in-match'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatchesAdminComponent', 'selector': 'matches-admin'},{'name': 'NewsPageComponent', 'selector': 'app-news'},{'name': 'PollsPageComponent', 'selector': 'app-polls'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UserDetailComponent', 'selector': 'app-user-panel'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'InMatchComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
 
 
 
@@ -1617,8 +2311,31 @@ transform(matchesList: matches[]) {
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'InMatchComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -1629,20 +2346,17 @@ transform(matchesList: matches[]) {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
+       <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
-       <script src="../js/libs/highlight.pack.js"></script>
-       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
-       <script src="../js/search/search_index.js"></script>
-       <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                hljs.initHighlightingOnLoad();
-                hljs.initLineNumbersOnLoad();
-            });
-       </script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
 
     </body>
 </html>

@@ -125,9 +125,17 @@ export class AuthService {
         window.alert(error);
       });
   }
-  /* Setting up user data when sign in with username/password,
-  sign up with username/password and sign in with social auth
-  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
+  /**
+   *  Setting up user data when sign in with username/password.
+   *  @param user User Interface Document
+   *  @param name User's name
+   *  @param surname User's surname
+   *  @param gender User's gender
+   *  @param age User's birthday
+   *  @param point User's point
+   *  @param team User's team
+   *  @returns user data collection (interface)
+   */
   SetUserData(user: any, name: string, surname: string, gender: string, age: Date, point: number, team: string) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`

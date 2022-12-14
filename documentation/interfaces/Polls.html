@@ -8,568 +8,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	    <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">feedball-project documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="../">feedball-project documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="../overview.html" 
-                                         href="../overview.html" 
-                                        >
-                                        <span class="fa fa-th"></span>Overview
-                                    </a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            ></span>
-                        </a>
-                        <ul class="links collapse in"
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="../modules/AppModule.html" >AppModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/AppComponent.html" >AppComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/ChartsComponent.html" >ChartsComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/InMatchComponent.html" >InMatchComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-long-arrow-down"></span>
-                            <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-injectables-links"
-                            >
-                                <li class="link">
-                                    <a href="../injectables/AuthService.html" >AuthService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/ChartService.html" >ChartService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/HighchartService.html" >HighchartService</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/News.html" >News</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/Polls.html"  class="active" >Polls</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/User.html" >User</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/chartModal.html" >chartModal</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/matches.html" >matches</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/messages.html" >messages</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-plus"></span>
-                            <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-pipes-links"
-                            >
-                                <li class="link">
-                                    <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/PluralPipe.html" >PluralPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/TransformPipe.html" >TransformPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-                    <li class="divider"></li>
-                    <li class="copyright">
-                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                            </a>
-                    </li>
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="../">feedball-project documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="../overview.html" 
-                                                href="../overview.html" 
-                                               >
-                                               <span class="fa fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   ></span>
-                               </a>
-                               <ul class="links collapse in"
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="../modules/AppModule.html" >AppModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/AppComponent.html" >AppComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/ChartsComponent.html" >ChartsComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/InMatchComponent.html" >InMatchComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-long-arrow-down"></span>
-                                   <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="injectables-links"
-                   >
-                                       <li class="link">
-                                           <a href="../injectables/AuthService.html" >AuthService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/ChartService.html" >ChartService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/HighchartService.html" >HighchartService</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/News.html" >News</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/Polls.html"  class="active" >Polls</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/User.html" >User</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/chartModal.html" >chartModal</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/matches.html" >matches</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/messages.html" >messages</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-plus"></span>
-                                   <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="pipes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/PluralPipe.html" >PluralPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/TransformPipe.html" >TransformPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                           <li class="copyright">
-                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                                   </a>
-                           </li>
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content interface">
                    <div class="content-data">
 
@@ -579,22 +37,30 @@
 
 
 
+
+
+
+
+
+
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>Polls</li>
+  <li
+  >
+  Polls</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-    </li>
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-    </li>
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
+    <div class="tab-pane fade active in" id="c-info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -605,6 +71,104 @@
 
 
 
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#countOpt1" 
+>
+                                            countOpt1
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#countOpt2" 
+>
+                                            countOpt2
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#countOpt3" 
+>
+                                            countOpt3
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#newsdate" 
+>
+                                            newsdate
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#option1" 
+>
+                                            option1
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#option2" 
+>
+                                            option2
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#option3" 
+>
+                                            option3
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#pid" 
+>
+                                            pid
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#question" 
+>
+                                            question
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#UsersPickOpt1" 
+>
+                                            UsersPickOpt1
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#UsersPickOpt2" 
+>
+                                            UsersPickOpt2
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#UsersPickOpt3" 
+>
+                                            UsersPickOpt3
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#writtenby" 
+>
+                                            writtenby
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
 
             <section>
                 <h3 id="inputs">Properties</h3>
@@ -612,23 +176,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>countOpt1</b>
+                                        <a name="countOpt1"></a>
+                                        <span class="name "><b>countOpt1</b>
+                                            <a href="#countOpt1">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>countOpt1:     <code>number</code>
-</bcode>
+                                        <code>countOpt1:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>number</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -638,23 +209,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>countOpt2</b>
+                                        <a name="countOpt2"></a>
+                                        <span class="name "><b>countOpt2</b>
+                                            <a href="#countOpt2">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>countOpt2:     <code>number</code>
-</bcode>
+                                        <code>countOpt2:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>number</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -664,23 +242,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>countOpt3</b>
+                                        <a name="countOpt3"></a>
+                                        <span class="name "><b>countOpt3</b>
+                                            <a href="#countOpt3">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>countOpt3:     <code>number</code>
-</bcode>
+                                        <code>countOpt3:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>number</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -690,23 +275,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>newsdate</b>
+                                        <a name="newsdate"></a>
+                                        <span class="name "><b>newsdate</b>
+                                            <a href="#newsdate">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>newsdate:     <code>Date</code>
-</bcode>
+                                        <code>newsdate:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>Date</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -716,23 +308,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>option1</b>
+                                        <a name="option1"></a>
+                                        <span class="name "><b>option1</b>
+                                            <a href="#option1">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>option1:     <code>string</code>
-</bcode>
+                                        <code>option1:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>string</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -742,23 +341,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>option2</b>
+                                        <a name="option2"></a>
+                                        <span class="name "><b>option2</b>
+                                            <a href="#option2">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>option2:     <code>string</code>
-</bcode>
+                                        <code>option2:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>string</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -768,23 +374,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>option3</b>
+                                        <a name="option3"></a>
+                                        <span class="name "><b>option3</b>
+                                            <a href="#option3">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>option3:     <code>string</code>
-</bcode>
+                                        <code>option3:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>string</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -794,23 +407,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>pid</b>
+                                        <a name="pid"></a>
+                                        <span class="name "><b>pid</b>
+                                            <a href="#pid">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>pid:     <code>string</code>
-</bcode>
+                                        <code>pid:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>string</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -820,23 +440,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>question</b>
+                                        <a name="question"></a>
+                                        <span class="name "><b>question</b>
+                                            <a href="#question">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>question:     <code>string</code>
-</bcode>
+                                        <code>question:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>string</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -846,23 +473,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>UsersPickOpt1</b>
+                                        <a name="UsersPickOpt1"></a>
+                                        <span class="name "><b>UsersPickOpt1</b>
+                                            <a href="#UsersPickOpt1">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>UsersPickOpt1:     <code>String[]</code>
-</bcode>
+                                        <code>UsersPickOpt1:     <code>Array&lt;String&gt;</code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>String[]</code>
+                                            <i>Type : </i>    <code>Array&lt;String&gt;</code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -872,23 +506,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>UsersPickOpt2</b>
+                                        <a name="UsersPickOpt2"></a>
+                                        <span class="name "><b>UsersPickOpt2</b>
+                                            <a href="#UsersPickOpt2">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>UsersPickOpt2:     <code>String[]</code>
-</bcode>
+                                        <code>UsersPickOpt2:     <code>Array&lt;String&gt;</code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>String[]</code>
+                                            <i>Type : </i>    <code>Array&lt;String&gt;</code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -898,23 +539,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>UsersPickOpt3</b>
+                                        <a name="UsersPickOpt3"></a>
+                                        <span class="name "><b>UsersPickOpt3</b>
+                                            <a href="#UsersPickOpt3">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>UsersPickOpt3:     <code>String[]</code>
-</bcode>
+                                        <code>UsersPickOpt3:     <code>Array&lt;String&gt;</code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>String[]</code>
+                                            <i>Type : </i>    <code>Array&lt;String&gt;</code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -924,23 +572,30 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <b>writtenby</b>
+                                        <a name="writtenby"></a>
+                                        <span class="name "><b>writtenby</b>
+                                            <a href="#writtenby">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>writtenby:     <code>string</code>
-</bcode>
+                                        <code>writtenby:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
                                     </td>
                                 </tr>
 
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>string</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
+
+
 
 
 
@@ -948,8 +603,10 @@
                     </table>
             </section>
     </div>
-    <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { Timestamp } from &quot;rxjs&quot;;
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Timestamp } from &quot;rxjs&quot;;
 
 export interface Polls {
     question: string;
@@ -972,6 +629,10 @@ export interface Polls {
 
 
 
+
+
+
+
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
@@ -982,8 +643,31 @@ export interface Polls {
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'Polls.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -994,20 +678,17 @@ export interface Polls {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
+       <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
-       <script src="../js/libs/highlight.pack.js"></script>
-       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
-       <script src="../js/search/search_index.js"></script>
-       <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                hljs.initHighlightingOnLoad();
-                hljs.initLineNumbersOnLoad();
-            });
-       </script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
 
     </body>
 </html>
