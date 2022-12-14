@@ -132,6 +132,7 @@ export class AdminPanelComponent{
 
     let emptyList: Array<string> = [];
     const sendPolls: Polls = {
+      pollIsActive: true,
       question: questionFrom,
       option1: option1From,
       option2: option2From,
@@ -185,7 +186,7 @@ export class AdminPanelComponent{
     form.resetForm();
   }
 
-  postedPollInactive(){             // Got to finish this one. Additionally should give error when no poll is posted but the deactivate button is still pressed.
+  PollInactive(){     // Got to finish this one. Makes poll inactive
 
   }
 

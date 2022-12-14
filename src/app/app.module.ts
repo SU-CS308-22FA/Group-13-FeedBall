@@ -32,6 +32,7 @@ import { NewsPageComponent } from './news_page/news_page.component';
 import { ToDatePipe2 } from './news_page/news_page.component';
 import { SortDateDescendingPipe } from './news_page/news_page.component';
 import { PluralPipe } from './in-match/in-match.component';
+import { SortDateDescendingPipeP } from './polls_page/polls_page.component';
 
 
 import { MatRadioModule} from '@angular/material/radio';
@@ -89,6 +90,7 @@ import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
     SortTeamFirstPipe,
     FilterTeamOnlyPipe,
     SortDateDescendingPipe,
+    SortDateDescendingPipeP,
     IsUserInDisikedListPipe,
     IsUserInLikedListPipe,
     HoursMinutesPipe,
