@@ -132,6 +132,12 @@
                                         </a>
                                 </li>
                                 <li>
+                                        <a href="#pollIsActive" 
+>
+                                            pollIsActive
+                                        </a>
+                                </li>
+                                <li>
                                         <a href="#question" 
 >
                                             question
@@ -440,6 +446,39 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
+                                        <a name="pollIsActive"></a>
+                                        <span class="name "><b>pollIsActive</b>
+                                            <a href="#pollIsActive">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>pollIsActive:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
                                         <a name="question"></a>
                                         <span class="name "><b>question</b>
                                             <a href="#question">
@@ -609,13 +648,14 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Timestamp } from &quot;rxjs&quot;;
 
 export interface Polls {
+    pollIsActive: boolean;
     question: string;
     option1: string;
     option2: string;
     option3: string;
-    countOpt1: number
-    countOpt2: number
-    countOpt3: number
+    countOpt1: number;
+    countOpt2: number;
+    countOpt3: number;
     writtenby: string;
     newsdate: Date;
     pid: string;

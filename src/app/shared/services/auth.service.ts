@@ -127,6 +127,8 @@ export class AuthService {
   }
   /**
    *  Setting up user data when sign in with username/password.
+   *  This function will use for store the data of user.
+   *  With these data, we can see user's detail.
    *  @param user User Interface Document
    *  @param name User's name
    *  @param surname User's surname
@@ -134,7 +136,7 @@ export class AuthService {
    *  @param age User's birthday
    *  @param point User's point
    *  @param team User's team
-   *  @returns user data collection (interface)
+   *  @returns User: Collection Interface
    */
   SetUserData(user: any, name: string, surname: string, gender: string, age: Date, point: number, team: string) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(

@@ -186,7 +186,7 @@
                                 <a href="#navigateMainPage" >navigateMainPage</a>
                             </li>
                             <li>
-                                <a href="#postedPollInactive" >postedPollInactive</a>
+                                <a href="#PollInactive" >PollInactive</a>
                             </li>
                             <li>
                                 <a href="#submitForm" >submitForm</a>
@@ -326,8 +326,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="264"
-                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:264</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="265"
+                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:265</a></div>
                 </td>
             </tr>
 
@@ -471,8 +471,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="259"
-                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:259</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="260"
+                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:260</a></div>
                 </td>
             </tr>
 
@@ -545,8 +545,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="268"
-                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:268</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="269"
+                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:269</a></div>
                 </td>
             </tr>
 
@@ -566,24 +566,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="postedPollInactive"></a>
+                    <a name="PollInactive"></a>
                     <span class="name">
-                        <span ><b>postedPollInactive</b></span>
-                        <a href="#postedPollInactive"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>PollInactive</b></span>
+                        <a href="#PollInactive"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>postedPollInactive()</code>
+<code>PollInactive()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="195"
-                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:195</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="196"
+                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:196</a></div>
                 </td>
             </tr>
 
@@ -700,8 +700,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="200"
-                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:200</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:201</a></div>
                 </td>
             </tr>
 
@@ -952,7 +952,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="272" class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:272</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="273" class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:273</a></div>
                         </td>
                     </tr>
 
@@ -978,7 +978,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="198" class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:198</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="199" class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:199</a></div>
                         </td>
                     </tr>
 
@@ -1013,7 +1013,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="275" class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:275</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="276" class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:276</a></div>
                         </td>
                     </tr>
 
@@ -1088,7 +1088,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="281" class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:281</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="282" class="link-to-prism">src/app/admin_panel/admin_panel.component.ts:282</a></div>
                         </td>
                     </tr>
 
@@ -1267,6 +1267,7 @@ export class AdminPanelComponent{
 
     let emptyList: Array&lt;string&gt; &#x3D; [];
     const sendPolls: Polls &#x3D; {
+      pollIsActive: true,
       question: questionFrom,
       option1: option1From,
       option2: option2From,
@@ -1320,7 +1321,7 @@ export class AdminPanelComponent{
     form.resetForm();
   }
 
-  postedPollInactive(){             // Got to finish this one. Additionally should give error when no poll is posted but the deactivate button is still pressed.
+  PollInactive(){     // Got to finish this one. Makes poll inactive
 
   }
   public matchesMatch &#x3D; true;
@@ -1460,6 +1461,7 @@ export class AdminPanelComponent{
   &lt;table align&#x3D;&quot;center&quot;&gt;
     &lt;td&gt;
       &lt;tr&gt;
+        &lt;td align&#x3D; &quot;center&quot;&gt;&lt;button (click)&#x3D;&quot;PollInactive()&quot; mat-raised-button class&#x3D;&quot;deletebutton&quot;&gt;Deactivate poll&lt;/button&gt;&lt;/td&gt;
         &lt;td align&#x3D;&quot;center&quot;&gt;&lt;button (click)&#x3D;&quot;UserInfo()&quot; mat-raised-button class&#x3D;&quot;deletebutton&quot;&gt;See User Profile&lt;/button&gt;&lt;/td&gt;
         &lt;td align&#x3D;&quot;center&quot;&gt;&lt;button (click)&#x3D;&quot;DoSmth()&quot; mat-raised-button class&#x3D;&quot;deletebutton&quot;&gt;Data Visuals&lt;/button&gt;&lt;/td&gt;
         &lt;td align&#x3D;&quot;center&quot;&gt;&lt;button (click)&#x3D;&quot;MatchesInfo()&quot; mat-raised-button class&#x3D;&quot;deletebutton&quot;&gt;Control Matches&lt;/button&gt;&lt;/td&gt;
@@ -1471,7 +1473,7 @@ export class AdminPanelComponent{
   &lt;table&gt;
     &lt;tr&gt;
 
-      &lt;td align&#x3D;&quot;center&quot;&gt;
+      &lt;td align&#x3D;&quot;center&quot;&gt; 
         &lt;mat-card class&#x3D;&quot;matcardclass3&quot;&gt;
           &lt;div class&#x3D;&quot;divform&quot; width&#x3D;&quot;50%&quot;&gt;
             &lt;mat-card&gt;
@@ -1500,9 +1502,6 @@ export class AdminPanelComponent{
                         &lt;textarea matInput name&#x3D;&quot;opt3Input&quot; ngModel placeholder&#x3D;&quot;Option3&quot; required  #localOption3Input&#x3D;&quot;ngModel&quot;&gt;&lt;/textarea&gt;
                       &lt;/mat-form-field&gt;
                     &lt;/tr&gt;
-                    &lt;br&gt;
-                    &lt;tr&gt;&lt;button (click)&#x3D;&quot;postedPollInactive()&quot; mat-raised-button class&#x3D;&quot;deactivatebutton&quot;&gt;Deactivate previous poll&lt;/button&gt;&lt;/tr&gt;
-                    &lt;br&gt;
                     &lt;tr&gt;&lt;button mat-raised-button class&#x3D;&quot;assignbutton&quot;&gt;Post the poll&lt;/button&gt;&lt;/tr&gt;
                   &lt;/td&gt;
                 &lt;/table&gt;
@@ -1773,7 +1772,7 @@ export class AdminPanelComponent{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /><div class="divs">  <p class="mainfeedtext">Admin Panel</p></div><div *ngIf="(user$ | async) as user">  <table  align="center">    <tr align="center">      <td>        <mat-card class="matcardclass">          <table>            <tr>              <td><span class="material-symbols-outlined">sports_soccer</span></td>              <td><p class="namesurname">&nbsp;&nbsp;{{user.name}}&nbsp;{{user.surname}}</p></td>            </tr>            <tr>              <td><mat-icon>alternate_email</mat-icon></td>              <td><p class="namesurname">&nbsp;&nbsp;{{user.email}}</p></td>            </tr>          </table>        </mat-card>      </td>    </tr>  </table>  <table align="center">    <td>      <tr>        <td align="center"><button (click)="UserInfo()" mat-raised-button class="deletebutton">See User Profile</button></td>        <td align="center"><button (click)="DoSmth()" mat-raised-button class="deletebutton">Data Visuals</button></td>        <td align="center"><button (click)="MatchesInfo()" mat-raised-button class="deletebutton">Control Matches</button></td>      </tr>    </td>  </table>  <div class="divs">  <table>    <tr>      <td align="center">        <mat-card class="matcardclass3">          <div class="divform" width="50%">            <mat-card>              <mat-card-title class="p2">Please enter the details of your polls here.</mat-card-title>              <form (submit)="submitPForm(pollsForm, user.name)" #pollsForm="ngForm">                <table align="center">                  <td align="center">                    <tr>                      <mat-form-field>                        <input type="text" matInput name="questionInput" ngModel placeholder="Question" required #localQuestionInput="ngModel">                      </mat-form-field>                    </tr>                    <br>                    <tr>                      <mat-form-field>                        <textarea matInput name="opt1Input" ngModel placeholder="Option1" required  #localOpt1Input="ngModel"></textarea>                      </mat-form-field>                    </tr>                    <tr>                      <mat-form-field>                        <textarea matInput name="opt2Input" ngModel placeholder="Option2" required  #localOpt2Input="ngModel"></textarea>                      </mat-form-field>                    </tr>                    <tr>                      <mat-form-field>                        <textarea matInput name="opt3Input" ngModel placeholder="Option3" required  #localOption3Input="ngModel"></textarea>                      </mat-form-field>                    </tr>                    <br>                    <tr><button (click)="postedPollInactive()" mat-raised-button class="deactivatebutton">Deactivate previous poll</button></tr>                    <br>                    <tr><button mat-raised-button class="assignbutton">Post the poll</button></tr>                  </td>                </table>              </form>            </mat-card>          </div>        </mat-card>      </td>      <td align="center">        <mat-card class="matcardclass2">          <div class="divform" width="50%">            <mat-card>              <mat-card-title class="p2">Please enter the details of your news here.</mat-card-title>              <form (submit)="submitForm(newsForm, user.name)" #newsForm="ngForm">                <table align="center">                  <td align="center">                    <tr>                      <mat-form-field>                        <input type="text" matInput name="headerInput" ngModel placeholder="Header" required #localHeaderInput="ngModel">                      </mat-form-field>                    </tr>                    <br>                    <tr>                      <mat-form-field>                        <textarea matInput name="contentInput" ngModel placeholder="Body" required  #localContentInput="ngModel"></textarea>                      </mat-form-field>                    </tr>                    <br>                    <tr><button mat-raised-button class="loginbutton">Submit News</button></tr>                  </td>                </table>              </form>            </mat-card>          </div>        </mat-card>      </td>      <td align="center">        <mat-card class="matcardclass2">          <div class="divform" width="50%">            <mat-card>              <mat-card-title class="p2">Please enter the details of the match here.</mat-card-title>              <form (submit)="submitMatch(matchesForm)" #matchesForm="ngForm">                <table align="center">                  <td align="center">                    <tr>                      <mat-form-field appearance="fill">                        <mat-label>Team1</mat-label>                        <mat-select matInput name= "Team1Input" ngModel required>                          <mat-option *ngFor="let team of teams" [value]="team">                            {{team}}                          </mat-option>                        </mat-select>                      </mat-form-field>                    </tr>                    <tr>                      <mat-form-field appearance="fill">                        <mat-label>Team2</mat-label>                        <mat-select matInput name= "Team2Input" ngModel required>                          <mat-option *ngFor="let team of teams" [value]="team">                            {{team}}                          </mat-option>                        </mat-select>                      </mat-form-field>                    </tr>                    <div>                    <mat-form-field appearance="fill">                      <mat-label>Choose the match date</mat-label>                      <input matInput required ngModel name= "DateInput" [matDatepicker]="picker">                      <mat-hint>MM/DD/YYYY</mat-hint>                      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>                      <mat-datepicker #picker></mat-datepicker>                    </mat-form-field>                  </div>                    <table>                      <tr>                      <td>                      <mat-form-field appearance="fill">                        <mat-label>Match Hour</mat-label>                        <mat-select matInput name= "HourInput" ngModel required>                          <mat-option *ngFor="let hour of hours" [value]="hour">                            {{hour}}                          </mat-option>                        </mat-select>                      </mat-form-field>                    </td>                    <td>                      <mat-form-field appearance="fill">                        <mat-label>Match Minute</mat-label>                        <mat-select matInput name= "MinuteInput" ngModel required>                          <mat-option *ngFor="let minute of minutes" [value]="minute">                            {{minute}}                          </mat-option>                        </mat-select>                      </mat-form-field>                    </td>                  </tr>                </table>                    <br>                    <tr><button mat-raised-button class="loginbutton" >Log the Match</button></tr>                  </td>                </table>              </form>            </mat-card>          </div>        </mat-card>      </td>    </tr>  </table>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /><div class="divs">  <p class="mainfeedtext">Admin Panel</p></div><div *ngIf="(user$ | async) as user">  <table  align="center">    <tr align="center">      <td>        <mat-card class="matcardclass">          <table>            <tr>              <td><span class="material-symbols-outlined">sports_soccer</span></td>              <td><p class="namesurname">&nbsp;&nbsp;{{user.name}}&nbsp;{{user.surname}}</p></td>            </tr>            <tr>              <td><mat-icon>alternate_email</mat-icon></td>              <td><p class="namesurname">&nbsp;&nbsp;{{user.email}}</p></td>            </tr>          </table>        </mat-card>      </td>    </tr>  </table>  <table align="center">    <td>      <tr>        <td align= "center"><button (click)="PollInactive()" mat-raised-button class="deletebutton">Deactivate poll</button></td>        <td align="center"><button (click)="UserInfo()" mat-raised-button class="deletebutton">See User Profile</button></td>        <td align="center"><button (click)="DoSmth()" mat-raised-button class="deletebutton">Data Visuals</button></td>        <td align="center"><button (click)="MatchesInfo()" mat-raised-button class="deletebutton">Control Matches</button></td>      </tr>    </td>  </table>  <div class="divs">  <table>    <tr>      <td align="center">         <mat-card class="matcardclass3">          <div class="divform" width="50%">            <mat-card>              <mat-card-title class="p2">Please enter the details of your polls here.</mat-card-title>              <form (submit)="submitPForm(pollsForm, user.name)" #pollsForm="ngForm">                <table align="center">                  <td align="center">                    <tr>                      <mat-form-field>                        <input type="text" matInput name="questionInput" ngModel placeholder="Question" required #localQuestionInput="ngModel">                      </mat-form-field>                    </tr>                    <br>                    <tr>                      <mat-form-field>                        <textarea matInput name="opt1Input" ngModel placeholder="Option1" required  #localOpt1Input="ngModel"></textarea>                      </mat-form-field>                    </tr>                    <tr>                      <mat-form-field>                        <textarea matInput name="opt2Input" ngModel placeholder="Option2" required  #localOpt2Input="ngModel"></textarea>                      </mat-form-field>                    </tr>                    <tr>                      <mat-form-field>                        <textarea matInput name="opt3Input" ngModel placeholder="Option3" required  #localOption3Input="ngModel"></textarea>                      </mat-form-field>                    </tr>                    <tr><button mat-raised-button class="assignbutton">Post the poll</button></tr>                  </td>                </table>              </form>            </mat-card>          </div>        </mat-card>      </td>      <td align="center">        <mat-card class="matcardclass2">          <div class="divform" width="50%">            <mat-card>              <mat-card-title class="p2">Please enter the details of your news here.</mat-card-title>              <form (submit)="submitForm(newsForm, user.name)" #newsForm="ngForm">                <table align="center">                  <td align="center">                    <tr>                      <mat-form-field>                        <input type="text" matInput name="headerInput" ngModel placeholder="Header" required #localHeaderInput="ngModel">                      </mat-form-field>                    </tr>                    <br>                    <tr>                      <mat-form-field>                        <textarea matInput name="contentInput" ngModel placeholder="Body" required  #localContentInput="ngModel"></textarea>                      </mat-form-field>                    </tr>                    <br>                    <tr><button mat-raised-button class="loginbutton">Submit News</button></tr>                  </td>                </table>              </form>            </mat-card>          </div>        </mat-card>      </td>      <td align="center">        <mat-card class="matcardclass2">          <div class="divform" width="50%">            <mat-card>              <mat-card-title class="p2">Please enter the details of the match here.</mat-card-title>              <form (submit)="submitMatch(matchesForm)" #matchesForm="ngForm">                <table align="center">                  <td align="center">                    <tr>                      <mat-form-field appearance="fill">                        <mat-label>Team1</mat-label>                        <mat-select matInput name= "Team1Input" ngModel required>                          <mat-option *ngFor="let team of teams" [value]="team">                            {{team}}                          </mat-option>                        </mat-select>                      </mat-form-field>                    </tr>                    <tr>                      <mat-form-field appearance="fill">                        <mat-label>Team2</mat-label>                        <mat-select matInput name= "Team2Input" ngModel required>                          <mat-option *ngFor="let team of teams" [value]="team">                            {{team}}                          </mat-option>                        </mat-select>                      </mat-form-field>                    </tr>                    <div>                    <mat-form-field appearance="fill">                      <mat-label>Choose the match date</mat-label>                      <input matInput required ngModel name= "DateInput" [matDatepicker]="picker">                      <mat-hint>MM/DD/YYYY</mat-hint>                      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>                      <mat-datepicker #picker></mat-datepicker>                    </mat-form-field>                  </div>                    <table>                      <tr>                      <td>                      <mat-form-field appearance="fill">                        <mat-label>Match Hour</mat-label>                        <mat-select matInput name= "HourInput" ngModel required>                          <mat-option *ngFor="let hour of hours" [value]="hour">                            {{hour}}                          </mat-option>                        </mat-select>                      </mat-form-field>                    </td>                    <td>                      <mat-form-field appearance="fill">                        <mat-label>Match Minute</mat-label>                        <mat-select matInput name= "MinuteInput" ngModel required>                          <mat-option *ngFor="let minute of minutes" [value]="minute">                            {{minute}}                          </mat-option>                        </mat-select>                      </mat-form-field>                    </td>                  </tr>                </table>                    <br>                    <tr><button mat-raised-button class="loginbutton" >Log the Match</button></tr>                  </td>                </table>              </form>            </mat-card>          </div>        </mat-card>      </td>    </tr>  </table>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdminPanelComponent', 'selector': 'app-admin-profile'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'EditProfileComponent', 'selector': 'app-user-profile-edit'},{'name': 'FeedMainComponent', 'selector': 'app-main'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'InMatchComponent', 'selector': 'app-in-match'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatchesAdminComponent', 'selector': 'matches-admin'},{'name': 'NewsPageComponent', 'selector': 'app-news'},{'name': 'PollsPageComponent', 'selector': 'app-polls'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UserDetailComponent', 'selector': 'app-user-panel'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdminPanelComponent'};
