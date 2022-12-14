@@ -198,6 +198,15 @@ export class AdminPanelComponent{
   }
   public matchesMatch = true;
 
+
+
+  /**
+   * Description:
+   * Sends the details of the match to the firebase. This function lets admins create matches which will later on be used in the in-match page.
+   * @param form This form contains the parameters taken from the form in the admin panel. The form is called when clicked on Log the Match. The parameters within the form are team1 and team2, date, hour and minutes.
+   * @returns alert: The match has been added to the schedule: success
+   * alert: You can't enter the same team for Team1 and Team2: failure.
+   */
   submitMatch(form: NgForm){
     if(form.value.Team1Input != form.value.Team2Input){
       this.matchesMatch = true;

@@ -8,26 +8,574 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">feedball-project documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">feedball-project documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ChartsComponent.html" >ChartsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InMatchComponent.html" >InMatchComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AuthService.html" >AuthService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ChartService.html" >ChartService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/HighchartService.html" >HighchartService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/News.html" >News</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/Polls.html" >Polls</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/User.html" >User</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/chartModal.html" >chartModal</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/matches.html" >matches</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/messages.html" >messages</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html"  class="active" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/PluralPipe.html" >PluralPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/TransformPipe.html" >TransformPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">feedball-project documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ChartsComponent.html" >ChartsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InMatchComponent.html" >InMatchComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AuthService.html" >AuthService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ChartService.html" >ChartService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/HighchartService.html" >HighchartService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/News.html" >News</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/Polls.html" >Polls</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/User.html" >User</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/chartModal.html" >chartModal</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/matches.html" >matches</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/messages.html" >messages</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html"  class="active" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/PluralPipe.html" >PluralPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/TransformPipe.html" >TransformPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content pipe">
                    <div class="content-data">
 
@@ -35,29 +583,22 @@
 
 
 
-
-
-
-
-
-
 <ol class="breadcrumb">
   <li>Pipes</li>
-  <li >DisplayMessagesOnlyFromCurrentMatchPipe</li>
+  <li>DisplayMessagesOnlyFromCurrentMatchPipe</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-
+    <div class="tab-pane fade active in" id="infos">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -67,112 +608,9 @@
 
 
 
-
-        <section>
-            <h3>Metadata</h3>
-            <table class="table table-sm table-hover metadata">
-                <tbody>
-                    <tr>
-                        <td class="col-md-3">Name</td>
-                        <td class="col-md-9">displaymessagesonlyformcurrentmatchipe</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-            <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="transform"></a>
-                    <span class="name">
-                        <span ><b>transform</b></span>
-                        <a href="#transform"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>transform(mesgList: <a href="../interfaces/messages.html" target="_self">messages[]</a>, currentMatchString: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="367"
-                            class="link-to-prism">src/app/in-match/in-match.component.ts:367</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>mesgList</td>
-                                    <td>
-                                                <code><a href="../interfaces/messages.html" target="_self" >messages[]</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>currentMatchString</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-
     </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { Component, Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 import { Form, NgForm } from &#x27;@angular/forms&#x27;;
 import { FormsModule, ReactiveFormsModule }   from &#x27;@angular/forms&#x27;;
 import { AuthService } from &quot;../shared/services/auth.service&quot;;
@@ -364,7 +802,17 @@ export class InMatchComponent{
 
   }
 
-
+  /**
+   * This functions is created to make sure the match ends within 90 minutes.
+   * Since we only get the hour, minute and date, it is up to this function to calculate the amount time during which the match is active.
+   * @param date This is the date that we will start with, including the hours and minutes
+   * @param minutes Minutes according to which we want to push the time by.
+   * @returns The function returns the new date, with (number) minutes added to it.
+   */
+  addMinutes(date:Date, minutes:number) {
+    date.setMinutes(date.getMinutes() + minutes);
+    return date;
+  }
 
   navigateMainPage(){
     this.router.navigate([&#x27;feed&#x27;]);
@@ -560,6 +1008,14 @@ transform(matchesList: matches[]) {
   var retStr: string &#x3D; &quot;&quot;;
 
   var size &#x3D; Object.keys(matchesList).length;
+
+  /**
+   * This functions is created to make sure the match ends within 90 minutes.
+   * Since we only get the hour, minute and date, it is up to this function to calculate the amount time during which the match is active.
+   * @param Date This is the date that we will start with, including the hours and minutes
+   * @param number Minutes according to which we want to push the time by.
+   * @returns date This is the new date, with (number) minutes added to it.
+   */
   function addMinutes(date:Date, minutes:number) {
     date.setMinutes(date.getMinutes() + minutes);
     return date;
@@ -633,12 +1089,7 @@ transform(matchesList: matches[]) {
 
 </code></pre>
     </div>
-
 </div>
-
-
-
-
 
 
 
@@ -655,31 +1106,8 @@ transform(matchesList: matches[]) {
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-          <label class="dark-mode-switch">
-               <input type="checkbox">
-               <span class="slider">
-                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-                    </svg>
-               </span>
-          </label>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
-            var COMPODOC_CURRENT_PAGE_URL = 'DisplayMessagesOnlyFromCurrentMatchPipe.html';
-            var MAX_SEARCH_RESULTS = 15;
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-
-       <script src="../js/menu-wc.js" defer></script>
-       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -690,17 +1118,20 @@ transform(matchesList: matches[]) {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>

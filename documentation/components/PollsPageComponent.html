@@ -8,59 +8,595 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">feedball-project documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">feedball-project documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ChartsComponent.html" >ChartsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InMatchComponent.html" >InMatchComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PollsPageComponent.html"  class="active" >PollsPageComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AuthService.html" >AuthService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ChartService.html" >ChartService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/HighchartService.html" >HighchartService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/News.html" >News</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/Polls.html" >Polls</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/User.html" >User</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/chartModal.html" >chartModal</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/matches.html" >matches</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/messages.html" >messages</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/PluralPipe.html" >PluralPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/TransformPipe.html" >TransformPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">feedball-project documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ChartsComponent.html" >ChartsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InMatchComponent.html" >InMatchComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NewsPageComponent.html" >NewsPageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PollsPageComponent.html"  class="active" >PollsPageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AuthService.html" >AuthService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ChartService.html" >ChartService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/HighchartService.html" >HighchartService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/News.html" >News</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/Polls.html" >Polls</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/User.html" >User</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/chartModal.html" >chartModal</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/matches.html" >matches</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/messages.html" >messages</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/PluralPipe.html" >PluralPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/TransformPipe.html" >TransformPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content component">
                    <div class="content-data">
 
 
-
-
 <ol class="breadcrumb">
   <li>Components</li>
-  <li
-  >
-  PollsPageComponent</li>
+  <li>PollsPageComponent</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
-</ul>
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -69,13 +605,11 @@
 
 
 
-
-
-
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
+    <table class="table table-sm table-hover">
         <tbody>
+
 
 
 
@@ -94,743 +628,28 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./polls_page.component.css</code></td>
+                <td class="col-md-9"><code>polls_page.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./polls_page.component.html</code></td>
+                <td class="col-md-9"><code>polls_page.component.html</code></td>
             </tr>
-
-
-
-
-
-
 
 
         </tbody>
     </table>
 </section>
 
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#authService" >authService</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#filterOption" >filterOption</a>
-                            </li>
-                            <li>
-                                <a href="#polls$" >polls$</a>
-                            </li>
-                            <li>
-                                <a href="#pollsRef" >pollsRef</a>
-                            </li>
-                            <li>
-                                <a href="#user$" >user$</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#checkclick" >checkclick</a>
-                            </li>
-                            <li>
-                                <a href="#isUserInList" >isUserInList</a>
-                            </li>
-                            <li>
-                                <a href="#pollIsActiveCheck" >pollIsActiveCheck</a>
-                            </li>
-                            <li>
-                                <a href="#returnListWithout" >returnListWithout</a>
-                            </li>
-                            <li>
-                                <a href="#userAnsweredPollAlready" >userAnsweredPollAlready</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, afs: AngularFirestore, auth: AngularFireAuth)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/polls_page/polls_page.component.ts:30</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>authService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>afs</td>
-                                                  
-                                                        <td>
-                                                                    <code>AngularFirestore</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>auth</td>
-                                                  
-                                                        <td>
-                                                                    <code>AngularFireAuth</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-
-
-
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="checkclick"></a>
-                    <span class="name">
-                        <span ><b>checkclick</b></span>
-                        <a href="#checkclick"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>checkclick(poll: <a href="../interfaces/Polls.html" target="_self">Polls</a>, option: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/app/polls_page/polls_page.component.ts:62</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>poll</td>
-                                    <td>
-                                                <code><a href="../interfaces/Polls.html" target="_self" >Polls</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>option</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="isUserInList"></a>
-                    <span class="name">
-                        <span ><b>isUserInList</b></span>
-                        <a href="#isUserInList"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>isUserInList(theList: Array<String>, user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="106"
-                            class="link-to-prism">src/app/polls_page/polls_page.component.ts:106</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>theList</td>
-                                    <td>
-                                            <code>Array&lt;String&gt;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="pollIsActiveCheck"></a>
-                    <span class="name">
-                        <span ><b>pollIsActiveCheck</b></span>
-                        <a href="#pollIsActiveCheck"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>pollIsActiveCheck(poll: <a href="../interfaces/Polls.html" target="_self">Polls</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="121"
-                            class="link-to-prism">src/app/polls_page/polls_page.component.ts:121</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>poll</td>
-                                    <td>
-                                                <code><a href="../interfaces/Polls.html" target="_self" >Polls</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="returnListWithout"></a>
-                    <span class="name">
-                        <span ><b>returnListWithout</b></span>
-                        <a href="#returnListWithout"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>returnListWithout(theList: Array<String>, theElem: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/polls_page/polls_page.component.ts:49</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>theList</td>
-                                    <td>
-                                            <code>Array&lt;String&gt;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>theElem</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Array&lt;String&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="userAnsweredPollAlready"></a>
-                    <span class="name">
-                        <span ><b>userAnsweredPollAlready</b></span>
-                        <a href="#userAnsweredPollAlready"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>userAnsweredPollAlready(poll: <a href="../interfaces/Polls.html" target="_self">Polls</a>, user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="130"
-                            class="link-to-prism">src/app/polls_page/polls_page.component.ts:130</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>poll</td>
-                                    <td>
-                                                <code><a href="../interfaces/Polls.html" target="_self" >Polls</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-    <section>
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="authService"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>authService</b></span>
-                        <a href="#authService"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/polls_page/polls_page.component.ts:35</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="filterOption"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>filterOption</b></span>
-                        <a href="#filterOption"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;alldatedesc&quot;</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/polls_page/polls_page.component.ts:45</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="polls$"></a>
-                    <span class="name">
-                        <span ><b>polls$</b></span>
-                        <a href="#polls$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/Polls.html" target="_self" >Observable&lt;Polls[]&gt;</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/polls_page/polls_page.component.ts:30</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="pollsRef"></a>
-                    <span class="name">
-                        <span ><b>pollsRef</b></span>
-                        <a href="#pollsRef"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/Polls.html" target="_self" >AngularFirestoreCollection&lt;Polls&gt;</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/polls_page/polls_page.component.ts:29</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="user$"></a>
-                    <span class="name">
-                        <span ><b>user$</b></span>
-                        <a href="#user$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>this.authService.user$</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/polls_page/polls_page.component.ts:46</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-</section>
 
 </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;;
 import {News} from &quot;src/app/models/news.model&quot;
 import { NgForm } from &#x27;@angular/forms&#x27;;
 import { FormsModule, ReactiveFormsModule }   from &#x27;@angular/forms&#x27;;
@@ -845,808 +664,19 @@ import { Router } from &#x27;@angular/router&#x27;;
 import { Pipe } from &#x27;@angular/core&#x27;;
 import { PipeTransform } from &#x27;@angular/core&#x27;;
 import { isIntersectionTypeNode, sortAndDeduplicateDiagnostics } from &#x27;typescript&#x27;;
-import {Polls} from &quot;src/app/models/polls.model&quot;
-import { appCheckInstanceFactory } from &#x27;@angular/fire/app-check/app-check.module&#x27;;
-import { listChanges } from &#x27;@angular/fire/compat/database&#x27;;
+
 
 
 @Component({
   selector: &#x27;app-polls&#x27;,
   templateUrl: &#x27;./polls_page.component.html&#x27;,
   styleUrls: [&#x27;./polls_page.component.css&#x27;]
-  
-  
 })
 export class PollsPageComponent{
-  pollsRef: AngularFirestoreCollection&lt;Polls&gt;;
-  polls$: Observable&lt;Polls[]&gt;;
-
-
-
-
-  constructor(public authService: AuthService,
-    private router: Router,
-    private afs: AngularFirestore,
-    private auth: AngularFireAuth)
-  {
-    this.pollsRef &#x3D; this.afs.collection(&#x27;Polls&#x27;);
-    this.polls$ &#x3D; this.pollsRef.valueChanges();
-    console.log(this.pollsRef);
-  }
-
-  public filterOption &#x3D; &quot;alldatedesc&quot;;
-  user$ &#x3D; this.authService.user$;
-
-
-  returnListWithout(theList: Array&lt;String&gt;, theElem: String){
-    var size &#x3D; Object.keys(theList).length;
-    var copyList: Array&lt;String&gt; &#x3D; [];
-
-    for(let i&#x3D;0; i&lt;size; i++){
-      if(theList[i] !&#x3D; theElem){
-        copyList.push(theList[i]);
-      }
-    }
-
-    return copyList;
-  }
-
-  checkclick(poll: Polls, option: number, user: User){
-    
-    const newRef: AngularFirestoreDocument&lt;any&gt; &#x3D; this.afs.doc(&#x60;Polls/${poll.pid}&#x60;);
-    console.log(newRef);
-
-    const theNewPoll: Polls &#x3D; {
-      pollIsActive: poll.pollIsActive,
-      pid: poll.pid,
-      question: poll.question,
-      option1: poll.option1,
-      option2: poll.option2,
-      option3: poll.option3,
-      countOpt1: poll.countOpt1,
-      countOpt2: poll.countOpt2,
-      countOpt3: poll.countOpt3,
-      writtenby: poll.writtenby,
-      newsdate: poll.newsdate,
-      UsersPickOpt1: poll.UsersPickOpt1,
-      UsersPickOpt2: poll.UsersPickOpt2,
-      UsersPickOpt3: poll.UsersPickOpt3
-    };
-    
-    if (option &#x3D;&#x3D; 1 &amp;&amp; !(this.isUserInList(poll.UsersPickOpt1, user))){
-      theNewPoll.countOpt1 +&#x3D; 1;
-      poll.UsersPickOpt1.push(user.uid);
-      let message: string &#x3D; &#x27;You have picked the first option for this poll.&#x27;;
-      alert(message);
-    }
-    if (option &#x3D;&#x3D; 2 &amp;&amp; (!this.isUserInList(poll.UsersPickOpt2, user))){
-      theNewPoll.countOpt2 +&#x3D; 1;
-      poll.UsersPickOpt2.push(user.uid);
-      let message: string &#x3D; &#x27;You have picked the second option for this poll.&#x27;;
-      alert(message);
-    }
-    if (option &#x3D;&#x3D; 3 &amp;&amp; !(this.isUserInList(poll.UsersPickOpt3, user))){
-      theNewPoll.countOpt3 +&#x3D; 1;
-      poll.UsersPickOpt3.push(user.uid);
-      let message: string &#x3D; &#x27;You have picked the third option for this poll.&#x27;;
-      alert(message);
-    }
-    return newRef.set(theNewPoll, { merge: true });
-
-  }
-
-  isUserInList(theList: Array&lt;String&gt;, user: User){
-    var size &#x3D; Object.keys(theList).length;
-    if(size&gt;0){
-      for(let i&#x3D;0; i&lt;size; i++){
-        if(theList[i] &#x3D;&#x3D; user.uid){
-          return true;
-        }
-      }
-      return false;
-    }
-    else{
-      return false;
-    }
-  }
-
-  pollIsActiveCheck(poll: Polls){
-    if(poll.pollIsActive &#x3D;&#x3D; true){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-
-  userAnsweredPollAlready(poll: Polls, user: User){
-    if((this.isUserInList(poll.UsersPickOpt1, user) || this.isUserInList(poll.UsersPickOpt2, user) || this.isUserInList(poll.UsersPickOpt3, user))  &#x3D;&#x3D; true){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
   
-
-}
-
-
-//pipelines
-@Pipe({ name: &#x27;todatepipe2&#x27; })
-export class ToDatePipe2 implements PipeTransform {
-  transform(timestamp: any) {
-
-    var numtimestamp &#x3D; Number(timestamp.seconds);
-    numtimestamp &#x3D; numtimestamp * 1000;
-    const dateOf &#x3D; new Date(numtimestamp);
-
-    var returnString &#x3D; &quot;&quot;;
-
-    var nummonth &#x3D; Number(dateOf.getMonth())+1;
-
-    var mins &#x3D; dateOf.getMinutes().toString();
-    if(Object.keys(mins).length &lt; 2){
-      mins &#x3D; &quot;0&quot; + mins;
-    }
-    if(Object.keys(mins).length &lt; 1){
-      mins &#x3D; &quot;00&quot; + mins;
-    }
-
-    var hours &#x3D; dateOf.getHours().toString();
-    if(Object.keys(hours).length &lt; 2){
-      hours &#x3D; &quot;0&quot; + hours;
-    }
-    if(Object.keys(hours).length &lt; 1){
-      hours &#x3D; &quot;00&quot; + hours;
-    }
-
-    returnString &#x3D; dateOf.getDate().toString() + &quot;.&quot; + String(nummonth) + &quot;.&quot; +  dateOf.getFullYear().toString()
-    + &quot; &quot; + hours + &quot;:&quot; + mins;
-
-    return returnString;
-
-  }
-}
-
-@Pipe({ name: &#x27;sortdatedescendingpipep&#x27; })
-export class SortDateDescendingPipeP implements PipeTransform {
-  transform(listUnfiltered: Polls[]) {
-
-    var sortedList: Polls[] &#x3D; [];
-
-    if(listUnfiltered !&#x3D; null){
-      sortedList &#x3D; listUnfiltered.sort((a, b) &#x3D;&gt; (a.newsdate &gt; b.newsdate ? -1 : 1));
-    }
-
-    return sortedList;
-  }
-}
-
-
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://fonts.googleapis.com/css2?family&#x3D;Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&quot; /&gt;
-
-&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;
-&lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;
-&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;polls_page.component.css&quot;&gt;
-
-&lt;div *ngIf&#x3D;&quot;(user$ | async) as user&quot;&gt;
-  &lt;div *ngIf&#x3D;&quot;(polls$ | async) as polls&quot;&gt;
-
-    &lt;br&gt;
-    &lt;div class&#x3D;&quot;titlediv&quot; &gt;&lt;p class&#x3D;&quot;mainfeedtext&quot;&gt; Polls Page &lt;/p&gt;&lt;/div&gt;
-    &lt;br&gt;
-    &lt;div class&#x3D;&quot;titlediv&quot;&gt;
-      &lt;table align&#x3D;&quot;center&quot;&gt;
-        &lt;tr align&#x3D;&quot;center&quot;&gt;
-          &lt;div class&#x3D;&quot;titlediv&quot; &gt;&lt;p class&#x3D;&quot;submainfeedtext&quot;&gt;Active Polls: &amp;nbsp;&lt;/p&gt;&lt;/div&gt;
-          &lt;td&gt;
-            &lt;div class&#x3D;&quot;borderclass&quot;&gt;
-              &lt;cdk-virtual-scroll-viewport itemSize&#x3D;&quot;100&quot; class&#x3D;&quot;example-viewport&quot;&gt;
-                &lt;div *ngIf&#x3D;&quot;(polls | sortdatedescendingpipep) as pollslist&quot;&gt;    &lt;!-- if the user has answered the poll the user should no longer see it. --&gt;
-                  &lt;div *ngFor&#x3D;&quot;let poll of pollslist&quot;&gt;  
-                    &lt;div *ngIf&#x3D;&quot; pollIsActiveCheck(poll) &#x3D;&#x3D; true&quot;&gt;  
-                    &lt;div *ngIf&#x3D;&quot; userAnsweredPollAlready(poll, user) &#x3D;&#x3D; false&quot;&gt;                              
-                      &lt;div class&#x3D;&quot;wrapper&quot;&gt;                                
-                        &lt;header&gt; {{poll.question}}&lt;br&gt;&lt;/header&gt;          
-                        &lt;div class&#x3D;&quot;poll-area&quot;&gt;                                
-                          &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;poll&quot; id&#x3D;&quot;opt-1&quot; (click) &#x3D;&quot;checkclick(poll, 1, user)&quot;&gt;      
-                          &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;poll&quot; id&#x3D;&quot;opt-2&quot; (click) &#x3D;&quot;checkclick(poll, 2, user)&quot;&gt;    
-                          &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;poll&quot; id&#x3D;&quot;opt-3&quot; (click) &#x3D;&quot;checkclick(poll, 3, user)&quot;&gt;
-                          &lt;label for&#x3D;&quot;opt-1&quot; class&#x3D;&quot;opt-1&quot;&gt;
-                            &lt;div class&#x3D;&quot;row&quot;&gt;
-                              &lt;div class&#x3D;&quot;column&quot;&gt;
-                                &lt;span class&#x3D;&quot;circle&quot;&gt;&lt;/span&gt;                     
-                                &lt;span class&#x3D;&quot;text&quot;&gt;{{poll.option1}}&lt;/span&gt;
-                              &lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;div class&#x3D;&quot;progress&quot; id&#x3D;&quot;pstyle1&quot; style&#x3D;&#x27;--w:55;&#x27;&gt;&lt;/div&gt;
-                          &lt;/label&gt;
-                          &lt;label for&#x3D;&quot;opt-2&quot; class&#x3D;&quot;opt-2&quot;&gt;
-                            &lt;div class&#x3D;&quot;row&quot;&gt;
-                              &lt;div class&#x3D;&quot;column&quot;&gt;
-                                &lt;span class&#x3D;&quot;circle&quot;&gt;&lt;/span&gt;
-                                &lt;span class&#x3D;&quot;text&quot;&gt;{{poll.option2}}&lt;/span&gt;
-                              &lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;div class&#x3D;&quot;progress&quot; id&#x3D;&quot;pstyle2&quot; style&#x3D;&#x27;--w:80;&#x27;&gt;&lt;/div&gt;
-                          &lt;/label&gt;
-                          &lt;label for&#x3D;&quot;opt-3&quot; class&#x3D;&quot;opt-3&quot;&gt;
-                            &lt;div class&#x3D;&quot;row&quot;&gt;
-                              &lt;div class&#x3D;&quot;column&quot;&gt;
-                                &lt;span class&#x3D;&quot;circle&quot;&gt;&lt;/span&gt;
-                                &lt;span class&#x3D;&quot;text&quot;&gt;{{poll.option3}}&lt;/span&gt;
-                              &lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;div class&#x3D;&quot;progress&quot; id&#x3D;&quot;pstyle3&quot; style&#x3D;&#x27;--w:20;&#x27;&gt;&lt;/div&gt;
-                          &lt;/label&gt;
-                        &lt;/div&gt;
-                      &lt;/div&gt;
-                    &lt;/div&gt;  
-                    &lt;/div&gt;                         
-                    &lt;/div&gt;
-                  &lt;/div&gt;
-              &lt;/cdk-virtual-scroll-viewport&gt;
-            &lt;/div&gt;
-          &lt;/td&gt;
-          &lt;div class&#x3D;&quot;titlediv&quot; &gt;&lt;p class&#x3D;&quot;submainfeedtext&quot;&gt;&amp;nbsp; Previous Polls: &amp;nbsp;&lt;/p&gt;&lt;/div&gt;   &lt;!--- Previous Polls section, Only the inactive polls are seen here.--&gt;
-          &lt;td&gt;                                                                                        &lt;!--- Previous Polls section, not finished: Need to see results aswell--&gt;
-          &lt;div class&#x3D;&quot;borderclass&quot;&gt;      
-            &lt;cdk-virtual-scroll-viewport itemSize&#x3D;&quot;100&quot; class&#x3D;&quot;example-viewport&quot;&gt;
-              &lt;div *ngIf&#x3D;&quot;(polls | sortdatedescendingpipep) as pollslist&quot;&gt;   
-                &lt;div *ngFor&#x3D;&quot;let poll of pollslist&quot;&gt; 
-                  &lt;div *ngIf&#x3D;&quot; pollIsActiveCheck(poll) &#x3D;&#x3D; false&quot;&gt;                               
-                    &lt;div class&#x3D;&quot;wrapper&quot;&gt;                                
-                      &lt;header&gt; {{poll.question}}&lt;br&gt;&lt;/header&gt;          
-                      &lt;div class&#x3D;&quot;poll-area&quot;&gt;                                
-                        &lt;label for&#x3D;&quot;opt-1&quot; class&#x3D;&quot;opt-1&quot;&gt;
-                          &lt;div class&#x3D;&quot;row&quot;&gt;
-                            &lt;div class&#x3D;&quot;column&quot;&gt;
-                              &lt;span class&#x3D;&quot;circle&quot;&gt;&lt;/span&gt;                      
-                              &lt;span class&#x3D;&quot;text&quot;&gt;{{poll.option1}}&lt;/span&gt;
-                            &lt;/div&gt;
-                            &lt;span class&#x3D;&quot;percent&quot;&gt;{{poll.countOpt1}}&lt;/span&gt;            &lt;!-- {{polls.countOptn}} are not needed here but can stay here for a while (?)--&gt;
-                          &lt;/div&gt;
-                          &lt;div class&#x3D;&quot;progress&quot; id&#x3D;&quot;pstyle1&quot; style&#x3D;&#x27;--w:55;&#x27;&gt;&lt;/div&gt;
-                        &lt;/label&gt;
-                        &lt;label for&#x3D;&quot;opt-2&quot; class&#x3D;&quot;opt-2&quot;&gt;
-                          &lt;div class&#x3D;&quot;row&quot;&gt;
-                            &lt;div class&#x3D;&quot;column&quot;&gt;
-                              &lt;span class&#x3D;&quot;circle&quot;&gt;&lt;/span&gt;
-                              &lt;span class&#x3D;&quot;text&quot;&gt;{{poll.option2}}&lt;/span&gt;
-                            &lt;/div&gt;
-                            &lt;span class&#x3D;&quot;percent&quot;&gt;{{poll.countOpt2}}&lt;/span&gt;
-                          &lt;/div&gt;
-                          &lt;div class&#x3D;&quot;progress&quot; id&#x3D;&quot;pstyle2&quot; style&#x3D;&#x27;--w:80;&#x27;&gt;&lt;/div&gt;
-                        &lt;/label&gt;
-                        &lt;label for&#x3D;&quot;opt-3&quot; class&#x3D;&quot;opt-3&quot;&gt;
-                          &lt;div class&#x3D;&quot;row&quot;&gt;
-                            &lt;div class&#x3D;&quot;column&quot;&gt;
-                              &lt;span class&#x3D;&quot;circle&quot;&gt;&lt;/span&gt;
-                              &lt;span class&#x3D;&quot;text&quot;&gt;{{poll.option3}}&lt;/span&gt;
-                            &lt;/div&gt;
-                            &lt;span class&#x3D;&quot;percent&quot;&gt;{{poll.countOpt3}}&lt;/span&gt;
-                          &lt;/div&gt;
-                          &lt;div class&#x3D;&quot;progress&quot; id&#x3D;&quot;pstyle3&quot; style&#x3D;&#x27;--w:20;&#x27;&gt;&lt;/div&gt;
-                        &lt;/label&gt;
-                      &lt;/div&gt;
-                    &lt;/div&gt;
-                  &lt;/div&gt;  
-                  &lt;/div&gt;
-                  &lt;/div&gt;
-          &lt;/cdk-virtual-scroll-viewport&gt;
-          &lt;/div&gt;
-        &lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/table&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-    
-
-
-
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./polls_page.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;Poppins:wght@200;300;400;500;600;700&amp;display&#x3D;swap&#x27;);
-
-.mainfeedtext{
-  font-size: 30px;
-  font-family: &#x27;Bangers&#x27;;
-}
-
-.submainfeedtext{
-  font-size: 25px;
-  font-family: &#x27;Bangers&#x27;;
-}
-
-
-.titlediv{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.example-viewport {
-  height: 480px;
-  width: 740px;
-  border: 1px transparent;
-}
-.example-viewport-2 {
-  height: 480px;
-  width: 740px;
-  border: 1px transparent;
-
-}
-
-
-.example-item {
-  height: 50px;
-}
-
-.dummydiv{
-  height: 68px;
-}
-
-.matchscorediv{
-  border: 1px solid grey;
-  height: 60px;
-  width: 1486px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-.borderclass{
-  border: 1px solid rgb(196, 196, 196);
-  border-radius: 10px;
-  padding-top:  5px;
-}
-
-
-/* width */
-::-webkit-scrollbar {
-  margin-top: -5px;
-  width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 1px rgb(196, 196, 196);
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(196, 196, 196);
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(121, 121, 121);
-}
-
-
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-.box3 {
-  width: 300px;
-  margin-bottom: 20px auto;
-  border-radius: 15px;
-  background: #b9dcc0;
-  color: black;
-  padding-right: 18px;
-  padding-left: 4px;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  text-align: center;
-  position: relative;
-  right: 14px;
-  height: fit-content;
-}
-
-.box3-2 {
-  width: 300px;
-  margin-bottom: 20px auto;
-  border-radius: 15px;
-  background: #e5f3e8;
-  color: black;
-  padding-left: 18px;
-  padding-right: 4px;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  text-align: center;
-  left: 14px;
-  position: relative;
-  height: fit-content;
-}
-
-
-/* speech bubble 13 */
-
-.sbright:before {
-  content: &quot;&quot;;
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 15px solid #b9dcc0;
-  border-right: 15px solid transparent;
-  border-top: 15px solid #b9dcc0;
-  border-bottom: 15px solid transparent;
-  right: -14px;
-  top: 0px;
-}
-
-
-/* speech bubble 14 */
-
-.sbleft:before {
-  content: &quot;&quot;;
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 15px solid transparent;
-  border-right: 15px solid #e5f3e8;
-  border-top: 15px solid #e5f3e8;
-  border-bottom: 15px solid transparent;
-  left: -14px;
-  top: 0px;
-}
-
-
-
-.rightdiv{
-  display: flex;
-  align-items: right;
-  justify-content: right;
-
-}
-
-.rightdiv2{
-  margin-right: 12px;
-
-}
-
-.leftdiv2{
-  display: flex;
-  align-items: left;
-  justify-content: left;
-
-  margin-left: 12px;
-
-}
-
-
-.leftdiv{
-  display: flex;
-  align-items: left;
-  justify-content: left;
-}
-
-.leftdivnew{
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  float:left;
-
-  left: 0px;
-}
-
-.iconclass{
-  background-color: #83e094;
-  color: black;
-  border-radius: 20px;
-  border: 5px solid #83e094;
-}
-
-.iconclass2{
-  color: grey;
-  transform: scale(0.85);
-}
-
-.iconclass3{
-  color: rgb(62, 91, 62);
-  transform: scale(0.85);
-}
-
-.colorclass{
-  background-color: #83e094;
-
-}
-
-.spacer{
-  flex: 1 1 auto;
-}
-
-.nameclass{
-  font-size: smaller;
-}
-
-.timeclass{
-  font-size:x-small;
-}
-
-.countclass{
-  font-size:x-small;
-}
-
-.countclass2{
-  font-size:x-small;
-  color: rgb(62, 91, 62);
-}
-
-.spacebetweendiv{
-  display: flex;
-  align-items:stretch;
-  justify-content: stretch;
-}
-
-
-.textalign1{
-  text-align: right;
-  text-align-last: right;
-}
-
-.textalign2{
-  text-align: left;
-  text-align-last: left;
-}
-
-
-
-.outerdiv{
-  display: flex;
-  align-items: right;
-  justify-content: space-between;
-  margin-bottom: 10px;
-
-  background-color: transparent;
-}
-
-
-.outerdiv2{
-  display: flex;
-  align-items: right;
-  justify-content: space-between;
-  margin-bottom: 10px;
-
-  background-color: transparent;
-}
-
-
-
-.inputdiv{
-  background-color: rgb(214, 214, 214);
-  border-bottom-left-radius:10px ;
-  border-bottom-right-radius:10px ;
-  border-top-right-radius:10px ;
-  border-top-left-radius:10px ;
-}
-
-
-
-
-/************************************************************************************************************************/
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: &#x27;Poppins&#x27;, sans-serif;
-}
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: FAFAFA;
-}
-.wrapper{
-  padding: 30px;
-  background: #fff;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
-}
-
-@media (max-width:675px){
-    .wrapper{
-        max-width: 300px;
-}
-}
-
-.wrapper header{
-  font-size: 22px;
-  font-weight: 600;
-}
-.wrapper .poll-area{
-  margin: 20px 0 15px 0;
-}
-.poll-area label{
-  display: block;
-  margin-bottom: 10px;
-  padding: 8px 15px;
-  border: 2px solid #e6e6e6;
-  transition: all 0.2s ease;
-}
-
-label.opt-2.selected {
-    border: 2px solid #cf2d00;
-}
-
-label.opt-3.selected {
-    border: 2px solid #cfbd00;
-}
-
-label.opt-1.selected {
-    border: 2px solid #01638c;
-}
-
-div#pstyle2::after {
-    background: #cf2d00 !important;
-}
-
-div#pstyle3::after {
-    background:  #cfbd00 !important;
-}
-
-div#pstyle1::after {
-    background: #01638c !important;
-}
-
-label.opt-2.selected .row .circle{
-    border-color: #cf2d00 !important;
-  }
-
-label.opt-3.selected .row .circle{
-    border-color: #cfbd00 !important;
-  }
-
-label.opt-1.selected .row .circle{
-    border-color: #01638c !important;
-  }
-
-  label.opt-2 .row .circle::after{
-    background: #cf2d00 !important;
-  }
-
-  label.opt-3 .row .circle::after{
-    background: #cfbd00 !important;
-  }
-
-  label.opt-1 .row .circle::after{
-    background: #01638c !important;
-  }
-
-label .row{
-  display: flex;
-  pointer-events: none;
-  justify-content: space-between;
-}
-label .row .column{
-  display: flex;
-  align-items: center;
-}
-label .row .circle{
-  height: 19px;
-  width: 19px;
-  display: block;
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  margin-right: 10px;
-  position: relative;
-}
-label .row .circle::after{
-  content: &quot;&quot;;
-  height: 11px;
-  width: 11px;
-  border-radius: inherit;
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  display: none;
-}
-.poll-area label:hover .row .circle::after{
-  display: block;
-  background: #e6e6e6;
-}
-label.selected .row .circle::after{
-  display: block;
-}
-label .row span{
-  font-size: 16px;
-  font-weight: 500;
-}
-label .row .percent{
-  display: none;
-}
-label .progress{
-  height: 7px;
-  width: 100%;
-  position: relative;
-  background: #f0f0f0;
-  margin: 8px 0 3px 0;
-  border-radius: 30px;
-  display: none;
-  pointer-events: none;
-}
-label .progress:after{
-  position: absolute;
-  content: &quot;&quot;;
-  height: 100%;
-  background: #ccc;
-  width: calc(1% * var(--w));
-  border-radius: inherit;
-  transition: all 0.2s ease;
-}
-label.selectall .progress,
-label.selectall .row .percent{
-  display: block;
-}
-input[type&#x3D;&quot;radio&quot;],
-input[type&#x3D;&quot;checkbox&quot;]{
-  display: none;
-}
-
-
-
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
+}</code></pre>
         </div>
     </div>
-
-    
-</div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="polls_page.component.css"><div *ngIf="(user$ | async) as user">  <div *ngIf="(polls$ | async) as polls">    <br>    <div class="titlediv" ><p class="mainfeedtext"> Polls Page </p></div>    <br>    <div class="titlediv">      <table align="center">        <tr align="center">          <div class="titlediv" ><p class="submainfeedtext">Active Polls: &nbsp;</p></div>          <td>            <div class="borderclass">              <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">                <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">    <!-- if the user has answered the poll the user should no longer see it. -->                  <div *ngFor="let poll of pollslist">                      <div *ngIf=" pollIsActiveCheck(poll) == true">                      <div *ngIf=" userAnsweredPollAlready(poll, user) == false">                                                    <div class="wrapper">                                                        <header> {{poll.question}}<br></header>                                  <div class="poll-area">                                                          <input type="checkbox" name="poll" id="opt-1" (click) ="checkclick(poll, 1, user)">                                <input type="checkbox" name="poll" id="opt-2" (click) ="checkclick(poll, 2, user)">                              <input type="checkbox" name="poll" id="opt-3" (click) ="checkclick(poll, 3, user)">                          <label for="opt-1" class="opt-1">                            <div class="row">                              <div class="column">                                <span class="circle"></span>                                                     <span class="text">{{poll.option1}}</span>                              </div>                            </div>                            <div class="progress" id="pstyle1" style=\'--w:55;\'></div>                          </label>                          <label for="opt-2" class="opt-2">                            <div class="row">                              <div class="column">                                <span class="circle"></span>                                <span class="text">{{poll.option2}}</span>                              </div>                            </div>                            <div class="progress" id="pstyle2" style=\'--w:80;\'></div>                          </label>                          <label for="opt-3" class="opt-3">                            <div class="row">                              <div class="column">                                <span class="circle"></span>                                <span class="text">{{poll.option3}}</span>                              </div>                            </div>                            <div class="progress" id="pstyle3" style=\'--w:20;\'></div>                          </label>                        </div>                      </div>                    </div>                      </div>                                             </div>                  </div>              </cdk-virtual-scroll-viewport>            </div>          </td>          <div class="titlediv" ><p class="submainfeedtext">&nbsp; Previous Polls: &nbsp;</p></div>   <!--- Previous Polls section, Only the inactive polls are seen here.-->          <td>                                                                                        <!--- Previous Polls section, not finished: Need to see results aswell-->          <div class="borderclass">                  <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">              <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">                   <div *ngFor="let poll of pollslist">                   <div *ngIf=" pollIsActiveCheck(poll) == false">                                                   <div class="wrapper">                                                      <header> {{poll.question}}<br></header>                                <div class="poll-area">                                                        <label for="opt-1" class="opt-1">                          <div class="row">                            <div class="column">                              <span class="circle"></span>                                                    <span class="text">{{poll.option1}}</span>                            </div>                            <span class="percent">{{poll.countOpt1}}</span>            <!-- {{polls.countOptn}} are not needed here but can stay here for a while (?)-->                          </div>                          <div class="progress" id="pstyle1" style=\'--w:55;\'></div>                        </label>                        <label for="opt-2" class="opt-2">                          <div class="row">                            <div class="column">                              <span class="circle"></span>                              <span class="text">{{poll.option2}}</span>                            </div>                            <span class="percent">{{poll.countOpt2}}</span>                          </div>                          <div class="progress" id="pstyle2" style=\'--w:80;\'></div>                        </label>                        <label for="opt-3" class="opt-3">                          <div class="row">                            <div class="column">                              <span class="circle"></span>                              <span class="text">{{poll.option3}}</span>                            </div>                            <span class="percent">{{poll.countOpt3}}</span>                          </div>                          <div class="progress" id="pstyle3" style=\'--w:20;\'></div>                        </label>                      </div>                    </div>                  </div>                    </div>                  </div>          </cdk-virtual-scroll-viewport>          </div>        </td>        </tr>      </table>    </div>  </div></div>    </div>'
-    var COMPONENTS = [{'name': 'AdminPanelComponent', 'selector': 'app-admin-profile'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'EditProfileComponent', 'selector': 'app-user-profile-edit'},{'name': 'FeedMainComponent', 'selector': 'app-main'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'InMatchComponent', 'selector': 'app-in-match'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatchesAdminComponent', 'selector': 'matches-admin'},{'name': 'NewsPageComponent', 'selector': 'app-news'},{'name': 'PollsPageComponent', 'selector': 'app-polls'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UserDetailComponent', 'selector': 'app-user-panel'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'PollsPageComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
-
-
-
 
 
 
@@ -1667,31 +697,8 @@ input[type&#x3D;&quot;checkbox&quot;]{
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-          <label class="dark-mode-switch">
-               <input type="checkbox">
-               <span class="slider">
-                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-                    </svg>
-               </span>
-          </label>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'PollsPageComponent.html';
-            var MAX_SEARCH_RESULTS = 15;
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-
-       <script src="../js/menu-wc.js" defer></script>
-       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -1702,17 +709,20 @@ input[type&#x3D;&quot;checkbox&quot;]{
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>
