@@ -1,13 +1,14 @@
 import { Timestamp } from "rxjs";
 
 export interface Polls {
+    pollIsActive: boolean;
     question: string;
     option1: string;
     option2: string;
     option3: string;
-    countOpt1: number
-    countOpt2: number
-    countOpt3: number
+    countOpt1: number;
+    countOpt2: number;
+    countOpt3: number;
     writtenby: string;
     newsdate: Date;
     pid: string;

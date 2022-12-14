@@ -428,6 +428,7 @@ export class AuthService {
     console.log(newRef); // stuck
 
     const thePoll: Polls = {
+      pollIsActive: polls.pollIsActive,
       pid: idGiven,
       question: polls.question,
       option1: polls.option1,

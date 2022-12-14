@@ -27,6 +27,7 @@
   <table align="center">
     <td>
       <tr>
+        <td align= "center"><button (click)="PollInactive()" mat-raised-button class="deletebutton">Deactivate poll</button></td>
         <td align="center"><button (click)="UserInfo()" mat-raised-button class="deletebutton">See User Profile</button></td>
         <td align="center"><button (click)="DoSmth()" mat-raised-button class="deletebutton">Data Visuals</button></td>
         <td align="center"><button (click)="MatchesInfo()" mat-raised-button class="deletebutton">Control Matches</button></td>
@@ -38,7 +39,7 @@
   <table>
     <tr>
 
-      <td align="center">
+      <td align="center"> 
         <mat-card class="matcardclass3">
           <div class="divform" width="50%">
             <mat-card>
@@ -67,9 +68,6 @@
                         <textarea matInput name="opt3Input" ngModel placeholder="Option3" required  #localOption3Input="ngModel"></textarea>
                       </mat-form-field>
                     </tr>
-                    <br>
-                    <tr><button (click)="postedPollInactive()" mat-raised-button class="deactivatebutton">Deactivate previous poll</button></tr>
-                    <br>
                     <tr><button mat-raised-button class="assignbutton">Post the poll</button></tr>
                   </td>
                 </table>
