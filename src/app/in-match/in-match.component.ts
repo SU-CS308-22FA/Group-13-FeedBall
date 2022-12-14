@@ -190,7 +190,17 @@ export class InMatchComponent{
 
   }
 
-
+  /**
+   * This functions is created to make sure the match ends within 90 minutes.
+   * Since we only get the hour, minute and date, it is up to this function to calculate the amount time during which the match is active.
+   * @param date This is the date that we will start with, including the hours and minutes
+   * @param minutes Minutes according to which we want to push the time by.
+   * @returns The function returns the new date, with (number) minutes added to it.
+   */
+  addMinutes(date:Date, minutes:number) {
+    date.setMinutes(date.getMinutes() + minutes);
+    return date;
+  }
 
   navigateMainPage(){
     this.router.navigate(['feed']);
@@ -386,6 +396,14 @@ transform(matchesList: matches[]) {
   var retStr: string = "";
 
   var size = Object.keys(matchesList).length;
+
+  /**
+   * This functions is created to make sure the match ends within 90 minutes.
+   * Since we only get the hour, minute and date, it is up to this function to calculate the amount time during which the match is active.
+   * @param Date This is the date that we will start with, including the hours and minutes
+   * @param number Minutes according to which we want to push the time by.
+   * @returns date This is the new date, with (number) minutes added to it.
+   */
   function addMinutes(date:Date, minutes:number) {
     date.setMinutes(date.getMinutes() + minutes);
     return date;

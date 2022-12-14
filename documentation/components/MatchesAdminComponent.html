@@ -223,10 +223,10 @@
                                     <a href="../pipes/PluralPipe.html" >PluralPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                    <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
@@ -260,6 +260,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
@@ -501,10 +504,10 @@
                                            <a href="../pipes/PluralPipe.html" >PluralPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                           <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
@@ -538,6 +541,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
@@ -653,6 +659,57 @@
             </table>
     </section>
 
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> incrementTeam1</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>incrementTeam1(scoringteam: matches)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> incrementTeam2</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>incrementTeam2(scoringteam: matches)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
     <section>
         <h3 id="inputs">Properties</h3>
@@ -766,40 +823,93 @@ export class MatchesAdminComponent{
         this.matchesRef &#x3D; this.afs.collection(&#x27;matches&#x27;);
         this.matches$ &#x3D; this.matchesRef.valueChanges();
       }
+      incrementTeam1(scoringteam: matches){
+        this.authService.Team1Scores(scoringteam);
+      }
+      incrementTeam2(scoringteam: matches){
+        this.authService.Team2Scores(scoringteam);
+      }
 
 }
 
-@Pipe({ name: &#x27;returncurrentmatchipe&#x27; })
-export class ReturnCurrentMatchPipe implements PipeTransform {
+
+
+@Pipe({ name: &#x27;returnallmatchpipe&#x27; })
+export class ReturnAllMatchPipe implements PipeTransform {
 transform(matchesList: matches[]) {
 
-  var retStr: string &#x3D; &quot;&quot;;
   var size &#x3D; Object.keys(matchesList).length;
   function addMinutes(date:Date, minutes:number) {
     date.setMinutes(date.getMinutes() + minutes);
     return date;
   }
 
+  var list1: matches[] &#x3D; [];
+
     for(let i&#x3D;0; i&lt;size; i++){
       var star:any &#x3D; matchesList[i].starts_at;
       var numtimestamp &#x3D; Number(star.seconds);
       numtimestamp &#x3D; numtimestamp * 1000;
       const dateOf &#x3D; new Date(numtimestamp);
-      const dateOf2 &#x3D; dateOf;
-      var ends_at &#x3D; addMinutes(dateOf2,90);
-      const anlik &#x3D; new Date();
-      const dateOf3 &#x3D; new Date(numtimestamp);
+      var ends_at &#x3D; addMinutes(dateOf,90);
       if (true){
-
-
-        return retStr;
+        list1.push(matchesList[i]);
+        return ends_at;
       }
     }
-    return retStr;
+    return list1;
     //search by date among matches list, return the match code
 
   }
+
+
 }
+
+@Pipe({ name: &#x27;todatepipe2&#x27; })
+export class ToDatePipe2 implements PipeTransform {
+  transform(timestamp: any) {
+
+    var numtimestamp &#x3D; Number(timestamp.seconds);
+    numtimestamp &#x3D; numtimestamp * 1000;
+    const dateOf &#x3D; new Date(numtimestamp);
+    var deneme &#x3D; new Date();
+    console.log(deneme.getHours().toString(), deneme.getMinutes().toString());
+    deneme.setHours(11);
+    deneme.setMinutes(30);
+    console.log(&quot;after: &quot;, deneme.getHours().toString(), deneme.getMinutes().toString());
+
+
+
+
+    var returnString &#x3D; &quot;&quot;;
+
+    var nummonth &#x3D; Number(dateOf.getMonth())+1;
+
+    var mins &#x3D; dateOf.getMinutes().toString();
+    if(Object.keys(mins).length &lt; 2){
+      mins &#x3D; &quot;0&quot; + mins;
+    }
+    if(Object.keys(mins).length &lt; 1){
+      mins &#x3D; &quot;00&quot; + mins;
+    }
+
+    var hours &#x3D; dateOf.getHours().toString();
+    if(Object.keys(hours).length &lt; 2){
+      hours &#x3D; &quot;0&quot; + hours;
+    }
+    if(Object.keys(hours).length &lt; 1){
+      hours &#x3D; &quot;00&quot; + hours;
+    }
+
+    returnString &#x3D; dateOf.getDate().toString() + &quot;.&quot; + String(nummonth) + &quot;.&quot; +  dateOf.getFullYear().toString()
+    + &quot; &quot; + hours + &quot;:&quot; + mins;
+
+    return returnString;
+
+  }
+}
+
+
 </code></pre>
         </div>
     </div>

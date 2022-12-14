@@ -223,10 +223,10 @@
                                     <a href="../pipes/PluralPipe.html" >PluralPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                    <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
@@ -260,6 +260,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
@@ -501,10 +504,10 @@
                                            <a href="../pipes/PluralPipe.html" >PluralPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                           <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
@@ -538,6 +541,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
@@ -841,10 +847,30 @@
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Description:<br>Sends the details of the match to the firebase. This function lets admins create matches which will later on be used in the in-match page.</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>form</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>This form contains the parameters taken from the form in the admin panel. The form is called when clicked on Log the Match. The parameters within the form are team1 and team2, date, hour and minutes.</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
                                 </div>
+                                    <div class="io-description">
+                                        <p>alert: The match has been added to the schedule: success<br>alert: You can&#39;t enter the same team for Team1 and Team2: failure.</p>
+    
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1257,6 +1283,15 @@ export class AdminPanelComponent{
   }
   public matchesMatch &#x3D; true;
 
+
+
+  /**
+   * Description:
+   * Sends the details of the match to the firebase. This function lets admins create matches which will later on be used in the in-match page.
+   * @param form This form contains the parameters taken from the form in the admin panel. The form is called when clicked on Log the Match. The parameters within the form are team1 and team2, date, hour and minutes.
+   * @returns alert: The match has been added to the schedule: success
+   * alert: You can&#x27;t enter the same team for Team1 and Team2: failure.
+   */
   submitMatch(form: NgForm){
     if(form.value.Team1Input !&#x3D; form.value.Team2Input){
       this.matchesMatch &#x3D; true;

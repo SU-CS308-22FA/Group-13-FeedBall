@@ -223,10 +223,10 @@
                                     <a href="../pipes/PluralPipe.html" >PluralPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                    <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
@@ -260,6 +260,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
@@ -501,10 +504,10 @@
                                            <a href="../pipes/PluralPipe.html" >PluralPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                           <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
@@ -538,6 +541,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
@@ -939,6 +945,54 @@
                             <tr>
                                 <td class="col-md-4">
             <code>updateUserData2(fbUser: User, ageGiven: Date, nameGiven: string, surnameGiven: string, genderGiven: string, pointGiven: number, teamGiven: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> Team1Scores</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>Team1Scores(scoringteam: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> Team2Scores</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>Team2Scores(scoringteam: any)</code>
                                 </td>
                             </tr>
             
@@ -1571,8 +1625,15 @@ export class AuthService {
     return userRef.set(user, { merge: true });
   }
 
+  Team1Scores(scoringteam: matches){
+    var increment &#x3D; scoringteam.score_team1 + 1;
+    this.afs.collection(&quot;matches&quot;).doc(scoringteam.matchID).update({&quot;score_team1&quot;: increment});
+  }
 
-
+  Team2Scores(scoringteam: matches){
+    var increment &#x3D; scoringteam.score_team2 + 1;
+    this.afs.collection(&quot;matches&quot;).doc(scoringteam.matchID).update({&quot;score_team2&quot;: increment});
+  }
 
   incrementPoints(userCurrent: User, pointToIncrement: number){ //points to incrememt will be given by the activity type that the user did, in related ts file
 

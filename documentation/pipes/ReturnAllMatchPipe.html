@@ -223,7 +223,7 @@
                                     <a href="../pipes/PluralPipe.html" >PluralPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
+                                    <a href="../pipes/ReturnAllMatchPipe.html"  class="active" >ReturnAllMatchPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
@@ -235,7 +235,7 @@
                                     <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ReturnIfXthPipe.html"  class="active" >ReturnIfXthPipe</a>
+                                    <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
@@ -504,7 +504,7 @@
                                            <a href="../pipes/PluralPipe.html" >PluralPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ReturnAllMatchPipe.html" >ReturnAllMatchPipe</a>
+                                           <a href="../pipes/ReturnAllMatchPipe.html"  class="active" >ReturnAllMatchPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
@@ -516,7 +516,7 @@
                                            <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ReturnIfXthPipe.html"  class="active" >ReturnIfXthPipe</a>
+                                           <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
@@ -585,7 +585,7 @@
 
 <ol class="breadcrumb">
   <li>Pipes</li>
-  <li>ReturnIfXthPipe</li>
+  <li>ReturnAllMatchPipe</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -603,162 +603,131 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/leaderboard/leaderboard.component.ts</code>
+            <code>src/app/admin_panel/matches_admin.component.ts</code>
         </p>
 
 
 
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
+        <pre><code class="hljs javascript">import { Component, Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 import { NgForm } from &#x27;@angular/forms&#x27;;
 import { FormsModule, ReactiveFormsModule }   from &#x27;@angular/forms&#x27;;
 import { AuthService } from &quot;../shared/services/auth.service&quot;;
-import { Subscription } from &#x27;rxjs&#x27;;
-
 import { User } from &quot;../shared/services/user&quot;;
 import { AngularFireAuth } from &#x27;@angular/fire/compat/auth&#x27;;
-import {
-  AngularFirestore,
-  AngularFirestoreDocument,
-} from &#x27;@angular/fire/compat/firestore&#x27;;
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument,} from &#x27;@angular/fire/compat/firestore&#x27;;
 import { animationFrameScheduler, of, switchMap } from &#x27;rxjs&#x27;;
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from &#x27;firebase/auth&#x27;;
-import * as firebase from &#x27;firebase/compat&#x27;;
+import firebase from &#x27;firebase/compat/app&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-import { Pipe } from &#x27;@angular/core&#x27;;
-import { PipeTransform } from &#x27;@angular/core&#x27;;
-
-
-interface LeaderboardElems {
-  userName: string,
-  userSurname: string,
-  userUid: string,
-  userPoint: number,
-  userRank: number
-}
+import { Observable } from &#x27;rxjs&#x27;;
+import { matches } from &#x27;../models/matches.model&#x27;;
 
 
 @Component({
-  selector: &#x27;app-leaderboard&#x27;,
-  templateUrl: &#x27;./leaderboard.component.html&#x27;,
-  styleUrls: [&#x27;./leaderboard.component.css&#x27;]
+  selector: &#x27;matches-admin&#x27;,
+  templateUrl: &#x27;./matches_admin.component.html&#x27;,
+  styleUrls: [&#x27;./matches_admin.component.css&#x27;]
 })
-export class LeaderboardComponent implements OnInit, OnDestroy {
 
-  public listUsers &#x3D; this.ngOnInit();
-  public isButtonClicked: boolean &#x3D; false;
-  constructor(public authService: AuthService){}
-
-  public filterSelection &#x3D; 10;
-
-  getUsersListAll(){
-    this.isButtonClicked &#x3D; true;
-    const vallistUsers &#x3D; this.authService.getAllUsers();
-    this.listUsers &#x3D; vallistUsers;
-  }
-
-  ngOnInit(){
-    const vallistUsers &#x3D; this.authService.getAllUsers();
-    this.listUsers &#x3D; vallistUsers;
-  }
-
-  ngOnDestroy(): void{
-  }
-
-  user$ &#x3D; this.authService.user$;
-}
-
-//pipelines
-@Pipe({ name: &#x27;transformpipe&#x27; })
-export class TransformPipe implements PipeTransform {
-transform(listOf: any) {
-
-  //uid name surname point sorted by point
-  var listType: Array&lt;LeaderboardElems&gt; &#x3D; [];
-  var size &#x3D; Object.keys(listOf).length;
-  for(let i&#x3D;0; i&lt;size; i++){
-    var model &#x3D; listOf[i];
-
-    var elem: LeaderboardElems &#x3D; {
-      userName: &quot;&quot;,
-      userSurname: &quot;&quot;,
-      userPoint: 0,
-      userUid: &quot;&quot;,
-      userRank: -1
-    }
-    elem.userName &#x3D; model.name;
-    elem.userSurname &#x3D; model.surname;
-    elem.userUid &#x3D; model.uid;
-    elem.userPoint &#x3D; model.point;
-
-    listType.push(elem);
-  }
-
-  var sortedList: LeaderboardElems[] &#x3D; listType.sort((obj1, obj2) &#x3D;&gt; {
-    if(obj1.userPoint &gt; obj2.userPoint){return -1;}
-    if(obj1.userPoint &lt; obj2.userPoint){return 1;}
-    return 0;
-  });
-
-  for (let j&#x3D;0; j&lt;size; j++){
-    sortedList[j].userRank &#x3D; j+1; //1st, 2nd, 3rd...
-  }
-
-  return sortedList;
-  }
-}
-
-@Pipe({ name: &#x27;returnsizepipe&#x27; })
-export class ReturnSizePipe implements PipeTransform {
-transform(listOf: any) {
-
-  var size &#x3D; Object.keys(listOf).length;
-  return size;
-  }
-}
-
-@Pipe({ name: &#x27;returnxthpipe&#x27; })
-export class ReturnXthPipe implements PipeTransform {
-transform(listOf: LeaderboardElems[], index: number) {
-
-  var toReturn &#x3D; &quot;&quot;;
-  toReturn &#x3D; listOf[index-1].userName +  &quot; &quot; + listOf[index-1].userSurname + &quot; - &quot; + listOf[index-1].userPoint + &quot; Points&quot;;
-
-  return toReturn;
-  }
-}
-
-@Pipe({ name: &#x27;returnifxthpipe&#x27; })
-export class ReturnIfXthPipe implements PipeTransform {
-transform(listOf: LeaderboardElems[], index: number, user: User) {
-
-  if(listOf[index-1].userUid &#x3D;&#x3D; user.uid){
-    return true;
-  }
-  return false;
-  }
-}
-
-
-@Pipe({ name: &#x27;returnrankuserpipe&#x27;})
-export class ReturnRankUserPipe implements PipeTransform {
-transform(listOf: LeaderboardElems[], user: User) {
-  var strReturn &#x3D; &quot;&quot;;
-  var size &#x3D; Object.keys(listOf).length;
-  for(let i&#x3D;0; i&lt;size; i++){
-    if(listOf[i].userUid &#x3D;&#x3D; user.uid){
-      if(listOf[i].userRank &lt; 4){
-        strReturn &#x3D; &quot;Congratulations, &quot; + user.name + &quot;! You are currently ranked #&quot; + listOf[i].userRank;
+export class MatchesAdminComponent{
+    matchesRef: AngularFirestoreCollection&lt;matches&gt;;
+    matches$: Observable&lt;matches[]&gt;;
+    constructor(
+        public authService: AuthService,
+        public afs: AngularFirestore,
+        public auth: AngularFireAuth,
+      ){
+        this.matchesRef &#x3D; this.afs.collection(&#x27;matches&#x27;);
+        this.matches$ &#x3D; this.matchesRef.valueChanges();
       }
-      else{
-        strReturn &#x3D; user.name + &quot;, you are currently ranked #&quot; + listOf[i].userRank;
+      incrementTeam1(scoringteam: matches){
+        this.authService.Team1Scores(scoringteam);
+      }
+      incrementTeam2(scoringteam: matches){
+        this.authService.Team2Scores(scoringteam);
+      }
+
+}
+
+
+
+@Pipe({ name: &#x27;returnallmatchpipe&#x27; })
+export class ReturnAllMatchPipe implements PipeTransform {
+transform(matchesList: matches[]) {
+
+  var size &#x3D; Object.keys(matchesList).length;
+  function addMinutes(date:Date, minutes:number) {
+    date.setMinutes(date.getMinutes() + minutes);
+    return date;
+  }
+
+  var list1: matches[] &#x3D; [];
+
+    for(let i&#x3D;0; i&lt;size; i++){
+      var star:any &#x3D; matchesList[i].starts_at;
+      var numtimestamp &#x3D; Number(star.seconds);
+      numtimestamp &#x3D; numtimestamp * 1000;
+      const dateOf &#x3D; new Date(numtimestamp);
+      var ends_at &#x3D; addMinutes(dateOf,90);
+      if (true){
+        list1.push(matchesList[i]);
+        return ends_at;
       }
     }
+    return list1;
+    //search by date among matches list, return the match code
+
   }
-  return strReturn;
+
+
+}
+
+@Pipe({ name: &#x27;todatepipe2&#x27; })
+export class ToDatePipe2 implements PipeTransform {
+  transform(timestamp: any) {
+
+    var numtimestamp &#x3D; Number(timestamp.seconds);
+    numtimestamp &#x3D; numtimestamp * 1000;
+    const dateOf &#x3D; new Date(numtimestamp);
+    var deneme &#x3D; new Date();
+    console.log(deneme.getHours().toString(), deneme.getMinutes().toString());
+    deneme.setHours(11);
+    deneme.setMinutes(30);
+    console.log(&quot;after: &quot;, deneme.getHours().toString(), deneme.getMinutes().toString());
+
+
+
+
+    var returnString &#x3D; &quot;&quot;;
+
+    var nummonth &#x3D; Number(dateOf.getMonth())+1;
+
+    var mins &#x3D; dateOf.getMinutes().toString();
+    if(Object.keys(mins).length &lt; 2){
+      mins &#x3D; &quot;0&quot; + mins;
+    }
+    if(Object.keys(mins).length &lt; 1){
+      mins &#x3D; &quot;00&quot; + mins;
+    }
+
+    var hours &#x3D; dateOf.getHours().toString();
+    if(Object.keys(hours).length &lt; 2){
+      hours &#x3D; &quot;0&quot; + hours;
+    }
+    if(Object.keys(hours).length &lt; 1){
+      hours &#x3D; &quot;00&quot; + hours;
+    }
+
+    returnString &#x3D; dateOf.getDate().toString() + &quot;.&quot; + String(nummonth) + &quot;.&quot; +  dateOf.getFullYear().toString()
+    + &quot; &quot; + hours + &quot;:&quot; + mins;
+
+    return returnString;
+
   }
 }
+
 
 </code></pre>
     </div>

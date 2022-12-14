@@ -79,7 +79,6 @@ import { HighchartsChartModule } from 'highcharts-angular';
     AppComponent,
     HeaderComponent,
     LoginComponent,
-
     FeedMainComponent,
     UserProfileComponent,
     SignupComponent,
