@@ -69,7 +69,7 @@ import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.com
 import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
 import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
 import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
-
+import { DisableInMatchButtonPipe } from './header/header.component';
 import { ChartsComponent } from './charts/charts.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 
@@ -114,6 +114,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     ReturnFinishedMatchPipe,
     ReturnCurrentMatchIdPipe,
     ChartsComponent,
+    DisableInMatchButtonPipe,
 
   ],
   imports: [
