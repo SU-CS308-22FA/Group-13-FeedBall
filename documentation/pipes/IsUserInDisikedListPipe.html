@@ -1,0 +1,582 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>feedball-project documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">feedball-project documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content pipe">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Pipes</li>
+  <li >IsUserInDisikedListPipe</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/news_page/news_page.component.ts</code>
+        </p>
+
+
+
+
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover metadata">
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">Name</td>
+                        <td class="col-md-9">isuserindislikedlistpipe</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transform"></a>
+                    <span class="name">
+                        <span ><b>transform</b></span>
+                        <a href="#transform"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>transform(news: <a href="../interfaces/News.html" target="_self">News</a>, user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="317"
+                            class="link-to-prism">src/app/news_page/news_page.component.ts:317</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>news</td>
+                                    <td>
+                                                <code><a href="../interfaces/News.html" target="_self" >News</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import {News} from &quot;src/app/models/news.model&quot;
+import { NgForm } from &#x27;@angular/forms&#x27;;
+import { FormsModule, ReactiveFormsModule }   from &#x27;@angular/forms&#x27;;
+import { AuthService } from &quot;../shared/services/auth.service&quot;;
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument,} from &#x27;@angular/fire/compat/firestore&#x27;;
+import { User } from &quot;../shared/services/user&quot;;
+import { AngularFireAuth } from &#x27;@angular/fire/compat/auth&#x27;;
+import { animationFrameScheduler, of, switchMap, Observable } from &#x27;rxjs&#x27;;
+import { Auth, getAdditionalUserInfo, updateCurrentUser } from &#x27;firebase/auth&#x27;;
+import * as firebase from &#x27;firebase/compat&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Pipe } from &#x27;@angular/core&#x27;;
+import { PipeTransform } from &#x27;@angular/core&#x27;;
+import { isIntersectionTypeNode, sortAndDeduplicateDiagnostics } from &#x27;typescript&#x27;;
+
+
+
+@Component({
+  selector: &#x27;app-news&#x27;,
+  templateUrl: &#x27;./news_page.component.html&#x27;,
+  styleUrls: [&#x27;./news_page.component.css&#x27;]
+})
+export class NewsPageComponent{
+  newsRef: AngularFirestoreCollection&lt;News&gt;;
+  news$: Observable&lt;News[]&gt;;
+
+
+
+
+  constructor(public authService: AuthService,
+    private router: Router,
+    private afs: AngularFirestore,
+    private auth: AngularFireAuth)
+  {
+    this.newsRef &#x3D; this.afs.collection(&#x27;News&#x27;);
+    this.news$ &#x3D; this.newsRef.valueChanges();
+    console.log(this.newsRef);
+  }
+
+  public filterOption &#x3D; &quot;alldatedesc&quot;;
+  user$ &#x3D; this.authService.user$;
+
+
+
+
+  returnListWithout(theList: Array&lt;String&gt;, theElem: String){
+    var size &#x3D; Object.keys(theList).length;
+    var copyList: Array&lt;String&gt; &#x3D; [];
+
+    for(let i&#x3D;0; i&lt;size; i++){
+      if(theList[i] !&#x3D; theElem){
+        copyList.push(theList[i]);
+      }
+    }
+
+    return copyList;
+  }
+
+  isUserInList(theList: Array&lt;String&gt;, user: User){
+    var size &#x3D; Object.keys(theList).length;
+    if(size&gt;0){
+      for(let i&#x3D;0; i&lt;size; i++){
+        if(theList[i] &#x3D;&#x3D; user.uid){
+          return true;
+        }
+      }
+      return false;
+    }
+    else{
+      return false;
+    }
+  }
+
+  like(user: User, news: News){
+    console.log(&quot;in like&quot;);
+    if(!this.isUserInList(news.likedUsers, user) &amp;&amp; !this.isUserInList(news.dislikedUsers, user)){ //if the user did not like the post and did not dislike the post
+
+      //call necessary increment and add functions
+      this.authService.incrementPoints(user, 5); //like: 5 points increment for the user
+
+      //
+      var newList: Array&lt;String&gt; &#x3D; news.likedUsers;
+      newList.push(user.uid);
+      var newLikeNum: number &#x3D; news.likes + 1;
+
+      this.authService.LikeDislikePost(news, newLikeNum, news.dislikes, newList, news.dislikedUsers, news.nid);
+
+    }
+    else{ //if user disliked the post, it cannot like the post at the same time, should undislike first
+      return;
+    }
+  }
+
+  unlike(user: User, news: News){
+    console.log(&quot;in unlike&quot;);
+
+    if(this.isUserInList(news.likedUsers, user)){
+
+      //call necessary decrement and remove functions
+      this.authService.decrementPoints(user, 5);
+
+      //
+      var newList &#x3D; this.returnListWithout(news.likedUsers, user.uid);
+      var newLikeNum &#x3D; news.likes - 1;
+
+      this.authService.LikeDislikePost(news, newLikeNum, news.dislikes, newList, news.dislikedUsers, news.nid);
+
+    }
+    else{ //should not be in this state
+      return;
+    }
+  }
+
+  dislike(user: User, news: News){
+    console.log(&quot;in like&quot;);
+    if(!this.isUserInList(news.dislikedUsers, user) &amp;&amp; !this.isUserInList(news.likedUsers, user)){ //if the user did not like the post and did not dislike the post
+
+      //call necessary increment and add functions
+      this.authService.incrementPoints(user, 5);//dislike: 5 points increment for the user
+
+      //
+      var newList: Array&lt;String&gt; &#x3D; news.dislikedUsers;
+      newList.push(user.uid);
+      var newDislikeNum: number &#x3D; news.dislikes + 1;
+
+      this.authService.LikeDislikePost(news, news.likes, newDislikeNum, news.likedUsers, newList, news.nid);
+
+
+    }
+    else{ //if user liked the post, it cannot dislike the post at the same time, should unlike first
+      return;
+    }
+  }
+
+  undislike(user: User, news: News){
+    console.log(&quot;in unlike&quot;);
+
+    if(this.isUserInList(news.dislikedUsers, user)){
+
+      //call necessary decrement and remove functions
+      this.authService.decrementPoints(user, 5);
+
+      //
+      var newList &#x3D; this.returnListWithout(news.dislikedUsers, user.uid);
+      var newDislikeNum &#x3D; news.dislikes - 1;
+
+      this.authService.LikeDislikePost(news, news.likes, newDislikeNum, news.likedUsers, newList, news.nid);
+
+    }
+    else{ //should not be in this state
+      return;
+    }
+  }
+
+
+}
+
+//pipelines
+@Pipe({ name: &#x27;todatepipe2&#x27; })
+export class ToDatePipe2 implements PipeTransform {
+  transform(timestamp: any) {
+
+    var numtimestamp &#x3D; Number(timestamp.seconds);
+    numtimestamp &#x3D; numtimestamp * 1000;
+    const dateOf &#x3D; new Date(numtimestamp);
+    var deneme &#x3D; new Date();
+    console.log(deneme.getHours().toString(), deneme.getMinutes().toString());
+    deneme.setHours(11);
+    deneme.setMinutes(30);
+    console.log(&quot;after: &quot;, deneme.getHours().toString(), deneme.getMinutes().toString());
+
+
+
+
+    var returnString &#x3D; &quot;&quot;;
+
+    var nummonth &#x3D; Number(dateOf.getMonth())+1;
+
+    var mins &#x3D; dateOf.getMinutes().toString();
+    if(Object.keys(mins).length &lt; 2){
+      mins &#x3D; &quot;0&quot; + mins;
+    }
+    if(Object.keys(mins).length &lt; 1){
+      mins &#x3D; &quot;00&quot; + mins;
+    }
+
+    var hours &#x3D; dateOf.getHours().toString();
+    if(Object.keys(hours).length &lt; 2){
+      hours &#x3D; &quot;0&quot; + hours;
+    }
+    if(Object.keys(hours).length &lt; 1){
+      hours &#x3D; &quot;00&quot; + hours;
+    }
+
+    returnString &#x3D; dateOf.getDate().toString() + &quot;.&quot; + String(nummonth) + &quot;.&quot; +  dateOf.getFullYear().toString()
+    + &quot; &quot; + hours + &quot;:&quot; + mins;
+
+    return returnString;
+
+  }
+}
+
+@Pipe({ name: &#x27;sortteamfirstpipe&#x27; })
+export class SortTeamFirstPipe implements PipeTransform {
+  transform(listUnsorted: News[], teamUser: string) {
+
+    var listSorted: News[] &#x3D; [];
+    var addedIndexes: number[] &#x3D; [];
+    var size &#x3D; Object.keys(listUnsorted).length;
+    if(listUnsorted !&#x3D; null &amp;&amp; size &gt; 0){
+      for(let i&#x3D;0; i&lt;size; i++){
+
+        var stringList &#x3D; listUnsorted[i].tags;
+        var boolOf &#x3D; false;
+        var sizeList &#x3D; Object.keys(stringList).length;
+        for(let j&#x3D;0; j&lt;sizeList; j++){
+
+          if(stringList[j] &#x3D;&#x3D; teamUser){
+            boolOf &#x3D; true;
+
+          }
+        }
+        if(boolOf){
+          listSorted.push(listUnsorted[i]);
+          addedIndexes.push(i);
+        }
+        boolOf &#x3D; false;
+      }
+
+      var sizeIndexList &#x3D; Object.keys(addedIndexes).length;
+      for(let k&#x3D;0; k&lt;size; k++){
+
+        var isAdded &#x3D; false;
+
+        for(let l&#x3D;0; l&lt;sizeIndexList; l++){
+          if(k &#x3D;&#x3D; addedIndexes[l]){
+            isAdded &#x3D; true;
+          }
+        }
+
+        if(!isAdded){
+          listSorted.push(listUnsorted[k]);
+        }
+      }
+    }
+    return listSorted;
+  }
+}
+
+
+@Pipe({ name: &#x27;filterteamonlypipe&#x27; })
+export class FilterTeamOnlyPipe implements PipeTransform {
+  transform(listUnfiltered: News[], teamUser: string) {
+
+    var filteredList: News[] &#x3D; [];
+    var size &#x3D; Object.keys(listUnfiltered).length;
+
+    if(listUnfiltered !&#x3D; null &amp;&amp; size &gt; 0){
+      for(let i&#x3D;0; i&lt;size; i++){
+
+        var strList &#x3D; listUnfiltered[i].tags;
+        var sizeStrList &#x3D; Object.keys(strList).length;
+        var isTeamInTag &#x3D; false;
+        for(let j&#x3D;0; j&lt;sizeStrList; j++){
+          if(teamUser &#x3D;&#x3D; strList[j]){
+            isTeamInTag &#x3D; true;
+          }
+        }
+
+        if(isTeamInTag){
+          filteredList.push(listUnfiltered[i]);
+        }
+      }
+    }
+
+    return filteredList;
+  }
+}
+
+@Pipe({ name: &#x27;sortdatedescendingpipe&#x27; })
+export class SortDateDescendingPipe implements PipeTransform {
+  transform(listUnfiltered: News[]) {
+
+    var sortedList: News[] &#x3D; [];
+
+    if(listUnfiltered !&#x3D; null){
+      sortedList &#x3D; listUnfiltered.sort((a, b) &#x3D;&gt; (a.newsdate &gt; b.newsdate ? -1 : 1));
+    }
+
+    return sortedList;
+  }
+}
+
+@Pipe({ name: &#x27;isuserinlikedlistpipe&#x27; })
+export class IsUserInLikedListPipe implements PipeTransform {
+  transform(news: News, user: User) {
+
+    var size &#x3D; Object.keys(news.likedUsers).length;
+    if(size&gt;0){
+      for(let i&#x3D;0; i&lt;size; i++){
+        if(news.likedUsers[i] &#x3D;&#x3D; user.uid){
+          return true;
+        }
+      }
+      return false;
+    }
+    else{
+      return false;
+    }
+
+  }
+}
+
+@Pipe({ name: &#x27;isuserindislikedlistpipe&#x27; })
+export class IsUserInDisikedListPipe implements PipeTransform {
+  transform(news: News, user: User) {
+
+    var size &#x3D; Object.keys(news.dislikedUsers).length;
+    if(size&gt;0){
+      for(let i&#x3D;0; i&lt;size; i++){
+        if(news.dislikedUsers[i] &#x3D;&#x3D; user.uid){
+          return true;
+        }
+      }
+      return false;
+    }
+    else{
+      return false;
+    }
+
+  }
+}
+
+
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
+            var COMPODOC_CURRENT_PAGE_URL = 'IsUserInDisikedListPipe.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,14 +1,22 @@
 import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "@angular/fire/compat/database";
 import { Observable } from "rxjs";
+import { AngularFirestore, AngularFirestoreDocument } from "@angular/fire/compat/firestore";
 
 @Injectable()
 export class ChartService {
 
-    constructor(private db: AngularFireDatabase){ }
+    constructor(private db: AngularFirestore){ }
 
-    getData(dataset: string){
+    filterGender(gend: string){
 
-        return this.db.list(dataset);
+
+
     }
+
+    filterTeam(gend: string){
+
+    }
+
+
 }
