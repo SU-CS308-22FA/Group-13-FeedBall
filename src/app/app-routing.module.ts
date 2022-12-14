@@ -13,6 +13,7 @@ import { UserDetailComponent } from './admin_panel/user_detail.component';
 import { NewsPageComponent } from './news_page/news_page.component';
 import { PollsPageComponent } from './polls_page/polls_page.component';
 import { ChartsComponent } from './charts/charts.component';
+import { MatchesAdminComponent } from './admin_panel/matches_admin.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,9 @@ const routes: Routes = [
   { path: 'user-detail', component: UserDetailComponent},
   { path: 'news-page', component: NewsPageComponent},
   { path: 'polls-page', component: PollsPageComponent},
-  { path: 'chart', component: ChartsComponent}
+  { path: 'chart', component: ChartsComponent},
+  { path: 'matches-admin', component: MatchesAdminComponent},
+
 ];
 
 @NgModule({

@@ -27,6 +27,8 @@ import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { InMatchComponent } from './in-match/in-match.component';
+import { MatchesAdminComponent } from './admin_panel/matches_admin.component';
+
 
 import { UserDetailComponent } from './admin_panel/user_detail.component';
 import { UidContainsListPipe } from './admin_panel/user_detail.component';
@@ -88,6 +90,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     LeaderboardComponent,
     InMatchComponent,
     UserDetailComponent,
+    MatchesAdminComponent,
     TransformPipe,
     ReturnSizePipe,
     ReturnXthPipe,
@@ -110,7 +113,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     ReturnCurrentMatchPipe,
     ReturnFinishedMatchPipe,
     ReturnCurrentMatchIdPipe,
-    ChartsComponent
+    ChartsComponent,
 
   ],
   imports: [
