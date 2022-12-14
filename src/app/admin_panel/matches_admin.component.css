@@ -1,0 +1,12 @@
+.matchcontainer{
+  border: 4px solid #b9dcc0;
+  width: 400px;
+  height: 700px;
+  overflow-x:auto
+}
+
+.matcardclass{
+    width: 250px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+  }
