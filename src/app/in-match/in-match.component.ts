@@ -403,7 +403,7 @@ transform(matchesList: matches[]) {
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
       if (anlik >= dateOf3 && anlik <= ends_at){
-        retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() +"\n" +
+        retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() + "\r\n" +
         matchesList[i].score_team1.toString() + " - " + matchesList[i].score_team2.toString();
 
         return retStr;
