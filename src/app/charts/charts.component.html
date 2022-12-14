@@ -1,0 +1,86 @@
+
+<br>
+<div class="divform"><!--we need admin-user-team types for the signing up users in order to redirect teams and admins to the admin panel and team panel-->
+  <mat-card>
+    <form (submit)="mamaMia(loginForm)" #loginForm="ngForm">
+      <div style="align-items: center;">
+        <td align="center">
+          <highcharts-chart *ngIf="chartOptions"
+            [Highcharts]="Highcharts"
+            [options]="chartOptions"
+            style="width: 100%; height: 400px; display: block;">
+          </highcharts-chart>
+        </td>
+      <table align="center">
+        <td align="center">
+          <tr align="center">
+            <mat-form-field>
+              <mat-label>Select a team</mat-label>
+                <mat-select matInput ngModel name="teamInput" required #localTeamInput="ngModel">
+                  <mat-option *ngFor="let team of this.teamsList" [value]="team">
+                    {{team}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="localTeamInput.invalid"><p class="errortext">Please select a team.</p></mat-error>
+            </mat-form-field>
+          </tr>
+          <tr><br></tr>
+          <tr><button mat-raised-button class="signupbutton">Filter</button></tr>
+          </td>
+
+
+      </table>
+    </div>
+    </form>
+  </mat-card>
+</div>
+<br>
+<div class="divform"><!--we need admin-user-team types for the signing up users in order to redirect teams and admins to the admin panel and team panel-->
+  <mat-card>
+
+        <td align="center">
+          <highcharts-chart *ngIf="chartOptions2"
+            [Highcharts]="Highcharts2"
+            [options]="chartOptions2"
+            style="width: 100%; height: 400px; display: block;">
+          </highcharts-chart>
+        </td>
+
+
+  </mat-card>
+</div>
+<br>
+<div class="divform"><!--we need admin-user-team types for the signing up users in order to redirect teams and admins to the admin panel and team panel-->
+  <mat-card>
+    <form (submit)="mamaMia2(login2Form)" #login2Form="ngForm">
+      <div style="align-items: center;">
+        <td align="center">
+          <highcharts-chart *ngIf="chartOptions3"
+            [Highcharts]="Highcharts3"
+            [options]="chartOptions3"
+            style="width: 100%; height: 400px; display: block;">
+          </highcharts-chart>
+        </td>
+      <table align="center">
+        <td align="center">
+          <tr align="center">
+            <mat-form-field>
+              <mat-label>Select a team</mat-label>
+                <mat-select matInput ngModel name="team2Input" required #localteam2Input="ngModel">
+                  <mat-option *ngFor="let team2 of this.teamsList" [value]="team2">
+                    {{team2}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="localteam2Input.invalid"><p class="errortext">Please select a team.</p></mat-error>
+            </mat-form-field>
+          </tr>
+          <tr><br></tr>
+          <tr><button mat-raised-button class="signupbutton">Filter</button></tr>
+          </td>
+
+
+      </table>
+    </div>
+    </form>
+  </mat-card>
+</div>

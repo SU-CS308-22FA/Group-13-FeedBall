@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AuthService } from "../shared/services/auth.service";
@@ -7,7 +7,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument,} from '@angular/fire/compat/firestore';
 import { animationFrameScheduler, of, switchMap } from 'rxjs';
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
-import * as firebase from 'firebase/compat';
+import firebase from 'firebase/compat/app';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -33,8 +33,14 @@ export class UserDetailComponent{
 
 
 
-  deleteUser(){
+  deleteUser(uidX: string){
+    return this.afs.doc(`users/${uidX}`).update({isBanned: true});
+    console.log('User is banned!');
+  }
 
+  UnbanUser(uidX: string){
+    return this.afs.doc(`users/${uidX}`).update({isBanned: false});
+    console.log('User is unbanned!');
   }
 
   navigateMainPage(){
@@ -48,5 +54,19 @@ export class UserDetailComponent{
   navigateAdminPanel(){
     //double check for if user is admin etc.
     //this.router.navigate(['admin-panel']);
+  }
+}
+
+
+@Pipe({ name: 'uidcontainslist' })
+export class UidContainsListPipe implements PipeTransform {
+  transform(deletes: Array<any>, user: String) {
+    const size = deletes.length;
+    for(let i = 0; i < size; i++){
+      if(deletes[i].uid == user){
+        return false;
+      }
+    }
+    return true;
   }
 }

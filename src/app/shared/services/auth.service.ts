@@ -145,6 +145,7 @@ export class AuthService {
       point: point,
       team: team,
       isAdmin: false,
+      isBanned: false
       //password: pass
     };
     return userRef.set(userData, {
@@ -168,6 +169,7 @@ export class AuthService {
       point: user.point,
       team: user.team,
       isAdmin: user.isAdmin,
+      isBanned: user.isBanned
       //password: user.password
     };
     return userRef.set(userData, {
@@ -264,15 +266,23 @@ export class AuthService {
       age: ageGiven,
       point: pointGiven,
       team: teamGiven,
-      isAdmin: fbUser.isAdmin
+      isAdmin: fbUser.isAdmin,
+      isBanned: false
       //password: fbUser.password
     };
 
     return userRef.set(user, { merge: true });
   }
 
+  Team1Scores(scoringteam: matches){
+    var increment = scoringteam.score_team1 + 1;
+    this.afs.collection("matches").doc(scoringteam.matchID).update({"score_team1": increment});
+  }
 
-
+  Team2Scores(scoringteam: matches){
+    var increment = scoringteam.score_team2 + 1;
+    this.afs.collection("matches").doc(scoringteam.matchID).update({"score_team2": increment});
+  }
 
   incrementPoints(userCurrent: User, pointToIncrement: number){ //points to incrememt will be given by the activity type that the user did, in related ts file
 

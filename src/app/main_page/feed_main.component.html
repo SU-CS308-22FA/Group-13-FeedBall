@@ -1,29 +1,48 @@
+<div *ngIf="(user$ | async) as user">
+  <div class="titlediv" *ngIf = "user.isBanned == true"><br><br><p class="mainfeedtext">You're banned! Please contact us if you think there is a mistake.</p></div>
+  <div *ngIf = "user.isBanned != true">
 <div class="titlediv" ><p class="mainfeedtext">Main Feed Page</p></div>
 
-<!-- <body>
-    <div style="width: 100%;">
-        <div style="margin-left: 5%; width: 42.5%; height: 100px; float: left; background: green;">
-            Left Div
+<table align="center">
+  <td align="center">
+    <tr align="center">
+      <td>
+        <button mat-button class="buttonclass" >
+          <a (click)="navigateNewsPage()"><img src="/assets/FeedB.png" width="700px"></a>
+        </button>
+      </td>
+      <td>
+        <button mat-button class="buttonclass">
+          <a (click)=" navigatePollsPage()"><img src="/assets/FeedB2.png" width="700px"></a>
+        </button>
+      </td>
+    </tr>
+  </td>
+</table>
+
+<table align="center">
+  <td align="center">
+    <tr>
+      <img src="/assets/FeedBMatch.png" width="200px">
+      <div *ngIf="(matches$ | async) as matches">
+        <div class="titlediv">
+          <div class="matchscorediv">
+            <div *ngIf="(matches | returnfinishedmatchpipe) as matcheslist">
+              <div class="scrollcontainer">
+              <div *ngFor="let match of matcheslist" class="item" >
+                <mat-card align="center" class="matcardclass">
+                  <p>{{match.team1}} - {{match.team2}}</p>
+                  <p>{{match.score_team1}} - {{match.score_team2}}</p>
+                </mat-card>
+              </div>
+              </div>
+              </div>
+              <br>
+            </div>
+          </div><!--match score real time div-->
         </div>
-        <div style="margin-left: 52.5%; margin-right: 5%; height: 100px; background: blue;">
-            Right Div
-        </div>
-        <article>
-      <h1>NEWS</h1>
-      <p>See the latest news from the teams and the Federation here!</p>
-    </article>
-    </div>
- </body> -->
-
- <section class="container">
-  <a (click)="navigateNewsPage()">
-  <div class="newscontainer">
-  </div>
-</a>
-
-  <a (click)=" navigatePollsPage()">
-  <div class="pollscontainer">
-  </div>
-</a>
-
-</section>
+    </tr>
+  </td>
+</table>
+</div>
+</div>

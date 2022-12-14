@@ -30,8 +30,10 @@
 }
 
 .container {
-  display: table;
+  display: flex;
   width: 100%;
+  border-color: #ff9e2c;
+  border-radius: 5px;
 }
 
 .newscontainer {
@@ -42,7 +44,7 @@
   margin-left:5%;
   margin-top:50px;
   height:350px;
-  background-image: url("FeedB.png")
+
 }
 
 .pollscontainer {
@@ -53,7 +55,42 @@
   margin-right:5%;
   margin-top:50px;
   height:350px;
-  background-image: url("FeedB2.png");
+
   box-sizing: cover;
 }
 
+.matchescontainer {
+  background-color: #ff9e2c;
+  position: relative;
+  height:fit-content;
+  top: 450px;
+  margin-left:500%;
+
+}
+
+.scrollcontainer{
+  width: 30em;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.item {
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.photocontainer {
+  position: absolute;
+
+  box-sizing: cover;
+}
+
+.matcardclass{
+  margin-left: 5px;
+  margin-right: 5px;
+  align-items: center;
+  width: max-content;
+  height:auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+}

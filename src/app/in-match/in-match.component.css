@@ -36,7 +36,7 @@
   border: 1px solid grey;
   height: 60px;
   width: 1486px;
-
+  white-space: pre-line;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -271,4 +271,22 @@
   border-bottom-right-radius:10px ;
   border-top-right-radius:10px ;
   border-top-left-radius:10px ;
+}
+
+
+.errordiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.buttonbackground{
+  background-color: #b9dcc0;
+}
+
+
+.oopsclass{
+  font-family: 'Bangers';
 }

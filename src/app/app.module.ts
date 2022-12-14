@@ -27,7 +27,11 @@ import { EditProfileComponent } from './profile/edit_profile.component';
 import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { InMatchComponent } from './in-match/in-match.component';
+import { MatchesAdminComponent, ReturnAllMatchPipe } from './admin_panel/matches_admin.component';
+
+
 import { UserDetailComponent } from './admin_panel/user_detail.component';
+import { UidContainsListPipe } from './admin_panel/user_detail.component';
 import { NewsPageComponent } from './news_page/news_page.component';
 import { ToDatePipe2 } from './news_page/news_page.component';
 import { SortDateDescendingPipe } from './news_page/news_page.component';
@@ -65,21 +69,29 @@ import { ReturnUserPipe } from './in-match/in-match.component';
 import { DisplayMessagesOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
 import { ReturnCurrentMatchPipe } from './in-match/in-match.component';
 import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
+import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
+import { DisableInMatchButtonPipe } from './header/header.component';
+import { ChartsComponent } from './charts/charts.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
+
     FeedMainComponent,
     UserProfileComponent,
     SignupComponent,
     EditProfileComponent,
     ToDatePipe,
+    UidContainsListPipe,
     AdminPanelComponent,
     LeaderboardComponent,
     InMatchComponent,
     UserDetailComponent,
+    MatchesAdminComponent,
     TransformPipe,
     ReturnSizePipe,
     ReturnXthPipe,
@@ -101,7 +113,11 @@ import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
     ReturnUserPipe,
     DisplayMessagesOnlyFromCurrentMatchPipe,
     ReturnCurrentMatchPipe,
+    ReturnFinishedMatchPipe,
+    ReturnAllMatchPipe,
     ReturnCurrentMatchIdPipe,
+    ChartsComponent,
+    DisableInMatchButtonPipe,
 
   ],
   imports: [
@@ -109,6 +125,7 @@ import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
     AppRoutingModule,
     MatToolbarModule,
     MatCardModule,
+    HighchartsChartModule,
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
@@ -132,7 +149,8 @@ import { ReturnCurrentMatchIdPipe } from './in-match/in-match.component';
     MatSelectModule,
     MatTooltipModule,
     MatExpansionModule,
-    ScrollingModule
+    ScrollingModule,
+
 
   ],
   providers: [AuthService, LeaderboardComponent],

@@ -40,6 +40,7 @@ export class InMatchComponent{
     public authService: AuthService,
     public afs: AngularFirestore,
     public auth: AngularFireAuth,
+    public router: Router
   ){
     this.messagesRef = this.afs.collection('messages');
     this.messages$ = this.messagesRef.valueChanges();
@@ -115,6 +116,7 @@ export class InMatchComponent{
       point: 0,
       team: "",
       isAdmin: false,
+      isBanned: false
     };
     return nullUser;
   }
@@ -132,6 +134,18 @@ export class InMatchComponent{
     return copyList;
   }
 
+  /**
+   * This function is called when user clicks the thumbs up button in order to like a message
+   * To increment the liking user's points by 5 by calling incrementPoints from authService, giving the first parameter as userLiking
+   * To increment the point of the user who is the one sent that message by 5 by calling incrementPoints from authService, giving the first parameters as userMessageOwner
+   * It also takes likeList of that message containing uids of users who liked this message, and appends liking user's uid to this list.
+   * It also takes that message's like count and adds 1
+   * Then it calls LikeUnlikeMessage function from authService with the paremeters of msg, new like count, new list containing uids and mid (message id) pf msg
+   * @param msg Message which is being liked
+   * @param userLiking User object of the user liking the messgae
+   * @param userMessageOwner User object of the user who wrote the message
+   * @returns
+   */
   likeMessage(msg: messages, userLiking: User, userMessageOwner: User){
 
     if(!this.isUserInList(msg.likeList, userLiking)){
@@ -177,6 +191,24 @@ export class InMatchComponent{
   }
 
 
+
+  navigateMainPage(){
+    this.router.navigate(['feed']);
+  }
+
+
+  /**
+   * This function is called in onSubmitForm after user presses Eter or clicks the send button.
+   * It creates a messages object to be pushed to the database, assigns matchCode as currentMatchCode, sentWhen as messageDate, mid empty, like count as 0,
+   * likeList as empty list, content as messageContent, message owner's id, name, surname from User object.
+   * Then it adds this object to the Firebase database and keeps the auto assigned unique document id as a variable.
+   * Then it calls SetMessageId to assign this unique document id as a field to use it later on during like or unlike operations.
+   *
+   * @param messageContent Content of the message taken as an input from the user
+   * @param messageDate Date object regarding when the button is clicked or Enter pressed to send the message
+   * @param user Usser object of the user sending the message
+   * @param currentMatchCode mid (match id) of the current match going on
+   */
   createMessageAndPushToDatabase(messageContent: string, messageDate: Date, user: User, currentMatchCode: string){
 
     let emptyList: Array<String> = [];
@@ -364,15 +396,14 @@ transform(matchesList: matches[]) {
       var numtimestamp = Number(star.seconds);
       numtimestamp = numtimestamp * 1000;
       const dateOf = new Date(numtimestamp);
-      console.log("dateofinitial", dateOf);
+      console.log(dateOf);
       const dateOf2 = dateOf;
       var ends_at = addMinutes(dateOf2,90);
+      console.log(ends_at);
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
-      console.log(anlik, "\n", dateOf3, "\n",  ends_at)
       if (anlik >= dateOf3 && anlik <= ends_at){
-        console.log("hereeee");
-        retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() +"\n" +
+        retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() + "\r\n" +
         matchesList[i].score_team1.toString() + " - " + matchesList[i].score_team2.toString();
 
         return retStr;
@@ -390,7 +421,7 @@ transform(matchesList: matches[]) {
 export class ReturnCurrentMatchIdPipe implements PipeTransform {
 transform(matchesList: matches[]) {
 
-  var retStr: string = "";
+  var retStr: string = "null";
 
   var size = Object.keys(matchesList).length;
   function addMinutes(date:Date, minutes:number) {

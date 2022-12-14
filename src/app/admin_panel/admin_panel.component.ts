@@ -39,7 +39,9 @@ export class AdminPanelComponent{
     public showMyMessage = false
     user$ = this.authService.user$;
 
-
+    /**
+    * This function resets the password
+    */
     changePassword(mail: string) {
 
       this.authService.ForgotPassword(mail);
@@ -56,6 +58,10 @@ export class AdminPanelComponent{
 
   UserInfo(){
     this.router.navigate(["user-detail"]);
+  }
+
+  MatchesInfo(){
+    this.router.navigate(["matches-admin"]);
   }
 
   submitForm(form: NgForm, name: any){
@@ -119,6 +125,7 @@ export class AdminPanelComponent{
 
     form.resetForm();
   }
+
 
   submitPForm(form: NgForm, name: any){
     var id = ""
@@ -189,15 +196,21 @@ export class AdminPanelComponent{
   PollInactive(){     // Got to finish this one. Makes poll inactive
 
   }
+  public matchesMatch = true;
 
   submitMatch(form: NgForm){
+    if(form.value.Team1Input != form.value.Team2Input){
+      this.matchesMatch = true;
+    }
+    else{
+      this.matchesMatch = false;
+    }
 
-    console.log("here");
+    if(this.matchesMatch){
     var id = ""
     var convert = form.value.DateInput;
     convert.setHours(form.value.HourInput);
     convert.setMinutes(form.value.MinuteInput);
-
 
     var Team1 = form.value.Team1Input;
     var Team2 = form.value.Team2Input;
@@ -234,19 +247,19 @@ export class AdminPanelComponent{
       const errorMessage = error.message;
       console.log(errorCode, errorMessage);
     });
+  }
 
-
-
-
-
-
+  else{
+    alert("You can't enter the same team for Team1 and Team2.")
+    return;
+  }
     form.resetForm();
   }
 
 
   DoSmth(){
     //bir sey yapcaz
-    this.router.navigate(["user-detail"]);
+    this.router.navigate(["chart"]);
   }
 
   adminPanel(){
@@ -260,10 +273,30 @@ export class AdminPanelComponent{
   hours: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
     11,12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 
-    minutes: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-      11,12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
-      24, 25, 26, 27,28,29,30,31,32,33,34,35,36,37,38,39,
-      40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,
-      57,58,59]
+  minutes: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+    11,12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+    24, 25, 26, 27,28,29,30,31,32,33,34,35,36,37,38,39,
+    40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,
+    57,58,59]
+
+  teams: string[] = ["Adana Demirspor",
+  "Alanyaspor" ,
+  "Antalyaspor",
+  "Beşiktaş",
+  "Fatih Karagümrük",
+  "Fenerbahçe",
+  "Galatasaray",
+  "Gaziantep",
+  "Giresunspor",
+  "Hatayspor",
+  "İstanbul Başakşehir",
+  "İstanbulspor",
+  "Kasımpaşa",
+  "Kayserispor",
+  "Konyaspor",
+  "MKE Ankaragücü",
+  "Sivasspor",
+  "Trabzonspor",
+  "Ümraniyespor"]
 
 }

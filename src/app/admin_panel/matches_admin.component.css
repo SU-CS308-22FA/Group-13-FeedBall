@@ -1,0 +1,16 @@
+.matchcontainer{
+  border: 4px solid #b9dcc0;
+  width: 500px;
+  height: 700px;
+  overflow-x:auto
+
+}
+
+.matcardclass{
+    margin-left: 5px;
+    margin-right: 5px;
+    align-items: center;
+    width: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+  }
