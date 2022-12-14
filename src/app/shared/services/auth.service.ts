@@ -23,6 +23,7 @@ import { Polls } from 'src/app/models/polls.model';
 })
 export class AuthService {
   userData: any; // Save logged in user data
+  myService: any;
 
 
   constructor(
