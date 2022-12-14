@@ -8,12 +8,12 @@
     <tr align="center">
       <td>
         <button mat-button class="buttonclass" >
-          <a (click)="navigateNewsPage()"><img src="FeedB.png" width="700px"></a>
+          <a (click)="navigateNewsPage()"><img src="/assets/FeedB.png" width="700px"></a>
         </button>
       </td>
       <td>
         <button mat-button class="buttonclass">
-          <a (click)=" navigatePollsPage()"><img src="FeedB2.png" width="700px"></a>
+          <a (click)=" navigatePollsPage()"><img src="/assets/FeedB2.png" width="700px"></a>
         </button>
       </td>
     </tr>
@@ -23,7 +23,7 @@
 <table align="center">
   <td align="center">
     <tr>
-      <img src="FeedBMatch.png" width="200px">
+      <img src="/assets/FeedBMatch.png" width="200px">
       <div *ngIf="(matches$ | async) as matches">
         <div class="titlediv">
           <div class="matchscorediv">

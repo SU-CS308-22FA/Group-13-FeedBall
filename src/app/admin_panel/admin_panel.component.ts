@@ -60,6 +60,10 @@ export class AdminPanelComponent{
     this.router.navigate(["user-detail"]);
   }
 
+  MatchesInfo(){
+    this.router.navigate(["matches-admin"]);
+  }
+
   submitForm(form: NgForm, name: any){
     var id = ""
     var created = true;

@@ -40,6 +40,7 @@ export class InMatchComponent{
     public authService: AuthService,
     public afs: AngularFirestore,
     public auth: AngularFireAuth,
+    public router: Router
   ){
     this.messagesRef = this.afs.collection('messages');
     this.messages$ = this.messagesRef.valueChanges();
@@ -175,6 +176,12 @@ export class InMatchComponent{
     //decrement liking user's point
     //decrement message owner's point
 
+  }
+
+
+
+  navigateMainPage(){
+    this.router.navigate(['feed']);
   }
 
 
@@ -388,7 +395,7 @@ transform(matchesList: matches[]) {
 export class ReturnCurrentMatchIdPipe implements PipeTransform {
 transform(matchesList: matches[]) {
 
-  var retStr: string = "";
+  var retStr: string = "null";
 
   var size = Object.keys(matchesList).length;
   function addMinutes(date:Date, minutes:number) {
