@@ -8,59 +8,589 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">feedball-project documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">feedball-project documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ChartsComponent.html" >ChartsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InMatchComponent.html" >InMatchComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NewsPageComponent.html"  class="active" >NewsPageComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AuthService.html" >AuthService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ChartService.html" >ChartService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/HighchartService.html" >HighchartService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/News.html" >News</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/Polls.html" >Polls</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/User.html" >User</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/chartModal.html" >chartModal</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/matches.html" >matches</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/messages.html" >messages</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/PluralPipe.html" >PluralPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/TransformPipe.html" >TransformPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">feedball-project documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AdminPanelComponent.html" >AdminPanelComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ChartsComponent.html" >ChartsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EditProfileComponent.html" >EditProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/FeedMainComponent.html" >FeedMainComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InMatchComponent.html" >InMatchComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LeaderboardComponent.html" >LeaderboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/MatchesAdminComponent.html" >MatchesAdminComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NewsPageComponent.html"  class="active" >NewsPageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PollsPageComponent.html" >PollsPageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserDetailComponent.html" >UserDetailComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserProfileComponent.html" >UserProfileComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AuthService.html" >AuthService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ChartService.html" >ChartService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/HighchartService.html" >HighchartService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/LeaderboardElems.html" >LeaderboardElems</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/News.html" >News</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/Polls.html" >Polls</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/User.html" >User</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/chartModal.html" >chartModal</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/matches.html" >matches</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/messages.html" >messages</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/DisableInMatchButtonPipe.html" >DisableInMatchButtonPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/DisplayMessagesOnlyFromCurrentMatchPipe.html" >DisplayMessagesOnlyFromCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/FilterTeamOnlyPipe.html" >FilterTeamOnlyPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/HoursMinutesPipe.html" >HoursMinutesPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInDisikedListPipe.html" >IsUserInDisikedListPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInLikedListOfMessagePipe.html" >IsUserInLikedListOfMessagePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/IsUserInLikedListPipe.html" >IsUserInLikedListPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/PluralPipe.html" >PluralPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchIdPipe.html" >ReturnCurrentMatchIdPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnCurrentMatchPipe.html" >ReturnCurrentMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnFinishedMatchPipe.html" >ReturnFinishedMatchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnIfXthPipe.html" >ReturnIfXthPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnRankUserPipe.html" >ReturnRankUserPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnSizePipe.html" >ReturnSizePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnUserPipe.html" >ReturnUserPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ReturnXthPipe.html" >ReturnXthPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortByDatePipe.html" >SortByDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortDateDescendingPipe.html" >SortDateDescendingPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SortTeamFirstPipe.html" >SortTeamFirstPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe.html" >ToDatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ToDatePipe2.html" >ToDatePipe2</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/TransformPipe.html" >TransformPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/UidContainsListPipe.html" >UidContainsListPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content component">
                    <div class="content-data">
 
 
-
-
 <ol class="breadcrumb">
   <li>Components</li>
-  <li
-  >
-  NewsPageComponent</li>
+  <li>NewsPageComponent</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
-</ul>
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -69,13 +599,11 @@
 
 
 
-
-
-
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
+    <table class="table table-sm table-hover">
         <tbody>
+
 
 
 
@@ -94,827 +622,271 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./news_page.component.css</code></td>
+                <td class="col-md-9"><code>news_page.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./news_page.component.html</code></td>
+                <td class="col-md-9"><code>news_page.component.html</code></td>
             </tr>
 
 
-
-
-
-
-
-
         </tbody>
     </table>
 </section>
 
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#authService" >authService</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#filterOption" >filterOption</a>
-                            </li>
-                            <li>
-                                <a href="#news$" >news$</a>
-                            </li>
-                            <li>
-                                <a href="#newsRef" >newsRef</a>
-                            </li>
-                            <li>
-                                <a href="#user$" >user$</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#dislike" >dislike</a>
-                            </li>
-                            <li>
-                                <a href="#isUserInList" >isUserInList</a>
-                            </li>
-                            <li>
-                                <a href="#like" >like</a>
-                            </li>
-                            <li>
-                                <a href="#returnListWithout" >returnListWithout</a>
-                            </li>
-                            <li>
-                                <a href="#undislike" >undislike</a>
-                            </li>
-                            <li>
-                                <a href="#unlike" >unlike</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
 
     <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, afs: AngularFirestore, auth: AngularFireAuth)</code>
-                    </td>
-                </tr>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(authService: <a href="../injectables/AuthService.html" >AuthService</a>, router: <a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a>, afs: AngularFirestore, auth: AngularFireAuth)</code>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> returnListWithout</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>returnListWithout(theList: String[], theElem: String)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> isUserInList</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>isUserInList(theList: String[], user: User)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> like</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>like(user: User, news: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> unlike</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>unlike(user: User, news: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> dislike</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>dislike(user: User, news: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> undislike</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>undislike(user: User, news: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> authService</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>authService:     <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> filterOption</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>filterOption:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/news_page/news_page.component.ts:26</a></div>
+                                <i>Default value: </i><code>alldatedesc</code>
                             </td>
                         </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>authService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>afs</td>
-                                                  
-                                                        <td>
-                                                                    <code>AngularFirestore</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>auth</td>
-                                                  
-                                                        <td>
-                                                                    <code>AngularFireAuth</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-
-
-
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="dislike"></a>
-                    <span class="name">
-                        <span ><b>dislike</b></span>
-                        <a href="#dislike"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>dislike(user: <a href="../interfaces/User.html" target="_self">User</a>, news: <a href="../interfaces/News.html" target="_self">News</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="115"
-                            class="link-to-prism">src/app/news_page/news_page.component.ts:115</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>news</td>
-                                    <td>
-                                                <code><a href="../interfaces/News.html" target="_self" >News</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="isUserInList"></a>
-                    <span class="name">
-                        <span ><b>isUserInList</b></span>
-                        <a href="#isUserInList"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>isUserInList(theList: Array<String>, user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/news_page/news_page.component.ts:60</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>theList</td>
-                                    <td>
-                                            <code>Array&lt;String&gt;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="like"></a>
-                    <span class="name">
-                        <span ><b>like</b></span>
-                        <a href="#like"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>like(user: <a href="../interfaces/User.html" target="_self">User</a>, news: <a href="../interfaces/News.html" target="_self">News</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/news_page/news_page.component.ts:75</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>news</td>
-                                    <td>
-                                                <code><a href="../interfaces/News.html" target="_self" >News</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="returnListWithout"></a>
-                    <span class="name">
-                        <span ><b>returnListWithout</b></span>
-                        <a href="#returnListWithout"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>returnListWithout(theList: Array<String>, theElem: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/news_page/news_page.component.ts:47</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>theList</td>
-                                    <td>
-                                            <code>Array&lt;String&gt;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>theElem</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Array&lt;String&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="undislike"></a>
-                    <span class="name">
-                        <span ><b>undislike</b></span>
-                        <a href="#undislike"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>undislike(user: <a href="../interfaces/User.html" target="_self">User</a>, news: <a href="../interfaces/News.html" target="_self">News</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="136"
-                            class="link-to-prism">src/app/news_page/news_page.component.ts:136</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>news</td>
-                                    <td>
-                                                <code><a href="../interfaces/News.html" target="_self" >News</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="unlike"></a>
-                    <span class="name">
-                        <span ><b>unlike</b></span>
-                        <a href="#unlike"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>unlike(user: <a href="../interfaces/User.html" target="_self">User</a>, news: <a href="../interfaces/News.html" target="_self">News</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/app/news_page/news_page.component.ts:95</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>news</td>
-                                    <td>
-                                                <code><a href="../interfaces/News.html" target="_self" >News</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-    <section>
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="authService"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>authService</b></span>
-                        <a href="#authService"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
-
-                    </td>
-                </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/news_page/news_page.component.ts:31</a></div>
+                            <b> news$</b>
                         </td>
                     </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="filterOption"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>filterOption</b></span>
-                        <a href="#filterOption"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;alldatedesc&quot;</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/news_page/news_page.component.ts:41</a></div>
+                            <code>news$:     <code>any</code>
+    </bcode>
                         </td>
                     </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="news$"></a>
-                    <span class="name">
-                        <span ><b>news$</b></span>
-                        <a href="#news$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/News.html" target="_self" >Observable&lt;News[]&gt;</a></code>
-
-                    </td>
-                </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/news_page/news_page.component.ts:26</a></div>
+                            <b> newsRef</b>
                         </td>
                     </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="newsRef"></a>
-                    <span class="name">
-                        <span ><b>newsRef</b></span>
-                        <a href="#newsRef"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/News.html" target="_self" >AngularFirestoreCollection&lt;News&gt;</a></code>
-
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/news_page/news_page.component.ts:25</a></div>
+                            <code>newsRef:     <code>any</code>
+    </bcode>
                         </td>
                     </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="user$"></a>
-                    <span class="name">
-                        <span ><b>user$</b></span>
-                        <a href="#user$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>this.authService.user$</code>
-                    </td>
-                </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/news_page/news_page.component.ts:42</a></div>
+                            <b> user$</b>
                         </td>
                     </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
+                    <tr>
+                        <td class="col-md-4">
+                            <code>user$:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;;
 import {News} from &quot;src/app/models/news.model&quot;
 import { NgForm } from &#x27;@angular/forms&#x27;;
 import { FormsModule, ReactiveFormsModule }   from &#x27;@angular/forms&#x27;;
@@ -1250,354 +1222,8 @@ export class IsUserInDisikedListPipe implements PipeTransform {
 
 
 </code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://fonts.googleapis.com/css2?family&#x3D;Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&quot; /&gt;
-
-&lt;table align&#x3D;&quot;center&quot;&gt;
-&lt;div *ngIf&#x3D;&quot;(user$ | async) as user&quot;&gt;
-
-  &lt;div *ngIf&#x3D;&quot;(news$ | async) as news&quot;&gt;
-
-    &lt;div *ngIf&#x3D;&quot;filterOption &#x3D;&#x3D; &#x27;allteamfirst&#x27;&quot;&gt;
-      &lt;div *ngIf&#x3D;&quot;(news | sortteamfirstpipe: user.team) as newslist&quot;&gt;
-
-        &lt;div *ngFor&#x3D;&quot;let news of newslist&quot;&gt;
-
-          &lt;mat-accordion multi&#x3D;&quot;true&quot;&gt;
-            &lt;mat-expansion-panel class&#x3D;&quot;individualnews&quot;&gt;
-              &lt;mat-expansion-panel-header&gt;
-                &lt;table width&#x3D;&quot;100%&quot;&gt;
-                  &lt;span class&#x3D;&quot;left&quot;&gt;&lt;td&gt;{{news.header}}&amp;nbsp;&amp;nbsp;&lt;/td&gt;&lt;/span&gt;
-                  &lt;span class&#x3D;&quot;space-panel&quot;&gt;&lt;/span&gt;
-                  &lt;span class&#x3D;&quot;right&quot;&gt;&lt;td&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;{{news.newsdate | todatepipe2}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/td&gt;&lt;/span&gt;
-                &lt;/table&gt;
-              &lt;/mat-expansion-panel-header&gt;
-              &lt;span class&#x3D;&quot;left&quot;&gt;&lt;td&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;by {{news.writtenby}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/td&gt;&lt;/span&gt;
-              &lt;br&gt;&lt;br&gt;
-              &lt;span class&#x3D;&quot;left&quot;&gt;&lt;td&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;{{news.content}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/td&gt;&lt;/span&gt;
-
-              &lt;mat-action-row class&#x3D;&quot;buttonsrowclass&quot;&gt;
-                &lt;span *ngIf&#x3D;&quot;!(news | isuserinlikedlistpipe : user)&quot;&gt;
-                  &lt;table align&#x3D;&quot;center&quot;&gt;
-                    &lt;td align&#x3D;&quot;center&quot;&gt;
-                      &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;like(user, news)&quot; class&#x3D;&quot;notliked&quot;&gt;&lt;mat-icon&gt;thumb_up&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                      &lt;tr class&#x3D;&quot;pgrey&quot;&gt;{{news.likes}}&lt;/tr&gt;
-                    &lt;/td&gt;
-                  &lt;/table&gt;
-                &lt;/span&gt;
-
-                &lt;span *ngIf&#x3D;&quot;(news | isuserinlikedlistpipe : user)&quot;&gt;
-                  &lt;table align&#x3D;&quot;center&quot;&gt;
-                    &lt;td align&#x3D;&quot;center&quot;&gt;
-                      &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;unlike(user, news)&quot; class&#x3D;&quot;liked&quot;&gt;&lt;mat-icon&gt;thumb_up&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                      &lt;tr class&#x3D;&quot;pgreen&quot;&gt;{{news.likes}}&lt;/tr&gt;
-                    &lt;/td&gt;
-                  &lt;/table&gt;
-                &lt;/span&gt;
-                &amp;nbsp;&amp;nbsp;
-                &lt;span *ngIf&#x3D;&quot;!(news | isuserindislikedlistpipe : user)&quot;&gt;
-                  &lt;table align&#x3D;&quot;center&quot;&gt;
-                    &lt;td align&#x3D;&quot;center&quot;&gt;
-                      &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;dislike(user, news)&quot; class&#x3D;&quot;notdisliked&quot;&gt;&lt;mat-icon&gt;thumb_down&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                      &lt;tr class&#x3D;&quot;pgrey&quot;&gt;{{news.dislikes}}&lt;/tr&gt;
-                    &lt;/td&gt;
-                  &lt;/table&gt;
-                &lt;/span&gt;
-                &lt;span *ngIf&#x3D;&quot;(news | isuserindislikedlistpipe : user)&quot;&gt;
-                  &lt;table align&#x3D;&quot;center&quot;&gt;
-                    &lt;td align&#x3D;&quot;center&quot;&gt;
-                      &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;undislike(user, news)&quot; class&#x3D;&quot;disliked&quot;&gt;&lt;mat-icon&gt;thumb_down&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                      &lt;tr class&#x3D;&quot;pred&quot;&gt;{{news.dislikes}}&lt;/tr&gt;
-                    &lt;/td&gt;
-                  &lt;/table&gt;
-                &lt;/span&gt;
-              &lt;/mat-action-row&gt;
-
-            &lt;/mat-expansion-panel&gt;
-          &lt;/mat-accordion&gt;
-
-        &lt;/div&gt;
-
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div *ngIf&#x3D;&quot;filterOption &#x3D;&#x3D; &#x27;teamonly&#x27;&quot;&gt;
-      &lt;div *ngIf&#x3D;&quot;((news | filterteamonlypipe: user.team) | sortdatedescendingpipe) as newslist&quot;&gt;
-        &lt;div *ngFor&#x3D;&quot;let news of newslist&quot;&gt;
-          &lt;div&gt;
-            &lt;mat-accordion multi&#x3D;&quot;true&quot;&gt;
-              &lt;mat-expansion-panel class&#x3D;&quot;individualnews&quot;&gt;
-                &lt;mat-expansion-panel-header&gt;
-                  &lt;table width&#x3D;&quot;100%&quot;&gt;
-                    &lt;span class&#x3D;&quot;left&quot;&gt;&lt;td&gt;{{news.header}}&amp;nbsp;&amp;nbsp;&lt;/td&gt;&lt;/span&gt;
-                    &lt;span class&#x3D;&quot;space-panel&quot;&gt;&lt;/span&gt;
-                    &lt;span class&#x3D;&quot;right&quot;&gt;&lt;td&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;{{news.newsdate | todatepipe2}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/td&gt;&lt;/span&gt;
-                  &lt;/table&gt;
-                &lt;/mat-expansion-panel-header&gt;
-                &lt;span class&#x3D;&quot;left&quot;&gt;&lt;td&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;by {{news.writtenby}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/td&gt;&lt;/span&gt;
-                &lt;br&gt;&lt;br&gt;
-                &lt;span class&#x3D;&quot;left&quot;&gt;&lt;td&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;{{news.content}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/td&gt;&lt;/span&gt;
-
-
-                &lt;mat-action-row class&#x3D;&quot;buttonsrowclass&quot;&gt;
-                  &lt;span *ngIf&#x3D;&quot;!(news | isuserinlikedlistpipe : user)&quot;&gt;
-                    &lt;table align&#x3D;&quot;center&quot;&gt;
-                      &lt;td align&#x3D;&quot;center&quot;&gt;
-                        &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;like(user, news)&quot; class&#x3D;&quot;notliked&quot;&gt;&lt;mat-icon&gt;thumb_up&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                        &lt;tr class&#x3D;&quot;pgrey&quot;&gt;{{news.likes}}&lt;/tr&gt;
-                      &lt;/td&gt;
-                    &lt;/table&gt;
-                  &lt;/span&gt;
-
-                  &lt;span *ngIf&#x3D;&quot;(news | isuserinlikedlistpipe : user)&quot;&gt;
-                    &lt;table align&#x3D;&quot;center&quot;&gt;
-                      &lt;td align&#x3D;&quot;center&quot;&gt;
-                        &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;unlike(user, news)&quot; class&#x3D;&quot;liked&quot;&gt;&lt;mat-icon&gt;thumb_up&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                        &lt;tr class&#x3D;&quot;pgreen&quot;&gt;{{news.likes}}&lt;/tr&gt;
-                      &lt;/td&gt;
-                    &lt;/table&gt;
-                  &lt;/span&gt;
-                  &amp;nbsp;&amp;nbsp;
-                  &lt;span *ngIf&#x3D;&quot;!(news | isuserindislikedlistpipe : user)&quot;&gt;
-                    &lt;table align&#x3D;&quot;center&quot;&gt;
-                      &lt;td align&#x3D;&quot;center&quot;&gt;
-                        &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;dislike(user, news)&quot; class&#x3D;&quot;notdisliked&quot;&gt;&lt;mat-icon&gt;thumb_down&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                        &lt;tr class&#x3D;&quot;pgrey&quot;&gt;{{news.dislikes}}&lt;/tr&gt;
-                      &lt;/td&gt;
-                    &lt;/table&gt;
-                  &lt;/span&gt;
-                  &lt;span *ngIf&#x3D;&quot;(news | isuserindislikedlistpipe : user)&quot;&gt;
-                    &lt;table align&#x3D;&quot;center&quot;&gt;
-                      &lt;td align&#x3D;&quot;center&quot;&gt;
-                        &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;undislike(user, news)&quot; class&#x3D;&quot;disliked&quot;&gt;&lt;mat-icon&gt;thumb_down&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                        &lt;tr class&#x3D;&quot;pred&quot;&gt;{{news.dislikes}}&lt;/tr&gt;
-                      &lt;/td&gt;
-                    &lt;/table&gt;
-                  &lt;/span&gt;
-                &lt;/mat-action-row&gt;
-
-              &lt;/mat-expansion-panel&gt;
-            &lt;/mat-accordion&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-
-    &lt;/div&gt;
-
-    &lt;div *ngIf&#x3D;&quot;filterOption &#x3D;&#x3D; &#x27;alldatedesc&#x27;&quot;&gt;
-      &lt;div *ngIf&#x3D;&quot;(news | sortdatedescendingpipe) as newslist&quot;&gt;
-        &lt;div *ngFor&#x3D;&quot;let news of newslist&quot;&gt;
-          &lt;div&gt;
-            &lt;mat-accordion multi&#x3D;&quot;true&quot;&gt;
-              &lt;mat-expansion-panel class&#x3D;&quot;individualnews&quot;&gt;
-                &lt;mat-expansion-panel-header&gt;
-                  &lt;table width&#x3D;&quot;100%&quot;&gt;
-                    &lt;span class&#x3D;&quot;left&quot;&gt;&lt;td&gt;{{news.header}}&amp;nbsp;&amp;nbsp;&lt;/td&gt;&lt;/span&gt;
-                    &lt;span class&#x3D;&quot;space-panel&quot;&gt;&lt;/span&gt;
-                    &lt;span class&#x3D;&quot;right&quot;&gt;&lt;td&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;{{news.newsdate | todatepipe2}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/td&gt;&lt;/span&gt;
-                  &lt;/table&gt;
-                &lt;/mat-expansion-panel-header&gt;
-                &lt;span class&#x3D;&quot;left&quot;&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;by {{news.writtenby}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/span&gt;
-                &lt;br&gt;&lt;br&gt;
-                &lt;span class&#x3D;&quot;left&quot;&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;{{news.content}}&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/span&gt;
-
-
-                &lt;mat-action-row class&#x3D;&quot;buttonsrowclass&quot;&gt;
-                  &lt;span *ngIf&#x3D;&quot;!(news | isuserinlikedlistpipe : user)&quot;&gt;
-                    &lt;table align&#x3D;&quot;center&quot;&gt;
-                      &lt;td align&#x3D;&quot;center&quot;&gt;
-                        &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;like(user, news)&quot; class&#x3D;&quot;notliked&quot; matTooltip&#x3D;&quot;like&quot; matTooltipPosition&#x3D;&quot;above&quot;&gt;&lt;mat-icon&gt;thumb_up&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                        &lt;tr class&#x3D;&quot;pgrey&quot;&gt;{{news.likes}}&lt;/tr&gt;
-                      &lt;/td&gt;
-                    &lt;/table&gt;
-                  &lt;/span&gt;
-
-                  &lt;span *ngIf&#x3D;&quot;(news | isuserinlikedlistpipe : user)&quot;&gt;
-                    &lt;table align&#x3D;&quot;center&quot;&gt;
-                      &lt;td align&#x3D;&quot;center&quot;&gt;
-                        &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;unlike(user, news)&quot; class&#x3D;&quot;liked&quot; matTooltip&#x3D;&quot;take back like&quot; matTooltipPosition&#x3D;&quot;above&quot;&gt;&lt;mat-icon&gt;thumb_up&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                        &lt;tr class&#x3D;&quot;pgreen&quot;&gt;{{news.likes}}&lt;/tr&gt;
-                      &lt;/td&gt;
-                    &lt;/table&gt;
-                  &lt;/span&gt;
-                  &amp;nbsp;&amp;nbsp;
-                  &lt;span *ngIf&#x3D;&quot;!(news | isuserindislikedlistpipe : user)&quot;&gt;
-                    &lt;table align&#x3D;&quot;center&quot;&gt;
-                      &lt;td align&#x3D;&quot;center&quot;&gt;
-                        &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;dislike(user, news)&quot; class&#x3D;&quot;notdisliked&quot; matTooltip&#x3D;&quot;dislike&quot; matTooltipPosition&#x3D;&quot;above&quot;&gt;&lt;mat-icon&gt;thumb_down&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                        &lt;tr class&#x3D;&quot;pgrey&quot;&gt;{{news.dislikes}}&lt;/tr&gt;
-                      &lt;/td&gt;
-                    &lt;/table&gt;
-                  &lt;/span&gt;
-                  &lt;span *ngIf&#x3D;&quot;(news | isuserindislikedlistpipe : user)&quot;&gt;
-                    &lt;table align&#x3D;&quot;center&quot;&gt;
-                      &lt;td align&#x3D;&quot;center&quot;&gt;
-                        &lt;tr&gt;&lt;button mat-icon-button (click)&#x3D;&quot;undislike(user, news)&quot; class&#x3D;&quot;disliked&quot; matTooltip&#x3D;&quot;take back dislike&quot; matTooltipPosition&#x3D;&quot;above&quot;&gt;&lt;mat-icon&gt;thumb_down&lt;/mat-icon&gt;&lt;/button&gt;&lt;/tr&gt;
-                        &lt;tr class&#x3D;&quot;pred&quot;&gt;{{news.dislikes}}&lt;/tr&gt;
-                      &lt;/td&gt;
-                    &lt;/table&gt;
-                  &lt;/span&gt;
-                &lt;/mat-action-row&gt;
-
-              &lt;/mat-expansion-panel&gt;
-            &lt;/mat-accordion&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-  &lt;/div&gt;
-  &lt;table align&#x3D;&quot;center&quot;&gt;
-  &lt;div class&#x3D;&quot;selectfilter&quot;&gt;
-    &lt;mat-form-field appearance &#x3D; &quot;fill&quot; class &#x3D; &quot;displaybutton&quot;&gt;
-      &lt;mat-label&gt;Display options&lt;/mat-label&gt;
-      &lt;mat-select class&#x3D;&quot;matselect&quot; [(value)]&#x3D;&quot;filterOption&quot;&gt;
-        &lt;mat-option value&#x3D;&quot;alldatedesc&quot;&gt;All News (Newer First)&lt;/mat-option&gt;
-        &lt;mat-option value&#x3D;&quot;allteamfirst&quot;&gt;All News ({{user.team}} First)&lt;/mat-option&gt;
-        &lt;mat-option value&#x3D;&quot;teamonly&quot;&gt;Only {{user.team}} News&lt;/mat-option&gt;
-      &lt;/mat-select&gt;
-    &lt;/mat-form-field&gt;
-  &lt;/div&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/table&gt;
-
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./news_page.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">.right{
-  float: right;
-}
-
-.left{
-  float: left;
-}
-
-.space-panel{
-  flex: 1 1 auto;
-}
-
-
-.individualnews{
-  margin: 5%;
-  background-color:rgb(242, 255, 241);
-  border: 3px solid rgb(216, 255, 213);
-  border-radius: 10px;
-}
-
-.displaybutton{
-  width: 170px;
-  height: 40px;
-  border-radius: 25px;
-}
-
-
-.buttonsrowclass{
-  display: flex;
-  align-items: flex-end;
-  justify-content: right;
-}
-
-
-.material-symbols-outlined{
-  font-variation-settings:
-  &#x27;FILL&#x27; 0,
-  &#x27;wght&#x27; 300,
-  &#x27;GRAD&#x27; 0,
-  &#x27;opsz&#x27; 10
-}
-
-
-.liked{
-  color: rgb(62, 91, 62);
-
-}
-
-.notliked{
-  color: grey;
-}
-
-
-.disliked{
-  color: rgb(133, 37, 37);
-}
-
-
-.notdisliked{
-  color: grey;
-}
-
-.aligncenter{
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.pgrey{
-  color: grey;
-}
-
-.pblack{
-  color: black;
-}
-
-.pred{
-  color: rgb(133, 37, 37);
-
-}
-
-.pgreen{
-  color: rgb(62, 91, 62);
-
-}
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
         </div>
     </div>
-
-    
-</div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /><table align="center"><div *ngIf="(user$ | async) as user">  <div *ngIf="(news$ | async) as news">    <div *ngIf="filterOption == \'allteamfirst\'">      <div *ngIf="(news | sortteamfirstpipe: user.team) as newslist">        <div *ngFor="let news of newslist">          <mat-accordion multi="true">            <mat-expansion-panel class="individualnews">              <mat-expansion-panel-header>                <table width="100%">                  <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>                  <span class="space-panel"></span>                  <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>                </table>              </mat-expansion-panel-header>              <span class="left"><td><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>              <br><br>              <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>              <mat-action-row class="buttonsrowclass">                <span *ngIf="!(news | isuserinlikedlistpipe : user)">                  <table align="center">                    <td align="center">                      <tr><button mat-icon-button (click)="like(user, news)" class="notliked"><mat-icon>thumb_up</mat-icon></button></tr>                      <tr class="pgrey">{{news.likes}}</tr>                    </td>                  </table>                </span>                <span *ngIf="(news | isuserinlikedlistpipe : user)">                  <table align="center">                    <td align="center">                      <tr><button mat-icon-button (click)="unlike(user, news)" class="liked"><mat-icon>thumb_up</mat-icon></button></tr>                      <tr class="pgreen">{{news.likes}}</tr>                    </td>                  </table>                </span>                &nbsp;&nbsp;                <span *ngIf="!(news | isuserindislikedlistpipe : user)">                  <table align="center">                    <td align="center">                      <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked"><mat-icon>thumb_down</mat-icon></button></tr>                      <tr class="pgrey">{{news.dislikes}}</tr>                    </td>                  </table>                </span>                <span *ngIf="(news | isuserindislikedlistpipe : user)">                  <table align="center">                    <td align="center">                      <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked"><mat-icon>thumb_down</mat-icon></button></tr>                      <tr class="pred">{{news.dislikes}}</tr>                    </td>                  </table>                </span>              </mat-action-row>            </mat-expansion-panel>          </mat-accordion>        </div>      </div>    </div>    <div *ngIf="filterOption == \'teamonly\'">      <div *ngIf="((news | filterteamonlypipe: user.team) | sortdatedescendingpipe) as newslist">        <div *ngFor="let news of newslist">          <div>            <mat-accordion multi="true">              <mat-expansion-panel class="individualnews">                <mat-expansion-panel-header>                  <table width="100%">                    <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>                    <span class="space-panel"></span>                    <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>                  </table>                </mat-expansion-panel-header>                <span class="left"><td><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>                <br><br>                <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>                <mat-action-row class="buttonsrowclass">                  <span *ngIf="!(news | isuserinlikedlistpipe : user)">                    <table align="center">                      <td align="center">                        <tr><button mat-icon-button (click)="like(user, news)" class="notliked"><mat-icon>thumb_up</mat-icon></button></tr>                        <tr class="pgrey">{{news.likes}}</tr>                      </td>                    </table>                  </span>                  <span *ngIf="(news | isuserinlikedlistpipe : user)">                    <table align="center">                      <td align="center">                        <tr><button mat-icon-button (click)="unlike(user, news)" class="liked"><mat-icon>thumb_up</mat-icon></button></tr>                        <tr class="pgreen">{{news.likes}}</tr>                      </td>                    </table>                  </span>                  &nbsp;&nbsp;                  <span *ngIf="!(news | isuserindislikedlistpipe : user)">                    <table align="center">                      <td align="center">                        <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked"><mat-icon>thumb_down</mat-icon></button></tr>                        <tr class="pgrey">{{news.dislikes}}</tr>                      </td>                    </table>                  </span>                  <span *ngIf="(news | isuserindislikedlistpipe : user)">                    <table align="center">                      <td align="center">                        <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked"><mat-icon>thumb_down</mat-icon></button></tr>                        <tr class="pred">{{news.dislikes}}</tr>                      </td>                    </table>                  </span>                </mat-action-row>              </mat-expansion-panel>            </mat-accordion>          </div>        </div>      </div>    </div>    <div *ngIf="filterOption == \'alldatedesc\'">      <div *ngIf="(news | sortdatedescendingpipe) as newslist">        <div *ngFor="let news of newslist">          <div>            <mat-accordion multi="true">              <mat-expansion-panel class="individualnews">                <mat-expansion-panel-header>                  <table width="100%">                    <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>                    <span class="space-panel"></span>                    <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>                  </table>                </mat-expansion-panel-header>                <span class="left"><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></span>                <br><br>                <span class="left"><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></span>                <mat-action-row class="buttonsrowclass">                  <span *ngIf="!(news | isuserinlikedlistpipe : user)">                    <table align="center">                      <td align="center">                        <tr><button mat-icon-button (click)="like(user, news)" class="notliked" matTooltip="like" matTooltipPosition="above"><mat-icon>thumb_up</mat-icon></button></tr>                        <tr class="pgrey">{{news.likes}}</tr>                      </td>                    </table>                  </span>                  <span *ngIf="(news | isuserinlikedlistpipe : user)">                    <table align="center">                      <td align="center">                        <tr><button mat-icon-button (click)="unlike(user, news)" class="liked" matTooltip="take back like" matTooltipPosition="above"><mat-icon>thumb_up</mat-icon></button></tr>                        <tr class="pgreen">{{news.likes}}</tr>                      </td>                    </table>                  </span>                  &nbsp;&nbsp;                  <span *ngIf="!(news | isuserindislikedlistpipe : user)">                    <table align="center">                      <td align="center">                        <tr><button mat-icon-button (click)="dislike(user, news)" class="notdisliked" matTooltip="dislike" matTooltipPosition="above"><mat-icon>thumb_down</mat-icon></button></tr>                        <tr class="pgrey">{{news.dislikes}}</tr>                      </td>                    </table>                  </span>                  <span *ngIf="(news | isuserindislikedlistpipe : user)">                    <table align="center">                      <td align="center">                        <tr><button mat-icon-button (click)="undislike(user, news)" class="disliked" matTooltip="take back dislike" matTooltipPosition="above"><mat-icon>thumb_down</mat-icon></button></tr>                        <tr class="pred">{{news.dislikes}}</tr>                      </td>                    </table>                  </span>                </mat-action-row>              </mat-expansion-panel>            </mat-accordion>          </div>        </div>      </div>    </div>  </div>  <table align="center">  <div class="selectfilter">    <mat-form-field appearance = "fill" class = "displaybutton">      <mat-label>Display options</mat-label>      <mat-select class="matselect" [(value)]="filterOption">        <mat-option value="alldatedesc">All News (Newer First)</mat-option>        <mat-option value="allteamfirst">All News ({{user.team}} First)</mat-option>        <mat-option value="teamonly">Only {{user.team}} News</mat-option>      </mat-select>    </mat-form-field>  </div></table></div></table></div>'
-    var COMPONENTS = [{'name': 'AdminPanelComponent', 'selector': 'app-admin-profile'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'EditProfileComponent', 'selector': 'app-user-profile-edit'},{'name': 'FeedMainComponent', 'selector': 'app-main'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'InMatchComponent', 'selector': 'app-in-match'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewsPageComponent', 'selector': 'app-news'},{'name': 'PollsPageComponent', 'selector': 'app-polls'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UserDetailComponent', 'selector': 'app-user-panel'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'NewsPageComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
-
-
-
 
 
 
@@ -1618,31 +1244,8 @@ export class IsUserInDisikedListPipe implements PipeTransform {
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-          <label class="dark-mode-switch">
-               <input type="checkbox">
-               <span class="slider">
-                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-                    </svg>
-               </span>
-          </label>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'NewsPageComponent.html';
-            var MAX_SEARCH_RESULTS = 15;
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-
-       <script src="../js/menu-wc.js" defer></script>
-       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -1653,17 +1256,20 @@ export class IsUserInDisikedListPipe implements PipeTransform {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>

@@ -36,7 +36,7 @@
   border: 1px solid grey;
   height: 60px;
   width: 1486px;
-
+  white-space: pre-line;
   display: flex;
   align-items: center;
   justify-content: center;

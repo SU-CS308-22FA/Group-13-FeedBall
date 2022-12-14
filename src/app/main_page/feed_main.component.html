@@ -30,8 +30,10 @@
             <div *ngIf="(matches | returnfinishedmatchpipe) as matcheslist">
               <div class="scrollcontainer">
               <div *ngFor="let match of matcheslist" class="item" >
+                <mat-card align="center" class="matcardclass">
                   <p>{{match.team1}} - {{match.team2}}</p>
                   <p>{{match.score_team1}} - {{match.score_team2}}</p>
+                </mat-card>
               </div>
               </div>
               </div>

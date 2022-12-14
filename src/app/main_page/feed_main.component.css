@@ -76,8 +76,6 @@
 
 .item {
   flex-shrink: 0;
-  height: 150px;
-  width: 150px;
   display: inline-block;
 }
 
@@ -85,4 +83,14 @@
   position: absolute;
 
   box-sizing: cover;
+}
+
+.matcardclass{
+  margin-left: 5px;
+  margin-right: 5px;
+  align-items: center;
+  width: max-content;
+  height:auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
 }
