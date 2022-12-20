@@ -73,6 +73,9 @@ import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
 import { DisableInMatchButtonPipe } from './header/header.component';
 import { ChartsComponent } from './charts/charts.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { InMatchPreComponent } from './in-match-pre/in-match-pre.component';
+import { ReturnCurrentMatchesListPipe } from './in-match-pre/in-match-pre.component';
+import { IsThereAnyCurrentMatchPipe } from './in-match-pre/in-match-pre.component';
 
 
 @NgModule({
@@ -117,6 +120,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     ReturnCurrentMatchIdPipe,
     ChartsComponent,
     DisableInMatchButtonPipe,
+    InMatchPreComponent,
+    ReturnCurrentMatchesListPipe,
+    IsThereAnyCurrentMatchPipe
 
   ],
   imports: [

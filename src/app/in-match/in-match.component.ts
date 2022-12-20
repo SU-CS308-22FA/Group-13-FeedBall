@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnDestroy, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AuthService } from "../shared/services/auth.service";
@@ -13,7 +13,7 @@ import {
 import { animationFrameScheduler, Observable, of, switchMap } from 'rxjs';
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 import * as firebase from 'firebase/compat';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { messages } from '../models/messages.model';
 import { UserDetailComponent } from '../admin_panel/user_detail.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
@@ -24,7 +24,7 @@ import { matches } from '../models/matches.model';
   templateUrl: './in-match.component.html',
   styleUrls: ['./in-match.component.css']
 })
-export class InMatchComponent{
+export class InMatchComponent implements OnInit, OnDestroy{
 
 
   messagesRef: AngularFirestoreCollection<messages>;
@@ -36,11 +36,14 @@ export class InMatchComponent{
   matchesRef: AngularFirestoreCollection<matches>;
   matches$: Observable<matches[]>;
 
+  public matchId: any;
+
   constructor(
     public authService: AuthService,
     public afs: AngularFirestore,
     public auth: AngularFireAuth,
-    public router: Router
+    public router: Router,
+    public route: ActivatedRoute
   ){
     this.messagesRef = this.afs.collection('messages');
     this.messages$ = this.messagesRef.valueChanges();
@@ -53,15 +56,31 @@ export class InMatchComponent{
 
     this.matchesRef = this.afs.collection('matches');
     this.matches$ = this.matchesRef.valueChanges();
+
+    //this.ngOnInit();
+  }
+
+  ngOnInit(){
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {  //paramMap: observable that can subscribe
+      if(paramMap.has('matchId')){
+
+        this.matchId = paramMap.get('matchId');
+        console.log("passed match id:", this.matchId);
+
+      }
+      else{
+        //what should happen here?
+        //show error and have a button to renaviagte to main
+      }
+    });
+
+  }
+  ngOnDestroy(){
+
   }
 
 
   user$ = this.authService.user$;
-
-  //currentMatch = "GS:FB/07.12.22/21.30:23.00";
-  className = "rightdiv";
-
-  dummyelems: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
   onSubmitForm(form: NgForm, user: User, currentMatchString: string){
 
@@ -391,7 +410,7 @@ transform(mesgList: messages[], currentMatchString: string) {
 
 @Pipe({ name: 'returncurrentmatchipe' })
 export class ReturnCurrentMatchPipe implements PipeTransform {
-transform(matchesList: matches[]) {
+transform(matchesList: matches[], passedId: string) {
 
   var retStr: string = "";
 
@@ -420,7 +439,7 @@ transform(matchesList: matches[]) {
       console.log(ends_at);
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
-      if (anlik >= dateOf3 && anlik <= ends_at){
+      if (anlik >= dateOf3 && anlik <= ends_at && passedId == matchesList[i].matchID){
         retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() + "\r\n" +
         matchesList[i].score_team1.toString() + " - " + matchesList[i].score_team2.toString();
 
@@ -437,7 +456,7 @@ transform(matchesList: matches[]) {
 
 @Pipe({ name: 'returncurrentmatchidipe' })
 export class ReturnCurrentMatchIdPipe implements PipeTransform {
-transform(matchesList: matches[]) {
+transform(matchesList: matches[], passedId: string) {
 
   var retStr: string = "null";
 
@@ -460,7 +479,7 @@ transform(matchesList: matches[]) {
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
 
-      if (anlik >= dateOf3 && anlik <= ends_at){
+      if (anlik >= dateOf3 && anlik <= ends_at && passedId == matchesList[i].matchID){
         retStr = matchesList[i].matchID;
         console.log("cureent match id: ", retStr);
         return retStr;
@@ -468,10 +487,12 @@ transform(matchesList: matches[]) {
     }
     return retStr;
     //search by date among matches list, return the match code
-
   }
-
-
 }
+
+
+
+
+
 
 

@@ -66,7 +66,7 @@ export class HeaderComponent{
   }
 
   navigateInMatch(){
-    this.router.navigate(['in-match']);
+    this.router.navigate(['in-match-pre']);
   }
 }
 

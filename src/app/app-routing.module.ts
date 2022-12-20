@@ -14,7 +14,7 @@ import { NewsPageComponent } from './news_page/news_page.component';
 import { PollsPageComponent } from './polls_page/polls_page.component';
 import { ChartsComponent } from './charts/charts.component';
 import { MatchesAdminComponent } from './admin_panel/matches_admin.component';
-
+import { InMatchPreComponent } from './in-match-pre/in-match-pre.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent},
   { path: 'admin-panel', component: AdminPanelComponent},
   { path: 'leaderboard', component: LeaderboardComponent},
-  { path: 'in-match', component: InMatchComponent},
+  { path: 'in-match/:matchId', component: InMatchComponent},
+  { path: 'in-match-pre', component: InMatchPreComponent},
   { path: 'user-detail', component: UserDetailComponent},
   { path: 'news-page', component: NewsPageComponent},
   { path: 'polls-page', component: PollsPageComponent},

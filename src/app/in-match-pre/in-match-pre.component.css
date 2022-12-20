@@ -3,57 +3,11 @@
   font-family: 'Bangers';
 }
 
-
-.titlediv{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.example-viewport {
-  height: 460px;
-  width: 740px;
-  border: 1px transparent;
-}
-.example-viewport-2 {
-  height: 460px;
-  width: 740px;
-  border: 1px transparent;
-
-}
-
-
-.example-item {
-  height: 50px;
-}
-
-.dummydiv{
-  height: 68px;
-}
-
-.matchscorediv{
-  border: 1px solid grey;
-  height: 60px;
-  width: 1486px;
-  white-space: pre-line;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-.borderclass{
-  border: 1px solid rgb(196, 196, 196);
-  border-radius: 10px;
-  padding-top:  5px;
-}
-
-
 /* width */
 ::-webkit-scrollbar {
   margin-top: -5px;
   width: 12px;
+  height: 10px;
 }
 
 /* Track */
@@ -73,77 +27,10 @@
   background: rgb(121, 121, 121);
 }
 
-
 * {
   margin: 0px;
   padding: 0px;
 }
-
-.box3 {
-  width: 300px;
-  margin-bottom: 20px auto;
-  border-radius: 15px;
-  background: #b9dcc0;
-  color: black;
-  padding-right: 18px;
-  padding-left: 4px;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  text-align: center;
-  position: relative;
-  right: 14px;
-  height: fit-content;
-}
-
-.box3-2 {
-  width: 300px;
-  margin-bottom: 20px auto;
-  border-radius: 15px;
-  background: #e5f3e8;
-  color: black;
-  padding-left: 18px;
-  padding-right: 4px;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  text-align: center;
-  left: 14px;
-  position: relative;
-  height: fit-content;
-}
-
-
-/* speech bubble 13 */
-
-.sbright:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 15px solid #b9dcc0;
-  border-right: 15px solid transparent;
-  border-top: 15px solid #b9dcc0;
-  border-bottom: 15px solid transparent;
-  right: -14px;
-  top: 0px;
-}
-
-
-/* speech bubble 14 */
-
-.sbleft:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 15px solid transparent;
-  border-right: 15px solid #e5f3e8;
-  border-top: 15px solid #e5f3e8;
-  border-bottom: 15px solid transparent;
-  left: -14px;
-  top: 0px;
-}
-
-
 
 .rightdiv{
   display: flex;
@@ -204,10 +91,6 @@
 
 }
 
-.spacer{
-  flex: 1 1 auto;
-}
-
 .nameclass{
   font-size: smaller;
 }
@@ -231,7 +114,6 @@
   justify-content: stretch;
 }
 
-
 .textalign1{
   text-align: right;
   text-align-last: right;
@@ -241,8 +123,6 @@
   text-align: left;
   text-align-last: left;
 }
-
-
 
 .outerdiv{
   display: flex;
@@ -263,8 +143,6 @@
   background-color: transparent;
 }
 
-
-
 .inputdiv{
   background-color: rgb(214, 214, 214);
   border-bottom-left-radius:10px ;
@@ -282,6 +160,104 @@
 }
 
 
+.titlediv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonbackground{
+  background-color: #b9dcc0;
+}
+
+.maindiv{
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+.rightalign{
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+
+.titlediv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+
+  align-items: center;
+  justify-content: center;
+  display: block;
+
+}
+
+.card {
+  display: inline-block;
+
+
+  border-radius: 10px;
+  height: fit-content;
+  width: fit-content;
+}
+
+.matcardclass{
+  border-radius: 10px;
+
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+
+  height: 280px;
+  width: 240px;
+
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+
+
+.enterbuttonclass{
+  background-color: #b9dcc0;
+
+  width: 200px;
+}
+
+
+
+.outerclass{
+  align-items: center;
+  justify-content: center;
+  display: block;
+
+}
+
+
+.p2{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+
 .buttonbackground{
   background-color: #b9dcc0;
 }
@@ -289,4 +265,11 @@
 
 .oopsclass{
   font-family: 'Bangers';
+}
+
+
+.centerclass{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

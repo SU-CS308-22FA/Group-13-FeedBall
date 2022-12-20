@@ -3,11 +3,11 @@
 <br>
 <div *ngIf="(user$ | async) as user">
   <div *ngIf="(matches$ | async) as matches">
-    <div *ngIf="(matches | returncurrentmatchidipe) as currentMatchId">
+    <div *ngIf="(matches | returncurrentmatchidipe: matchId) as currentMatchId">
       <div *ngIf="currentMatchId != 'null'">
         <div class="titlediv">
           <div class="matchscorediv">
-            <p align="center">{{(matches | returncurrentmatchipe)}}</p>
+            <p align="center">{{(matches | returncurrentmatchipe: matchId)}}</p>
           </div>
         </div>
         <div class="titlediv">

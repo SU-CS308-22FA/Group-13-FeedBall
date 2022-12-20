@@ -1,0 +1,55 @@
+<br>
+<div class="titlediv" ><p class="mainfeedtext">Ongoing Matches</p></div>
+
+
+<div *ngIf="(matches$ | async) as matches" class="outerclass">
+  <div *ngIf="(matches | returncurrentmatcheslistipe) as currentMatches">
+    <div *ngIf="(currentMatches | isthereanycurrentmatchpipe)">
+
+      <br><br>
+      <div class="titlediv" ><p class="p2">Please select a match to join the live chat and to access the polls:</p></div>
+      <br><br>
+
+      <div class="scrolling-wrapper">
+        <div class="card" *ngFor="let thisMatch of currentMatches">
+          <mat-card class="matcardclass">
+            <table align="center">
+              <td align="center">
+                <tr>
+                  <p>{{thisMatch.team1}}&nbsp;-&nbsp;{{thisMatch.team2}}</p>
+                </tr>
+                <tr><br><br></tr>
+                <tr>
+                  <p>{{thisMatch.score_team1}}&nbsp;-&nbsp;{{thisMatch.score_team2}}</p>
+                </tr>
+                <tr><br><br><br></tr>
+                <tr>
+                  <a [routerLink]="['/in-match', thisMatch.matchID]" mat-stroked-button class="enterbuttonclass">Enter</a>
+                </tr>
+              </td>
+            </table>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!(currentMatches | isthereanycurrentmatchpipe)" class="centerclass">
+      <table align="center">
+        <td align="center">
+          <tr>
+            <br><br><br><br>
+            <h2 class="oopsclass">OOPS!!</h2>
+          </tr>
+          <tr>
+            <br>
+            <h4>There is no match currently going on.<br><br>You can acces finished match scores in main feed page.</h4>
+          </tr>
+          <tr>
+            <br>
+            <button mat-raised-button (click)="navigateMainPage()" class="buttonbackground">Go back to main page</button>
+          </tr>
+        </td>
+      </table>
+    </div>
+  </div>
+</div>
+
