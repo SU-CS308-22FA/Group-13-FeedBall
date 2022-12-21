@@ -1,6 +1,6 @@
 <br>
 <div class="titlediv2" ><p class="mainfeedtext">InMatch Page</p></div>
-<br>
+
 <div *ngIf="(user$ | async) as user">
   <div *ngIf="(matches$ | async) as matches">
     <div *ngIf="(matches | returncurrentmatchidipe: matchId) as currentMatchId">

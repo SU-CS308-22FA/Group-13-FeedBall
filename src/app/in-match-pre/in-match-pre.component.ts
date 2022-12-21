@@ -18,6 +18,7 @@ import { messages } from '../models/messages.model';
 import { UserDetailComponent } from '../admin_panel/user_detail.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { matches } from '../models/matches.model';
+import { ReturnSizePipe } from '../leaderboard/leaderboard.component';
 
 @Component({
   selector: 'app-in-match-pre',
@@ -46,6 +47,28 @@ export class InMatchPreComponent{
 
   navigateMainPage(){
     this.router.navigate(['feed']);
+  }
+
+  public currentIndex: number = 0;
+
+  goBack(){
+    if(this.currentIndex > 0){
+      this.currentIndex--;
+    }
+
+  }
+
+  returnSize(theList: matches[]){
+    var sizeList = Object.keys(theList).length;
+    return sizeList;
+  }
+
+  goForward(theList: matches[]){
+
+    var sizeList = this.returnSize(theList);
+    if(this.currentIndex < sizeList-1){
+      this.currentIndex++;
+    }
   }
 
 }

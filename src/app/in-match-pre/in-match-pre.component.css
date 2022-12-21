@@ -53,7 +53,6 @@
 
 }
 
-
 .leftdiv{
   display: flex;
   align-items: left;
@@ -133,7 +132,6 @@
   background-color: transparent;
 }
 
-
 .outerdiv2{
   display: flex;
   align-items: right;
@@ -151,14 +149,12 @@
   border-top-left-radius:10px ;
 }
 
-
 .errordiv{
   display: flex;
   align-items: center;
   justify-content: center;
 
 }
-
 
 .titlediv{
   display: flex;
@@ -177,18 +173,15 @@
   justify-content: right;
 }
 
-
 .rightalign{
   display: flex;
   align-items: flex-end;
   justify-content: right;
 }
 
-
 .spacer{
   flex: 1 1 auto;
 }
-
 
 .titlediv{
   display: flex;
@@ -200,7 +193,6 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-
 
   align-items: center;
   justify-content: center;
@@ -235,41 +227,95 @@
   margin-bottom: 4px;
 }
 
-
 .enterbuttonclass{
   background-color: #b9dcc0;
 
   width: 200px;
 }
 
-
-
-.outerclass{
+.outerclass{ /*changed*/
   align-items: center;
   justify-content: center;
-  display: block;
+  display: flex;
+  /*display: block;*/
 
 }
-
 
 .p2{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
 }
 
-
 .buttonbackground{
   background-color: #b9dcc0;
 }
-
 
 .oopsclass{
   font-family: 'Bangers';
 }
 
-
 .centerclass{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.selectscreen{
+
+  width: 500px;
+  height: fit-content;
+
+  border-radius: 15px;
+  border: solid 2px rgb(196, 196, 196);
+
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectscreendeneme{
+
+  max-width: 879px;
+  height: fit-content;
+
+  border-radius: 15px;
+  border: solid 2px rgb(196, 196, 196);
+
+  display: block;
+  align-items: center;
+  justify-content: center;
+
+
+  overflow-y: hidden;
+
+
+  margin-bottom: 30px;
+}
+
+.matcard2{
+  border-radius: 10px;
+
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+
+  height: 350px;
+  width: 290px;
+
+  margin: 10px;
+}
+
+.minimatcard{
+
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  background-color: rgb(228, 228, 228);
+  border: solid 1px rgb(196, 196, 196);
 }

@@ -76,6 +76,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { InMatchPreComponent } from './in-match-pre/in-match-pre.component';
 import { ReturnCurrentMatchesListPipe } from './in-match-pre/in-match-pre.component';
 import { IsThereAnyCurrentMatchPipe } from './in-match-pre/in-match-pre.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -122,7 +123,8 @@ import { IsThereAnyCurrentMatchPipe } from './in-match-pre/in-match-pre.componen
     DisableInMatchButtonPipe,
     InMatchPreComponent,
     ReturnCurrentMatchesListPipe,
-    IsThereAnyCurrentMatchPipe
+    IsThereAnyCurrentMatchPipe,
+
 
   ],
   imports: [
@@ -155,6 +157,7 @@ import { IsThereAnyCurrentMatchPipe } from './in-match-pre/in-match-pre.componen
     MatTooltipModule,
     MatExpansionModule,
     ScrollingModule,
+    MatCheckboxModule
 
 
   ],

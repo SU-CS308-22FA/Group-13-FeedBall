@@ -37,6 +37,8 @@ export class InMatchComponent implements OnInit, OnDestroy{
   matches$: Observable<matches[]>;
 
   public matchId: any;
+  public isChecked: boolean = false;
+  public enteredTime: Date;
 
   constructor(
     public authService: AuthService,
@@ -45,6 +47,8 @@ export class InMatchComponent implements OnInit, OnDestroy{
     public router: Router,
     public route: ActivatedRoute
   ){
+    this.enteredTime = new Date();
+
     this.messagesRef = this.afs.collection('messages');
     this.messages$ = this.messagesRef.valueChanges();
 
@@ -61,6 +65,8 @@ export class InMatchComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(){
+
+
     this.route.paramMap.subscribe((paramMap: ParamMap) => {  //paramMap: observable that can subscribe
       if(paramMap.has('matchId')){
 
@@ -73,6 +79,8 @@ export class InMatchComponent implements OnInit, OnDestroy{
         //show error and have a button to renaviagte to main
       }
     });
+
+
 
   }
   ngOnDestroy(){
@@ -110,6 +118,8 @@ export class InMatchComponent implements OnInit, OnDestroy{
       return false;
     }
   }
+
+
 
   ReturnUser(uidUser: string, userList: Array<User>){
 
@@ -489,10 +499,4 @@ transform(matchesList: matches[], passedId: string) {
     //search by date among matches list, return the match code
   }
 }
-
-
-
-
-
-
 
