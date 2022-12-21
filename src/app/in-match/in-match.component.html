@@ -1,10 +1,10 @@
 <br>
-<div class="titlediv" ><p class="mainfeedtext">InMatch Page</p></div>
+<div class="titlediv2" ><p class="mainfeedtext">InMatch Page</p></div>
 <br>
 <div *ngIf="(user$ | async) as user">
   <div *ngIf="(matches$ | async) as matches">
     <div *ngIf="(matches | returncurrentmatchidipe: matchId) as currentMatchId">
-      <div *ngIf="currentMatchId != 'null'">
+      <div *ngIf="currentMatchId != 'null'" class="aclass">
         <div class="titlediv">
           <div class="matchscorediv">
             <p align="center">{{(matches | returncurrentmatchipe: matchId)}}</p>

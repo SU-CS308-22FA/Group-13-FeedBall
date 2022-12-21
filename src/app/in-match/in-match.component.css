@@ -5,6 +5,13 @@
 
 
 .titlediv{
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.titlediv2{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +23,8 @@
   width: 740px;
   border: 1px transparent;
 }
+
+
 .example-viewport-2 {
   height: 460px;
   width: 740px;
@@ -95,6 +104,7 @@
   height: fit-content;
 }
 
+
 .box3-2 {
   width: 300px;
   margin-bottom: 20px auto;
@@ -110,7 +120,6 @@
   position: relative;
   height: fit-content;
 }
-
 
 /* speech bubble 13 */
 
@@ -289,4 +298,9 @@
 
 .oopsclass{
   font-family: 'Bangers';
+}
+
+
+.aclass{
+  margin: 15px;
 }
