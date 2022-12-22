@@ -5,7 +5,7 @@
 }
 
 .mat-toolbar{
-  background-color: #b9dcc0;
+  background-color: rgb(185, 220, 192);
 
 }.rightalign{
   display: flex;
@@ -47,4 +47,15 @@
 
 .imgclass{
   margin-top: 8px;
+}
+
+
+
+.in-match-button{
+  border-radius: 35px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
