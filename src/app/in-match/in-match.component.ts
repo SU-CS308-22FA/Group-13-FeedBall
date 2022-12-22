@@ -419,6 +419,30 @@ transform(mesgList: messages[], currentMatchString: string) {
   }
 }
 
+@Pipe({ name: 'displaymessagesonlyformcurrentmatchnonpreviouspipe' })
+export class DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe implements PipeTransform {
+transform(mesgList: messages[], currentMatchString: string, entered: Date) {
+
+  var returnList: messages[] = [];
+  var size = Object.keys(mesgList).length;
+
+  for(let i=0; i<size; i++){
+
+
+    var star:any = mesgList[i].sentWhen;
+    var numtimestamp = Number(star.seconds);
+    numtimestamp = numtimestamp * 1000;
+    const dateOf = new Date(numtimestamp);
+
+    if(mesgList[i].matchCode == currentMatchString && dateOf >= entered){
+      returnList.push(mesgList[i]);
+    }
+  }
+
+  return returnList;
+  }
+}
+
 @Pipe({ name: 'returncurrentmatchipe' })
 export class ReturnCurrentMatchPipe implements PipeTransform {
 transform(matchesList: matches[], passedId: string) {

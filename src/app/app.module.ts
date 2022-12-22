@@ -77,6 +77,7 @@ import { InMatchPreComponent } from './in-match-pre/in-match-pre.component';
 import { ReturnCurrentMatchesListPipe } from './in-match-pre/in-match-pre.component';
 import { IsThereAnyCurrentMatchPipe } from './in-match-pre/in-match-pre.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe } from './in-match/in-match.component';
 
 
 @NgModule({
@@ -124,6 +125,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     InMatchPreComponent,
     ReturnCurrentMatchesListPipe,
     IsThereAnyCurrentMatchPipe,
+    DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe
 
 
   ],
