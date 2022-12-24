@@ -53,6 +53,7 @@
                           </div>
                         </div>
                         <div *ngIf="this.isChecked">
+                          <div *ngIf="isListEmpty((messagesList | displaymessagesonlyformcurrentmatchnonpreviouspipe : currentMatchId : this.enteredTime))"><p class="welcometext">Welcome to live chat!</p></div>
                           <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchnonpreviouspipe : currentMatchId : this.enteredTime) | sortbydatepipe)">
                             <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
                               <div class="box3 sbright">
@@ -108,11 +109,14 @@
               <td>
                 <div class="borderclass">
                   <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport-2">
-                    <div>
-                      <h3>in match poll screen</h3>
+
+                    <div class="pollcard">
+                      <mat-card class="pollmatcard"></mat-card>
+                      <mat-card class="pollmatcard"></mat-card>
+                      <mat-card class="pollmatcard"></mat-card>
+                      <mat-card class="pollmatcard"></mat-card>
                     </div>
                   </cdk-virtual-scroll-viewport>
-                  <div class="dummydiv"></div>
                 </div>
               </td>
             </tr>

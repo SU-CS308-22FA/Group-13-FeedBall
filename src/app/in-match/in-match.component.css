@@ -26,7 +26,7 @@
 
 
 .example-viewport-2 {
-  height: 435px;
+  height: 504px;
   width: 740px;
   border: 1px transparent;
 
@@ -56,6 +56,14 @@
   border: 1px solid rgb(196, 196, 196);
   border-radius: 10px;
   padding-top:  5px;
+}
+
+.borderclass2{
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  padding-top:  5px;
+  height: 435px;
+
 }
 
 
@@ -319,4 +327,26 @@
 .p2{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
+}
+
+.pollcard{
+
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.pollmatcard{
+  margin-bottom: 8px;
+
+  background-color: #83e094;
+  color:#83e094;
+  border: solid 1ps rgb(62, 91, 62);
+
+  height: 100px;
+}
+
+.welcometext{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  color:dimgray;
 }

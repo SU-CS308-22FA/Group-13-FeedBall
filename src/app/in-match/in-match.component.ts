@@ -120,6 +120,12 @@ export class InMatchComponent implements OnInit, OnDestroy{
     }
   }
 
+  isListEmpty(mesglist: messages[]){
+    var size = Object.keys(mesglist).length;
+
+    return size == 0;
+
+  }
 
 
   ReturnUser(uidUser: string, userList: Array<User>){
