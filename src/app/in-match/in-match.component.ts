@@ -42,6 +42,7 @@ export class InMatchComponent implements OnInit, OnDestroy{
 
   public matchId: any;
   public isChecked: boolean = false;
+  public isCheckedPoll: boolean = false;
   public enteredTime: Date;
 
   constructor(
@@ -130,6 +131,23 @@ export class InMatchComponent implements OnInit, OnDestroy{
     var size = Object.keys(mesglist).length;
 
     return size == 0;
+
+  }
+
+  isListEmptyPoll(implist: InMatchPolls[], user: User){ //empty means being empty for polls that are not answered
+    var size = Object.keys(implist).length;
+
+    if(size == 0){
+      return true;
+    }
+    else{
+      for(let i=0; i<size; i++){
+        if(!this.hasTheUserAnsweredThisPoll(user, implist[i])){
+          return false;
+        }
+      }
+      return true;
+    }
 
   }
 
