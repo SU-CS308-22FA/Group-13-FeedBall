@@ -18,6 +18,7 @@ import { messages } from '../models/messages.model';
 import { UserDetailComponent } from '../admin_panel/user_detail.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { matches } from '../models/matches.model';
+import { InMatchPolls } from '../models/inmatchpolls.model';
 
 @Component({
   selector: 'app-in-match',
@@ -29,6 +30,9 @@ export class InMatchComponent implements OnInit, OnDestroy{
 
   messagesRef: AngularFirestoreCollection<messages>;
   messages$: Observable<messages[]>;
+
+  inMatchPollsRef: AngularFirestoreCollection<InMatchPolls>;
+  inMatchPolls$: Observable<InMatchPolls[]>;
 
   usersRef: AngularFirestoreCollection<User>;
   users$: Observable<User[]>;
@@ -52,6 +56,8 @@ export class InMatchComponent implements OnInit, OnDestroy{
     this.messagesRef = this.afs.collection('messages');
     this.messages$ = this.messagesRef.valueChanges();
 
+    this.inMatchPollsRef = this.afs.collection('InMatchPolls');
+    this.inMatchPolls$ = this.inMatchPollsRef.valueChanges();
 
     //get matches list, apply async on frontend, then a pipeline to match a match time to current time, when found, dummyMathch will be assigned accordingly maybe with a function.
 
@@ -226,6 +232,102 @@ export class InMatchComponent implements OnInit, OnDestroy{
 
   }
 
+  selectOption(userNow: User, selection: number, imp: InMatchPolls){
+
+    this.authService.incrementPoints(userNow, 5);
+
+    var opt1Count:number = imp.option1Count;
+    var opt2Count:number = imp.option2Count;
+    var opt3Count:number = imp.option3Count;
+    var opt1List:Array<String> = imp.option1UserList;
+    var opt2List:Array<String> = imp.option2UserList;
+    var opt3List:Array<String> = imp.option3UserList;
+
+
+    if(selection == 1){
+      opt1Count = opt1Count + 1;
+      opt1List.push(userNow.uid);
+    }
+    else if(selection == 2){
+      opt2Count = opt2Count + 1;
+      opt2List.push(userNow.uid);
+    }
+    else{//selection == 3
+      opt3Count = opt3Count + 1;
+      opt3List.push(userNow.uid);
+    }
+    console.log("checkbox clicked");
+
+
+
+    var impidGiven: string = imp.impid;
+    const newRef: AngularFirestoreDocument<any> = this.afs.doc(`InMatchPolls/${impidGiven}`);
+
+
+    const theNewImp: InMatchPolls = {
+      impid: imp.impid,
+      writtenBy: imp.writtenBy,
+      dateWritten: imp.dateWritten,
+      matchId: imp.matchId,
+      pollText: imp.pollText,
+      option1: imp.option1,
+      option2: imp.option2,
+      option3:imp.option3,
+      option1Count: opt1Count,
+      option2Count: opt2Count,
+      option3Count: opt3Count,
+      option1UserList: opt1List,
+      option2UserList: opt2List,
+      option3UserList: opt3List
+    }
+
+
+    return newRef.set(theNewImp, { merge: true });
+
+  }
+
+  hasTheUserAnsweredThisPoll(thisUser: User, impoll: InMatchPolls){
+
+    for(let i=0; i<impoll.option1Count; i++){
+      if(thisUser.uid == impoll.option1UserList[i]){
+        return true;
+      }
+    }
+    for(let i=0; i<impoll.option2Count; i++){
+      if(thisUser.uid == impoll.option2UserList[i]){
+        return true;
+      }
+    }
+    for(let i=0; i<impoll.option3Count; i++){
+      if(thisUser.uid == impoll.option3UserList[i]){
+        return true;
+      }
+    }
+    return false;
+
+  }
+
+  whichOptionSelected(user: User, impoll: InMatchPolls){
+    for(let i=0; i<impoll.option1Count; i++){
+      if(user.uid == impoll.option1UserList[i]){
+        return "1";
+      }
+    }
+    for(let i=0; i<impoll.option2Count; i++){
+      if(user.uid == impoll.option2UserList[i]){
+        return "2";
+      }
+    }
+    for(let i=0; i<impoll.option3Count; i++){
+      if(user.uid == impoll.option3UserList[i]){
+        return "3";
+      }
+    }
+
+    console.log("something went wrong");
+    return "";
+  }
+
   /**
    * This functions is created to make sure the match ends within 90 minutes.
    * Since we only get the hour, minute and date, it is up to this function to calculate the amount time during which the match is active.
@@ -356,6 +458,21 @@ export class SortByDatePipe implements PipeTransform {
   }
 }
 
+@Pipe({ name: 'sortbydatepollpipe'})
+export class SortByDatePollPipe implements PipeTransform {
+  transform(listNotSorted: InMatchPolls[]) {
+
+    var sortedList: InMatchPolls[] = [];
+
+    if(listNotSorted != null){
+      sortedList = listNotSorted.sort((a, b) => (a.dateWritten < b.dateWritten ? -1 : 1));
+    }
+
+    return sortedList;
+
+  }
+}
+
 @Pipe({ name: 'pluralpipe'})
 export class PluralPipe implements PipeTransform {
   transform(count: number) {
@@ -418,6 +535,23 @@ transform(mesgList: messages[], currentMatchString: string) {
   for(let i=0; i<size; i++){
     if(mesgList[i].matchCode == currentMatchString){
       returnList.push(mesgList[i]);
+    }
+  }
+
+  return returnList;
+  }
+}
+
+@Pipe({ name: 'displaypollsonlyformcurrentmatchipe' })
+export class DisplayPollsOnlyFromCurrentMatchPipe implements PipeTransform {
+transform(pollList: InMatchPolls[], currentMatchString: string) {
+
+  var returnList: InMatchPolls[] = [];
+  var size = Object.keys(pollList).length;
+
+  for(let i=0; i<size; i++){
+    if(pollList[i].matchId == currentMatchString){
+      returnList.push(pollList[i]);
     }
   }
 
@@ -530,4 +664,33 @@ transform(matchesList: matches[], passedId: string) {
     //search by date among matches list, return the match code
   }
 }
+
+
+@Pipe({ name: 'displaypercentpipe' })
+export class DisplayPercentPipe implements PipeTransform {
+transform(optionNo: number, imp:InMatchPolls) {
+
+  var numerator: number;
+  if(optionNo == 1){
+    numerator = imp.option1Count;
+  }
+  else if(optionNo == 2){
+    numerator = imp.option2Count;
+  }
+  else{
+    numerator = imp.option3Count;
+  }
+
+  console.log(imp.pollText, numerator, (imp.option1Count + imp.option2Count + imp.option3Count));
+  var percent = numerator / (imp.option1Count + imp.option2Count + imp.option3Count);
+
+  percent = percent * 100;
+  console.log(percent);
+
+  return percent.toString() + "%";
+
+  }
+}
+
+
 

@@ -69,8 +69,10 @@
             <table align="center">
               <td align="center">
                 <tr>
-                  <button mat-stroked-button (click)="goBack()" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_left</mat-icon></button>
-                  <button mat-stroked-button (click)="goForward(currentMatches)" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_right</mat-icon></button>
+                  <button mat-stroked-button *ngIf="this.currentIndex+1 != 1" (click)="goBack()" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                  <button mat-stroked-button *ngIf="this.currentIndex+1 == 1" [disabled]="true" (click)="goBack()" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                  <button mat-stroked-button *ngIf="this.currentIndex+1 != this.returnSize(currentMatches)" (click)="goForward(currentMatches)" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_right</mat-icon></button>
+                  <button mat-stroked-button *ngIf="this.currentIndex+1 == this.returnSize(currentMatches)" [disabled]="true" (click)="goForward(currentMatches)" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_right</mat-icon></button>
                 </tr>
               </td>
             </table>

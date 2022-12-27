@@ -78,7 +78,9 @@ import { ReturnCurrentMatchesListPipe } from './in-match-pre/in-match-pre.compon
 import { IsThereAnyCurrentMatchPipe } from './in-match-pre/in-match-pre.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe } from './in-match/in-match.component';
-
+import { DisplayPollsOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
+import { SortByDatePollPipe } from './in-match/in-match.component';
+import { DisplayPercentPipe } from './in-match/in-match.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +127,10 @@ import { DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe } from './in-match/i
     InMatchPreComponent,
     ReturnCurrentMatchesListPipe,
     IsThereAnyCurrentMatchPipe,
-    DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe
+    DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe,
+    DisplayPollsOnlyFromCurrentMatchPipe,
+    SortByDatePollPipe,
+    DisplayPercentPipe
 
 
   ],

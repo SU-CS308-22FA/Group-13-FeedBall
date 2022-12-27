@@ -17,6 +17,7 @@ import { messages } from 'src/app/models/messages.model';
 import { ReturnRankUserPipe } from 'src/app/leaderboard/leaderboard.component';
 import { matches } from 'src/app/models/matches.model';
 import { Polls } from 'src/app/models/polls.model';
+import { InMatchPolls } from 'src/app/models/inmatchpolls.model';
 
 @Injectable({
   providedIn: 'root',

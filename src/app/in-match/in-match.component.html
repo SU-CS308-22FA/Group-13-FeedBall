@@ -109,12 +109,105 @@
               <td>
                 <div class="borderclass">
                   <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport-2">
+                    <div *ngIf="(inMatchPolls$ | async) as inMatchPollsList">
+                      <div *ngFor="let impoll of ((inMatchPollsList | displaypollsonlyformcurrentmatchipe : currentMatchId) | sortbydatepollpipe)">
+                        <div *ngIf="hasTheUserAnsweredThisPoll(user, impoll)"><!--answered polls-->
+                          <div class="pollcard">
+                            <mat-card class="pollinnercard">
+                              <table width="100%" align="left">
+                                <td align="left">
+                                  <tr>
+                                    <p class="pollquestion">{{impoll.pollText}}</p>
+                                  </tr>
+                                  <tr>
+                                    <div class="spacerdiv"></div>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='1'">
+                                      <div class="spacebetweendiv">
 
-                    <div class="pollcard">
-                      <mat-card class="pollmatcard"></mat-card>
-                      <mat-card class="pollmatcard"></mat-card>
-                      <mat-card class="pollmatcard"></mat-card>
-                      <mat-card class="pollmatcard"></mat-card>
+                                        <span><div><p>{{impoll.option1}}</p></div></span>
+                                        <span><div><p>{{1|displaypercentpipe: impoll}}</p></div></span>
+
+
+                                      </div>
+                                    </button>
+                                    <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='1'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p>{{impoll.option1}}</p></span>
+                                        <span><p>{{1|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='2'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p>{{impoll.option2}}</p></span>
+                                        <span><p>{{2|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                    <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='2'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p>{{impoll.option2}}</p></span>
+                                        <span><p>{{2|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='3'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p>{{impoll.option3}}</p></span>
+                                        <span><p>{{3|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                    <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='3'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p>{{impoll.option3}}</p></span>
+                                        <span><p>{{3|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                  </tr>
+                                </td>
+                              </table>
+                            </mat-card>
+                          </div>
+                        </div>
+                        <div *ngIf="!hasTheUserAnsweredThisPoll(user, impoll)"><!--unanswered polls-->
+                          <div class="pollcard">
+                            <mat-card class="pollinnercard">
+                              <table width="100%" align="left">
+                                <td align="left">
+                                  <tr>
+                                    <p class="pollquestion">{{impoll.pollText}}</p>
+                                  </tr>
+                                  <tr>
+                                    <div class="spacerdiv"></div>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoption" mat-stroked-button (click)="selectOption(user, 1, impoll)">{{impoll.option1}}</button>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoption" mat-stroked-button (click)="selectOption(user, 2, impoll)">{{impoll.option2}}</button>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoption" mat-stroked-button (click)="selectOption(user, 3, impoll)">{{impoll.option3}}</button>
+                                  </tr>
+                                </td>
+                              </table>
+                            </mat-card>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </cdk-virtual-scroll-viewport>
                 </div>
