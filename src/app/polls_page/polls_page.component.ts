@@ -22,8 +22,8 @@ import { listChanges } from '@angular/fire/compat/database';
   selector: 'app-polls',
   templateUrl: './polls_page.component.html',
   styleUrls: ['./polls_page.component.css']
-  
-  
+
+
 })
 export class PollsPageComponent{
   pollsRef: AngularFirestoreCollection<Polls>;
@@ -60,7 +60,8 @@ export class PollsPageComponent{
   }
 
   checkclick(poll: Polls, option: number, user: User){
-    
+
+    this.authService.incrementPoints(user, 5);
     const newRef: AngularFirestoreDocument<any> = this.afs.doc(`Polls/${poll.pid}`);
     console.log(newRef);
 
@@ -80,7 +81,7 @@ export class PollsPageComponent{
       UsersPickOpt2: poll.UsersPickOpt2,
       UsersPickOpt3: poll.UsersPickOpt3
     };
-    
+
     if (option == 1 && !(this.isUserInList(poll.UsersPickOpt1, user))){
       theNewPoll.countOpt1 += 1;
       poll.UsersPickOpt1.push(user.uid);
@@ -135,7 +136,7 @@ export class PollsPageComponent{
       return false;
     }
   }
-  
+
 
 }
 
