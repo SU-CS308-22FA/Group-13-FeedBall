@@ -340,6 +340,30 @@ export class AuthService {
     return newRef.set(theNew, { merge: true });
   }
 
+  SetIdInMatchPoll(imp: InMatchPolls, idGiven: string){
+
+    const newRef: AngularFirestoreDocument<any> = this.afs.doc(`InMatchPolls/${idGiven}`);
+
+    const theImp: InMatchPolls = {
+      impid: idGiven,
+      writtenBy: imp.writtenBy,
+      dateWritten: imp.dateWritten,
+      matchId: imp.matchId,
+      pollText: imp.pollText,
+      option1: imp.option1,
+      option2: imp.option2,
+      option3: imp.option3,
+      option1Count: imp.option1Count,
+      option2Count: imp.option2Count,
+      option3Count: imp.option3Count,
+      option1UserList: imp.option1UserList,
+      option2UserList: imp.option2UserList,
+      option3UserList: imp.option3UserList
+    };
+
+    return newRef.set(theImp, { merge: true });
+  }
+
   SetMatchId(theMatch: matches, idGiven: string){
 
     const matchRef: AngularFirestoreDocument<any> = this.afs.doc(`matches/${idGiven}`);

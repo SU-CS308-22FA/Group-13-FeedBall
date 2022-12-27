@@ -39,7 +39,7 @@
   <table>
     <tr>
 
-      <td align="center"> 
+      <td align="center">
         <mat-card class="matcardclass3">
           <div class="divform" width="50%">
             <mat-card>
@@ -180,6 +180,61 @@
         </mat-card>
       </td>
 
+    </tr>
+    <tr>
+      <td>
+        <div *ngIf="(matches$ | async) as matchesList">
+          <mat-card class="matcardclass4">
+            <div class="divform">
+              <mat-card class="inmatchpollmatcard">
+                <mat-card-title class="p2">Open an in-match poll</mat-card-title>
+                <form (submit)="openInMatchPoll(pollsInMatchForm)" #pollsInMatchForm="ngForm">
+                  <table align="center">
+                    <td align="center">
+                      <tr>
+                        <mat-form-field>
+                          <input type="text" matInput name="pollTextInput" ngModel placeholder="Question" required #localQuestionInput="ngModel">
+                        </mat-form-field>
+                      </tr>
+                      <br>
+                      <tr>
+                        <mat-form-field>
+                          <textarea matInput name="opt1Input" ngModel placeholder="Option1" required  #localOpt1Input="ngModel"></textarea>
+                        </mat-form-field>
+                      </tr>
+                      <tr>
+                        <mat-form-field>
+                          <textarea matInput name="opt2Input" ngModel placeholder="Option2" required  #localOpt2Input="ngModel"></textarea>
+                        </mat-form-field>
+                      </tr>
+                      <tr>
+                        <mat-form-field>
+                          <textarea matInput name="opt3Input" ngModel placeholder="Option3" required  #localOption3Input="ngModel"></textarea>
+                        </mat-form-field>
+                      </tr>
+                      <tr>
+                        <mat-form-field>
+                          <mat-label>Select a match to assign this poll</mat-label>
+                            <mat-select matInput ngModel name="matchInput" required #localMatchInput="ngModel">
+                              <mat-option *ngFor="let match of matchesList" [value]="match.matchID">
+                                {{match.team1}}&nbsp;-&nbsp;{{match.team2}}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="localMatchInput.invalid"><p class="errortext">Please select a match.</p></mat-error>
+                        </mat-form-field>
+                      </tr>
+                      <tr>
+                        <div class="spacediv"></div>
+                      </tr>
+                      <tr><button mat-raised-button class="assignbutton">Submit</button></tr>
+                    </td>
+                  </table>
+                </form>
+              </mat-card>
+            </div>
+          </mat-card>
+        </div>
+      </td>
     </tr>
   </table>
   </div>
