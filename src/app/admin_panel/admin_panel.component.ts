@@ -16,7 +16,7 @@ import { NgForm } from '@angular/forms';
 import { Polls } from '../models/polls.model';
 import { matches } from '../models/matches.model';
 import { InMatchPolls } from '../models/inmatchpolls.model';
-
+import {FormControl} from '@angular/forms';
 
 
 
@@ -42,10 +42,33 @@ export class AdminPanelComponent{
     ){
       this.matchesRef = this.afs.collection('matches');
       this.matches$ = this.matchesRef.valueChanges();
+
     }
 
     public showMyMessage = false
     user$ = this.authService.user$;
+
+    public teamsList: Array<string> = [
+    "Adana Demirspor",
+    "Alanyaspor" ,
+    "Antalyaspor",
+    "Beşiktaş",
+    "Fatih Karagümrük",
+    "Fenerbahçe",
+    "Galatasaray",
+    "Gaziantep",
+    "Giresunspor",
+    "Hatayspor",
+    "İstanbul Başakşehir",
+    "İstanbulspor",
+    "Kasımpaşa",
+    "Kayserispor",
+    "Konyaspor",
+    "MKE Ankaragücü",
+    "Sivasspor",
+    "Trabzonspor",
+    "Ümraniyespor"
+    ];
 
     /**
     * This function resets the password
@@ -80,8 +103,11 @@ export class AdminPanelComponent{
     var headerFrom = form.value.headerInput;
     var contentFrom = form.value.contentInput;
 
+    var unsplitted: string = form.value.tagsInput;
+    var splittedArray: Array<string> = unsplitted.toString().split(",");
 
-    let tags: Array<string> = ['Konyaspor'];
+
+    let tags: Array<string> = splittedArray;
     let emptyList: Array<string> = [];
     const sendNews: News = {
       header: headerFrom,

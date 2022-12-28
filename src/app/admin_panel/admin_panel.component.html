@@ -96,6 +96,14 @@
                         <textarea matInput name="contentInput" ngModel placeholder="Body" required  #localContentInput="ngModel"></textarea>
                       </mat-form-field>
                     </tr>
+                    <tr>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Select tags</mat-label>
+                        <mat-select  multiple #localTags="ngModel" matInput name="tagsInput" ngModel required>
+                          <mat-option *ngFor="let team of teamsList" [value]="team">{{team}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </tr>
                     <br>
                     <tr><button mat-raised-button class="loginbutton">Submit News</button></tr>
                   </td>
