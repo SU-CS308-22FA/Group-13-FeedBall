@@ -37,6 +37,7 @@ import { ToDatePipe2 } from './news_page/news_page.component';
 import { SortDateDescendingPipe } from './news_page/news_page.component';
 import { PluralPipe } from './in-match/in-match.component';
 import { SortDateDescendingPipeP } from './polls_page/polls_page.component';
+import { AdminPollsComponent } from './admin_panel/admin_polls.component';
 
 
 import { MatRadioModule} from '@angular/material/radio';
@@ -97,6 +98,7 @@ import { DisplayPercentPipe } from './in-match/in-match.component';
     LeaderboardComponent,
     InMatchComponent,
     UserDetailComponent,
+    AdminPollsComponent,
     MatchesAdminComponent,
     TransformPipe,
     ReturnSizePipe,

@@ -280,8 +280,8 @@ export class AdminPanelComponent{
     formInMatch.resetForm();
   }
 
-  PollInactive(){     // Got to finish this one. Makes poll inactive
-
+  PollInactive(){
+    this.router.navigate(["admin-polls"]);
   }
   public matchesMatch = true;
 
