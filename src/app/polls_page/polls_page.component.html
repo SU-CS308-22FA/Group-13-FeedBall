@@ -17,7 +17,7 @@
           <td>
             <div class="borderclass">
               <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
-                <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">    <!-- if the user has answered the poll the user should no longer see it. -->
+                <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">    
                   <div *ngFor="let poll of pollslist">  
                     <div *ngIf=" pollIsActiveCheck(poll) == true">  
                     <div *ngIf=" userAnsweredPollAlready(poll, user) == false">                              
@@ -64,8 +64,8 @@
             </div>
           </td>
           <div class="titlediv" ><p class="submainfeedtext">&nbsp; Previous Polls: &nbsp;</p></div>   <!--- Previous Polls section, Only the inactive polls are seen here.-->
-          <td>                                                                                        <!--- Previous Polls section, not finished: Need to see results aswell-->
-          <div class="borderclass">      
+          <td>                                                                                        <!--- Not finished: Need to be sure results are dsiplayed correctly.-->
+          <div class="borderclass">                                                                   <!--- Not finished: Additionally, make output be displayed with "%" symbol.-->
             <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
               <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">   
                 <div *ngFor="let poll of pollslist"> 
@@ -76,30 +76,27 @@
                         <label for="opt-1" class="opt-1">
                           <div class="row">
                             <div class="column">
-                              <span class="circle"></span>                      
                               <span class="text">{{poll.option1}}</span>
                             </div>
-                            <span class="percent">{{poll.countOpt1}}</span>            <!-- {{polls.countOptn}} are not needed here but can stay here for a while (?)-->
+                            <span class="percent">{{pollChoicePercent(poll, 1)}}</span>           
                           </div>
                           <div class="progress" id="pstyle1" style='--w:55;'></div>
                         </label>
                         <label for="opt-2" class="opt-2">
                           <div class="row">
                             <div class="column">
-                              <span class="circle"></span>
                               <span class="text">{{poll.option2}}</span>
                             </div>
-                            <span class="percent">{{poll.countOpt2}}</span>
+                            <span class="percent">{{pollChoicePercent(poll, 2)}}</span>
                           </div>
                           <div class="progress" id="pstyle2" style='--w:80;'></div>
                         </label>
                         <label for="opt-3" class="opt-3">
                           <div class="row">
                             <div class="column">
-                              <span class="circle"></span>
                               <span class="text">{{poll.option3}}</span>
                             </div>
-                            <span class="percent">{{poll.countOpt3}}</span>
+                            <span class="percent">{{pollChoicePercent(poll, 3)}}</span>
                           </div>
                           <div class="progress" id="pstyle3" style='--w:20;'></div>
                         </label>
