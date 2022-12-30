@@ -1,25 +1,42 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+<div class="centerdiv"><p class="mainfeedtext">News Page</p></div>
 <table align="center">
 <div *ngIf="(user$ | async) as user">
 
   <div *ngIf="(news$ | async) as news">
+
+    <table align="center">
+      <td>
+        <tr>
+          <div class="selectfilter">
+            <mat-form-field appearance = "fill" class = "displaybutton">
+              <mat-label>Display options</mat-label>
+              <mat-select class="matselect" [(value)]="filterOption">
+                <mat-option value="alldatedesc">All News (Newest First)</mat-option>
+                <mat-option value="allteamfirst">All News ({{user.team}} First)</mat-option>
+                <mat-option value="teamonly">Only {{user.team}} News</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </tr>
+      </td>
+    </table>
 
     <div *ngIf="filterOption == 'allteamfirst'">
       <div *ngIf="(news | sortteamfirstpipe: user.team) as newslist">
 
         <div *ngFor="let news of newslist">
 
-          <mat-accordion multi="true">
+          <mat-accordion lcass="accordionsclass" multi="true">
             <mat-expansion-panel class="individualnews">
               <mat-expansion-panel-header>
                 <table width="100%">
-                  <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>
+                  <span class="lefttitle"><td>{{news.header}}&nbsp;&nbsp;</td></span>
                   <span class="space-panel"></span>
                   <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
                 </table>
               </mat-expansion-panel-header>
-              <span class="left"><td><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+              <span class="leftby"><td><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
               <br><br>
               <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
 
@@ -76,12 +93,12 @@
               <mat-expansion-panel class="individualnews">
                 <mat-expansion-panel-header>
                   <table width="100%">
-                    <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>
+                    <span class="lefttitle"><td>{{news.header}}&nbsp;&nbsp;</td></span>
                     <span class="space-panel"></span>
                     <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
                   </table>
                 </mat-expansion-panel-header>
-                <span class="left"><td><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
+                <span class="leftby"><td><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></td></span>
                 <br><br>
                 <span class="left"><td><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></td></span>
 
@@ -140,12 +157,12 @@
               <mat-expansion-panel class="individualnews">
                 <mat-expansion-panel-header>
                   <table width="100%">
-                    <span class="left"><td>{{news.header}}&nbsp;&nbsp;</td></span>
+                    <span class="lefttitle"><td>{{news.header}}&nbsp;&nbsp;</td></span>
                     <span class="space-panel"></span>
                     <span class="right"><td><div>&nbsp;&nbsp;{{news.newsdate | todatepipe2}}&nbsp;&nbsp;</div></td></span>
                   </table>
                 </mat-expansion-panel-header>
-                <span class="left"><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></span>
+                <span class="leftby"><div>&nbsp;&nbsp;by {{news.writtenby}}&nbsp;&nbsp;</div></span>
                 <br><br>
                 <span class="left"><div>&nbsp;&nbsp;{{news.content}}&nbsp;&nbsp;</div></span>
 
@@ -195,18 +212,6 @@
     </div>
 
   </div>
-  <table align="center">
-  <div class="selectfilter">
-    <mat-form-field appearance = "fill" class = "displaybutton">
-      <mat-label>Display options</mat-label>
-      <mat-select class="matselect" [(value)]="filterOption">
-        <mat-option value="alldatedesc">All News (Newer First)</mat-option>
-        <mat-option value="allteamfirst">All News ({{user.team}} First)</mat-option>
-        <mat-option value="teamonly">Only {{user.team}} News</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-</table>
 </div>
 </table>
 

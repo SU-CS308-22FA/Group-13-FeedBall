@@ -82,6 +82,8 @@ import { DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe } from './in-match/i
 import { DisplayPollsOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
 import { SortByDatePollPipe } from './in-match/in-match.component';
 import { DisplayPercentPipe } from './in-match/in-match.component';
+import { ImpollsUserHasAnswered } from './in-match/in-match.component';
+import { ImpollsUserHasNotAnswered } from './in-match/in-match.component';
 
 @NgModule({
   declarations: [
@@ -132,7 +134,10 @@ import { DisplayPercentPipe } from './in-match/in-match.component';
     DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe,
     DisplayPollsOnlyFromCurrentMatchPipe,
     SortByDatePollPipe,
-    DisplayPercentPipe
+    DisplayPercentPipe,
+    ImpollsUserHasAnswered,
+    ImpollsUserHasNotAnswered
+
 
 
   ],

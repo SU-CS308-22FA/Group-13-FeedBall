@@ -115,7 +115,7 @@
                           <p class="welcometext">You can answer polls here as they are opened.</p>
                         </div>
                       </div>
-                      <div *ngFor="let impoll of ((inMatchPollsList | displaypollsonlyformcurrentmatchipe : currentMatchId) | sortbydatepollpipe)">
+                      <div *ngFor="let impoll of (((inMatchPollsList | impollsuserhasanswered: user) | displaypollsonlyformcurrentmatchipe : currentMatchId) | sortbydatepollpipe)">
                         <div *ngIf="hasTheUserAnsweredThisPoll(user, impoll) && !isCheckedPoll"><!--answered polls-->
                           <div class="pollcard">
                             <mat-card class="pollinnercard">
@@ -182,11 +182,18 @@
                                       </div>
                                     </button>
                                   </tr>
+                                  <tr>
+                                    <div class="timeclass2">
+                                      <p class="welcometext">{{impoll.dateWritten | hoursminutespipe}}</p>
+                                    </div>
+                                  </tr>
                                 </td>
                               </table>
                             </mat-card>
                           </div>
                         </div>
+                      </div>
+                      <div *ngFor="let impoll of (((inMatchPollsList | impollsuserhasnotanswered: user) | displaypollsonlyformcurrentmatchipe : currentMatchId) | sortbydatepollpipe)">
                         <div *ngIf="!hasTheUserAnsweredThisPoll(user, impoll)"><!--unanswered polls-->
                           <div class="pollcard">
                             <mat-card class="pollinnercard">
@@ -206,6 +213,11 @@
                                   </tr>
                                   <tr>
                                     <button class="buttonoption" mat-stroked-button (click)="selectOption(user, 3, impoll)">{{impoll.option3}}</button>
+                                  </tr>
+                                  <tr>
+                                    <div class="timeclass2">
+                                      <p class="welcometext">{{impoll.dateWritten | hoursminutespipe}}</p>
+                                    </div>
                                   </tr>
                                 </td>
                               </table>
