@@ -698,12 +698,9 @@ transform(optionNo: number, imp:InMatchPolls) {
   else{
     numerator = imp.option3Count;
   }
-
-  console.log(imp.pollText, numerator, (imp.option1Count + imp.option2Count + imp.option3Count));
   var percent = numerator / (imp.option1Count + imp.option2Count + imp.option3Count);
 
   percent = percent * 100;
-  console.log(percent);
 
   return percent.toString() + "%";
 
