@@ -711,4 +711,95 @@ transform(optionNo: number, imp:InMatchPolls) {
 }
 
 
+@Pipe({name: 'impollsuserhasanswered'})
+export class ImpollsUserHasAnswered implements PipeTransform {
+transform(impollsList: InMatchPolls[], thisUser: User){
+
+  var answeredList: InMatchPolls[] = []
+
+  var size = Object.keys(impollsList).length;
+
+  for(let i=0; i<size; i++){
+    var found = false;
+    var impoll: InMatchPolls = impollsList[i];
+
+    for(let i=0; i<impoll.option1Count; i++){
+      if(thisUser.uid == impoll.option1UserList[i]){
+        answeredList.push(impoll);
+        var found = true;
+
+      }
+    }
+    if(!found){
+      for(let i=0; i<impoll.option2Count; i++){
+        if(thisUser.uid == impoll.option2UserList[i]){
+          answeredList.push(impoll);
+          var found = true;
+
+        }
+      }
+    }
+    if(!found){
+      for(let i=0; i<impoll.option3Count; i++){
+        if(thisUser.uid == impoll.option3UserList[i]){
+          answeredList.push(impoll);
+          var found = true;
+        }
+      }
+    }
+  }
+
+  return answeredList;
+
+
+}
+}
+
+@Pipe({name: 'impollsuserhasnotanswered'})
+export class ImpollsUserHasNotAnswered implements PipeTransform {
+transform(impollsList: InMatchPolls[], thisUser: User){
+
+  var unansweredList: InMatchPolls[] = []
+
+  var size = Object.keys(impollsList).length;
+
+  for(let i=0; i<size; i++){
+    var found = false;
+    var impoll: InMatchPolls = impollsList[i];
+
+    for(let i=0; i<impoll.option1Count; i++){
+      if(thisUser.uid == impoll.option1UserList[i]){
+        var found = true;
+
+      }
+    }
+    if(!found){
+      for(let i=0; i<impoll.option2Count; i++){
+
+        if(thisUser.uid == impoll.option2UserList[i]){
+          var found = true;
+
+        }
+      }
+    }
+    if(!found){
+      for(let i=0; i<impoll.option3Count; i++){
+        if(thisUser.uid == impoll.option3UserList[i]){
+          var found = true;
+        }
+      }
+    }
+
+    if(!found){
+      unansweredList.push(impollsList[i]);
+    }
+  }
+
+  return unansweredList;
+
+
+}
+}
+
+
 

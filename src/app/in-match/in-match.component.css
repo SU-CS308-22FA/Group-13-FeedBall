@@ -430,3 +430,12 @@
   float: right;
   width:50%;
 }
+
+
+.timeclass2{
+  margin-top: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
