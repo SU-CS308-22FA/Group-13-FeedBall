@@ -445,5 +445,10 @@ input[type="checkbox"]{
   display: none;
 }
 
+.deletebutton{
+  background-color: #861a1f;
+  color: white;
+  width: 200px;
 
+}
 

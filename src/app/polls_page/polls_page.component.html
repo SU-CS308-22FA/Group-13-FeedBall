@@ -63,9 +63,9 @@
               </cdk-virtual-scroll-viewport>
             </div>
           </td>
-          <div class="titlediv" ><p class="submainfeedtext">&nbsp; Previous Polls: &nbsp;</p></div>   <!--- Previous Polls section, Only the inactive polls are seen here.-->
-          <td>                                                                                        <!--- Not finished: Need to be sure results are dsiplayed correctly.-->
-          <div class="borderclass">                                                                   <!--- Not finished: Additionally, make output be displayed with "%" symbol.-->
+          <div class="titlediv" ><p class="submainfeedtext">&nbsp; &nbsp; Previous Polls: &nbsp;</p></div>   
+          <td>                                                                                        
+          <div class="borderclass">                                                                  
             <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
               <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">   
                 <div *ngFor="let poll of pollslist"> 
@@ -76,9 +76,9 @@
                         <label for="opt-1" class="opt-1">
                           <div class="row">
                             <div class="column">
-                              <span class="text">{{poll.option1}}</span>
+                              <span class="text">{{poll.option1}} </span>
                             </div>
-                            <span class="percent">{{pollChoicePercent(poll, 1)}}</span>           
+                            <span class="text">{{pollChoicePercent(poll, 1)}}%</span>           
                           </div>
                           <div class="progress" id="pstyle1" style='--w:55;'></div>
                         </label>
@@ -87,7 +87,7 @@
                             <div class="column">
                               <span class="text">{{poll.option2}}</span>
                             </div>
-                            <span class="percent">{{pollChoicePercent(poll, 2)}}</span>
+                            <span class="text">{{pollChoicePercent(poll, 2)}}%</span>
                           </div>
                           <div class="progress" id="pstyle2" style='--w:80;'></div>
                         </label>
@@ -96,7 +96,7 @@
                             <div class="column">
                               <span class="text">{{poll.option3}}</span>
                             </div>
-                            <span class="percent">{{pollChoicePercent(poll, 3)}}</span>
+                            <span class="text">{{pollChoicePercent(poll, 3)}}%</span>
                           </div>
                           <div class="progress" id="pstyle3" style='--w:20;'></div>
                         </label>

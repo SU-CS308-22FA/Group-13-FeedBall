@@ -139,17 +139,32 @@ export class PollsPageComponent{
 
   pollChoicePercent(poll: Polls, option: number ){
     var totalNumberOPicks = poll.countOpt1 + poll.countOpt2 + poll.countOpt3;
-    if(option == 1){
+    if((option == 1) && (poll.countOpt1 != 0)){
       var percentOpt1 = (poll.countOpt1 / totalNumberOPicks) * 100;
-      return percentOpt1;
+      if(percentOpt1 % 1 != 0){
+        return percentOpt1.toFixed(2);
+      }
+      else{
+        return percentOpt1;
+      }
     }
-    else if(option == 2){
+    else if((option == 2) && (poll.countOpt2 != 0)){
       var percentOpt2 = (poll.countOpt2 / totalNumberOPicks) * 100;
-      return percentOpt2;
+      if(percentOpt2 % 1 != 0){
+        return percentOpt2.toFixed(2);
+      }
+      else{
+        return percentOpt2;
+      }
     }
-    else if(option == 3){
+    else if((option == 3) && (poll.countOpt1 != 0)){
       var percentOpt3 = (poll.countOpt3 / totalNumberOPicks) * 100;
-      return percentOpt3;
+      if(percentOpt3 % 1 != 0){
+        return percentOpt3.toFixed(2);
+      }
+      else{
+        return percentOpt3;
+      }
     }
     else{
       return 0;
