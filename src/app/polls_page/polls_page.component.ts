@@ -137,6 +137,11 @@ export class PollsPageComponent{
     }
   }
 
+  participantTotal(poll: Polls){
+    var totalNumberOPicks = poll.countOpt1 + poll.countOpt2 + poll.countOpt3;
+    return totalNumberOPicks;
+  }
+
   pollChoicePercent(poll: Polls, option: number ){
     var totalNumberOPicks = poll.countOpt1 + poll.countOpt2 + poll.countOpt3;
     if((option == 1) && (poll.countOpt1 != 0)){
