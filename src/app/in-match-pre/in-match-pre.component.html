@@ -50,7 +50,48 @@
                 <table align="center">
                   <td align="center">
                     <tr>
-                      <p>{{currentMatches[this.currentIndex].team1}}&nbsp;-&nbsp;{{currentMatches[this.currentIndex].team2}}</p>
+                      <table align="center">
+                        <tr align="center">
+                          <td>
+                            <div class="teamcard">
+                              <table align="center">
+                                <td align="center">
+                                  <tr>
+                                    <div class="innerdiv">
+                                      <img [src]="returnPngLink(1,currentMatches[this.currentIndex])" width="100px" length="100px"><br>
+                                    </div>
+                                  </tr>
+                                  <tr>
+                                    <div class="teamname">
+                                      <p>{{currentMatches[this.currentIndex].team1}}</p>
+                                    </div>
+                                  </tr>
+                                </td>
+                              </table>
+                            </div>
+                          </td><!--team 1-->
+                          <td><p class="p3">VS</p></td><!--VS paragraph-->
+                          <td>
+                            <div class="teamcard">
+                              <table align="center">
+                                <td align="center">
+                                  <tr>
+                                    <div class="innerdiv">
+                                      <img [src]="returnPngLink(2,currentMatches[this.currentIndex])" width="100px" length="100px"><br>
+                                    </div>
+                                  </tr>
+                                  <tr>
+                                    <div class="teamname">
+                                      <p>{{currentMatches[this.currentIndex].team2}}</p>
+                                    </div>
+                                  </tr>
+                                </td>
+                              </table>
+                            </div>
+                          </td><!--team 2-->
+                        </tr>
+                      </table>
+                      <!--<p>{{currentMatches[this.currentIndex].team1}}&nbsp;-&nbsp;{{currentMatches[this.currentIndex].team2}}</p>-->
                     </tr>
                     <tr><br><br></tr>
                     <tr>

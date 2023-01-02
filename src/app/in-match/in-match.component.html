@@ -6,8 +6,41 @@
     <div *ngIf="(matches | returncurrentmatchidipe: matchId) as currentMatchId">
       <div *ngIf="currentMatchId != 'null'" class="aclass">
         <div class="titlediv">
-          <div class="matchscorediv">
-            <p align="center">{{(matches | returncurrentmatchipe: matchId)}}</p>
+          <div class="matchscorediv" *ngIf="(matches | returncurrentmatchipe: matchId) as resultList">
+            <table align="center">
+              <tr align="center">
+                <td>
+                  <img [src]="returnPngLink(1,resultList[0])" width="45px" length="45px"><br>
+                </td>
+                <td>
+                  <table align="right">
+                    <td align="right">
+                      <tr>{{resultList[0]}}</tr>
+                      <tr>{{resultList[2]}}</tr>
+                    </td>
+                  </table>
+                </td>
+                <td>
+                  <table align="center">
+                    <td align="center">
+                      <tr>-</tr>
+                      <tr>-</tr>
+                    </td>
+                  </table>
+                </td>
+                <td>
+                  <table align="left">
+                    <td align="left">
+                      <tr>{{resultList[1]}}</tr>
+                      <tr>{{resultList[3]}}</tr>
+                    </td>
+                  </table>
+                </td>
+                <td>
+                  <img [src]="returnPngLink(2,resultList[1])" width="45px" length="45px"><br>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
         <div class="titlediv">
@@ -131,8 +164,8 @@
                                     <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='1'">
                                       <div class="spacebetweendiv">
 
-                                        <span><div><p>{{impoll.option1}}</p></div></span>
-                                        <span><div><p>{{1|displaypercentpipe: impoll}}</p></div></span>
+                                        <span><p class="margin2">{{impoll.option1}}</p></span>
+                                        <span><p class="margin2">{{1|displaypercentpipe: impoll}}</p></span>
 
 
                                       </div>
@@ -140,8 +173,8 @@
                                     <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='1'">
                                       <div class="spacebetweendiv">
 
-                                        <span><p>{{impoll.option1}}</p></span>
-                                        <span><p>{{1|displaypercentpipe: impoll}}</p></span>
+                                        <span><p class="margin2">{{impoll.option1}}</p></span>
+                                        <span><p class="margin2">{{1|displaypercentpipe: impoll}}</p></span>
 
                                       </div>
                                     </button>
@@ -150,16 +183,16 @@
                                     <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='2'">
                                       <div class="spacebetweendiv">
 
-                                        <span><p>{{impoll.option2}}</p></span>
-                                        <span><p>{{2|displaypercentpipe: impoll}}</p></span>
+                                        <span><p class="margin2">{{impoll.option2}}</p></span>
+                                        <span><p class="margin2">{{2|displaypercentpipe: impoll}}</p></span>
 
                                       </div>
                                     </button>
                                     <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='2'">
                                       <div class="spacebetweendiv">
 
-                                        <span><p>{{impoll.option2}}</p></span>
-                                        <span><p>{{2|displaypercentpipe: impoll}}</p></span>
+                                        <span><p class="margin2">{{impoll.option2}}</p></span>
+                                        <span><p class="margin2">{{2|displaypercentpipe: impoll}}</p></span>
 
                                       </div>
                                     </button>
@@ -168,16 +201,16 @@
                                     <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='3'">
                                       <div class="spacebetweendiv">
 
-                                        <span><p>{{impoll.option3}}</p></span>
-                                        <span><p>{{3|displaypercentpipe: impoll}}</p></span>
+                                        <span><p class="margin2">{{impoll.option3}}</p></span>
+                                        <span><p class="margin2">{{3|displaypercentpipe: impoll}}</p></span>
 
                                       </div>
                                     </button>
                                     <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='3'">
                                       <div class="spacebetweendiv">
 
-                                        <span><p>{{impoll.option3}}</p></span>
-                                        <span><p>{{3|displaypercentpipe: impoll}}</p></span>
+                                        <span><p class="margin2">{{impoll.option3}}</p></span>
+                                        <span><p class="margin2">{{3|displaypercentpipe: impoll}}</p></span>
 
                                       </div>
                                     </button>

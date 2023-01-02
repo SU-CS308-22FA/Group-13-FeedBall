@@ -85,6 +85,7 @@ import { DisplayPercentPipe } from './in-match/in-match.component';
 import { ImpollsUserHasAnswered } from './in-match/in-match.component';
 import { ImpollsUserHasNotAnswered } from './in-match/in-match.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -136,9 +137,7 @@ import { ImpollsUserHasNotAnswered } from './in-match/in-match.component';
     SortByDatePollPipe,
     DisplayPercentPipe,
     ImpollsUserHasAnswered,
-    ImpollsUserHasNotAnswered
-
-
+    ImpollsUserHasNotAnswered,
 
   ],
   imports: [

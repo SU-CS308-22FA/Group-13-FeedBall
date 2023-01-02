@@ -95,6 +95,17 @@ export class InMatchComponent implements OnInit, OnDestroy{
 
   }
 
+  teamLogoSrcList: string[] = ["assets/Adanademirspor.png", "assets/Alanyaspor_logo.png", "assets/Antalyaspor_logo.png", "assets/367px-BesiktasJK-Logo.svg.png",
+                              "assets/Fatihkaragumruk.png", "assets/Fenerbahçe_SK.png", "assets/Galatasaray_Star_Logo.png",
+                              "assets/Gaziantep_FK.png", "assets/Hatayspor.png", "assets/İstanbul_Başakşehir_FK.png", "assets/IstanbulsporAS.png",
+                              "assets/Kasimpasa_2012.png", "assets/Kayserispor_logosu.png", "assets/Konyaspor_1922.png",
+                              "assets/MKE_Ankaragücü_logo.png","assets/Sivasspor.png", "assets/TrabzonsporAmblemi.png", "assets/Ümraniyespor_Logosu.png"];
+
+  public teamsList: Array<string> = ["Adana Demirspor", "Alanyaspor" , "Antalyaspor", "Beşiktaş", "Fatih Karagümrük", "Fenerbahçe", "Galatasaray",
+                                      "Gaziantep", "Giresunspor", "Hatayspor", "İstanbul Başakşehir", "İstanbulspor", "Kasımpaşa", "Kayserispor",
+                                      "Konyaspor", "MKE Ankaragücü", "Sivasspor", "Trabzonspor", "Ümraniyespor"];
+
+
 
   user$ = this.authService.user$;
 
@@ -124,6 +135,28 @@ export class InMatchComponent implements OnInit, OnDestroy{
     }
     else{
       return false;
+    }
+  }
+
+  returnPngLink(team1or2: number, teamName: string){
+
+
+    var size = Object.keys(this.teamsList).length;
+    if(team1or2 == 1){
+      for(let i=0; i<size; i++){
+        if(teamName == this.teamsList[i]){
+          return this.teamLogoSrcList[i];
+        }
+      }
+      return "";
+    }
+    else{
+      for(let i=0; i<size; i++){
+        if(teamName == this.teamsList[i]){
+          return this.teamLogoSrcList[i];
+        }
+      }
+      return "";
     }
   }
 
@@ -605,7 +638,7 @@ transform(mesgList: messages[], currentMatchString: string, entered: Date) {
 export class ReturnCurrentMatchPipe implements PipeTransform {
 transform(matchesList: matches[], passedId: string) {
 
-  var retStr: string = "";
+  var retStr: string[] = [];
 
   var size = Object.keys(matchesList).length;
 
@@ -633,8 +666,10 @@ transform(matchesList: matches[], passedId: string) {
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
       if (anlik >= dateOf3 && anlik <= ends_at && passedId == matchesList[i].matchID){
-        retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() + "\r\n" +
-        matchesList[i].score_team1.toString() + " - " + matchesList[i].score_team2.toString();
+        retStr.push(matchesList[i].team1.toString());
+        retStr.push(matchesList[i].team2.toString());
+        retStr.push(matchesList[i].score_team1.toString());
+        retStr.push(matchesList[i].score_team2.toString());
 
         return retStr;
       }
@@ -646,6 +681,7 @@ transform(matchesList: matches[], passedId: string) {
 
 
 }
+
 
 @Pipe({ name: 'returncurrentmatchidipe' })
 export class ReturnCurrentMatchIdPipe implements PipeTransform {

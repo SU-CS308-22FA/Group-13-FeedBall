@@ -262,6 +262,11 @@
   position: relative;
 }
 
+.margin2{
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
 
 .textalign1{
   text-align: right;
