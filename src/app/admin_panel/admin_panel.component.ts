@@ -17,6 +17,7 @@ import { Polls } from '../models/polls.model';
 import { matches } from '../models/matches.model';
 import { InMatchPolls } from '../models/inmatchpolls.model';
 import {FormControl} from '@angular/forms';
+import { commentary } from '../models/commentary.model';
 
 
 
@@ -42,12 +43,27 @@ export class AdminPanelComponent{
     ){
       this.matchesRef = this.afs.collection('matches');
       this.matches$ = this.matchesRef.valueChanges();
+      this.matches$.forEach(data =>{
+        data.forEach(nX =>{
+          if(this.currMatch(nX.starts_at)){
+            var mtc = "";
+            mtc += nX.team1;
+            mtc += " - "
+            mtc += nX.team2;
+            this.myMatch.push(mtc);
+            this.myMatchID.push(nX.matchID);
+          }
+        })
+
+      })
+
 
     }
 
     public showMyMessage = false
     user$ = this.authService.user$;
 
+    public types: Array<String> = ["yellow","red","change","comment","whistle"];
     public teamsList: Array<string> = [
     "Adana Demirspor",
     "Alanyaspor" ,
@@ -70,6 +86,9 @@ export class AdminPanelComponent{
     "Ümraniyespor"
     ];
 
+    public myMatch: Array<String> = [];
+    public myMatchID: Array<String> = []
+
     /**
     * This function resets the password
     */
@@ -89,6 +108,16 @@ export class AdminPanelComponent{
 
   UserInfo(){
     this.router.navigate(["user-detail"]);
+  }
+
+  deneme(mama: String){
+    for(let i = 0; i < this.myMatch.length; i++){
+      if(this.myMatch[i] == mama){
+        return this.myMatchID[i];
+      }
+    }
+    return "errorID";
+
   }
 
   MatchesInfo(){
@@ -160,6 +189,31 @@ export class AdminPanelComponent{
     form.resetForm();
   }
 
+  currMatch(matchStart: Date){
+    function addMinutes(date:Date, minutes:number) {
+      date.setMinutes(date.getMinutes() + minutes);
+      return date;
+    }
+    var star: any = matchStart;
+    var numtimestamp = Number(star.seconds);
+
+    numtimestamp = numtimestamp * 1000;
+
+    const dateOf = new Date(numtimestamp);
+    const dateOf2 = dateOf;
+
+    var ends_at = addMinutes(dateOf2, 90);
+
+    const forNow = new Date();
+    const dateOf3 = new Date(numtimestamp);
+
+    if (forNow >= dateOf3 && forNow <= ends_at){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
   submitPForm(form: NgForm, name: any){
     var id = ""
@@ -352,6 +406,27 @@ export class AdminPanelComponent{
     form.resetForm();
   }
 
+  submitComment(form: NgForm){
+
+    if(form.value.minuteInput <= 90 && form.value.minuteInput >= 0){
+      const sendComment: commentary = {
+        matchID: form.value.matchInput,
+        commentType: form.value.typeInput,
+        comment: form.value.comT,
+        minute: form.value.minuteInput,
+      };
+      this.afs.collection("commentary").add(sendComment).then((result) => {
+        console.log("result id: ");
+        alert("You have succesfully log the comment!");
+      });
+      form.reset();
+    }
+    else{
+      alert("Please enter the minute between 0 and 90!");
+    }
+
+  }
+
 
   DoSmth(){
     //bir sey yapcaz
@@ -374,6 +449,16 @@ export class AdminPanelComponent{
     24, 25, 26, 27,28,29,30,31,32,33,34,35,36,37,38,39,
     40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,
     57,58,59]
+
+  fullMinutes: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+    20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+    30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+    40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+    50, 51, 52, 53, 54, 55, 56, 57, 58, 59,
+    60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
+    70, 71, 72, 73, 74, 75, 76, 77, 78, 79,
+    80, 81, 82, 83, 84, 85, 86, 87, 88, 89,
+    90]
 
   teams: string[] = ["Adana Demirspor",
   "Alanyaspor" ,

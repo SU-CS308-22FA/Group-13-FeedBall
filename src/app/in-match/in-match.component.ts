@@ -19,6 +19,7 @@ import { UserDetailComponent } from '../admin_panel/user_detail.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { matches } from '../models/matches.model';
 import { InMatchPolls } from '../models/inmatchpolls.model';
+import { commentary } from '../models/commentary.model';
 
 @Component({
   selector: 'app-in-match',
@@ -27,6 +28,8 @@ import { InMatchPolls } from '../models/inmatchpolls.model';
 })
 export class InMatchComponent implements OnInit, OnDestroy{
 
+  commentaryRef: AngularFirestoreCollection<commentary>;
+  commentary$: Observable<commentary[]>;
 
   messagesRef: AngularFirestoreCollection<messages>;
   messages$: Observable<messages[]>;
@@ -67,6 +70,9 @@ export class InMatchComponent implements OnInit, OnDestroy{
 
     this.matchesRef = this.afs.collection('matches');
     this.matches$ = this.matchesRef.valueChanges();
+
+    this.commentaryRef = this.afs.collection('commentary');
+    this.commentary$ = this.commentaryRef.valueChanges();
 
     //this.ngOnInit();
   }

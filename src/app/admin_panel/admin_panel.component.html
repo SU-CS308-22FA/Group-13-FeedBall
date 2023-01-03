@@ -243,6 +243,60 @@
           </mat-card>
         </div>
       </td>
+      <td align="center">
+        <mat-card class="matcardclass2">
+          <div class="divform" width="50%">
+            <mat-card>
+              <mat-card-title class="p2">Please enter the details of the comments here.</mat-card-title>
+              <form (submit)="submitComment(commentsForm)" #commentsForm="ngForm">
+                <table align="center">
+                  <td align="center">
+                    <tr>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Match</mat-label>
+                        <mat-select matInput name= "matchInput" ngModel required>
+                          <mat-option *ngFor="let matchX of myMatch" [value]="deneme(matchX)">
+                            {{matchX}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </tr>
+                    <table>
+                      <tr>
+                      <td>
+                        <mat-form-field>
+                          <input type="number" matInput name="minuteInput" number ngModel placeholder="Minute" required #localminuteInput="ngModel">
+                        </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Comment Type</mat-label>
+                      <mat-select matInput name= "typeInput" ngModel required>
+                        <mat-option *ngFor="let type of types" [value]="type">
+                          {{type}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <mat-form-field>
+                    <textarea matInput name="comT" ngModel placeholder="Comment" required  #localcomTInput="ngModel"></textarea>
+                  </mat-form-field>
+                </tr>
+                </table>
+                    <br>
+                    <tr><button mat-raised-button class="loginbutton" >Log the Comment</button></tr>
+                  </td>
+                </table>
+              </form>
+            </mat-card>
+          </div>
+        </mat-card>
+      </td>
+
     </tr>
   </table>
   </div>
