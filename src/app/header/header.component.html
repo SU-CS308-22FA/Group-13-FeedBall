@@ -3,8 +3,13 @@
   <span>
     <div *ngIf="(user$ | async) as user"  class="maindiv">
       <div *ngIf="(matches$ | async) as matchesList">
-        <button mat-icon-button matTooltip="InMatch Page" (click)="navigateInMatch()" *ngIf = "user.isBanned != true"  [disabled]="matchesList | disableinmatchbuttonpipe">
-          <mat-icon>play_circle_outline</mat-icon>
+        <button mat-icon-button matTooltip="InMatch Page" (click)="navigateInMatch()" *ngIf = "(user.isBanned != true) && !(matchesList | disableinmatchbuttonpipe)"  [disabled]="matchesList | disableinmatchbuttonpipe" class="in-match-button">
+          <!--<mat-icon>play_circle_outline</mat-icon>-->
+          <img src="assets\transparent-backgorund-gif.gif"  width="28px" height="28px">
+        </button>
+        <button mat-icon-button matTooltip="InMatch Page" (click)="navigateInMatch()" *ngIf = "(user.isBanned != true) && (matchesList | disableinmatchbuttonpipe)"  [disabled]="matchesList | disableinmatchbuttonpipe" class="in-match-button">
+          <!--<mat-icon>play_circle_outline</mat-icon>-->
+          <img src="assets\icons8-soccer-ball-disabled.png"  width="28px" height="28px">
         </button>
       </div>
     </div>

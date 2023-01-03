@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnDestroy, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AuthService } from "../shared/services/auth.service";
@@ -13,22 +13,26 @@ import {
 import { animationFrameScheduler, Observable, of, switchMap } from 'rxjs';
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 import * as firebase from 'firebase/compat';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { messages } from '../models/messages.model';
 import { UserDetailComponent } from '../admin_panel/user_detail.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { matches } from '../models/matches.model';
+import { InMatchPolls } from '../models/inmatchpolls.model';
 
 @Component({
   selector: 'app-in-match',
   templateUrl: './in-match.component.html',
   styleUrls: ['./in-match.component.css']
 })
-export class InMatchComponent{
+export class InMatchComponent implements OnInit, OnDestroy{
 
 
   messagesRef: AngularFirestoreCollection<messages>;
   messages$: Observable<messages[]>;
+
+  inMatchPollsRef: AngularFirestoreCollection<InMatchPolls>;
+  inMatchPolls$: Observable<InMatchPolls[]>;
 
   usersRef: AngularFirestoreCollection<User>;
   users$: Observable<User[]>;
@@ -36,15 +40,25 @@ export class InMatchComponent{
   matchesRef: AngularFirestoreCollection<matches>;
   matches$: Observable<matches[]>;
 
+  public matchId: any;
+  public isChecked: boolean = false;
+  public isCheckedPoll: boolean = false;
+  public enteredTime: Date;
+
   constructor(
     public authService: AuthService,
     public afs: AngularFirestore,
     public auth: AngularFireAuth,
-    public router: Router
+    public router: Router,
+    public route: ActivatedRoute
   ){
+    this.enteredTime = new Date();
+
     this.messagesRef = this.afs.collection('messages');
     this.messages$ = this.messagesRef.valueChanges();
 
+    this.inMatchPollsRef = this.afs.collection('InMatchPolls');
+    this.inMatchPolls$ = this.inMatchPollsRef.valueChanges();
 
     //get matches list, apply async on frontend, then a pipeline to match a match time to current time, when found, dummyMathch will be assigned accordingly maybe with a function.
 
@@ -53,15 +67,47 @@ export class InMatchComponent{
 
     this.matchesRef = this.afs.collection('matches');
     this.matches$ = this.matchesRef.valueChanges();
+
+    //this.ngOnInit();
   }
+
+  ngOnInit(){
+
+
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {  //paramMap: observable that can subscribe
+      if(paramMap.has('matchId')){
+
+        this.matchId = paramMap.get('matchId');
+        console.log("passed match id:", this.matchId);
+
+      }
+      else{
+        //what should happen here?
+        //show error and have a button to renaviagte to main
+      }
+    });
+
+
+
+  }
+
+  ngOnDestroy(){
+
+  }
+
+  teamLogoSrcList: string[] = ["assets/Adanademirspor.png", "assets/Alanyaspor_logo.png", "assets/Antalyaspor_logo.png", "assets/367px-BesiktasJK-Logo.svg.png",
+                              "assets/Fatihkaragumruk.png", "assets/Fenerbahçe_SK.png", "assets/Galatasaray_Star_Logo.png",
+                              "assets/Gaziantep_FK.png", "assets/Hatayspor.png", "assets/İstanbul_Başakşehir_FK.png", "assets/IstanbulsporAS.png",
+                              "assets/Kasimpasa_2012.png", "assets/Kayserispor_logosu.png", "assets/Konyaspor_1922.png",
+                              "assets/MKE_Ankaragücü_logo.png","assets/Sivasspor.png", "assets/TrabzonsporAmblemi.png", "assets/Ümraniyespor_Logosu.png"];
+
+  public teamsList: Array<string> = ["Adana Demirspor", "Alanyaspor" , "Antalyaspor", "Beşiktaş", "Fatih Karagümrük", "Fenerbahçe", "Galatasaray",
+                                      "Gaziantep", "Giresunspor", "Hatayspor", "İstanbul Başakşehir", "İstanbulspor", "Kasımpaşa", "Kayserispor",
+                                      "Konyaspor", "MKE Ankaragücü", "Sivasspor", "Trabzonspor", "Ümraniyespor"];
+
 
 
   user$ = this.authService.user$;
-
-  //currentMatch = "GS:FB/07.12.22/21.30:23.00";
-  className = "rightdiv";
-
-  dummyelems: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
   onSubmitForm(form: NgForm, user: User, currentMatchString: string){
 
@@ -91,6 +137,53 @@ export class InMatchComponent{
       return false;
     }
   }
+
+  returnPngLink(team1or2: number, teamName: string){
+
+
+    var size = Object.keys(this.teamsList).length;
+    if(team1or2 == 1){
+      for(let i=0; i<size; i++){
+        if(teamName == this.teamsList[i]){
+          return this.teamLogoSrcList[i];
+        }
+      }
+      return "";
+    }
+    else{
+      for(let i=0; i<size; i++){
+        if(teamName == this.teamsList[i]){
+          return this.teamLogoSrcList[i];
+        }
+      }
+      return "";
+    }
+  }
+
+  isListEmpty(mesglist: messages[]){
+    var size = Object.keys(mesglist).length;
+
+    return size == 0;
+
+  }
+
+  isListEmptyPoll(implist: InMatchPolls[], user: User){ //empty means being empty for polls that are not answered
+    var size = Object.keys(implist).length;
+
+    if(size == 0){
+      return true;
+    }
+    else{
+      for(let i=0; i<size; i++){
+        if(!this.hasTheUserAnsweredThisPoll(user, implist[i])){
+          return false;
+        }
+      }
+      return true;
+    }
+
+  }
+
 
   ReturnUser(uidUser: string, userList: Array<User>){
 
@@ -188,6 +281,102 @@ export class InMatchComponent{
     //decrement liking user's point
     //decrement message owner's point
 
+  }
+
+  selectOption(userNow: User, selection: number, imp: InMatchPolls){
+
+    this.authService.incrementPoints(userNow, 5);
+
+    var opt1Count:number = imp.option1Count;
+    var opt2Count:number = imp.option2Count;
+    var opt3Count:number = imp.option3Count;
+    var opt1List:Array<String> = imp.option1UserList;
+    var opt2List:Array<String> = imp.option2UserList;
+    var opt3List:Array<String> = imp.option3UserList;
+
+
+    if(selection == 1){
+      opt1Count = opt1Count + 1;
+      opt1List.push(userNow.uid);
+    }
+    else if(selection == 2){
+      opt2Count = opt2Count + 1;
+      opt2List.push(userNow.uid);
+    }
+    else{//selection == 3
+      opt3Count = opt3Count + 1;
+      opt3List.push(userNow.uid);
+    }
+    console.log("checkbox clicked");
+
+
+
+    var impidGiven: string = imp.impid;
+    const newRef: AngularFirestoreDocument<any> = this.afs.doc(`InMatchPolls/${impidGiven}`);
+
+
+    const theNewImp: InMatchPolls = {
+      impid: imp.impid,
+      writtenBy: imp.writtenBy,
+      dateWritten: imp.dateWritten,
+      matchId: imp.matchId,
+      pollText: imp.pollText,
+      option1: imp.option1,
+      option2: imp.option2,
+      option3:imp.option3,
+      option1Count: opt1Count,
+      option2Count: opt2Count,
+      option3Count: opt3Count,
+      option1UserList: opt1List,
+      option2UserList: opt2List,
+      option3UserList: opt3List
+    }
+
+
+    return newRef.set(theNewImp, { merge: true });
+
+  }
+
+  hasTheUserAnsweredThisPoll(thisUser: User, impoll: InMatchPolls){
+
+    for(let i=0; i<impoll.option1Count; i++){
+      if(thisUser.uid == impoll.option1UserList[i]){
+        return true;
+      }
+    }
+    for(let i=0; i<impoll.option2Count; i++){
+      if(thisUser.uid == impoll.option2UserList[i]){
+        return true;
+      }
+    }
+    for(let i=0; i<impoll.option3Count; i++){
+      if(thisUser.uid == impoll.option3UserList[i]){
+        return true;
+      }
+    }
+    return false;
+
+  }
+
+  whichOptionSelected(user: User, impoll: InMatchPolls){
+    for(let i=0; i<impoll.option1Count; i++){
+      if(user.uid == impoll.option1UserList[i]){
+        return "1";
+      }
+    }
+    for(let i=0; i<impoll.option2Count; i++){
+      if(user.uid == impoll.option2UserList[i]){
+        return "2";
+      }
+    }
+    for(let i=0; i<impoll.option3Count; i++){
+      if(user.uid == impoll.option3UserList[i]){
+        return "3";
+      }
+    }
+
+    console.log("something went wrong");
+    return "";
   }
 
   /**
@@ -320,6 +509,21 @@ export class SortByDatePipe implements PipeTransform {
   }
 }
 
+@Pipe({ name: 'sortbydatepollpipe'})
+export class SortByDatePollPipe implements PipeTransform {
+  transform(listNotSorted: InMatchPolls[]) {
+
+    var sortedList: InMatchPolls[] = [];
+
+    if(listNotSorted != null){
+      sortedList = listNotSorted.sort((a, b) => (a.dateWritten < b.dateWritten ? -1 : 1));
+    }
+
+    return sortedList;
+
+  }
+}
+
 @Pipe({ name: 'pluralpipe'})
 export class PluralPipe implements PipeTransform {
   transform(count: number) {
@@ -389,11 +593,52 @@ transform(mesgList: messages[], currentMatchString: string) {
   }
 }
 
+@Pipe({ name: 'displaypollsonlyformcurrentmatchipe' })
+export class DisplayPollsOnlyFromCurrentMatchPipe implements PipeTransform {
+transform(pollList: InMatchPolls[], currentMatchString: string) {
+
+  var returnList: InMatchPolls[] = [];
+  var size = Object.keys(pollList).length;
+
+  for(let i=0; i<size; i++){
+    if(pollList[i].matchId == currentMatchString){
+      returnList.push(pollList[i]);
+    }
+  }
+
+  return returnList;
+  }
+}
+
+@Pipe({ name: 'displaymessagesonlyformcurrentmatchnonpreviouspipe' })
+export class DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe implements PipeTransform {
+transform(mesgList: messages[], currentMatchString: string, entered: Date) {
+
+  var returnList: messages[] = [];
+  var size = Object.keys(mesgList).length;
+
+  for(let i=0; i<size; i++){
+
+
+    var star:any = mesgList[i].sentWhen;
+    var numtimestamp = Number(star.seconds);
+    numtimestamp = numtimestamp * 1000;
+    const dateOf = new Date(numtimestamp);
+
+    if(mesgList[i].matchCode == currentMatchString && dateOf >= entered){
+      returnList.push(mesgList[i]);
+    }
+  }
+
+  return returnList;
+  }
+}
+
 @Pipe({ name: 'returncurrentmatchipe' })
 export class ReturnCurrentMatchPipe implements PipeTransform {
-transform(matchesList: matches[]) {
+transform(matchesList: matches[], passedId: string) {
 
-  var retStr: string = "";
+  var retStr: string[] = [];
 
   var size = Object.keys(matchesList).length;
 
@@ -420,9 +665,11 @@ transform(matchesList: matches[]) {
       console.log(ends_at);
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
-      if (anlik >= dateOf3 && anlik <= ends_at){
-        retStr = matchesList[i].team1.toString() + "-" + matchesList[i].team2.toString() + "\r\n" +
-        matchesList[i].score_team1.toString() + " - " + matchesList[i].score_team2.toString();
+      if (anlik >= dateOf3 && anlik <= ends_at && passedId == matchesList[i].matchID){
+        retStr.push(matchesList[i].team1.toString());
+        retStr.push(matchesList[i].team2.toString());
+        retStr.push(matchesList[i].score_team1.toString());
+        retStr.push(matchesList[i].score_team2.toString());
 
         return retStr;
       }
@@ -435,9 +682,10 @@ transform(matchesList: matches[]) {
 
 }
 
+
 @Pipe({ name: 'returncurrentmatchidipe' })
 export class ReturnCurrentMatchIdPipe implements PipeTransform {
-transform(matchesList: matches[]) {
+transform(matchesList: matches[], passedId: string) {
 
   var retStr: string = "null";
 
@@ -460,7 +708,7 @@ transform(matchesList: matches[]) {
       const anlik = new Date();
       const dateOf3 = new Date(numtimestamp);
 
-      if (anlik >= dateOf3 && anlik <= ends_at){
+      if (anlik >= dateOf3 && anlik <= ends_at && passedId == matchesList[i].matchID){
         retStr = matchesList[i].matchID;
         console.log("cureent match id: ", retStr);
         return retStr;
@@ -468,10 +716,123 @@ transform(matchesList: matches[]) {
     }
     return retStr;
     //search by date among matches list, return the match code
+  }
+}
+
+
+@Pipe({ name: 'displaypercentpipe' })
+export class DisplayPercentPipe implements PipeTransform {
+transform(optionNo: number, imp:InMatchPolls) {
+
+  var numerator: number;
+  if(optionNo == 1){
+    numerator = imp.option1Count;
+  }
+  else if(optionNo == 2){
+    numerator = imp.option2Count;
+  }
+  else{
+    numerator = imp.option3Count;
+  }
+  var percent = numerator / (imp.option1Count + imp.option2Count + imp.option3Count);
+
+  percent = percent * 100;
+
+  return percent.toString() + "%";
 
   }
+}
+
+
+@Pipe({name: 'impollsuserhasanswered'})
+export class ImpollsUserHasAnswered implements PipeTransform {
+transform(impollsList: InMatchPolls[], thisUser: User){
+
+  var answeredList: InMatchPolls[] = []
+
+  var size = Object.keys(impollsList).length;
+
+  for(let i=0; i<size; i++){
+    var found = false;
+    var impoll: InMatchPolls = impollsList[i];
+
+    for(let i=0; i<impoll.option1Count; i++){
+      if(thisUser.uid == impoll.option1UserList[i]){
+        answeredList.push(impoll);
+        var found = true;
+
+      }
+    }
+    if(!found){
+      for(let i=0; i<impoll.option2Count; i++){
+        if(thisUser.uid == impoll.option2UserList[i]){
+          answeredList.push(impoll);
+          var found = true;
+
+        }
+      }
+    }
+    if(!found){
+      for(let i=0; i<impoll.option3Count; i++){
+        if(thisUser.uid == impoll.option3UserList[i]){
+          answeredList.push(impoll);
+          var found = true;
+        }
+      }
+    }
+  }
+
+  return answeredList;
 
 
 }
+}
+
+@Pipe({name: 'impollsuserhasnotanswered'})
+export class ImpollsUserHasNotAnswered implements PipeTransform {
+transform(impollsList: InMatchPolls[], thisUser: User){
+
+  var unansweredList: InMatchPolls[] = []
+
+  var size = Object.keys(impollsList).length;
+
+  for(let i=0; i<size; i++){
+    var found = false;
+    var impoll: InMatchPolls = impollsList[i];
+
+    for(let i=0; i<impoll.option1Count; i++){
+      if(thisUser.uid == impoll.option1UserList[i]){
+        var found = true;
+
+      }
+    }
+    if(!found){
+      for(let i=0; i<impoll.option2Count; i++){
+
+        if(thisUser.uid == impoll.option2UserList[i]){
+          var found = true;
+
+        }
+      }
+    }
+    if(!found){
+      for(let i=0; i<impoll.option3Count; i++){
+        if(thisUser.uid == impoll.option3UserList[i]){
+          var found = true;
+        }
+      }
+    }
+
+    if(!found){
+      unansweredList.push(impollsList[i]);
+    }
+  }
+
+  return unansweredList;
+
+
+}
+}
+
 
 

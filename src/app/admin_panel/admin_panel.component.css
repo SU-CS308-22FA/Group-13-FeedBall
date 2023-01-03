@@ -13,6 +13,17 @@
   justify-content: center;
 }
 
+
+.inmatchpollmatcard{
+  width: 300px;
+
+
+}
+
+.spacediv{
+  height: 20px;
+}
+
 .p1{
   font-size: 25px;
   font-family: 'Bangers';
@@ -44,6 +55,13 @@
   justify-content: right;
 }
 
+
+.errordiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 
 .rightalign{
   display: flex;
@@ -107,6 +125,13 @@
   height: 520px;
   background-color:rgb(209, 148, 83);
 }
+
+.matcardclass4{
+  min-width: 500px;
+  height: 520px;
+  background-color:rgb(209, 148, 83);
+}
+
 
 
 .material-symbols-outlined {

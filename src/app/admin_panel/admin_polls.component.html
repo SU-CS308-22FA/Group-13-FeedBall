@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="admin_polls.component.css">
+
+<div *ngIf="(user$ | async) as user">
+  <div *ngIf="(polls$ | async) as polls">
+
+    <br>
+    <div class="titlediv" ><p class="mainfeedtext"> Admin Polls Page </p></div>
+    <br>
+    <div class="titlediv">
+      <table align="center">
+        <tr align="center">
+          <div class="titlediv" ><p class="submainfeedtext">Active Polls: &nbsp; &nbsp;</p></div>
+          <td>
+            <div class="borderclass">
+              <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
+                <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">    
+                  <div *ngFor="let poll of pollslist">  
+                    <div *ngIf=" pollIsActiveCheck(poll) == true">                              
+                      <div class="wrapper">                                
+                        <header> {{poll.question}}<br></header>          
+                        <div class="poll-area">                                
+                          <input type="checkbox" name="poll" id="opt-1">      
+                          <input type="checkbox" name="poll" id="opt-2">    
+                          <input type="checkbox" name="poll" id="opt-3">
+                          <label for="opt-1" class="opt-1">
+                            <div class="row">
+                              <div class="column">                   
+                                <span class="text">{{poll.option1}}</span>
+                              </div>
+                            </div>
+                            <div class="progress" id="pstyle1" style='--w:55;'></div>
+                          </label>
+                          <label for="opt-2" class="opt-2">
+                            <div class="row">
+                              <div class="column">
+                                <span class="text">{{poll.option2}}</span>
+                              </div>
+                            </div>
+                            <div class="progress" id="pstyle2" style='--w:80;'></div>
+                          </label>
+                          <label for="opt-3" class="opt-3">
+                            <div class="row">
+                              <div class="column">
+                                <span class="text">{{poll.option3}}</span>
+                              </div>
+                            </div>
+                            <div class="progress" id="pstyle3" style='--w:20;'></div>
+                          </label> 
+                          <td align= "center"><button (click)="DeactivateOnClick(poll)" mat-raised-button class="deletebutton">Deactivate this poll</button></td>
+                        </div>
+                      </div> 
+                    </div>                         
+                    </div>
+                  </div>
+              </cdk-virtual-scroll-viewport>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+    
+
+
+

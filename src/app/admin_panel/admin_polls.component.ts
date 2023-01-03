@@ -19,13 +19,13 @@ import { listChanges } from '@angular/fire/compat/database';
 
 
 @Component({
-  selector: 'app-polls',
-  templateUrl: './polls_page.component.html',
-  styleUrls: ['./polls_page.component.css']
+  selector: 'admin-polls',                       /* previous 'app-polls', */  /* Should I rename it? */
+  templateUrl: './admin_polls.component.html',   
+  styleUrls: ['./admin_polls.component.css']     
 
 
-})
-export class PollsPageComponent{
+}) 
+export class AdminPollsComponent{                  
   pollsRef: AngularFirestoreCollection<Polls>;
   polls$: Observable<Polls[]>;
 
@@ -59,9 +59,7 @@ export class PollsPageComponent{
     return copyList;
   }
 
-  checkclick(poll: Polls, option: number, user: User){
-
-    this.authService.incrementPoints(user, 5);
+  DeactivateOnClick(poll: Polls){
     const newRef: AngularFirestoreDocument<any> = this.afs.doc(`Polls/${poll.pid}`);
     console.log(newRef);
 
@@ -82,26 +80,11 @@ export class PollsPageComponent{
       UsersPickOpt3: poll.UsersPickOpt3
     };
 
-    if (option == 1 && !(this.isUserInList(poll.UsersPickOpt1, user))){
-      theNewPoll.countOpt1 += 1;
-      poll.UsersPickOpt1.push(user.uid);
-      let message: string = 'You have picked the first option for this poll.';
-      alert(message);
-    }
-    if (option == 2 && (!this.isUserInList(poll.UsersPickOpt2, user))){
-      theNewPoll.countOpt2 += 1;
-      poll.UsersPickOpt2.push(user.uid);
-      let message: string = 'You have picked the second option for this poll.';
-      alert(message);
-    }
-    if (option == 3 && !(this.isUserInList(poll.UsersPickOpt3, user))){
-      theNewPoll.countOpt3 += 1;
-      poll.UsersPickOpt3.push(user.uid);
-      let message: string = 'You have picked the third option for this poll.';
-      alert(message);
-    }
-    return newRef.set(theNewPoll, { merge: true });
+    let message: string = 'You have deactivated the chosen poll.';
+    alert(message);
 
+    theNewPoll.pollIsActive = false;
+    return newRef.set(theNewPoll, { merge: true });
   }
 
   isUserInList(theList: Array<String>, user: User){
@@ -128,53 +111,9 @@ export class PollsPageComponent{
     }
   }
 
-  userAnsweredPollAlready(poll: Polls, user: User){
-    if((this.isUserInList(poll.UsersPickOpt1, user) || this.isUserInList(poll.UsersPickOpt2, user) || this.isUserInList(poll.UsersPickOpt3, user))  == true){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
+  
 
-  participantTotal(poll: Polls){
-    var totalNumberOPicks = poll.countOpt1 + poll.countOpt2 + poll.countOpt3;
-    return totalNumberOPicks;
-  }
-
-  pollChoicePercent(poll: Polls, option: number ){
-    var totalNumberOPicks = poll.countOpt1 + poll.countOpt2 + poll.countOpt3;
-    if((option == 1) && (poll.countOpt1 != 0)){
-      var percentOpt1 = (poll.countOpt1 / totalNumberOPicks) * 100;
-      if(percentOpt1 % 1 != 0){
-        return percentOpt1.toFixed(2);
-      }
-      else{
-        return percentOpt1;
-      }
-    }
-    else if((option == 2) && (poll.countOpt2 != 0)){
-      var percentOpt2 = (poll.countOpt2 / totalNumberOPicks) * 100;
-      if(percentOpt2 % 1 != 0){
-        return percentOpt2.toFixed(2);
-      }
-      else{
-        return percentOpt2;
-      }
-    }
-    else if((option == 3) && (poll.countOpt1 != 0)){
-      var percentOpt3 = (poll.countOpt3 / totalNumberOPicks) * 100;
-      if(percentOpt3 % 1 != 0){
-        return percentOpt3.toFixed(2);
-      }
-      else{
-        return percentOpt3;
-      }
-    }
-    else{
-      return 0;
-    }
-  }
+  
 
 }
 

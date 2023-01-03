@@ -1,13 +1,46 @@
 <br>
-<div class="titlediv" ><p class="mainfeedtext">InMatch Page</p></div>
-<br>
+<div class="titlediv2" ><p class="mainfeedtext">InMatch Page</p></div>
+
 <div *ngIf="(user$ | async) as user">
   <div *ngIf="(matches$ | async) as matches">
-    <div *ngIf="(matches | returncurrentmatchidipe) as currentMatchId">
-      <div *ngIf="currentMatchId != 'null'">
+    <div *ngIf="(matches | returncurrentmatchidipe: matchId) as currentMatchId">
+      <div *ngIf="currentMatchId != 'null'" class="aclass">
         <div class="titlediv">
-          <div class="matchscorediv">
-            <p align="center">{{(matches | returncurrentmatchipe)}}</p>
+          <div class="matchscorediv" *ngIf="(matches | returncurrentmatchipe: matchId) as resultList">
+            <table align="center">
+              <tr align="center">
+                <td>
+                  <img [src]="returnPngLink(1,resultList[0])" width="45px" length="45px"><br>
+                </td>
+                <td>
+                  <table align="right">
+                    <td align="right">
+                      <tr>{{resultList[0]}}</tr>
+                      <tr>{{resultList[2]}}</tr>
+                    </td>
+                  </table>
+                </td>
+                <td>
+                  <table align="center">
+                    <td align="center">
+                      <tr>-</tr>
+                      <tr>-</tr>
+                    </td>
+                  </table>
+                </td>
+                <td>
+                  <table align="left">
+                    <td align="left">
+                      <tr>{{resultList[1]}}</tr>
+                      <tr>{{resultList[3]}}</tr>
+                    </td>
+                  </table>
+                </td>
+                <td>
+                  <img [src]="returnPngLink(2,resultList[1])" width="45px" length="45px"><br>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
         <div class="titlediv">
@@ -18,37 +51,74 @@
                   <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
                     <div *ngIf="(messages$ | async) as messagesList">
                       <div *ngIf="(users$ | async) as usersList">
-                        <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe)">
-                          <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
-                            <div class="box3 sbright">
-                              <div class="rightdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
-                              <div class="rightdiv"><p class="timeclass"><br></p></div>
-                              <div class="rightdiv"><p class="textalign1">{{mesg.content}}</p></div>
-                              <div><br></div>
-                              <div class="outerdiv2">
-                                <span><div class="leftdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
-                                <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                        <div *ngIf="!this.isChecked">
+                          <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe)">
+                            <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
+                              <div class="box3 sbright">
+                                <div class="rightdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
+                                <div class="rightdiv"><p class="timeclass"><br></p></div>
+                                <div class="rightdiv"><p class="textalign1">{{mesg.content}}</p></div>
+                                <div><br></div>
+                                <div class="outerdiv2">
+                                  <span><div class="leftdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                                  <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">
-                            <div class="box3-2 sbleft">
-                              <div class="leftdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
-                              <div class="leftdiv"><p class="timeclass"><br></p></div>
-                              <div class="leftdiv"><p class="textalign2">{{mesg.content}}</p></div>
-                              <div class="rightdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="likeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass2">thumb_up</mat-icon></button></div>
-                              <div class="rightdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="unlikeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass3">thumb_up</mat-icon></button></div>
-                              <div class="outerdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)">
-                                <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
-                                <span><div class="rightdiv2"><p class="countclass2">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
-                              </div>
-                              <div class="outerdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)">
-                                <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
-                                <span><div class="rightdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                            <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">
+                              <div class="box3-2 sbleft">
+                                <div class="leftdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
+                                <div class="leftdiv"><p class="timeclass"><br></p></div>
+                                <div class="leftdiv"><p class="textalign2">{{mesg.content}}</p></div>
+                                <div class="rightdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="likeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass2">thumb_up</mat-icon></button></div>
+                                <div class="rightdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="unlikeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass3">thumb_up</mat-icon></button></div>
+                                <div class="outerdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)">
+                                  <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                                  <span><div class="rightdiv2"><p class="countclass2">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                                </div>
+                                <div class="outerdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)">
+                                  <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                                  <span><div class="rightdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                                </div>
                               </div>
                             </div>
+                            <br>
                           </div>
-                          <br>
+                        </div>
+                        <div *ngIf="this.isChecked">
+                          <div *ngIf="isListEmpty((messagesList | displaymessagesonlyformcurrentmatchnonpreviouspipe : currentMatchId : this.enteredTime))"><p class="welcometext">Welcome to live chat!</p></div>
+                          <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchnonpreviouspipe : currentMatchId : this.enteredTime) | sortbydatepipe)">
+                            <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
+                              <div class="box3 sbright">
+                                <div class="rightdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
+                                <div class="rightdiv"><p class="timeclass"><br></p></div>
+                                <div class="rightdiv"><p class="textalign1">{{mesg.content}}</p></div>
+                                <div><br></div>
+                                <div class="outerdiv2">
+                                  <span><div class="leftdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                                  <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div *ngIf="mesg.messageOwnerID != user.uid" class="leftdiv">
+                              <div class="box3-2 sbleft">
+                                <div class="leftdiv"><p class="nameclass">{{mesg.messageOwnerName}}&nbsp;{{mesg.messageOwnerSurname}}</p></div>
+                                <div class="leftdiv"><p class="timeclass"><br></p></div>
+                                <div class="leftdiv"><p class="textalign2">{{mesg.content}}</p></div>
+                                <div class="rightdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="likeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass2">thumb_up</mat-icon></button></div>
+                                <div class="rightdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)"><button mat-icon-button (click)="unlikeMessage(mesg, user, ReturnUser(mesg.messageOwnerID, usersList))"><mat-icon class="iconclass3">thumb_up</mat-icon></button></div>
+                                <div class="outerdiv" *ngIf="(mesg | isuserinlikedlistofmessagepipe: user)">
+                                  <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                                  <span><div class="rightdiv2"><p class="countclass2">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                                </div>
+                                <div class="outerdiv" *ngIf="!(mesg | isuserinlikedlistofmessagepipe: user)">
+                                  <span><div><p class="timeclass">{{mesg.sentWhen | hoursminutespipe}}</p></div></span>
+                                  <span><div class="rightdiv2"><p class="countclass">{{mesg.likeNumber}}&nbsp;like{{mesg.likeNumber | pluralpipe}}</p></div></span>
+                                </div>
+                              </div>
+                            </div>
+                            <br>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -72,12 +142,145 @@
               <td>
                 <div class="borderclass">
                   <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport-2">
-                    <div>
-                      <h3>in match poll screen</h3>
+                    <div *ngIf="(inMatchPolls$ | async) as inMatchPollsList">
+                      <div *ngIf="isCheckedPoll">
+                        <div *ngIf="isListEmptyPoll(inMatchPollsList, user)">
+                          <p class="welcometext">You can answer polls here as they are opened.</p>
+                        </div>
+                      </div>
+                      <div *ngFor="let impoll of (((inMatchPollsList | impollsuserhasanswered: user) | displaypollsonlyformcurrentmatchipe : currentMatchId) | sortbydatepollpipe)">
+                        <div *ngIf="hasTheUserAnsweredThisPoll(user, impoll) && !isCheckedPoll"><!--answered polls-->
+                          <div class="pollcard">
+                            <mat-card class="pollinnercard">
+                              <table width="100%" align="left">
+                                <td align="left">
+                                  <tr>
+                                    <p class="pollquestion">{{impoll.pollText}}</p>
+                                  </tr>
+                                  <tr>
+                                    <div class="spacerdiv"></div>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='1'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p class="margin2">{{impoll.option1}}</p></span>
+                                        <span><p class="margin2">{{1|displaypercentpipe: impoll}}</p></span>
+
+
+                                      </div>
+                                    </button>
+                                    <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='1'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p class="margin2">{{impoll.option1}}</p></span>
+                                        <span><p class="margin2">{{1|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='2'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p class="margin2">{{impoll.option2}}</p></span>
+                                        <span><p class="margin2">{{2|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                    <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='2'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p class="margin2">{{impoll.option2}}</p></span>
+                                        <span><p class="margin2">{{2|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoptionselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) =='3'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p class="margin2">{{impoll.option3}}</p></span>
+                                        <span><p class="margin2">{{3|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                    <button class="buttonoptionnonselected" mat-stroked-button [disabled]="true" *ngIf="whichOptionSelected(user, impoll) !='3'">
+                                      <div class="spacebetweendiv">
+
+                                        <span><p class="margin2">{{impoll.option3}}</p></span>
+                                        <span><p class="margin2">{{3|displaypercentpipe: impoll}}</p></span>
+
+                                      </div>
+                                    </button>
+                                  </tr>
+                                  <tr>
+                                    <div class="timeclass2">
+                                      <p class="welcometext">{{impoll.dateWritten | hoursminutespipe}}</p>
+                                    </div>
+                                  </tr>
+                                </td>
+                              </table>
+                            </mat-card>
+                          </div>
+                        </div>
+                      </div>
+                      <div *ngFor="let impoll of (((inMatchPollsList | impollsuserhasnotanswered: user) | displaypollsonlyformcurrentmatchipe : currentMatchId) | sortbydatepollpipe)">
+                        <div *ngIf="!hasTheUserAnsweredThisPoll(user, impoll)"><!--unanswered polls-->
+                          <div class="pollcard">
+                            <mat-card class="pollinnercard">
+                              <table width="100%" align="left">
+                                <td align="left">
+                                  <tr>
+                                    <p class="pollquestion">{{impoll.pollText}}</p>
+                                  </tr>
+                                  <tr>
+                                    <div class="spacerdiv"></div>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoption" mat-stroked-button (click)="selectOption(user, 1, impoll)">{{impoll.option1}}</button>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoption" mat-stroked-button (click)="selectOption(user, 2, impoll)">{{impoll.option2}}</button>
+                                  </tr>
+                                  <tr>
+                                    <button class="buttonoption" mat-stroked-button (click)="selectOption(user, 3, impoll)">{{impoll.option3}}</button>
+                                  </tr>
+                                  <tr>
+                                    <div class="timeclass2">
+                                      <p class="welcometext">{{impoll.dateWritten | hoursminutespipe}}</p>
+                                    </div>
+                                  </tr>
+                                </td>
+                              </table>
+                            </mat-card>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </cdk-virtual-scroll-viewport>
-                  <div class="dummydiv"></div>
                 </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table align="left">
+                  <td align="left">
+                    <tr>
+                      <mat-checkbox class="checkbox" [(ngModel)]="isChecked" labelPosition="after" color="primary"><p class="p2">Do not show previous messages</p></mat-checkbox>
+                    </tr>
+                  </td>
+                </table>
+              </td>
+              <td>
+                <table align="left">
+                  <td align="left">
+                    <tr>
+                      <mat-checkbox class="checkbox" [(ngModel)]="isCheckedPoll" labelPosition="after" color="primary"><p class="p2">Do not show answered polls</p></mat-checkbox>
+                    </tr>
+                  </td>
+                </table>
               </td>
             </tr>
           </table>

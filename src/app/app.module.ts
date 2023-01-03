@@ -37,6 +37,7 @@ import { ToDatePipe2 } from './news_page/news_page.component';
 import { SortDateDescendingPipe } from './news_page/news_page.component';
 import { PluralPipe } from './in-match/in-match.component';
 import { SortDateDescendingPipeP } from './polls_page/polls_page.component';
+import { AdminPollsComponent } from './admin_panel/admin_polls.component';
 
 
 import { MatRadioModule} from '@angular/material/radio';
@@ -73,6 +74,16 @@ import { ReturnFinishedMatchPipe } from './main_page/feed_main.component';
 import { DisableInMatchButtonPipe } from './header/header.component';
 import { ChartsComponent } from './charts/charts.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { InMatchPreComponent } from './in-match-pre/in-match-pre.component';
+import { ReturnCurrentMatchesListPipe } from './in-match-pre/in-match-pre.component';
+import { IsThereAnyCurrentMatchPipe } from './in-match-pre/in-match-pre.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe } from './in-match/in-match.component';
+import { DisplayPollsOnlyFromCurrentMatchPipe } from './in-match/in-match.component';
+import { SortByDatePollPipe } from './in-match/in-match.component';
+import { DisplayPercentPipe } from './in-match/in-match.component';
+import { ImpollsUserHasAnswered } from './in-match/in-match.component';
+import { ImpollsUserHasNotAnswered } from './in-match/in-match.component';
 
 
 @NgModule({
@@ -90,6 +101,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     LeaderboardComponent,
     InMatchComponent,
     UserDetailComponent,
+    AdminPollsComponent,
     MatchesAdminComponent,
     TransformPipe,
     ReturnSizePipe,
@@ -117,6 +129,15 @@ import { HighchartsChartModule } from 'highcharts-angular';
     ReturnCurrentMatchIdPipe,
     ChartsComponent,
     DisableInMatchButtonPipe,
+    InMatchPreComponent,
+    ReturnCurrentMatchesListPipe,
+    IsThereAnyCurrentMatchPipe,
+    DisplayMessagesOnlyFromCurrentMatchNonPreviousPipe,
+    DisplayPollsOnlyFromCurrentMatchPipe,
+    SortByDatePollPipe,
+    DisplayPercentPipe,
+    ImpollsUserHasAnswered,
+    ImpollsUserHasNotAnswered,
 
   ],
   imports: [
@@ -149,6 +170,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatTooltipModule,
     MatExpansionModule,
     ScrollingModule,
+    MatCheckboxModule
 
 
   ],

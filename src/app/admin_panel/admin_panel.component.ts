@@ -4,9 +4,10 @@ import { User } from "../shared/services/user";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
+  AngularFirestoreCollection,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
-import { animationFrameScheduler, of, switchMap } from 'rxjs';
+import { animationFrameScheduler, Observable, of, switchMap } from 'rxjs';
 import { Auth, getAdditionalUserInfo, updateCurrentUser } from 'firebase/auth';
 import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
@@ -14,7 +15,8 @@ import { News } from '../models/news.model';
 import { NgForm } from '@angular/forms';
 import { Polls } from '../models/polls.model';
 import { matches } from '../models/matches.model';
-
+import { InMatchPolls } from '../models/inmatchpolls.model';
+import {FormControl} from '@angular/forms';
 
 
 
@@ -28,16 +30,45 @@ import { matches } from '../models/matches.model';
 
 export class AdminPanelComponent{
 
+
+  matchesRef: AngularFirestoreCollection<matches>;
+  matches$: Observable<matches[]>;
   constructor(
     public afAuth: AngularFireAuth,
     public afs: AngularFirestore,
 
     private authService: AuthService,
     private router: Router
-    ){}
+    ){
+      this.matchesRef = this.afs.collection('matches');
+      this.matches$ = this.matchesRef.valueChanges();
+
+    }
 
     public showMyMessage = false
     user$ = this.authService.user$;
+
+    public teamsList: Array<string> = [
+    "Adana Demirspor",
+    "Alanyaspor" ,
+    "Antalyaspor",
+    "Beşiktaş",
+    "Fatih Karagümrük",
+    "Fenerbahçe",
+    "Galatasaray",
+    "Gaziantep",
+    "Giresunspor",
+    "Hatayspor",
+    "İstanbul Başakşehir",
+    "İstanbulspor",
+    "Kasımpaşa",
+    "Kayserispor",
+    "Konyaspor",
+    "MKE Ankaragücü",
+    "Sivasspor",
+    "Trabzonspor",
+    "Ümraniyespor"
+    ];
 
     /**
     * This function resets the password
@@ -72,8 +103,11 @@ export class AdminPanelComponent{
     var headerFrom = form.value.headerInput;
     var contentFrom = form.value.contentInput;
 
+    var unsplitted: string = form.value.tagsInput;
+    var splittedArray: Array<string> = unsplitted.toString().split(",");
 
-    let tags: Array<string> = ['Konyaspor'];
+
+    let tags: Array<string> = splittedArray;
     let emptyList: Array<string> = [];
     const sendNews: News = {
       header: headerFrom,
@@ -194,8 +228,61 @@ export class AdminPanelComponent{
     form.resetForm();
   }
 
-  PollInactive(){     // Got to finish this one. Makes poll inactive
 
+  openInMatchPoll(formInMatch: NgForm){
+    if(formInMatch.invalid){
+      return;
+    }
+    else{
+      var id = "";
+      var created = true;
+      const today = new Date();
+
+      let emptyList: Array<string> = [];
+      const sendInMatchPoll: InMatchPolls = {
+        impid: "",
+        writtenBy: "TFF",
+        dateWritten: today,
+        matchId: formInMatch.value.matchInput,
+        pollText: formInMatch.value.pollTextInput,
+        option1: formInMatch.value.opt1Input,
+        option2: formInMatch.value.opt2Input,
+        option3: formInMatch.value.opt3Input,
+        option1Count: 0,
+        option2Count: 0,
+        option3Count: 0,
+        option1UserList: emptyList,
+        option2UserList: emptyList,
+        option3UserList: emptyList
+      }
+
+      this.afs.collection("InMatchPolls").add(sendInMatchPoll)
+      .then((result) => {
+        id = result.id;
+        console.log("result id: ", result.id, "\n");
+
+        this.authService.SetIdInMatchPoll(sendInMatchPoll, id).then((result2) => {
+          console.log("id setted succesfully\n");
+        }).catch((error2) => {
+          const errorCode2 = error2.code;
+          const errorMessage2 = error2.message;
+
+          console.log(errorCode2, errorMessage2);
+        });
+      })
+      .catch((error) => {
+        created = false;
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+    }
+
+    formInMatch.resetForm();
+  }
+
+  PollInactive(){
+    this.router.navigate(["admin-polls"]);
   }
   public matchesMatch = true;
 
