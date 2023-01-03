@@ -10,7 +10,7 @@
             <table align="center">
               <tr align="center">
                 <td>
-                  <img [src]="returnPngLink(1,resultList[0])" width="45px" length="45px"><br>
+                  <img [src]="returnPngLink(1,resultList[0])" width="38px" length="38px"><br>
                 </td>
                 <td>
                   <table align="right">
@@ -37,7 +37,7 @@
                   </table>
                 </td>
                 <td>
-                  <img [src]="returnPngLink(2,resultList[1])" width="45px" length="45px"><br>
+                  <img [src]="returnPngLink(2,resultList[1])" width="38px" length="38px"><br>
                 </td>
               </tr>
             </table>
@@ -145,6 +145,11 @@
                     <div *ngIf="(inMatchPolls$ | async) as inMatchPollsList">
                       <div *ngIf="isCheckedPoll">
                         <div *ngIf="isListEmptyPoll(inMatchPollsList, user)">
+                          <p class="welcometext">You can answer polls here as they are opened.</p>
+                        </div>
+                      </div>
+                      <div *ngIf="!isCheckedPoll">
+                        <div *ngIf="!areTherePollsRelatedWithThisMatch(inMatchPollsList, currentMatchId)">
                           <p class="welcometext">You can answer polls here as they are opened.</p>
                         </div>
                       </div>

@@ -170,6 +170,7 @@ export class InMatchComponent implements OnInit, OnDestroy{
   isListEmptyPoll(implist: InMatchPolls[], user: User){ //empty means being empty for polls that are not answered
     var size = Object.keys(implist).length;
 
+    console.log(size, "size");
     if(size == 0){
       return true;
     }
@@ -184,6 +185,17 @@ export class InMatchComponent implements OnInit, OnDestroy{
 
   }
 
+  areTherePollsRelatedWithThisMatch(inMatchPollsList: InMatchPolls[], currentMatchId: string){
+    var size = Object.keys(inMatchPollsList).length;
+
+    for(let i=0; i<size; i++){
+      if(inMatchPollsList[i].matchId == currentMatchId){
+        return true;
+      }
+    }
+    return false;
+
+  }
 
   ReturnUser(uidUser: string, userList: Array<User>){
 
