@@ -222,7 +222,7 @@
                       </tr>
                       <tr>
                         <mat-form-field>
-                          <mat-label>Select a match to assign this poll</mat-label>
+                          <mat-label>Select a match</mat-label>
                             <mat-select matInput ngModel name="matchInput" required #localMatchInput="ngModel">
                               <mat-option *ngFor="let match of matchesList" [value]="match.matchID">
                                 {{match.team1}}&nbsp;-&nbsp;{{match.team2}}

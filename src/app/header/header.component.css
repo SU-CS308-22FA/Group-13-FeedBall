@@ -45,6 +45,10 @@
   color: black;
 }
 
+.fontclass{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .imgclass{
   margin-top: 8px;
 }
