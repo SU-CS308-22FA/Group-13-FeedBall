@@ -156,11 +156,12 @@ export class AdminPanelComponent{
     .then((result) => {
       id = result.id;
       console.log("result id: ", result.id, "\n");
-      //alert("The new has been added to the news page.")
+
 
 
       this.authService.SetNewId(sendNews, id).then((result2) => {
         console.log("id setted succesfully\n");
+        alert("The new has been added to the news page.")
       }).catch((error2) => {
         const errorCode2 = error2.code;
         const errorMessage2 = error2.message;

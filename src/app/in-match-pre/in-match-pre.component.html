@@ -3,109 +3,102 @@
 <div *ngIf="(matches$ | async) as matches" class="outerclass">
   <div *ngIf="(matches | returncurrentmatcheslistipe) as currentMatches">
     <div *ngIf="(currentMatches | isthereanycurrentmatchpipe)">
+
       <br><br>
       <div class="titlediv" ><p class="p2">Please select a match to join the live chat and to access the polls:</p></div>
       <br><br>
 
-      <!--
-      <div class="scrolling-wrapper">
-        <div class="card" *ngFor="let thisMatch of currentMatches">
-          <mat-card class="matcardclass">
-            <table align="center">
-              <td align="center">
-                <tr>
-                  <p>{{thisMatch.team1}}&nbsp;-&nbsp;{{thisMatch.team2}}</p>
-                </tr>
-                <tr><br><br></tr>
-                <tr>
-                  <p>{{thisMatch.score_team1}}&nbsp;-&nbsp;{{thisMatch.score_team2}}</p>
-                </tr>
-                <tr><br><br><br></tr>
-                <tr>
-                  <a [routerLink]="['/in-match', thisMatch.matchID]" mat-stroked-button class="enterbuttonclass">Enter</a>
-                </tr>
-              </td>
-            </table>
-          </mat-card>
-        </div>
-      </div>-->
-
-    <div class="selectscreen">
-      <table align="center">
-        <td align="center">
-          <tr>
-            <table align="center">
-              <td align="center">
-                <tr>
-                  <div class="minimatcard">
-                    <p>&nbsp;{{this.currentIndex+1}}/{{this.returnSize(currentMatches)}}&nbsp;</p>
-                  </div>
-                </tr>
-              </td>
-            </table>
-          </tr>
-          <tr>
-            <div>
-              <mat-card class="matcard2">
-                <table align="center">
-                  <td align="center">
-                    <tr>
-                      <p>{{currentMatches[this.currentIndex].team1}}&nbsp;-&nbsp;{{currentMatches[this.currentIndex].team2}}</p>
-                    </tr>
-                    <tr><br><br></tr>
-                    <tr>
-                      <p>{{currentMatches[this.currentIndex].score_team1}}&nbsp;-&nbsp;{{currentMatches[this.currentIndex].score_team2}}</p>
-                    </tr>
-                    <tr><br><br><br></tr>
-                    <tr>
-                      <a [routerLink]="['/in-match', currentMatches[this.currentIndex].matchID]" mat-stroked-button class="enterbuttonclass">Enter</a>
-                    </tr>
-                  </td>
-                </table>
-              </mat-card>
-            </div>
-          </tr>
-          <tr>
-            <table align="center">
-              <td align="center">
-                <tr>
-                  <button mat-stroked-button *ngIf="this.currentIndex+1 != 1" (click)="goBack()" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_left</mat-icon></button>
-                  <button mat-stroked-button *ngIf="this.currentIndex+1 == 1" [disabled]="true" (click)="goBack()" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_left</mat-icon></button>
-                  <button mat-stroked-button *ngIf="this.currentIndex+1 != this.returnSize(currentMatches)" (click)="goForward(currentMatches)" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_right</mat-icon></button>
-                  <button mat-stroked-button *ngIf="this.currentIndex+1 == this.returnSize(currentMatches)" [disabled]="true" (click)="goForward(currentMatches)" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_right</mat-icon></button>
-                </tr>
-              </td>
-            </table>
-          </tr>
-        </td>
-      </table>
+      <div class="selectscreen">
+        <table align="center">
+          <td align="center">
+            <tr>
+              <table align="center">
+                <td align="center">
+                  <tr>
+                    <div class="minimatcard">
+                      <p>&nbsp;{{this.currentIndex+1}}/{{this.returnSize(currentMatches)}}&nbsp;</p>
+                    </div>
+                  </tr>
+                </td>
+              </table>
+            </tr>
+            <tr>
+              <div>
+                <mat-card class="matcard2">
+                  <table align="center">
+                    <td align="center">
+                      <tr>
+                        <table align="center">
+                          <tr align="center">
+                            <td>
+                              <div class="teamcard">
+                                <table align="center">
+                                  <td align="center">
+                                    <tr>
+                                      <div class="innerdiv">
+                                        <img [src]="returnPngLink(1,currentMatches[this.currentIndex])" width="90px" length="90px"><br>
+                                      </div>
+                                    </tr>
+                                    <tr>
+                                      <div class="teamname">
+                                        <p>{{currentMatches[this.currentIndex].team1}}</p>
+                                      </div>
+                                    </tr>
+                                  </td>
+                                </table>
+                              </div>
+                            </td><!--team 1-->
+                            <td><p class="p3">VS</p></td><!--VS paragraph-->
+                            <td>
+                              <div class="teamcard">
+                                <table align="center">
+                                  <td align="center">
+                                    <tr>
+                                      <div class="innerdiv">
+                                        <img [src]="returnPngLink(2,currentMatches[this.currentIndex])" width="90px" length="90px"><br>
+                                      </div>
+                                    </tr>
+                                    <tr>
+                                      <div class="teamname">
+                                        <p>{{currentMatches[this.currentIndex].team2}}</p>
+                                      </div>
+                                    </tr>
+                                  </td>
+                                </table>
+                              </div>
+                            </td><!--team 2-->
+                          </tr>
+                        </table>
+                      </tr>
+                      <tr><br><br></tr>
+                      <tr>
+                        <p>{{currentMatches[this.currentIndex].score_team1}}&nbsp;-&nbsp;{{currentMatches[this.currentIndex].score_team2}}</p>
+                      </tr>
+                      <tr><br><br><br></tr>
+                      <tr>
+                        <a [routerLink]="['/in-match', currentMatches[this.currentIndex].matchID]" mat-stroked-button class="enterbuttonclass">Enter</a>
+                      </tr>
+                    </td>
+                  </table>
+                </mat-card>
+              </div>
+            </tr>
+            <tr>
+              <table align="center">
+                <td align="center">
+                  <tr>
+                    <button mat-stroked-button *ngIf="this.currentIndex+1 != 1" (click)="goBack()" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                    <button mat-stroked-button *ngIf="this.currentIndex+1 == 1" [disabled]="true" (click)="goBack()" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                    <button mat-stroked-button *ngIf="this.currentIndex+1 != this.returnSize(currentMatches)" (click)="goForward(currentMatches)" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_right</mat-icon></button>
+                    <button mat-stroked-button *ngIf="this.currentIndex+1 == this.returnSize(currentMatches)" [disabled]="true" (click)="goForward(currentMatches)" style="background-color: #b9dcc0"><mat-icon>keyboard_arrow_right</mat-icon></button>
+                  </tr>
+                </td>
+              </table>
+            </tr>
+          </td>
+        </table>
+      </div>
     </div>
-
-
-    <!--
-      <div class="selectscreendeneme">
-        <div class="card" *ngFor="let thisMatch of currentMatches">
-          <mat-card class="matcardclass">
-            <table align="center">
-              <td align="center">
-                <tr>
-                  <p>{{thisMatch.team1}}&nbsp;-&nbsp;{{thisMatch.team2}}</p>
-                </tr>
-                <tr><br><br></tr>
-                <tr>
-                  <p>{{thisMatch.score_team1}}&nbsp;-&nbsp;{{thisMatch.score_team2}}</p>
-                </tr>
-                <tr><br><br><br></tr>
-                <tr>
-                  <a [routerLink]="['/in-match', thisMatch.matchID]" mat-stroked-button class="enterbuttonclass">Enter</a>
-                </tr>
-              </td>
-            </table>
-          </mat-card>
-        </div>
-      </div>-->
-    </div>
-
     <div *ngIf="!(currentMatches | isthereanycurrentmatchpipe)" class="centerclass">
       <table align="center">
         <td align="center">

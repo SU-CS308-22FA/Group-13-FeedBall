@@ -45,6 +45,16 @@ export class InMatchPreComponent{
 
   elemslist: string[] = ["dummyId1", "dummyId2", "dummyId3", "dummyId4"];
 
+  teamLogoSrcList: string[] = ["assets/Adanademirspor.png", "assets/Alanyaspor_logo.png", "assets/Antalyaspor_logo.png", "assets/367px-BesiktasJK-Logo.svg.png",
+                              "assets/Fatihkaragumruk.png", "assets/Fenerbahçe_SK.png", "assets/Galatasaray_Star_Logo.png",
+                              "assets/Gaziantep_FK.png", "assets/Hatayspor.png", "assets/İstanbul_Başakşehir_FK.png", "assets/IstanbulsporAS.png",
+                              "assets/Kasimpasa_2012.png", "assets/Kayserispor_logosu.png", "assets/Konyaspor_1922.png",
+                            "assets/MKE_Ankaragücü_logo.png","assets/Sivasspor.png", "assets/TrabzonsporAmblemi.png", "assets/Ümraniyespor_Logosu.png"];
+
+  public teamsList: Array<string> = ["Adana Demirspor", "Alanyaspor" , "Antalyaspor", "Beşiktaş", "Fatih Karagümrük", "Fenerbahçe", "Galatasaray",
+                                     "Gaziantep", "Giresunspor", "Hatayspor", "İstanbul Başakşehir", "İstanbulspor", "Kasımpaşa", "Kayserispor",
+                                     "Konyaspor", "MKE Ankaragücü", "Sivasspor", "Trabzonspor", "Ümraniyespor"];
+
   navigateMainPage(){
     this.router.navigate(['feed']);
   }
@@ -56,6 +66,28 @@ export class InMatchPreComponent{
       this.currentIndex--;
     }
 
+  }
+
+  returnPngLink(team1or2: number, matchOf: matches){
+
+
+    var size = Object.keys(this.teamsList).length;
+    if(team1or2 == 1){
+      for(let i=0; i<size; i++){
+        if(matchOf.team1 == this.teamsList[i]){
+          return this.teamLogoSrcList[i];
+        }
+      }
+      return "";
+    }
+    else{
+      for(let i=0; i<size; i++){
+        if(matchOf.team2 == this.teamsList[i]){
+          return this.teamLogoSrcList[i];
+        }
+      }
+      return "";
+    }
   }
 
   returnSize(theList: matches[]){
