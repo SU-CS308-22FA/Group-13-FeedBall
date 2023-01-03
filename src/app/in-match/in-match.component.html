@@ -52,6 +52,11 @@
                     <div *ngIf="(messages$ | async) as messagesList">
                       <div *ngIf="(users$ | async) as usersList">
                         <div *ngIf="!this.isChecked">
+                          <div *ngIf="((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe) as messagesListCurrent">
+                            <div *ngIf="messagesListCurrent.length == 0">
+                              <p class="welcometext">Welcome to live chat!</p>
+                            </div>
+                          </div>
                           <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe)">
                             <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
                               <div class="box3 sbright">
