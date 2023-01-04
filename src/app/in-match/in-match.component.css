@@ -255,16 +255,18 @@
   display: flex;
   align-items: left;
   justify-content: space-between;
-  padding-left: 1px;
-  padding-right: 1px;
 
   text-align: center;
   position: relative;
 }
 
+
 .margin2{
-  margin-left: 2px;
-  margin-right: 2px;
+
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+
 }
 
 
@@ -363,7 +365,8 @@
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+
 
   display: flex;
   align-items: flex-start;
@@ -384,11 +387,18 @@
 
 .buttonoption{
   border-radius: 5px;
+
   width: 580px;
   align-items: left;
   display: flex;
   justify-content: left;
   margin-top: 5px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.optiontext{
+  margin-left: 5px;
+  margin-left: 5px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

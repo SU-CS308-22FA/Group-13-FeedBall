@@ -20,12 +20,12 @@
 
 .example-viewport {
   height: 480px;
-  width: 740px;
+  width: 700px;
   border: 1px transparent;
 }
 .example-viewport-2 {
   height: 480px;
-  width: 740px;
+  width: 700px;
   border: 1px transparent;
 
 }
@@ -299,11 +299,12 @@ body{
   background: FAFAFA;
 }
 .wrapper{
-  padding: 30px;
+  padding: 10px;
   background: #fff;
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
 }
 
 @media (max-width:675px){
@@ -313,7 +314,7 @@ body{
 }
 
 .wrapper header{
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
 }
 .wrapper .poll-area{
@@ -411,7 +412,7 @@ label.selected .row .circle::after{
   display: block;
 }
 label .row span{
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
 }
 label .row .percent{
