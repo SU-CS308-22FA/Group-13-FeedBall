@@ -317,35 +317,23 @@
     </div>
   </div>
 </div>
+
+<div class="header2"><p>LIVE COMMENTARY</p></div>
 <br>
 
-<br>
+  <div *ngFor="let comments of commentary$ | async">
+    <div class="header2" *ngIf="comments.matchID == this.matchId">
+      <div><p class="namesurname">&nbsp;&nbsp;{{comments.minute}}</p></div>
+      <div>
+        <div class="circular--portrait">
+          <img *ngIf="comments.commentType == 'yellow'" src="/assets/iconsX/yellowcard.png">
+          <img *ngIf="comments.commentType == 'red'" src="/assets/iconsX/redcard.png">
+          <img *ngIf="comments.commentType == 'comment'" src="/assets/iconsX/commentcard.png">
+          <img *ngIf="comments.commentType == 'whistle'" src="/assets/iconsX/whistle.png">
+          <img *ngIf="comments.commentType == 'change'" src="/assets/iconsX/playerchange.png">
+        </div>
+      </div>
+      <div><p>{{comments.comment}}</p></div>
+    </div>
+  </div>
 
-<div class="divs" *ngIf="(user$ | async) as user">
-
-  <table  align="center" >
-    <th>LIVE COMMENTARY</th>
-    <br>
-    <tr align="center" >
-      <td>
-        <mat-card class="matcardclass">
-          <table align="center" *ngFor="let comments of commentary$ | async">
-            <tr *ngIf="comments.matchID == this.matchId">
-              <td><p class="namesurname">&nbsp;&nbsp;{{comments.minute}}</p></td>
-              <td>
-                <div class="circular--portrait">
-                  <img *ngIf="comments.commentType == 'yellow'" src="/assets/iconsX/yellowcard.png">
-                  <img *ngIf="comments.commentType == 'red'" src="/assets/iconsX/redcard.png">
-                  <img *ngIf="comments.commentType == 'comment'" src="/assets/iconsX/commentcard.png">
-                  <img *ngIf="comments.commentType == 'whistle'" src="/assets/iconsX/whistle.png">
-                  <img *ngIf="comments.commentType == 'change'" src="/assets/iconsX/playerchange.png">
-                </div>
-              </td>
-              <td><p>{{comments.comment}}</p></td>
-            </tr>
-          </table>
-        </mat-card>
-      </td>
-    </tr>
-  </table>
-</div>
