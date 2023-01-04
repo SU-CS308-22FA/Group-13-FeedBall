@@ -756,7 +756,16 @@ transform(optionNo: number, imp:InMatchPolls) {
 
   percent = percent * 100;
 
-  return percent.toString() + "%";
+  var percentStr: string = percent.toString();
+
+
+  if(percentStr.length > 5){
+    console.log(percentStr);
+    percentStr = percentStr.substring(0, 5);
+    console.log(percentStr);
+  }
+
+  return percentStr + "%";
 
   }
 }
