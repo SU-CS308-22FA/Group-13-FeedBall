@@ -84,7 +84,8 @@ import { SortByDatePollPipe } from './in-match/in-match.component';
 import { DisplayPercentPipe } from './in-match/in-match.component';
 import { ImpollsUserHasAnswered } from './in-match/in-match.component';
 import { ImpollsUserHasNotAnswered } from './in-match/in-match.component';
-
+import { TeamInfoComponent } from './team-info/team-info.component';
+import { TeamsComponent } from './teams/teams.component';
 
 @NgModule({
   declarations: [
@@ -138,6 +139,8 @@ import { ImpollsUserHasNotAnswered } from './in-match/in-match.component';
     DisplayPercentPipe,
     ImpollsUserHasAnswered,
     ImpollsUserHasNotAnswered,
+    TeamInfoComponent,
+    TeamsComponent,
 
   ],
   imports: [
@@ -170,7 +173,7 @@ import { ImpollsUserHasNotAnswered } from './in-match/in-match.component';
     MatTooltipModule,
     MatExpansionModule,
     ScrollingModule,
-    MatCheckboxModule
+    MatCheckboxModule,
 
 
   ],

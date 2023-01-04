@@ -40,6 +40,8 @@
     "geckodriver": "^3.2.0",
     "highcharts": "^10.3.2",
     "highcharts-angular": "^3.0.0",
+    "ionic": "^5.4.16",
+    "ionic-angular": "^3.9.10",
     "path": "^0.12.7",
     "plotly.js": "^2.16.4",
     "rxjs": "~7.5.0",

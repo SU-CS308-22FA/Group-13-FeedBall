@@ -475,6 +475,45 @@
 
 }
 
+.myContainer{
+  display: flex;
+  width: 250px;
+  height: 50px;
+  background-color: aliceblue;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  box-shadow: inset 0 0 1px rgb(196,196,196);
+  border-radius: 10px;
+}
+
+.header{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  height:50vw;
+  min-height:400px;
+  max-height:650px;
+  min-width:300px;
+  color:#eee;
+}
+.header2{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex;
+
+  color:rgb(0, 0, 0);
+}
+
 .circular--portrait2 {
   position: relative;
   width: 40px;
