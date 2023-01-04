@@ -338,6 +338,10 @@ export class AdminPanelComponent{
   PollInactive(){
     this.router.navigate(["admin-polls"]);
   }
+
+  PrizePage(){
+    this.router.navigate(["prize-page"]);
+  }
   public matchesMatch = true;
 
 

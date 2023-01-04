@@ -13,108 +13,110 @@
     <div class="titlediv">
       <table align="center">
         <tr align="center">
-          <div class="titlediv" ><p class="submainfeedtext">Active Polls: &nbsp;</p></div>
           <td>
+            <div class="titlediv" ><p class="submainfeedtext">Active Polls &nbsp;</p></div>
+
             <div class="borderclass">
               <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
-                <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">    
-                  <div *ngFor="let poll of pollslist">  
-                    <div *ngIf=" pollIsActiveCheck(poll) == true">  
-                    <div *ngIf=" userAnsweredPollAlready(poll, user) == false">                              
-                      <div class="wrapper">                                
-                        <header> {{poll.question}}<br></header>          
-                        <div class="poll-area">                                
-                          <input type="checkbox" name="poll" id="opt-1" (click) ="checkclick(poll, 1, user)">      
-                          <input type="checkbox" name="poll" id="opt-2" (click) ="checkclick(poll, 2, user)">    
-                          <input type="checkbox" name="poll" id="opt-3" (click) ="checkclick(poll, 3, user)">
+                <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">
+                  <div *ngFor="let poll of pollslist">
+                    <div *ngIf=" pollIsActiveCheck(poll) == true">
+                      <div *ngIf=" userAnsweredPollAlready(poll, user) == false">
+                        <div class="wrapper">
+                          <header> {{poll.question}}<br></header>
+                          <div class="poll-area">
+                            <input type="checkbox" name="poll" id="opt-1" (click) ="checkclick(poll, 1, user)">
+                            <input type="checkbox" name="poll" id="opt-2" (click) ="checkclick(poll, 2, user)">
+                            <input type="checkbox" name="poll" id="opt-3" (click) ="checkclick(poll, 3, user)">
+                            <label for="opt-1" class="opt-1">
+                              <div class="row">
+                                <div class="column">
+                                  <span class="circle"></span>
+                                  <span class="text">{{poll.option1}}</span>
+                                </div>
+                              </div>
+                              <div class="progress" id="pstyle1" style='--w:55;'></div>
+                            </label>
+                            <label for="opt-2" class="opt-2">
+                              <div class="row">
+                                <div class="column">
+                                  <span class="circle"></span>
+                                  <span class="text">{{poll.option2}}</span>
+                                </div>
+                              </div>
+                              <div class="progress" id="pstyle2" style='--w:80;'></div>
+                            </label>
+                            <label for="opt-3" class="opt-3">
+                              <div class="row">
+                                <div class="column">
+                                  <span class="circle"></span>
+                                  <span class="text">{{poll.option3}}</span>
+                                </div>
+                              </div>
+                              <div class="progress" id="pstyle3" style='--w:20;'></div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </cdk-virtual-scroll-viewport>
+            </div>
+          </td>
+          <td>
+            <div class="titlediv" ><p class="submainfeedtext">&nbsp; &nbsp; Previous Polls &nbsp;</p></div>
+
+            <div class="borderclass">
+              <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
+                <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">
+                  <div *ngFor="let poll of pollslist">
+                    <div *ngIf=" pollIsActiveCheck(poll) == false">
+                      <div class="wrapper">
+                        <header> {{poll.question}}<br></header>
+                        <div class="poll-area">
                           <label for="opt-1" class="opt-1">
                             <div class="row">
                               <div class="column">
-                                <span class="circle"></span>                     
-                                <span class="text">{{poll.option1}}</span>
+                                <span class="text">{{poll.option1}} </span>
                               </div>
+                              <span class="text">{{pollChoicePercent(poll, 1)}}%</span>
                             </div>
                             <div class="progress" id="pstyle1" style='--w:55;'></div>
                           </label>
                           <label for="opt-2" class="opt-2">
                             <div class="row">
                               <div class="column">
-                                <span class="circle"></span>
                                 <span class="text">{{poll.option2}}</span>
                               </div>
+                              <span class="text">{{pollChoicePercent(poll, 2)}}%</span>
                             </div>
                             <div class="progress" id="pstyle2" style='--w:80;'></div>
                           </label>
                           <label for="opt-3" class="opt-3">
                             <div class="row">
                               <div class="column">
-                                <span class="circle"></span>
                                 <span class="text">{{poll.option3}}</span>
                               </div>
+                              <span class="text">{{pollChoicePercent(poll, 3)}}%</span>
                             </div>
                             <div class="progress" id="pstyle3" style='--w:20;'></div>
                           </label>
                         </div>
+                        <span class="text"> This poll has been answered by {{participantTotal(poll)}} user(s).</span>
                       </div>
-                    </div>  
-                    </div>                         
                     </div>
                   </div>
+                </div>
               </cdk-virtual-scroll-viewport>
             </div>
           </td>
-          <div class="titlediv" ><p class="submainfeedtext">&nbsp; &nbsp; Previous Polls: &nbsp;</p></div>   
-          <td>                                                                                        
-          <div class="borderclass">                                                                  
-            <cdk-virtual-scroll-viewport itemSize="100" class="example-viewport">
-              <div *ngIf="(polls | sortdatedescendingpipep) as pollslist">   
-                <div *ngFor="let poll of pollslist"> 
-                  <div *ngIf=" pollIsActiveCheck(poll) == false">                               
-                    <div class="wrapper">                                
-                      <header> {{poll.question}}<br></header>          
-                      <div class="poll-area">                                
-                        <label for="opt-1" class="opt-1">
-                          <div class="row">
-                            <div class="column">
-                              <span class="text">{{poll.option1}} </span>
-                            </div>
-                            <span class="text">{{pollChoicePercent(poll, 1)}}%</span>           
-                          </div>
-                          <div class="progress" id="pstyle1" style='--w:55;'></div>
-                        </label>
-                        <label for="opt-2" class="opt-2">
-                          <div class="row">
-                            <div class="column">
-                              <span class="text">{{poll.option2}}</span>
-                            </div>
-                            <span class="text">{{pollChoicePercent(poll, 2)}}%</span>
-                          </div>
-                          <div class="progress" id="pstyle2" style='--w:80;'></div>
-                        </label>
-                        <label for="opt-3" class="opt-3">
-                          <div class="row">
-                            <div class="column">
-                              <span class="text">{{poll.option3}}</span>
-                            </div>
-                            <span class="text">{{pollChoicePercent(poll, 3)}}%</span>
-                          </div>
-                          <div class="progress" id="pstyle3" style='--w:20;'></div>
-                        </label>
-                      </div>
-                      <span class="text"> This poll has been answered by {{participantTotal(poll)}} user(s).</span>  
-                    </div>
-                  </div>  
-                  </div>
-                  </div>
-          </cdk-virtual-scroll-viewport>
-          </div>
-        </td>
         </tr>
       </table>
     </div>
   </div>
 </div>
-    
+
 
 
 

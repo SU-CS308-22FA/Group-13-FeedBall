@@ -18,6 +18,8 @@ import { InMatchPreComponent } from './in-match-pre/in-match-pre.component';
 import { AdminPollsComponent } from './admin_panel/admin_polls.component';
 import { TeamInfoComponent } from './team-info/team-info.component';
 import { TeamsComponent } from './teams/teams.component';
+import { PrizePageComponent } from './prize_page/prize_page.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -35,8 +37,9 @@ const routes: Routes = [
   { path: 'chart', component: ChartsComponent},
   { path: 'matches-admin', component: MatchesAdminComponent},
   { path: 'admin-polls', component: AdminPollsComponent},
-  { path: 'team-info', component: TeamInfoComponent},
-  { path: 'teams/:team', component: TeamsComponent},
+  { path: 'team-info', component: TeamInfoComponent },
+  { path: 'teams/:team', component: TeamsComponent },
+  { path: 'prize-page', component: PrizePageComponent },
 
 ];
 
