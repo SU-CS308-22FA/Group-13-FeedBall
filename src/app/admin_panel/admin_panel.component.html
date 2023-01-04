@@ -128,7 +128,7 @@
                     <tr>
                       <mat-form-field appearance="fill">
                         <mat-label>Team1</mat-label>
-                        <mat-select matInput name= "Team1Input" ngModel required>
+                        <mat-select id="tm1" matInput name= "Team1Input" ngModel required>
                           <mat-option *ngFor="let team of teams" [value]="team">
                             {{team}}
                           </mat-option>
@@ -138,7 +138,7 @@
                     <tr>
                       <mat-form-field appearance="fill">
                         <mat-label>Team2</mat-label>
-                        <mat-select matInput name= "Team2Input" ngModel required>
+                        <mat-select id="tm2" matInput name= "Team2Input" ngModel required>
                           <mat-option *ngFor="let team of teams" [value]="team">
                             {{team}}
                           </mat-option>
