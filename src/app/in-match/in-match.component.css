@@ -444,3 +444,69 @@
   justify-content: right;
 }
 
+.commentaryContainer{
+  height: 300px;
+  position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circular--portrait {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: solid 3px #000000;
+  text-align: center;
+
+}
+
+.circular--portrait img { width: 100%; height: auto; text-align: center;}
+
+.deneme{
+  justify-content: center;
+  align-items:baseline;
+  justify-items: center;
+
+  text-align: center;
+
+}
+
+.circular--portrait2 {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: solid 3px #000000;
+  text-align: center;
+
+}
+
+.namesurname{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: bold;
+  font-size: 20px;
+}
+
+.deletebutton{
+  background-color: #861a1f;
+  color: white;
+  width: 200px;
+
+}
+
+
+.matcardclass{
+  min-width: 200px;
+}
+
+.divs{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

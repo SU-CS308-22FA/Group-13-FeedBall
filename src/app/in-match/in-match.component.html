@@ -10,7 +10,7 @@
             <table align="center">
               <tr align="center">
                 <td>
-                  <img [src]="returnPngLink(1,resultList[0])" width="45px" length="45px"><br>
+                  <img [src]="returnPngLink(1,resultList[0])" width="38px" length="38px"><br>
                 </td>
                 <td>
                   <table align="right">
@@ -37,7 +37,7 @@
                   </table>
                 </td>
                 <td>
-                  <img [src]="returnPngLink(2,resultList[1])" width="45px" length="45px"><br>
+                  <img [src]="returnPngLink(2,resultList[1])" width="38px" length="38px"><br>
                 </td>
               </tr>
             </table>
@@ -52,6 +52,11 @@
                     <div *ngIf="(messages$ | async) as messagesList">
                       <div *ngIf="(users$ | async) as usersList">
                         <div *ngIf="!this.isChecked">
+                          <div *ngIf="((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe) as messagesListCurrent">
+                            <div *ngIf="messagesListCurrent.length == 0">
+                              <p class="welcometext">Welcome to live chat!</p>
+                            </div>
+                          </div>
                           <div *ngFor="let mesg of ((messagesList | displaymessagesonlyformcurrentmatchipe : currentMatchId) | sortbydatepipe)">
                             <div *ngIf="mesg.messageOwnerID == user.uid" class="rightdiv">
                               <div class="box3 sbright">
@@ -145,6 +150,11 @@
                     <div *ngIf="(inMatchPolls$ | async) as inMatchPollsList">
                       <div *ngIf="isCheckedPoll">
                         <div *ngIf="isListEmptyPoll(inMatchPollsList, user)">
+                          <p class="welcometext">You can answer polls here as they are opened.</p>
+                        </div>
+                      </div>
+                      <div *ngIf="!isCheckedPoll">
+                        <div *ngIf="!areTherePollsRelatedWithThisMatch(inMatchPollsList, currentMatchId)">
                           <p class="welcometext">You can answer polls here as they are opened.</p>
                         </div>
                       </div>
@@ -306,4 +316,36 @@
       </div>
     </div>
   </div>
+</div>
+<br>
+
+<br>
+
+<div class="divs" *ngIf="(user$ | async) as user">
+
+  <table  align="center" >
+    <th>LIVE COMMENTARY</th>
+    <br>
+    <tr align="center" >
+      <td>
+        <mat-card class="matcardclass">
+          <table align="center" *ngFor="let comments of commentary$ | async">
+            <tr *ngIf="comments.matchID == this.matchId">
+              <td><p class="namesurname">&nbsp;&nbsp;{{comments.minute}}</p></td>
+              <td>
+                <div class="circular--portrait">
+                  <img *ngIf="comments.commentType == 'yellow'" src="/assets/iconsX/yellowcard.png">
+                  <img *ngIf="comments.commentType == 'red'" src="/assets/iconsX/redcard.png">
+                  <img *ngIf="comments.commentType == 'comment'" src="/assets/iconsX/commentcard.png">
+                  <img *ngIf="comments.commentType == 'whistle'" src="/assets/iconsX/whistle.png">
+                  <img *ngIf="comments.commentType == 'change'" src="/assets/iconsX/playerchange.png">
+                </div>
+              </td>
+              <td><p>{{comments.comment}}</p></td>
+            </tr>
+          </table>
+        </mat-card>
+      </td>
+    </tr>
+  </table>
 </div>

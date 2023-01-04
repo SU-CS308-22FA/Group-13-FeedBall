@@ -19,6 +19,7 @@ import { UserDetailComponent } from '../admin_panel/user_detail.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { matches } from '../models/matches.model';
 import { InMatchPolls } from '../models/inmatchpolls.model';
+import { commentary } from '../models/commentary.model';
 
 @Component({
   selector: 'app-in-match',
@@ -27,6 +28,8 @@ import { InMatchPolls } from '../models/inmatchpolls.model';
 })
 export class InMatchComponent implements OnInit, OnDestroy{
 
+  commentaryRef: AngularFirestoreCollection<commentary>;
+  commentary$: Observable<commentary[]>;
 
   messagesRef: AngularFirestoreCollection<messages>;
   messages$: Observable<messages[]>;
@@ -67,6 +70,9 @@ export class InMatchComponent implements OnInit, OnDestroy{
 
     this.matchesRef = this.afs.collection('matches');
     this.matches$ = this.matchesRef.valueChanges();
+
+    this.commentaryRef = this.afs.collection('commentary');
+    this.commentary$ = this.commentaryRef.valueChanges();
 
     //this.ngOnInit();
   }
@@ -170,6 +176,7 @@ export class InMatchComponent implements OnInit, OnDestroy{
   isListEmptyPoll(implist: InMatchPolls[], user: User){ //empty means being empty for polls that are not answered
     var size = Object.keys(implist).length;
 
+    console.log(size, "size");
     if(size == 0){
       return true;
     }
@@ -184,6 +191,17 @@ export class InMatchComponent implements OnInit, OnDestroy{
 
   }
 
+  areTherePollsRelatedWithThisMatch(inMatchPollsList: InMatchPolls[], currentMatchId: string){
+    var size = Object.keys(inMatchPollsList).length;
+
+    for(let i=0; i<size; i++){
+      if(inMatchPollsList[i].matchId == currentMatchId){
+        return true;
+      }
+    }
+    return false;
+
+  }
 
   ReturnUser(uidUser: string, userList: Array<User>){
 
@@ -738,7 +756,16 @@ transform(optionNo: number, imp:InMatchPolls) {
 
   percent = percent * 100;
 
-  return percent.toString() + "%";
+  var percentStr: string = percent.toString();
+
+
+  if(percentStr.length > 5){
+    console.log(percentStr);
+    percentStr = percentStr.substring(0, 5);
+    console.log(percentStr);
+  }
+
+  return percentStr + "%";
 
   }
 }
