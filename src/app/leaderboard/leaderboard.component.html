@@ -1,6 +1,27 @@
-<div class="titlediv" >
-  <p class="mainfeedtext">LeaderBoard</p>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<table>
+  <tr>
+    <td>
+      <p class="mainfeedtext">LeaderBoard</p>
+    </td>
+    <td>
+      <button class="material-symbols-outlined" (click)="openForm()">
+        auto_awesome
+      </button>
+    </td>
+  </tr>
+</table>
+
+<div align = "center" class="form-popup" id="myForm">
+  <table align = "center" class="form-container">
+    <h2> Your Awards</h2>
+    <button type="button" align = "center" class="btn cancel" (click)="closeForm()">Close</button>
+  </table>
 </div>
+
 <div class="maindiv" *ngIf="(user$ | async) as user">
   <div *ngIf="!isButtonClicked && this.listUsers == null">
     <table align="center">
