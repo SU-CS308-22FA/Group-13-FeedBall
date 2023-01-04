@@ -28,6 +28,7 @@ import { AdminPanelComponent } from './admin_panel/admin_panel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { InMatchComponent } from './in-match/in-match.component';
 import { MatchesAdminComponent, ReturnAllMatchPipe } from './admin_panel/matches_admin.component';
+import { PrizePageComponent } from './prize_page/prize_page.component';
 
 
 import { UserDetailComponent } from './admin_panel/user_detail.component';
@@ -100,6 +101,7 @@ import { ImpollsUserHasNotAnswered } from './in-match/in-match.component';
     AdminPanelComponent,
     LeaderboardComponent,
     InMatchComponent,
+    PrizePageComponent,
     UserDetailComponent,
     AdminPollsComponent,
     MatchesAdminComponent,

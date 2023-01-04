@@ -54,6 +54,18 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void{
   }
 
+  openForm() {
+    console.log("1");
+    const popup = document.getElementById("myForm") as HTMLDivElement;
+    popup.style.display = "block";
+    console.log("2");
+  }
+
+  closeForm() {
+    const popupclose = document.getElementById("myForm") as HTMLDivElement;
+    popupclose.style.display = "none";
+  }
+
   user$ = this.authService.user$;
 }
 
