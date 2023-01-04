@@ -37,6 +37,9 @@ const routes: Routes = [
   { path: 'chart', component: ChartsComponent},
   { path: 'matches-admin', component: MatchesAdminComponent},
   { path: 'admin-polls', component: AdminPollsComponent},
+  { path: 'team-info', component: TeamInfoComponent },
+  { path: 'teams/:team', component: TeamsComponent },
+  { path: 'prize-page', component: PrizePageComponent },
 
 ];
 
