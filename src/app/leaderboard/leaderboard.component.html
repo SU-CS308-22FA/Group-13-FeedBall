@@ -1,4 +1,6 @@
-<div class="titlediv" ><p class="mainfeedtext">LeaderBoard</p></div>
+<div class="titlediv" >
+  <p class="mainfeedtext">LeaderBoard</p>
+</div>
 <div class="maindiv" *ngIf="(user$ | async) as user">
   <div *ngIf="!isButtonClicked && this.listUsers == null">
     <table align="center">
