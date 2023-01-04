@@ -1,0 +1,50 @@
+<head>
+
+  <link rel="stylesheet" href="./team-info.component.css">
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<script>
+  const close = document.querySelector(".close");
+  const open = document.querySelector(".ham");
+  const menu = document.querySelector(".menu");
+  close.addEventListener("click", () => {
+    menu.style.visibility = "hidden";
+  });
+  open.addEventListener("click", () => {
+    menu.style.visibility = "visible";
+  });
+</script>
+
+<body>
+<br>
+  <section>
+    <div class="section">
+      <div class="section1">
+        <div class="img-slider">
+          <a [routerLink]="['/teams', 'Galatasaray']"><img src="https://imgyukle.com/f/2023/01/03/JUr2jH.png" alt="" class="img"></a>
+          <a [routerLink]="['/teams', 'Fenerbahçe']"><img src="https://imgyukle.com/f/2023/01/03/JUr0Ye.png" alt="" class="img"></a>
+          <a [routerLink]="['/teams', 'Trabzonspor']"><img src="https://imgyukle.com/f/2023/01/03/JUytHp.png" alt="" class="img"></a>
+
+        </div>
+
+      </div>
+      <div class="section2">
+        <div class="container">
+          <div class="items" *ngFor="let teamX of teams$ | async">
+            <a [routerLink]="['/teams', teamX.teamName]"><div class="img img1"><img [src]="returnPngLink(teamX.teamName)" alt=""></div></a>
+            <div class="name">{{teamX.teamName}}</div><br>
+            <div class="price">{{teamX.establish}}&nbsp;</div>
+            <div class="info">Turkish Super League&nbsp;</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+</body>
+

@@ -48,6 +48,9 @@ export class HeaderComponent{
   callLogOut(){
     this.authService.SignOut();
   }
+  navigateTeam(){
+    this.router.navigate(['team-info']);
+  }
   navigateMainPage(){
     this.router.navigate(['feed']);
   }
