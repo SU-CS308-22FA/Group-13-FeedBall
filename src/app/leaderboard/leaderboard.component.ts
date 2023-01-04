@@ -2,12 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AuthService } from "../shared/services/auth.service";
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { User } from "../shared/services/user";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
+  AngularFirestoreCollection,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { animationFrameScheduler, of, switchMap } from 'rxjs';
@@ -16,7 +17,7 @@ import * as firebase from 'firebase/compat';
 import { Router } from '@angular/router';
 import { Pipe } from '@angular/core';
 import { PipeTransform } from '@angular/core';
-
+import { prizes } from '../models/prizes.model';
 
 interface LeaderboardElems {
   userName: string,
@@ -34,10 +35,24 @@ interface LeaderboardElems {
 })
 export class LeaderboardComponent implements OnInit, OnDestroy {
 
+
+  public dateList = new Array<Date>;
+  public awardList = new Array<string>;
+  prizeRef: AngularFirestoreCollection<prizes>;
+  prize$: Observable<prizes[]>;
+
   public listUsers = this.ngOnInit();
   public isButtonClicked: boolean = false;
-  constructor(public authService: AuthService){}
+  constructor(
+    public afAuth: AngularFireAuth,
+    public authService: AuthService,
+    public afs: AngularFirestore
+    ){
+    this.prizeRef = this.afs.collection("prizes");
+    this.prize$ = this.prizeRef.valueChanges();
 
+
+  }
   public filterSelection = 10;
 
   getUsersListAll(){
