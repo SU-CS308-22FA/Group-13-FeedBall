@@ -146,6 +146,7 @@ import { TeamsComponent } from './teams/teams.component';
     TeamInfoComponent,
     TeamsComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -178,6 +179,7 @@ import { TeamsComponent } from './teams/teams.component';
     MatExpansionModule,
     ScrollingModule,
     MatCheckboxModule,
+
 
 
   ],

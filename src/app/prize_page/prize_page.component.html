@@ -1,0 +1,116 @@
+<head>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    emailjs.init('GRZ_EfGOaPD-uRfst')
+  </script>
+</head>
+
+<div class = "prizeclass" align = "center" *ngIf="(user$ | async) as usersList">
+  <div *ngIf="assignStuff(usersList) as sorted">
+    <div class = "cont">
+      <form id="form">
+        <h3>First</h3>
+        <p>{{sorted[0].name}}&nbsp;{{sorted[0].surname}}</p>
+        <p>{{sorted[0].point}}</p>
+
+        <div class="field" hidden>
+          <label for="to_name">to_name</label>
+          <input value={{this.name1}} type="text" name="to_name" id="to_name">
+        </div>
+
+        <div class="field" hidden>
+          <label for="message">message</label>
+          <input value={{this.message1}} type="text" name="message" id="message">
+        </div>
+
+        <div class="field" hidden>
+          <label for="user_mail">user_mail</label>
+          <input value={{this.email1}} type="text" name="user_mail" id="user_mail">
+        </div>
+
+        <tr>
+          <td>
+            <input class = "button" (click)="deneme()" type="submit" id="button" value="Send Email" >
+          </td>
+          <br>
+          <td>
+            <input class = "button" (click)="notifyUser()" type="submit" id="button3" value="Send Notification" >
+          </td>
+        </tr>
+
+      </form>
+    </div>
+
+    <div class = "cont">
+      <form id="form1">
+        <h3>Second</h3>
+        <p>{{sorted[1].name}}&nbsp;{{sorted[1].surname}}</p>
+        <p>{{sorted[1].point}}</p>
+
+        <div class="field" hidden>
+          <label for="to_name">to_name</label>
+          <input value={{this.name2}} type="text" name="to_name" id="to_name">
+        </div>
+
+        <div class="field" hidden>
+          <label for="message">message</label>
+          <input value={{this.message2}} type="text" name="message" id="message">
+        </div>
+
+        <div class="field" hidden>
+          <label for="user_mail">user_mail</label>
+          <input value={{this.email2}} type="text" name="user_mail" id="user_mail">
+        </div>
+
+        <tr>
+          <td>
+            <input class = "button" (click)="deneme1()" type="submit" id="button1" value="Send Email" >
+          </td>
+          <br>
+          <td>
+            <input class = "button" (click)="notifyUser1()" type="submit" id="button4" value="Send Notification" >
+          </td>
+        </tr>
+
+      </form>
+    </div>
+
+    <div class = "cont">
+      <form id="form2">
+        <h3>Third</h3>
+        <p>{{sorted[2].name}}&nbsp;{{sorted[2].surname}}</p>
+        <p>{{sorted[2].point}}</p>
+
+        <div class="field" hidden>
+          <label for="to_name">to_name</label>
+          <input value={{this.name3}} type="text" name="to_name" id="to_name">
+        </div>
+
+        <div class="field" hidden>
+          <label for="message">message</label>
+          <input value={{this.message3}} type="text" name="message" id="message">
+        </div>
+
+        <div class="field" hidden>
+          <label for="user_mail">user_mail</label>
+          <input value={{this.email3}} type="text" name="user_mail" id="user_mail">
+        </div>
+
+        <tr>
+          <td>
+            <input class = "button" (click)="deneme2()" type="submit" id="button2" value="Send Email" >
+          </td>
+          <br>
+          <td>
+            <input class = "button" (click)="notifyUser2()" type="submit" id="button5" value="Send Notification" >
+          </td>
+        </tr>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
