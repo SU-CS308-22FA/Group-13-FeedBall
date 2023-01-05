@@ -206,8 +206,21 @@
 .form-container {
   padding: 10px;
   background-color: white;
-  font-family: 'Bangers';
   font-size: 16px;
+}
+
+.font{
+  font-family: 'Bangers'
+}
+
+.date{
+  position: absolute;
+  right: 0px;
+}
+
+.line{
+  width:max-content;
+  border: 3px solid rgb(185, 220, 192);
 }
 
 .form-container .cancel {

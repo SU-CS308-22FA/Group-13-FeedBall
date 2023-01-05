@@ -210,3 +210,48 @@ export class PrizePageComponent{
 
     }
 }
+
+
+@Pipe({ name: 'todatepipe2' })
+export class ToDatePipe2 implements PipeTransform {
+  transform(timestamp: any) {
+
+    var numtimestamp = Number(timestamp.seconds);
+    numtimestamp = numtimestamp * 1000;
+    const dateOf = new Date(numtimestamp);
+    var deneme = new Date();
+    console.log(deneme.getHours().toString(), deneme.getMinutes().toString());
+    deneme.setHours(11);
+    deneme.setMinutes(30);
+    console.log("after: ", deneme.getHours().toString(), deneme.getMinutes().toString());
+
+
+
+
+    var returnString = "";
+
+    var nummonth = Number(dateOf.getMonth())+1;
+
+    var mins = dateOf.getMinutes().toString();
+    if(Object.keys(mins).length < 2){
+      mins = "0" + mins;
+    }
+    if(Object.keys(mins).length < 1){
+      mins = "00" + mins;
+    }
+
+    var hours = dateOf.getHours().toString();
+    if(Object.keys(hours).length < 2){
+      hours = "0" + hours;
+    }
+    if(Object.keys(hours).length < 1){
+      hours = "00" + hours;
+    }
+
+    returnString = dateOf.getDate().toString() + "." + String(nummonth) + "." +  dateOf.getFullYear().toString()
+    + " " + hours + ":" + mins;
+
+    return returnString;
+
+  }
+}
