@@ -127,7 +127,7 @@
 
     <div *ngIf="(listUsers | returnsizepipe) < 3">
       <div class="maindiv">
-        <p class="p2">{{(this.listUsers | transformpipe) | returnrankuserpipe: user}}</p><!--userName, you are ranking xth prompt-->
+        <p class="p2-special">{{(this.listUsers | transformpipe) | returnrankuserpipe: user}}</p><!--userName, you are ranking xth prompt-->
       </div>
 
       <span *ngFor="let thisUser of (this.listUsers | transformpipe)">
