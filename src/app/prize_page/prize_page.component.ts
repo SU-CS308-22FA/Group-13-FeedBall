@@ -9,7 +9,8 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { User } from '../shared/services/user';
 import { prizes } from '../models/prizes.model';
 

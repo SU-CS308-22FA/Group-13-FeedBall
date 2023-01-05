@@ -2,52 +2,44 @@ const {By,Key,Builder} = require("selenium-webdriver");
 require("chromedriver");
 
 
-async function example(){
-
-  var searchString = "Automation testing with Selenium and JavaScript";
+async function example_leaderboard_testing(){
 
   //To wait for browser to build and launch properly
   let driver = await new Builder().forBrowser("chrome").build();
 
    //To fetch http://google.com from the browser with our code.
-    await driver.get("https://group-13-feed-ball.vercel.app/feed");
+    await driver.get("https://group-13-feed-ball.vercel.app/");
 
    //Verify the page title and print it
     var title = await driver.getTitle();
+    console.log(title);
 
-    if(title != null && title.length > 0){
-      console.log('Title is:',title);
+    try{
+      let emailInputBox = await driver.findElement(By.name("emailInput"));
+      let passwordInputBox = await driver.findElement(By.name("passwordInput"));
+
+      emailInputBox.click();
+      emailInputBox.sendKeys("bilgesucakir@gmail.com");
+
+
+      passwordInputBox.click();
+      passwordInputBox.sendKeys("123456");
+
+
+
+
     }
-    else{
-      console.log("title is empty");
+    catch{
+      console.log("couldnt login");
     }
-
-    let submitButton = await driver.findElement(By.name("leaderboardbutton"));
-
-      await submitButton.click();
-
-      var currentLink = driver.getPageSource();
-
-      console.log(currentLink);
-
-      /*
-      let message = await driver.findElement(By.id('message'));
-      let value = await message.getText();
-      assert.equal("Received!", value);*/
-
-
-      /*
-      var title_leaderboard = await driver.findElement(By.className("mainfeedtext"));
-
-      console.log(title_leaderboard);*/
-
 
 
 
    //It is always a safe practice to quit the browser after execution
-   await driver.quit();
+
+    await driver.quit();
 
 }
 
 
-example();
+example_leaderboard_testing();
