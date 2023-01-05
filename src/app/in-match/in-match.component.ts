@@ -108,7 +108,7 @@ export class InMatchComponent implements OnInit, OnDestroy{
                               "assets/MKE_Ankaragücü_logo.png","assets/Sivasspor.png", "assets/TrabzonsporAmblemi.png", "assets/Ümraniyespor_Logosu.png"];
 
   public teamsList: Array<string> = ["Adana Demirspor", "Alanyaspor" , "Antalyaspor", "Beşiktaş", "Fatih Karagümrük", "Fenerbahçe", "Galatasaray",
-                                      "Gaziantep", "Giresunspor", "Hatayspor", "İstanbul Başakşehir", "İstanbulspor", "Kasımpaşa", "Kayserispor",
+                                      "Gaziantep", "Giresunspor", "Hatayspor", "İstanbul Başakşehir", "İstanbulspor",  "Kasımpaşa", "Kayserispor",
                                       "Konyaspor", "MKE Ankaragücü", "Sivasspor", "Trabzonspor", "Ümraniyespor"];
 
 
@@ -861,5 +861,43 @@ transform(impollsList: InMatchPolls[], thisUser: User){
 }
 }
 
+interface commentaryElems{
+  matchID: string;
+  commentType: string;
+  comment: string;
+  minute: number;
+}
 
+@Pipe({ name: 'transformpipe5' })
+export class transformpipe5 implements PipeTransform {
+transform(listOf: any) {
 
+  //uid name surname point sorted by point
+  var listType: Array<commentaryElems> = [];
+  var size = Object.keys(listOf).length;
+  for(let i=0; i<size; i++){
+    var model = listOf[i];
+
+    var elem: commentaryElems = {
+      matchID: "",
+      commentType: "",
+      comment: "",
+      minute: 0,
+    }
+    elem.matchID = model.matchID;
+    elem.commentType = model.commentType;
+    elem.comment = model.comment;
+    elem.minute = model.minute;
+
+    listType.push(elem);
+  }
+
+  var sortedList: commentaryElems[] = listType.sort((obj1, obj2) => {
+    if(obj1.minute > obj2.minute){return -1;}
+    if(obj1.minute < obj2.minute){return 1;}
+    return 0;
+  });
+
+    return sortedList;
+  }
+}

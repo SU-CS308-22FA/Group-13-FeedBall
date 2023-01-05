@@ -55,6 +55,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ToDatePipe } from './profile/edit_profile.component';
 import { TransformPipe } from './leaderboard/leaderboard.component';
+import { transformpipe5 } from './in-match/in-match.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ReturnSizePipe } from './leaderboard/leaderboard.component';
 import { ReturnXthPipe } from './leaderboard/leaderboard.component';
@@ -107,6 +108,7 @@ import { TeamsComponent } from './teams/teams.component';
     AdminPollsComponent,
     MatchesAdminComponent,
     TransformPipe,
+    transformpipe5,
     ReturnSizePipe,
     ReturnXthPipe,
     ReturnIfXthPipe,

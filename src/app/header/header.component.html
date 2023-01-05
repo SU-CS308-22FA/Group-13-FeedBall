@@ -19,7 +19,7 @@
   <span class="spacer"></span>
   <span>
     <div *ngIf="(user$ | async) as user" class="maindiv">
-      <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Menu" *ngIf = "user.isBanned != true">
+      <button mat-icon-button name="menuButton" [matMenuTriggerFor]="menu" matTooltip="Menu" *ngIf = "user.isBanned != true">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
@@ -35,7 +35,7 @@
         </button>
 
         <div *ngIf="user.isAdmin != true">
-          <button mat-menu-item (click)="navigateProfilePage()">
+          <button mat-menu-item  name="profilePageButton" (click)="navigateProfilePage()">
             <div class="rightalign">
               <span><mat-icon class="blackclass">account_circle</mat-icon></span>
 
@@ -53,7 +53,7 @@
             </div>
           </button>
         </div>
-        <button mat-menu-item (click)="navigateLeaderBoard()">
+        <button mat-menu-item  name="leaderboardbutton" (click)="navigateLeaderBoard()">
           <div class="rightalign">
             <span><mat-icon class="blackclass">assessment</mat-icon></span>
 

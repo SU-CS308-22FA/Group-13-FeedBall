@@ -321,7 +321,7 @@
 <div class="header2"><p>LIVE COMMENTARY</p></div>
 <br>
 
-  <div *ngFor="let comments of commentary$ | async">
+  <div *ngFor="let comments of ((commentary$ | async)| transformpipe5)">
     <div class="header2" *ngIf="comments.matchID == this.matchId">
       <div><p class="namesurname">&nbsp;&nbsp;{{comments.minute}}</p></div>
       <div>
