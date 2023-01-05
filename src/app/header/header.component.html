@@ -35,7 +35,7 @@
         </button>
 
         <div *ngIf="user.isAdmin != true">
-          <button mat-menu-item (click)="navigateProfilePage()">
+          <button mat-menu-item  name="profilePageButton" (click)="navigateProfilePage()">
             <div class="rightalign">
               <span><mat-icon class="blackclass">account_circle</mat-icon></span>
 
